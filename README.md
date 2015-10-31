@@ -28,6 +28,7 @@ Use www.baidu.com if you feel that you are not clear enough about them.
         you should offer me your GitHub account name for me to invite you
 
     1.4 Clone MIA to your Git Desktop 
+    
         by clicking "Clone in Desktop" button at the lower right corner on page 
             https://github.com/SEhomeworkTeamUnnamed/MIA
         or by clicking "+" button at the upper left corner on GitHub Desktop, then
@@ -42,6 +43,7 @@ Use www.baidu.com if you feel that you are not clear enough about them.
 2. Open the project in IntelliJ IDEA(IDEA for brief):
 
     2.1 open IDEA and create a new java project at the path where you put MIA
+    
         it will recognize MIA as a project with Git, and asking you to fix the problem that it can't find git.exe
             to solve this: 
                 click "fix it" and browse to 
@@ -56,7 +58,9 @@ Use www.baidu.com if you feel that you are not clear enough about them.
     Sometimes you modified your file and clicked "sync" in GitHub Desktop, but the file remains unchanged on the GitHub website. So we need Git Shell.
     
     Introduction to some Git commands:
+    
         http://blog.csdn.net/chun799/article/details/9095635
+        
     We seem only need commands I listed below:
     
     3.1 Browse to the directory of project MIA
