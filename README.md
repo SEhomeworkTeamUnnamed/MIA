@@ -43,7 +43,7 @@ Use www.baidu.com if you feel that you are not clear enough about them.
 <br>
 2. Open the project in IntelliJ IDEA(IDEA for brief):
 -----------------------------------------------------
-        If you don't have IDEA, get a community edition from [here](https://www.jetbrains.com/idea/).
+If you don't have IDEA, get a community edition from [here](https://www.jetbrains.com/idea/).
 
 ####2.1 open IDEA and create a new java project at the path where you put MIA
     
