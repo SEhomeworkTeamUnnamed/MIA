@@ -63,7 +63,9 @@ Use www.baidu.com if you feel that you are not clear enough about them.
         if you clone MIA in the suggested path, you only need to input "cd MIA"
         
     3.1 Use 
+    
                 git status
+                
         to check modified files, files not change and files Git didn't track
         There are usually three kinds of file status:
             Changes to be committed: files whose changes will be uploaded
@@ -71,18 +73,24 @@ Use www.baidu.com if you feel that you are not clear enough about them.
             Untracked files: files which Git didn't track their changes
             
     3.2 Use 
+    
                 git add \<foldername or filename\>
+                
         to 
         add folders and files from "Untracked files" and "Changes not staged for commit"
             to "Changes to be committed"
             
     3.3 Use 
+    
                 git commit -m "\<some notes\>"
+                
         to commit changes of files which are in "Changes to be committed"
         Be aware that after this command the changes is still local
         
     3.4 Use
+    
                 git push
+                
         to submit your local changes online
         things on https://github.com/SEhomeworkTeamUnnamed/MIA should change now
         
