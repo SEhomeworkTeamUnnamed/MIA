@@ -68,7 +68,7 @@ Use www.baidu.com if you feel that you are not clear enough about them.
         
     We seem only need commands I listed below:
     
-####3.1 Browse to the directory of project MIA
+####3.1 Open Git Shell and browse to the directory of project MIA
         if you clone MIA in the suggested path, you only need to input "cd MIA"
         
 ####3.2 Use 
