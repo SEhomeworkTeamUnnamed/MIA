@@ -4,7 +4,9 @@ Mathematica input assistant(for starters)
 
 This is a mathematica input assistant for starters and people who infrequently use it.
 
-Tips for team members
+
+
+Tips for team members:
 
 --by jwt 2015-10-31
 
@@ -69,13 +71,13 @@ Use www.baidu.com if you feel that you are not clear enough about them.
             Untracked files: files which Git didn't track their changes
             
     3.2 Use 
-            git add <foldername or filename>
+            git add \<foldername or filename\>
         to 
         add folders and files from "Untracked files" and "Changes not staged for commit"
             to "Changes to be committed"
             
     3.3 Use 
-            git commit -m "<some notes>"
+            git commit -m "\<some notes\>"
         to commit changes of files which are in "Changes to be committed"
         Be aware that after this command the changes is still local
         
