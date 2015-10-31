@@ -1,9 +1,6 @@
 package Others;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created by IIIS on 10/29/2015.
@@ -54,11 +51,49 @@ public class Others {
         }
         return false;
     }
+    public void writeFile(String path, String toWrite, boolean append){
+
+        File file = new File(path);
+        File dir = new File(file.getParent());
+        //System.out.print(file.getParent());
+        String content = toWrite;
+
+        try{
+            if (!dir.isDirectory()) {
+                dir.mkdir();
+            }
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+        }catch (IOException e0) {
+            e0.printStackTrace();
+        }
+        try (FileOutputStream fop = new FileOutputStream(file, append)) {
+
+            // if file doesn't exists, then create it
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            // get the content in bytes
+            byte[] contentInBytes = content.getBytes();
+
+            fop.write(contentInBytes);
+            fop.flush();
+            fop.close();
+
+            //System.out.println("Done");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public static void main(String[] args){
         Others b=new Others();
         String test = "123222";
         int a;
         a= b.String2int(test);
         System.out.print(a);
+        //b.writeFile("D:/tteesstt/test.txt","test hahahaha!",false);
     }
 }
