@@ -13,13 +13,14 @@ Tips for team members:
 You should know a little bit about what is Git and what is GitHub.
 Use www.baidu.com if you feel that you are not clear enough about them.
 <br>
+<br>
 >1. Set up the project on your own computer:
 --------------------------------------------
 
 ####1.1 Get your own GitHub account
 
 ####1.2 Download GitHub Desktop (https://desktop.github.com/) and install
-        a brief introduction to it: [clickhere](https://github.com/integrations/github-desktop)
+        a brief introduction to it: (https://github.com/integrations/github-desktop)
         
         it will install a GitHub and a Git Shell
         GitHub is mainly used to visualize change history
@@ -38,7 +39,8 @@ Use www.baidu.com if you feel that you are not clear enough about them.
             
 ####1.5 Create your own branch by GitHub Desktop(find the button yourself) and publish it(find the button yourself)
     
-    <br>
+<br>
+<br>
 >2. Open the project in IntelliJ IDEA(IDEA for brief):
 -----------------------------------------------------
 
@@ -51,7 +53,9 @@ Use www.baidu.com if you feel that you are not clear enough about them.
                 so that the path of git.exe is known by IDEA. There is also a "test" button, click which will tell you that git.exe works.
         
 ####2.2 start reading code and writing code!
-    <br>
+
+<br>
+<br>
 >3. Using Git Shell
 ------------------
 
@@ -60,7 +64,7 @@ Use www.baidu.com if you feel that you are not clear enough about them.
     
     Introduction to some Git commands:
     
-        [clickhere](http://blog.csdn.net/chun799/article/details/9095635)
+        (http://blog.csdn.net/chun799/article/details/9095635)
         
     We seem only need commands I listed below:
     
@@ -96,11 +100,12 @@ Use www.baidu.com if you feel that you are not clear enough about them.
                 git push
                 
         to submit your local changes online
-        things on [MIA](https://github.com/SEhomeworkTeamUnnamed/MIA) should change now
+        things on (https://github.com/SEhomeworkTeamUnnamed/MIA) should change now
         
 ####3.6 pull request
         (will be used in the future)
         
-        <br>
+<br>
+<br>
 I hope you can go through all this and on Monday we will solve problems you meet during these and discuss something else.
     
