@@ -88,7 +88,7 @@ If you don't have IDEA, get a community edition from [here](https://www.jetbrain
                 
         to add folders and files from "Untracked files" and "Changes not staged for commit"
             to "Changes to be committed"
-        you can use "\*" for abbreviate, e.g., git add class\* will add all folders and files whose name begin with "class" 
+        you can use "*" for abbreviate, e.g., git add class* will add all folders and files whose name begin with "class" 
             
 ####3.4 Use 
     
