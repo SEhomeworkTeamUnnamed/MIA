@@ -80,8 +80,7 @@ Use www.baidu.com if you feel that you are not clear enough about them.
     
                 git add \<foldername or filename\>
                 
-        to 
-        add folders and files from "Untracked files" and "Changes not staged for commit"
+        to add folders and files from "Untracked files" and "Changes not staged for commit"
             to "Changes to be committed"
             
     3.3 Use 
