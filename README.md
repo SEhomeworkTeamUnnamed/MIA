@@ -43,6 +43,7 @@ Use www.baidu.com if you feel that you are not clear enough about them.
 <br>
 2. Open the project in IntelliJ IDEA(IDEA for brief):
 -----------------------------------------------------
+If you don't have IDEA, get a community edition from [here](https://www.jetbrains.com/idea/).
 
 ####2.1 open IDEA and create a new java project at the path where you put MIA
     
@@ -83,14 +84,15 @@ Use www.baidu.com if you feel that you are not clear enough about them.
             
 ####3.3 Use 
     
-                git add \<foldername or filename>
+                git add <foldername or filename>
                 
         to add folders and files from "Untracked files" and "Changes not staged for commit"
             to "Changes to be committed"
+        you can use "*" for abbreviate, e.g., git add class* will add all folders and files whose name begin with "class" 
             
 ####3.4 Use 
     
-                git commit -m "\<some notes>"
+                git commit -m "<some notes here>"
                 
         to commit changes of files which are in "Changes to be committed"
         Be aware that after this command the changes is still local
@@ -113,5 +115,5 @@ Use www.baidu.com if you feel that you are not clear enough about them.
         
 <br>
 <br>
-I hope you can go through all this and on Monday we will solve problems you meet during these and discuss something else.
+I hope you can go through all this so that on Monday we will solve problems you meet during these and discuss something else.
     
