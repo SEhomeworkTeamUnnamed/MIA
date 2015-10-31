@@ -14,7 +14,7 @@ You should know a little bit about what is Git and what is GitHub.
 Use www.baidu.com if you feel that you are not clear enough about them.
 <br>
 <br>
->1. Set up the project on your own computer:
+1. Set up the project on your own computer:
 --------------------------------------------
 
 ####1.1 Get your own GitHub account
@@ -41,7 +41,7 @@ Use www.baidu.com if you feel that you are not clear enough about them.
     
 <br>
 <br>
->2. Open the project in IntelliJ IDEA(IDEA for brief):
+2. Open the project in IntelliJ IDEA(IDEA for brief):
 -----------------------------------------------------
 
 ####2.1 open IDEA and create a new java project at the path where you put MIA
@@ -56,7 +56,7 @@ Use www.baidu.com if you feel that you are not clear enough about them.
 
 <br>
 <br>
->3. Using Git Shell
+3. Using Git Shell
 ------------------
 
     Although GitHub Desktop offers functions such as publish and synchronize, they are not clear enough. 
