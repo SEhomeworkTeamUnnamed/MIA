@@ -101,8 +101,14 @@ Use www.baidu.com if you feel that you are not clear enough about them.
                 
         to submit your local changes online
         things on (https://github.com/SEhomeworkTeamUnnamed/MIA) should change now
+
+####3.6 Use
+                git fetch
         
-####3.6 pull request
+        to get changes from website to your local repository
+        better to use git status to check changes first
+
+####3.7 pull request
         (will be used in the future)
         
 <br>
