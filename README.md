@@ -84,14 +84,15 @@ If you don't have IDEA, get a community edition from [here](https://www.jetbrain
             
 ####3.3 Use 
     
-                git add \<foldername or filename>
+                git add <foldername or filename>
                 
         to add folders and files from "Untracked files" and "Changes not staged for commit"
             to "Changes to be committed"
+        you can use "\*" for abbreviate, e.g., git add class\* will add all folders and files whose name begin with "class" 
             
 ####3.4 Use 
     
-                git commit -m "\<some notes>"
+                git commit -m "<some notes here>"
                 
         to commit changes of files which are in "Changes to be committed"
         Be aware that after this command the changes is still local
@@ -114,5 +115,5 @@ If you don't have IDEA, get a community edition from [here](https://www.jetbrain
         
 <br>
 <br>
-I hope you can go through all this and on Monday we will solve problems you meet during these and discuss something else.
+I hope you can go through all this so that on Monday we will solve problems you meet during these and discuss something else.
     
