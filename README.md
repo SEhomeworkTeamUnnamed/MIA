@@ -12,14 +12,14 @@ Tips for team members:
 
 You should know a little bit about what is Git and what is GitHub.
 Use www.baidu.com if you feel that you are not clear enough about them.
-
+<br>
 >1. Set up the project on your own computer:
 --------------------------------------------
 
 ####1.1 Get your own GitHub account
 
 ####1.2 Download GitHub Desktop (https://desktop.github.com/) and install
-        a brief introduction to it: (https://github.com/integrations/github-desktop)
+        a brief introduction to it: [clickhere](https://github.com/integrations/github-desktop)
         
         it will install a GitHub and a Git Shell
         GitHub is mainly used to visualize change history
@@ -38,7 +38,7 @@ Use www.baidu.com if you feel that you are not clear enough about them.
             
 ####1.5 Create your own branch by GitHub Desktop(find the button yourself) and publish it(find the button yourself)
     
-    
+    <br>
 >2. Open the project in IntelliJ IDEA(IDEA for brief):
 -----------------------------------------------------
 
@@ -51,7 +51,7 @@ Use www.baidu.com if you feel that you are not clear enough about them.
                 so that the path of git.exe is known by IDEA. There is also a "test" button, click which will tell you that git.exe works.
         
 ####2.2 start reading code and writing code!
-    
+    <br>
 >3. Using Git Shell
 ------------------
 
@@ -60,7 +60,7 @@ Use www.baidu.com if you feel that you are not clear enough about them.
     
     Introduction to some Git commands:
     
-        (http://blog.csdn.net/chun799/article/details/9095635)
+        [clickhere](http://blog.csdn.net/chun799/article/details/9095635)
         
     We seem only need commands I listed below:
     
@@ -79,14 +79,14 @@ Use www.baidu.com if you feel that you are not clear enough about them.
             
 ####3.3 Use 
     
-                git add \<foldername or filename\>
+                git add \<foldername or filename>
                 
         to add folders and files from "Untracked files" and "Changes not staged for commit"
             to "Changes to be committed"
             
 ####3.4 Use 
     
-                git commit -m "\<some notes\>"
+                git commit -m "\<some notes>"
                 
         to commit changes of files which are in "Changes to be committed"
         Be aware that after this command the changes is still local
@@ -96,11 +96,11 @@ Use www.baidu.com if you feel that you are not clear enough about them.
                 git push
                 
         to submit your local changes online
-        things on (https://github.com/SEhomeworkTeamUnnamed/MIA) should change now
+        things on [MIA](https://github.com/SEhomeworkTeamUnnamed/MIA) should change now
         
 ####3.6 pull request
         (will be used in the future)
         
-        
+        <br>
 I hope you can go through all this and on Monday we will solve problems you meet during these and discuss something else.
     
