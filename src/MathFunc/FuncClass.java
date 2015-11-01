@@ -9,27 +9,21 @@ import Others.*;
 /**
  * Created by IIIS on 10/28/2015.
  */
-public class FuncClass {
-    String FuncClassName;
-    String UpperPath;
-    String Notes;
-    MathFunc[] AllMathFunc;
+public class FuncClass extends MathObject {
 
+    MathFunc[] AllMathFunc;
     FuncClass[] AllFuncClass;
     int NumOfFunc;
     int NumOfClass;
 
     public FuncClass(){
-        FuncClassName="";
-        UpperPath="";
-        Notes="";
+        super();
         NumOfFunc=0;
         NumOfClass=0;
     }
-    public void setFuncClassName(String classname){FuncClassName = classname;}
     public void print(){
         System.out.print("FuncClass name: ");
-        System.out.println(FuncClassName);
+        System.out.println(ObjectName);
         System.out.print("FuncClass notes: ");
         System.out.println(Notes);
         System.out.print("include class:\n");
@@ -42,26 +36,11 @@ public class FuncClass {
         }
     }
 
-    public void setNotes(String notes) {
-        Notes = notes;
-    }
-    public void setUpperPath(String upperPath) {
-        UpperPath = upperPath;
-    }
     public void setNumOfFunc(int numoffunc){NumOfFunc = numoffunc;}
     public void setNumOfClass(int numofclass){NumOfClass = numofclass;}
 
     public int getNumOfFunc(){return NumOfFunc;}
     public int getNumOfClass(){return NumOfClass;}
-    public String getFuncClassName() {
-        return FuncClassName;
-    }
-    public String getUpperPath() {
-        return UpperPath;
-    }
-    public String getNotes() {
-        return Notes;
-    }
 
     public void readAll(String upperpath, String classname){
         readFunc(upperpath, classname);
@@ -74,31 +53,33 @@ public class FuncClass {
         //System.out.println(classname);
         UpperPath=upperpath;
         String FilePath = upperpath+"\\"+classname+"\\"+classname+".txt";
-        File file = new File(FilePath);
-        BufferedReader reader = null;
-        try {
-            reader = new BufferedReader(new FileReader(file));
-            String funcname = null;
-            int line = 1;
-            // 一次读入一行，直到读入null为文件结束
-            while ((funcname = reader.readLine()) != null) {
-                line++;
-            }
-            NumOfFunc = line-1;
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e1) {
-                }
-            }
-        }
+        //File file = new File(FilePath);
+        //BufferedReader reader = null;
+        //try {
+        //    reader = new BufferedReader(new FileReader(file));
+        //    String funcname = null;
+        //    int line = 1;
+        //    // 一次读入一行，直到读入null为文件结束
+        //    while ((funcname = reader.readLine()) != null) {
+        //        line++;
+        //    }
+        //    NumOfFunc = line-1;
+        //    reader.close();
+        //} catch (IOException e) {
+        //    e.printStackTrace();
+        //} finally {
+        //    if (reader != null) {
+        //        try {
+        //            reader.close();
+        //        } catch (IOException e1) {
+        //        }
+        //    }
+        //}
+        Others otherfuncs = new Others();
+        NumOfFunc=otherfuncs.getFileLength(FilePath);
 
 
-        FuncClassName=classname;
+        ObjectName=classname;
         AllMathFunc=new MathFunc[NumOfFunc];
         for(int i = 0; i < NumOfFunc; i++){
             AllMathFunc[i]=new MathFunc();
@@ -163,31 +144,31 @@ public class FuncClass {
         if(otherfuncs.hasSubClass(FilePath0)) {
 
             String FilePath = upperpath + "\\" + classname + "\\" + classname + "subClass.txt";
-            File file = new File(FilePath);
-            BufferedReader reader = null;
-            try {
-                reader = new BufferedReader(new FileReader(file));
-                String funcname = null;
-                int line = 1;
-                // 一次读入一行，直到读入null为文件结束
-                while ((funcname = reader.readLine()) != null) {
-                    line++;
-                }
-                NumOfClass = line - 1;
-                reader.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                if (reader != null) {
-                    try {
-                        reader.close();
-                    } catch (IOException e1) {
-                    }
-                }
-            }
+            //File file = new File(FilePath);
+            //BufferedReader reader = null;
+            //try {
+            //    reader = new BufferedReader(new FileReader(file));
+            //    String funcname = null;
+            //    int line = 1;
+            //    // 一次读入一行，直到读入null为文件结束
+            //    while ((funcname = reader.readLine()) != null) {
+            //        line++;
+            //    }
+            //    NumOfClass = line - 1;
+            //    reader.close();
+            //} catch (IOException e) {
+            //    e.printStackTrace();
+            //} finally {
+            //    if (reader != null) {
+            //        try {
+            //            reader.close();
+            //        } catch (IOException e1) {
+            //        }
+            //    }
+            //}
+            NumOfClass=otherfuncs.getFileLength(FilePath);
 
-
-            FuncClassName = classname;
+            ObjectName = classname;
             AllFuncClass = new FuncClass[NumOfClass];
             for (int i = 0; i < NumOfClass; i++) {
                 AllFuncClass[i] = new FuncClass();
@@ -246,8 +227,8 @@ public class FuncClass {
     }
 
     public void addSubClass(String nameOfSubClass){
-        String pathOfhasSubClass=UpperPath+"\\"+FuncClassName+"\\"+"hasSubClass.txt";
-        String pathOfSubClass=UpperPath+"\\"+FuncClassName+"\\"+FuncClassName+"subClass.txt";
+        String pathOfhasSubClass=UpperPath+"\\"+ObjectName+"\\"+"hasSubClass.txt";
+        String pathOfSubClass=UpperPath+"\\"+ObjectName+"\\"+ObjectName+"subClass.txt";
 
     }
 }

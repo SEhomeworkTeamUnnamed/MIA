@@ -10,40 +10,18 @@ import java.io.IOException;
 /**
  * Created by IIIS on 10/28/2015.
  */
-public class MathFunc {
-    String FuncName;
-    String UpperPath;
-    String Notes;
+public class MathFunc extends MathObject {
+
     Para[] AllPara;
     int NumOfPara;
-    int UseFreq;
 
     public MathFunc() {
-        FuncName = "";
-        UpperPath="";
-        Notes="";
+        super();
         NumOfPara = 0;
-        UseFreq = 0;
     }
 
     public void oneUse() {
         UseFreq++;
-    }
-
-    public void setUseFreq(int freq) {
-        UseFreq = freq;
-    }
-
-    public void setFuncName(String funcname) {
-        FuncName = funcname;
-    }
-
-    public void setNotes(String notes) {
-        Notes = notes;
-    }
-
-    public void setUpperPath(String upperPath) {
-        UpperPath = upperPath;
     }
 
     public void setAllPara(Para[] NewParas) {
@@ -64,24 +42,8 @@ public class MathFunc {
         NumOfPara++;
     }
 
-    public String getUpperPath() {
-        return UpperPath;
-    }
-
-    public String getNotes() {
-        return Notes;
-    }
-
-    public int getUseFreq() {
-        return UseFreq;
-    }
-
     public int getNumOfPara() {
         return NumOfPara;
-    }
-
-    public String getFuncName() {
-        return FuncName;
     }
 
     public Para[] getAllPara() {
@@ -89,9 +51,9 @@ public class MathFunc {
     }
 
     public void print() {
-        System.out.print("\t" + FuncName + " " + UseFreq + "\n\t\tParameters:\n");
+        System.out.print("\t" + ObjectName + " " + UseFreq);
         System.out.print("\tFunc notes: ");
-        System.out.println(Notes);
+        System.out.print(Notes + "\n\t\tParameters:\n");
         for (int i = 0; i < NumOfPara; i++) {
             AllPara[i].print();
         }
@@ -107,32 +69,33 @@ public class MathFunc {
 
         //System.out.println(funcname);
 
-        FuncName = funcname;
+        ObjectName = funcname;
         UpperPath = upperpath;
         String FilePath = upperpath + "\\" + funcname + "\\" + funcname + ".txt";
-        File file = new File(FilePath);
-        BufferedReader reader = null;
-        try {
-            reader = new BufferedReader(new FileReader(file));
-            String paraname = null;
-            int line = 1;
-            // 一次读入一行，直到读入null为文件结束
-            while ((paraname = reader.readLine()) != null) {
-                NumOfPara++;
-                line++;
-            }
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e1) {
-                }
-            }
-        }
-
+        //File file = new File(FilePath);
+        //BufferedReader reader = null;
+        //try {
+        //    reader = new BufferedReader(new FileReader(file));
+        //    String paraname = null;
+        //    int line = 1;
+        //    // 一次读入一行，直到读入null为文件结束
+        //    while ((paraname = reader.readLine()) != null) {
+        //        NumOfPara++;
+        //        line++;
+        //    }
+        //    reader.close();
+        //} catch (IOException e) {
+        //    e.printStackTrace();
+        //} finally {
+        //    if (reader != null) {
+        //        try {
+        //            reader.close();
+        //        } catch (IOException e1) {
+        //        }
+        //    }
+        //}
+        Others otherfuncs = new Others();
+        NumOfPara=otherfuncs.getFileLength(FilePath);
 
         AllPara = new Para[NumOfPara];
         for (int i = 0; i < NumOfPara; i++) {
@@ -169,7 +132,7 @@ public class MathFunc {
 
         //System.out.println(funcname);
 
-        FuncName = funcname;
+        ObjectName = funcname;
         String FilePath = upperpath + "\\" + funcname + "\\" + funcname + "freq.txt";
         File file = new File(FilePath);
         BufferedReader reader = null;

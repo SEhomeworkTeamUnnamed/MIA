@@ -7,6 +7,14 @@ import java.io.*;
  */
 public class Others {
     //This function returns the int value of a String of decimal number
+
+    /**
+     * get the int value of a string comprised of decimal digits
+     *      might be meaningless if given a string with characters or something else
+     *
+     * @param StrToConvert a string comprised of decimal digits
+     * @return int value of the string
+     */
     public int String2int(String StrToConvert){
         int len = StrToConvert.length();
         int num = 0;
@@ -19,6 +27,14 @@ public class Others {
         }
         return num;
     }
+
+    /**
+     *get whether the class has a subclass or not
+     *
+     * @param FilePath path of the file recording whether the class has subclass or not
+     * @return true if the class has subclass according to file
+     *          at FilePath
+     */
     public boolean hasSubClass(String FilePath){
 
         File file = new File(FilePath);
@@ -51,6 +67,52 @@ public class Others {
         }
         return false;
     }
+
+    /**
+     * get the length of the file in path
+     *
+     * @param path path of the file to read
+     * @return length of the file, -1 if not found
+     */
+    public int getFileLength(String path){
+        File file = new File(path);
+        File dir = new File(file.getParent());
+        int line = 1;
+        if (!dir.isDirectory()||!file.exists()) {
+            return -1;
+        }
+        BufferedReader reader = null;
+
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            String funcname = null;
+            // 一次读入一行，直到读入null为文件结束
+            while ((funcname = reader.readLine()) != null) {
+                line++;
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e1) {
+                }
+            }
+        }
+        return line-1;
+
+    }
+
+    /**
+     * remember to add "\r\n" in param toWrite to start a new line!
+     *
+     * @param path path of the file to write, create new if not found
+     * @param toWrite String that is going to be write into the file
+     * @param append if <code>true</code>, then bytes will be written
+     *                   to the end of the file rather than the beginning
+     */
     public void writeFile(String path, String toWrite, boolean append){
 
         File file = new File(path);
@@ -60,7 +122,7 @@ public class Others {
 
         try{
             if (!dir.isDirectory()) {
-                dir.mkdir();
+                dir.mkdirs();
             }
             if (!file.exists()) {
                 file.createNewFile();
@@ -94,6 +156,7 @@ public class Others {
         int a;
         a= b.String2int(test);
         System.out.print(a);
-        //b.writeFile("D:/tteesstt/test.txt","test hahahaha!",false);
+        b.writeFile("D:\\tteesstt\\test.txt","\r\ntest hahahaha!",true);
+        System.out.print("\n"+b.getFileLength("D:\\tteesstt\\test.txt")+"\n");
     }
 }

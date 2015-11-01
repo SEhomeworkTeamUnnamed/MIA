@@ -10,23 +10,17 @@ import java.io.IOException;
 /**
  * Created by IIIS on 10/28/2015.
  */
-public class Para {
-    String ParaName;
+public class Para extends MathObject {
+
     String ParaValue;
-    String UpperPath;
-    String Notes;
     boolean ShowName;
-    int UseFreq;
     int NumOfValues;
     String[] AllParaValue;
 
     public Para(){
-        ParaName="";
+        super();
         ParaValue="";
-        UpperPath="";
-        Notes="";
         ShowName=false;
-        UseFreq=0;
         NumOfValues=0;
         AllParaValue=new String[20];
         for(int i = 0; i < 20; i++){
@@ -34,20 +28,8 @@ public class Para {
         }
     }
 
-    public void setNotes(String notes) {
-        Notes = notes;
-    }
-    public void setUpperPath(String upperPath) {
-        UpperPath = upperPath;
-    }
-    public void setParaName(String NewName){
-        ParaName = NewName;
-    }
     public void setParaValue(String NewValue){
         ParaValue = NewValue;
-    }
-    public void setUseFreq(int freq){
-        UseFreq=freq;
     }
     public void setAllParaValue(String[] NewValues){
         int NumOfValues = NewValues.length;
@@ -61,20 +43,12 @@ public class Para {
     }
     public void oneUse(){UseFreq++;}
 
-    public String getNotes() {
-        return Notes;
-    }
-    public String getUpperPath() {
-        return UpperPath;
-    }
-    public int getUseFreq(){return UseFreq;}
     public int getNumOfValues(){return NumOfValues;}
-    public String getParaName(){return ParaName;}
     public String getParaValue(){return ParaValue;}
     public String[] getAllParaValue(){return AllParaValue;}
     public boolean isShowName(){return ShowName;}
     public void print(){
-        System.out.print("\t\t" + ParaName +" "+ UseFreq + "\n");
+        System.out.print("\t\t" + ObjectName +" "+ UseFreq + "\n");
         System.out.print("\t\t\tPara notes: ");
         System.out.println(Notes);
     }
@@ -87,7 +61,7 @@ public class Para {
 
         //System.out.println(paraname);
 
-        ParaName=paraname;
+        ObjectName=paraname;
         UpperPath=upperpath;
         String FilePath = upperpath+"\\"+paraname+".txt";
         File file = new File(FilePath);
