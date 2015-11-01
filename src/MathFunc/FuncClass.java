@@ -85,6 +85,18 @@ public class FuncClass extends MathObject {
             AllMathFunc[i]=new MathFunc();
         }
         File file2 = new File(FilePath);
+        File dir = new File(file2.getParent());
+        try{
+            if (!dir.isDirectory()) {
+                dir.mkdirs();
+            }
+            if (!file2.exists()) {
+                file2.createNewFile();
+            }
+        }catch (IOException e0) {
+            e0.printStackTrace();
+        }
+
         BufferedReader reader2 = null;
         try {
             reader2 = new BufferedReader(new FileReader(file2));
@@ -111,6 +123,18 @@ public class FuncClass extends MathObject {
         Others otherFuncs=new Others();
         String FilePath = upperpath+"\\"+classname+"\\"+classname+"freq.txt";
         File file = new File(FilePath);
+        File dir = new File(file.getParent());
+
+        try{
+            if (!dir.isDirectory()) {
+                dir.mkdirs();
+            }
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+        }catch (IOException e0) {
+            e0.printStackTrace();
+        }
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(new FileReader(file));
@@ -175,6 +199,20 @@ public class FuncClass extends MathObject {
             }
 
             File file2 = new File(FilePath);
+            File dir = new File(file2.getParent());
+
+            try{
+                if (!dir.isDirectory()) {
+                    dir.mkdirs();
+                }
+                if (!file2.exists()) {
+                    file2.createNewFile();
+                }
+            }catch (IOException e0) {
+                e0.printStackTrace();
+            }
+
+
             BufferedReader reader2 = null;
             try {
                 reader2 = new BufferedReader(new FileReader(file2));
@@ -202,6 +240,18 @@ public class FuncClass extends MathObject {
     public void readNotes(String upperpath, String classname){
         String FilePath = upperpath+"\\"+classname+"\\"+classname+"notes.txt";
         File file = new File(FilePath);
+        File dir = new File(file.getParent());
+
+        try{
+            if (!dir.isDirectory()) {
+                dir.mkdirs();
+            }
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+        }catch (IOException e0) {
+            e0.printStackTrace();
+        }
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(new FileReader(file));

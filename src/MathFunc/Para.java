@@ -65,6 +65,18 @@ public class Para extends MathObject {
         UpperPath=upperpath;
         String FilePath = upperpath+"\\"+paraname+".txt";
         File file = new File(FilePath);
+        File dir = new File(file.getParent());
+        try{
+            if (!dir.isDirectory()) {
+                dir.mkdirs();
+            }
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+        }catch (IOException e0) {
+            e0.printStackTrace();
+        }
+
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(new FileReader(file));
@@ -97,6 +109,18 @@ public class Para extends MathObject {
 
         String FilePath = upperpath+"\\"+paraname+"notes.txt";
         File file = new File(FilePath);
+        File dir = new File(file.getParent());
+        try{
+            if (!dir.isDirectory()) {
+                dir.mkdirs();
+            }
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+        }catch (IOException e0) {
+            e0.printStackTrace();
+        }
+
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(new FileReader(file));

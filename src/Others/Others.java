@@ -38,6 +38,17 @@ public class Others {
     public boolean hasSubClass(String FilePath){
 
         File file = new File(FilePath);
+        File dir = new File(file.getParent());
+        try{
+            if (!dir.isDirectory()) {
+                dir.mkdirs();
+            }
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+        }catch (IOException e0) {
+            e0.printStackTrace();
+        }
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(new FileReader(file));
@@ -79,7 +90,7 @@ public class Others {
         File dir = new File(file.getParent());
         int line = 1;
         if (!dir.isDirectory()||!file.exists()) {
-            return -1;
+            return 0;
         }
         BufferedReader reader = null;
 

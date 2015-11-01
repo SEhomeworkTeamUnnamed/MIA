@@ -104,6 +104,18 @@ public class MathFunc extends MathObject {
 
 
         File file2 = new File(FilePath);
+        File dir = new File(file2.getParent());
+        try{
+            if (!dir.isDirectory()) {
+                dir.mkdirs();
+            }
+            if (!file2.exists()) {
+                file2.createNewFile();
+            }
+        }catch (IOException e0) {
+            e0.printStackTrace();
+        }
+
         BufferedReader reader2 = null;
         try {
             reader2 = new BufferedReader(new FileReader(file2));
@@ -135,6 +147,18 @@ public class MathFunc extends MathObject {
         ObjectName = funcname;
         String FilePath = upperpath + "\\" + funcname + "\\" + funcname + "freq.txt";
         File file = new File(FilePath);
+        File dir = new File(file.getParent());
+        try{
+            if (!dir.isDirectory()) {
+                dir.mkdirs();
+            }
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+        }catch (IOException e0) {
+            e0.printStackTrace();
+        }
+
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(new FileReader(file));
@@ -164,6 +188,18 @@ public class MathFunc extends MathObject {
 
         String FilePath = upperpath + "\\" + funcname + "\\" + funcname + "notes.txt";
         File file = new File(FilePath);
+        File dir = new File(file.getParent());
+        try{
+            if (!dir.isDirectory()) {
+                dir.mkdirs();
+            }
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+        }catch (IOException e0) {
+            e0.printStackTrace();
+        }
+
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(new FileReader(file));
