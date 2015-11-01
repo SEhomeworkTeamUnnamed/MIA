@@ -41,7 +41,6 @@ public class Para extends MathObject {
         AllParaValue[NumOfValues]=NewValue;
         NumOfValues++;
     }
-    public void oneUse(){UseFreq++;}
 
     public int getNumOfValues(){return NumOfValues;}
     public String getParaValue(){return ParaValue;}

@@ -96,9 +96,9 @@ public class Others {
 
         try {
             reader = new BufferedReader(new FileReader(file));
-            String funcname = null;
+            String str = null;
             // 一次读入一行，直到读入null为文件结束
-            while ((funcname = reader.readLine()) != null) {
+            while ((str = reader.readLine()) != null) {
                 line++;
             }
             reader.close();
@@ -161,6 +161,12 @@ public class Others {
             e.printStackTrace();
         }
     }
+
+    /**
+     * for testing
+     *
+     * @param args
+     */
     public static void main(String[] args){
         Others b=new Others();
         String test = "123222";
