@@ -31,9 +31,7 @@ public class ReadFuncClass {
 
                 //System.out.println("classname = reader.readLine()) != null");
                 //AllFuncClass[line-1].print();
-                AllFuncClass[line-1].readFunc(System.getProperty("user.dir"),classname);
-                AllFuncClass[line-1].readFuncFreq(System.getProperty("user.dir"),classname);
-                AllFuncClass[line-1].readClass(System.getProperty("user.dir"),classname);
+                AllFuncClass[line-1].readAll(System.getProperty("user.dir"),classname);
                 line++;
             }
             reader.close();

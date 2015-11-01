@@ -9,21 +9,23 @@ import Others.*;
 /**
  * Created by IIIS on 10/28/2015.
  */
-public class FuncClass {
-    String FuncClassName;
+public class FuncClass extends MathObject {
+
     MathFunc[] AllMathFunc;
     FuncClass[] AllFuncClass;
     int NumOfFunc;
     int NumOfClass;
 
     public FuncClass(){
-        FuncClassName="";
+        super();
         NumOfFunc=0;
+        NumOfClass=0;
     }
-    public void setFuncClassName(String classname){FuncClassName = classname;}
     public void print(){
         System.out.print("FuncClass name: ");
-        System.out.println(FuncClassName);
+        System.out.println(ObjectName);
+        System.out.print("FuncClass notes: ");
+        System.out.println(Notes);
         System.out.print("include class:\n");
         for(int i = 0; i < NumOfClass; i++){
             AllFuncClass[i].print();
@@ -33,42 +35,51 @@ public class FuncClass {
             AllMathFunc[i].print();
         }
     }
+
     public void setNumOfFunc(int numoffunc){NumOfFunc = numoffunc;}
     public void setNumOfClass(int numofclass){NumOfClass = numofclass;}
 
     public int getNumOfFunc(){return NumOfFunc;}
     public int getNumOfClass(){return NumOfClass;}
 
+    public void readAll(String upperpath, String classname){
+        readFunc(upperpath, classname);
+        readFuncFreq(upperpath, classname);
+        readClass(upperpath, classname);
+        readNotes(upperpath, classname);
+    }
     public void readFunc(String upperpath, String classname) {
 
         //System.out.println(classname);
-
+        UpperPath=upperpath;
         String FilePath = upperpath+"\\"+classname+"\\"+classname+".txt";
-        File file = new File(FilePath);
-        BufferedReader reader = null;
-        try {
-            reader = new BufferedReader(new FileReader(file));
-            String funcname = null;
-            int line = 1;
-            // 一次读入一行，直到读入null为文件结束
-            while ((funcname = reader.readLine()) != null) {
-                line++;
-            }
-            NumOfFunc = line-1;
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e1) {
-                }
-            }
-        }
+        //File file = new File(FilePath);
+        //BufferedReader reader = null;
+        //try {
+        //    reader = new BufferedReader(new FileReader(file));
+        //    String funcname = null;
+        //    int line = 1;
+        //    // 一次读入一行，直到读入null为文件结束
+        //    while ((funcname = reader.readLine()) != null) {
+        //        line++;
+        //    }
+        //    NumOfFunc = line-1;
+        //    reader.close();
+        //} catch (IOException e) {
+        //    e.printStackTrace();
+        //} finally {
+        //    if (reader != null) {
+        //        try {
+        //            reader.close();
+        //        } catch (IOException e1) {
+        //        }
+        //    }
+        //}
+        Others otherfuncs = new Others();
+        NumOfFunc=otherfuncs.getFileLength(FilePath);
 
 
-        FuncClassName=classname;
+        ObjectName=classname;
         AllMathFunc=new MathFunc[NumOfFunc];
         for(int i = 0; i < NumOfFunc; i++){
             AllMathFunc[i]=new MathFunc();
@@ -81,8 +92,7 @@ public class FuncClass {
             int line = 1;
             // 一次读入一行，直到读入null为文件结束
             while ((funcname = reader2.readLine()) != null) {
-                AllMathFunc[line-1].readPara(upperpath+"\\"+classname, funcname);
-                AllMathFunc[line-1].readParaFreq(upperpath+"\\"+classname, funcname);
+                AllMathFunc[line-1].readAll(upperpath+"\\"+classname, funcname);
                 line++;
             }
             reader2.close();
@@ -134,31 +144,31 @@ public class FuncClass {
         if(otherfuncs.hasSubClass(FilePath0)) {
 
             String FilePath = upperpath + "\\" + classname + "\\" + classname + "subClass.txt";
-            File file = new File(FilePath);
-            BufferedReader reader = null;
-            try {
-                reader = new BufferedReader(new FileReader(file));
-                String funcname = null;
-                int line = 1;
-                // 一次读入一行，直到读入null为文件结束
-                while ((funcname = reader.readLine()) != null) {
-                    line++;
-                }
-                NumOfClass = line - 1;
-                reader.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                if (reader != null) {
-                    try {
-                        reader.close();
-                    } catch (IOException e1) {
-                    }
-                }
-            }
+            //File file = new File(FilePath);
+            //BufferedReader reader = null;
+            //try {
+            //    reader = new BufferedReader(new FileReader(file));
+            //    String funcname = null;
+            //    int line = 1;
+            //    // 一次读入一行，直到读入null为文件结束
+            //    while ((funcname = reader.readLine()) != null) {
+            //        line++;
+            //    }
+            //    NumOfClass = line - 1;
+            //    reader.close();
+            //} catch (IOException e) {
+            //    e.printStackTrace();
+            //} finally {
+            //    if (reader != null) {
+            //        try {
+            //            reader.close();
+            //        } catch (IOException e1) {
+            //        }
+            //    }
+            //}
+            NumOfClass=otherfuncs.getFileLength(FilePath);
 
-
-            FuncClassName = classname;
+            ObjectName = classname;
             AllFuncClass = new FuncClass[NumOfClass];
             for (int i = 0; i < NumOfClass; i++) {
                 AllFuncClass[i] = new FuncClass();
@@ -172,9 +182,7 @@ public class FuncClass {
                 int line = 1;
                 // 一次读入一行，直到读入null为文件结束
                 while ((subclassname = reader2.readLine()) != null) {
-                    AllFuncClass[line - 1].readFunc(upperpath + "\\" + classname, subclassname);
-                    AllFuncClass[line - 1].readFuncFreq(upperpath + "\\" + classname, subclassname);
-                    AllFuncClass[line - 1].readClass(upperpath + "\\" + classname, subclassname);
+                    AllFuncClass[line - 1].readAll(upperpath + "\\" + classname, subclassname);
                     line++;
                 }
                 reader2.close();
@@ -191,4 +199,36 @@ public class FuncClass {
         }
     }
 
+    public void readNotes(String upperpath, String classname){
+        String FilePath = upperpath+"\\"+classname+"\\"+classname+"notes.txt";
+        File file = new File(FilePath);
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            String notes = null;
+            int line = 1;
+            // 一次读入一行，直到读入null为文件结束
+            while ((notes = reader.readLine()) != null) {
+                Notes = notes;
+                line++;
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e1) {
+                }
+            }
+        }
+
+    }
+
+    public void addSubClass(String nameOfSubClass){
+        String pathOfhasSubClass=UpperPath+"\\"+ObjectName+"\\"+"hasSubClass.txt";
+        String pathOfSubClass=UpperPath+"\\"+ObjectName+"\\"+ObjectName+"subClass.txt";
+
+    }
 }
