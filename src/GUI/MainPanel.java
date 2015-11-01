@@ -23,10 +23,11 @@ public class MainPanel {
         RootClass.setUpperPath(System.getProperty("user.dir")+"\\root");
         RootClass.setObjectName("rootClass");
         RootClass.readAll();
-        RootClass.addSubClass("Class3");
-        RootClass.addMathFunc("sb!yeah!");
-        RootClass.getAllFuncClass()[0].getAllFuncClass()[0].addSubClass("subsubclass");
+        //RootClass.addSubClass("Class3");
+        //RootClass.addMathFunc("sb!yeah!");
+        //RootClass.getAllFuncClass()[0].getAllFuncClass()[0].addSubClass("subsubclass");
         RootClass.print();
+        RootClass.outputFile();
     }
 
 }

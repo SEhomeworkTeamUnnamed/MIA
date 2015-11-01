@@ -231,4 +231,26 @@ public class MathFunc extends MathObject {
             }
         }
     }
+
+    public void outputFile(){
+        Others otherFuncs=new Others();
+        String PathOfPara = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"Para.txt";
+        String PathOfParaFreq = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"Parafreq.txt";
+        for (int i = 0; i < NumOfPara; i++) {
+            String ParaName = AllPara[i].getObjectName();
+            String ParaFreq = ""+AllPara[i].getUseFreq();
+            if(i==0){
+                otherFuncs.writeFile(PathOfPara, ParaName, false);
+                otherFuncs.writeFile(PathOfParaFreq, ParaFreq, false);
+            }
+            else{
+                otherFuncs.writeFile(PathOfPara, "\r\n"+ParaName, true);
+                otherFuncs.writeFile(PathOfParaFreq, "\r\n"+ParaFreq, true);
+            }
+            AllPara[i].outputFile();
+        }
+
+        String PathOfNotes = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"notes.txt";
+        otherFuncs.writeFile(PathOfNotes, Notes, false);
+    }
 }

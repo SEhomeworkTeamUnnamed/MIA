@@ -2,6 +2,8 @@ package MathFunc;
 
 //import Others.*;
 
+import Others.Others;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -62,7 +64,7 @@ public class Para extends MathObject {
 
         ObjectName=paraname;
         UpperPath=upperpath;
-        String FilePath = upperpath+"\\"+paraname+".txt";
+        String FilePath = upperpath+"\\"+paraname+"Values.txt";
         File file = new File(FilePath);
         File dir = new File(file.getParent());
         try{
@@ -145,5 +147,21 @@ public class Para extends MathObject {
                 }
             }
         }
+    }
+
+    public void outputFile(){
+        Others otherFuncs=new Others();
+        String PathOfValues = UpperPath+"\\"+ObjectName+"Values.txt";
+        for (int i = 0; i < NumOfValues; i++) {
+            if(i==0){
+                otherFuncs.writeFile(PathOfValues, AllParaValue[i], false);
+            }
+            else{
+                otherFuncs.writeFile(PathOfValues, "\r\n"+AllParaValue[i], true);
+            }
+        }
+
+        String PathOfNotes = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"notes.txt";
+        otherFuncs.writeFile(PathOfNotes, Notes, false);
     }
 }
