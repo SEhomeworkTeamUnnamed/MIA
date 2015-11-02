@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Hashtable;
 
 import Others.*;
 /**
@@ -26,11 +27,11 @@ public class FuncClass extends MathObject {
         System.out.println(ObjectName);
         System.out.print("FuncClass notes: ");
         System.out.println(Notes);
-        System.out.print("include class:\n");
+        System.out.print(ObjectName+" include class:\n");
         for(int i = 0; i < NumOfClass; i++){
             AllFuncClass[i].print();
         }
-        System.out.print("include functions:\n");
+        System.out.print(ObjectName+" include functions:\n");
         for(int i = 0; i < NumOfFunc; i++){
             AllMathFunc[i].print();
         }
@@ -47,6 +48,19 @@ public class FuncClass extends MathObject {
     }
     public FuncClass[] getAllFuncClass() {
         return AllFuncClass;
+    }
+    public Hashtable getHashtable(){
+        Hashtable tempTable=new Hashtable();
+        String[] AllFuncName=new String[NumOfFunc];
+        for (int i = 0; i < NumOfFunc; i++) {
+            //AllFuncName[i]=AllMathFunc[i].getObjectName();
+            tempTable.put(AllMathFunc[i].getObjectName(),AllMathFunc[i].getObjectName());
+        }
+        //tempTable.put(ObjectName,AllFuncName);
+        for (int i = 0; i < NumOfClass; i++) {
+            tempTable.put(AllFuncClass[i].getObjectName(),AllFuncClass[i].getHashtable());
+        }
+        return tempTable;
     }
 
     public boolean hasSubClass(){
