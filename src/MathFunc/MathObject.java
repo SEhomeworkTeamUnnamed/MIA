@@ -47,4 +47,6 @@ public class MathObject {
     public void setUseFreq(int useFreq) {
         UseFreq = useFreq;
     }
+
+    public void oneUse(){UseFreq++;}
 }

@@ -21,6 +21,17 @@ public class ReadFuncClass {
         //System.out.println(FilePath);
 
         File file = new File(FilePath);
+        File dir = new File(file.getParent());
+        try{
+            if (!dir.isDirectory()) {
+                dir.mkdirs();
+            }
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+        }catch (IOException e0) {
+            e0.printStackTrace();
+        }
         BufferedReader reader = null;
         int line = 1;
         try {
