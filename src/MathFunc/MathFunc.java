@@ -20,10 +20,6 @@ public class MathFunc extends MathObject {
         NumOfPara = 0;
     }
 
-    public void oneUse() {
-        UseFreq++;
-    }
-
     public void setAllPara(Para[] NewParas) {
         NumOfPara = NewParas.length;
         for (int i = 0; i < NumOfPara; i++) {
@@ -32,13 +28,25 @@ public class MathFunc extends MathObject {
     }
 
     public void addPara(Para NewPara) {
-        //need modification
         Para[] tempPara = new Para[NumOfPara + 1];
         for (int i = 0; i < NumOfPara; i++) {
             tempPara[i] = AllPara[i];
         }
         AllPara = null;
         AllPara = tempPara;
+        AllPara[NumOfPara]=NewPara;
+        NumOfPara++;
+    }
+    public void addPara(String ParaName){
+        Para[] tempPara = new Para[NumOfPara + 1];
+        for (int i = 0; i < NumOfPara; i++) {
+            tempPara[i] = AllPara[i];
+        }
+        AllPara = null;
+        AllPara = tempPara;
+        AllPara[NumOfPara]=new Para();
+        AllPara[NumOfPara].setObjectName(ParaName);
+        AllPara[NumOfPara].setUpperPath(UpperPath+"\\"+ObjectName);
         NumOfPara++;
     }
 
@@ -57,6 +65,7 @@ public class MathFunc extends MathObject {
         for (int i = 0; i < NumOfPara; i++) {
             AllPara[i].print();
         }
+        System.out.println("\t------end of Func "+ObjectName);
     }
 
     public void readAll(String upperpath, String funcname) {
@@ -71,7 +80,7 @@ public class MathFunc extends MathObject {
 
         ObjectName = funcname;
         UpperPath = upperpath;
-        String FilePath = upperpath + "\\" + funcname + "\\" + funcname + ".txt";
+        String FilePath = upperpath + "\\" + funcname + "\\" + funcname + "Para.txt";
         //File file = new File(FilePath);
         //BufferedReader reader = null;
         //try {
@@ -145,7 +154,7 @@ public class MathFunc extends MathObject {
         //System.out.println(funcname);
 
         ObjectName = funcname;
-        String FilePath = upperpath + "\\" + funcname + "\\" + funcname + "freq.txt";
+        String FilePath = upperpath + "\\" + funcname + "\\" + funcname + "Parafreq.txt";
         File file = new File(FilePath);
         File dir = new File(file.getParent());
         try{
@@ -221,5 +230,27 @@ public class MathFunc extends MathObject {
                 }
             }
         }
+    }
+
+    public void outputFile(){
+        Others otherFuncs=new Others();
+        String PathOfPara = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"Para.txt";
+        String PathOfParaFreq = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"Parafreq.txt";
+        for (int i = 0; i < NumOfPara; i++) {
+            String ParaName = AllPara[i].getObjectName();
+            String ParaFreq = ""+AllPara[i].getUseFreq();
+            if(i==0){
+                otherFuncs.writeFile(PathOfPara, ParaName, false);
+                otherFuncs.writeFile(PathOfParaFreq, ParaFreq, false);
+            }
+            else{
+                otherFuncs.writeFile(PathOfPara, "\r\n"+ParaName, true);
+                otherFuncs.writeFile(PathOfParaFreq, "\r\n"+ParaFreq, true);
+            }
+            AllPara[i].outputFile();
+        }
+
+        String PathOfNotes = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"notes.txt";
+        otherFuncs.writeFile(PathOfNotes, Notes, false);
     }
 }

@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Hashtable;
 
 import Others.*;
 /**
@@ -26,14 +27,15 @@ public class FuncClass extends MathObject {
         System.out.println(ObjectName);
         System.out.print("FuncClass notes: ");
         System.out.println(Notes);
-        System.out.print("include class:\n");
+        System.out.print(ObjectName+" include class:\n");
         for(int i = 0; i < NumOfClass; i++){
             AllFuncClass[i].print();
         }
-        System.out.print("include functions:\n");
+        System.out.print(ObjectName+" include functions:\n");
         for(int i = 0; i < NumOfFunc; i++){
             AllMathFunc[i].print();
         }
+        System.out.println("------end of Class " + ObjectName);
     }
 
     public void setNumOfFunc(int numoffunc){NumOfFunc = numoffunc;}
@@ -41,7 +43,41 @@ public class FuncClass extends MathObject {
 
     public int getNumOfFunc(){return NumOfFunc;}
     public int getNumOfClass(){return NumOfClass;}
+    public MathFunc[] getAllMathFunc() {
+        return AllMathFunc;
+    }
+    public FuncClass[] getAllFuncClass() {
+        return AllFuncClass;
+    }
+    public Hashtable getHashtable(){
+        Hashtable tempTable=new Hashtable();
+        String[] AllFuncName=new String[NumOfFunc];
+        for (int i = 0; i < NumOfFunc; i++) {
+            //AllFuncName[i]=AllMathFunc[i].getObjectName();
+            tempTable.put(AllMathFunc[i].getObjectName(),AllMathFunc[i].getObjectName());
+        }
+        //tempTable.put(ObjectName,AllFuncName);
+        for (int i = 0; i < NumOfClass; i++) {
+            tempTable.put(AllFuncClass[i].getObjectName(),AllFuncClass[i].getHashtable());
+        }
+        return tempTable;
+    }
 
+    public boolean hasSubClass(){
+        if(NumOfClass==0){
+            return false;
+        }
+        return true;
+    }
+
+    public void readAll(){
+        String upperpath=UpperPath;
+        String classname=ObjectName;
+        readFunc(upperpath, classname);
+        readFuncFreq(upperpath, classname);
+        readClass(upperpath, classname);
+        readNotes(upperpath, classname);
+    }
     public void readAll(String upperpath, String classname){
         readFunc(upperpath, classname);
         readFuncFreq(upperpath, classname);
@@ -52,7 +88,7 @@ public class FuncClass extends MathObject {
 
         //System.out.println(classname);
         UpperPath=upperpath;
-        String FilePath = upperpath+"\\"+classname+"\\"+classname+".txt";
+        String FilePath = upperpath+"\\"+classname+"\\"+classname+"Func.txt";
         //File file = new File(FilePath);
         //BufferedReader reader = null;
         //try {
@@ -121,7 +157,7 @@ public class FuncClass extends MathObject {
     }
     public void readFuncFreq(String upperpath, String classname){
         Others otherFuncs=new Others();
-        String FilePath = upperpath+"\\"+classname+"\\"+classname+"freq.txt";
+        String FilePath = upperpath+"\\"+classname+"\\"+classname+"FuncFreq.txt";
         File file = new File(FilePath);
         File dir = new File(file.getParent());
 
@@ -167,7 +203,7 @@ public class FuncClass extends MathObject {
         Others otherfuncs = new Others();
         if(otherfuncs.hasSubClass(FilePath0)) {
 
-            String FilePath = upperpath + "\\" + classname + "\\" + classname + "subClass.txt";
+            String FilePath = upperpath + "\\" + classname + "\\" + classname + "SubClass.txt";
             //File file = new File(FilePath);
             //BufferedReader reader = null;
             //try {
@@ -276,9 +312,83 @@ public class FuncClass extends MathObject {
 
     }
 
-    public void addSubClass(String nameOfSubClass){
-        String pathOfhasSubClass=UpperPath+"\\"+ObjectName+"\\"+"hasSubClass.txt";
-        String pathOfSubClass=UpperPath+"\\"+ObjectName+"\\"+ObjectName+"subClass.txt";
+    public void addSubClass(FuncClass NewClass){
+        FuncClass[] tempFuncClass=new FuncClass[NumOfClass+1];
+        for(int i = 0; i < NumOfClass; i++){
+            tempFuncClass[i]=AllFuncClass[i];
+        }
+        AllFuncClass=null;
+        AllFuncClass=tempFuncClass;
+        AllFuncClass[NumOfClass]=NewClass;
+        NumOfClass++;
+    }
+    public void addSubClass(String SubClassName){
+        FuncClass[] tempFuncClass=new FuncClass[NumOfClass+1];
+        for(int i = 0; i < NumOfClass; i++){
+            tempFuncClass[i]=AllFuncClass[i];
+        }
+        AllFuncClass=null;
+        AllFuncClass=tempFuncClass;
+        AllFuncClass[NumOfClass]=new FuncClass();
+        AllFuncClass[NumOfClass].setObjectName(SubClassName);
+        AllFuncClass[NumOfClass].setUpperPath(UpperPath+"\\"+ObjectName);
+        NumOfClass++;
+    }
 
+    public void addMathFunc(MathFunc NewMathFunc){
+        MathFunc[] tempMathFunc=new MathFunc[NumOfFunc+1];
+        for(int i = 0; i < NumOfFunc; i++){
+            tempMathFunc[i]=AllMathFunc[i];
+        }
+        AllMathFunc=null;
+        AllMathFunc=tempMathFunc;
+        AllMathFunc[NumOfFunc]=NewMathFunc;
+        NumOfFunc++;
+    }
+    public void addMathFunc(String FuncName){
+        MathFunc[] tempMathFunc=new MathFunc[NumOfFunc+1];
+        for(int i = 0; i < NumOfFunc; i++){
+            tempMathFunc[i]=AllMathFunc[i];
+        }
+        AllMathFunc=null;
+        AllMathFunc=tempMathFunc;
+        AllMathFunc[NumOfFunc]=new MathFunc();
+        AllMathFunc[NumOfFunc].setObjectName(FuncName);
+        AllMathFunc[NumOfFunc].setUpperPath(UpperPath+"\\"+ObjectName);
+        NumOfFunc++;
+    }
+    public void outputFile(){
+        Others otherFuncs=new Others();
+        String PathOfFunc = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"Func.txt";
+        String PathOfFuncFreq = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"FuncFreq.txt";
+        for (int i = 0; i < NumOfFunc ; i++) {
+            String FuncName = AllMathFunc[i].getObjectName();
+            String FuncFreq = ""+AllMathFunc[i].getUseFreq();
+            if(i==0){
+                otherFuncs.writeFile(PathOfFunc, FuncName, false);
+                otherFuncs.writeFile(PathOfFuncFreq, FuncFreq, false);
+            }
+            else{
+                otherFuncs.writeFile(PathOfFunc, "\r\n"+FuncName, true);
+                otherFuncs.writeFile(PathOfFuncFreq, "\r\n"+FuncFreq, true);
+            }
+            AllMathFunc[i].outputFile();
+        }
+
+        String PathOfSubClass = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"SubClass.txt";
+        for (int i = 0; i < NumOfClass; i++) {
+            String ClassName = AllFuncClass[i].getObjectName();
+            if(i==0){
+                otherFuncs.writeFile(PathOfSubClass, ClassName, false);
+                otherFuncs.writeFile(UpperPath+"\\"+ObjectName+"\\"+"hasSubClass.txt",""+1,false);
+            }
+            else {
+                otherFuncs.writeFile(PathOfSubClass, "\r\n"+ClassName, true);
+            }
+            AllFuncClass[i].outputFile();
+        }
+
+        String PathOfNotes = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"notes.txt";
+        otherFuncs.writeFile(PathOfNotes, Notes, false);
     }
 }
