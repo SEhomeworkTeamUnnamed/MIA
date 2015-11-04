@@ -161,7 +161,7 @@ public class Para extends MathObject {
             }
         }
 
-        String PathOfNotes = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"notes.txt";
+        String PathOfNotes = UpperPath+"\\"+ObjectName+"notes.txt";
         otherFuncs.writeFile(PathOfNotes, Notes, false);
     }
 }
