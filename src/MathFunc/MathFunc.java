@@ -232,6 +232,18 @@ public class MathFunc extends MathObject {
         }
     }
 
+    public String getPathOfPara(){
+        return UpperPath+"\\"+ObjectName+"\\"+ObjectName+"Para.txt";
+    }
+
+    public String getPathOfParaFreq(){
+        return UpperPath+"\\"+ObjectName+"\\"+ObjectName+"Parafreq.txt";
+    }
+
+    public String getPathOfNotes(){
+        return UpperPath+"\\"+ObjectName+"\\"+ObjectName+"notes.txt";
+    }
+
     public void outputFile(){
         Others otherFuncs=new Others();
         String PathOfPara = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"Para.txt";

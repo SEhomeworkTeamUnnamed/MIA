@@ -148,6 +148,12 @@ public class Para extends MathObject {
             }
         }
     }
+    public String getPathOfValues(){
+        return UpperPath+"\\"+ObjectName+"Values.txt";
+    }
+    public String getPathOfNotes(){
+        return UpperPath+"\\"+ObjectName+"notes.txt";
+    }
 
     public void outputFile(){
         Others otherFuncs=new Others();

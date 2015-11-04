@@ -21,8 +21,12 @@ public class MainPanel {
         //}
         FuncClass RootClass=new FuncClass();
         RootClass.setUpperPath(System.getProperty("user.dir")+"\\root");
-        RootClass.setObjectName("rootClass");
+        RootClass.setObjectName("simpleClass");
         RootClass.readAll();
+        //String[] path={"simpleClass"};
+        //RootClass.addSubClass(path,"newClass");
+        String[] path2={"simpleClass","newClass"};
+        RootClass.addSubClass(path2,"newClass2");
         //RootClass.addSubClass("Class3");
         //RootClass.addMathFunc("sb!yeah!");
         //RootClass.getAllFuncClass()[0].getAllFuncClass()[0].addSubClass("subsubclass");
