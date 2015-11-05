@@ -27,8 +27,17 @@ public class TreeListener implements TreeModelListener {
         DefaultMutableTreeNode RootNode = RootClass.getTreeNode();
 
         JFrame f=new JFrame("树组件测试");
-
         Container contentPane=f.getContentPane();
+
+        JMenuBar menuBar1=new JMenuBar();
+        f.setJMenuBar(menuBar1);
+        JMenu menu1=new JMenu("文件");
+        JMenuItem item1=new JMenuItem("打开");
+        JMenuItem item2=new JMenuItem("保存");
+        menu1.add(item1);
+        menu1.add(item2);
+        menuBar1.add(menu1);
+
 
         JTree tree=new JTree(RootNode);
         tree.setEditable(true);
@@ -49,13 +58,13 @@ public class TreeListener implements TreeModelListener {
         JButton b3=new JButton("删除");
         con.add(b1);con.add(b2);con.add(b3);
 
-        Container con2=new Container();
-        con2.setLayout(new FlowLayout());
-        JButton b4=new JButton("保存更改");
-        con2.add(b4);
+        //Container con2=new Container();
+        //con2.setLayout(new FlowLayout());
+        //JButton b4=new JButton("保存更改");
+        //con2.add(b4);
 
         contentPane.add(con,BorderLayout.SOUTH);
-        contentPane.add(con2,BorderLayout.NORTH);
+        //contentPane.add(con2,BorderLayout.NORTH);
 
         contentPane.add(scrollPane,BorderLayout.CENTER);
 
@@ -71,7 +80,7 @@ public class TreeListener implements TreeModelListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 DefaultMutableTreeNode parentNode=null;
-                DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new node");
+                DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new class");
                 newNode.setAllowsChildren(true);
                 TreePath parentPath=tree.getSelectionPath();
                 //System.out.print(parentPath.getPath()[0]+" "+parentPath.getPath()[1]+"\n");
@@ -82,7 +91,7 @@ public class TreeListener implements TreeModelListener {
 
                 treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
 
-                RootClass.addSubClass(treePath2String(parentPath),"new node");
+                RootClass.addSubClass(treePath2String(parentPath),"new class");
                 //RootClass.outputFile();
 
                 tree.scrollPathToVisible(new TreePath(newNode.getPath()));
@@ -94,7 +103,7 @@ public class TreeListener implements TreeModelListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 DefaultMutableTreeNode parentNode=null;
-                DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new node");
+                DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new func");
                 newNode.setAllowsChildren(true);
                 TreePath parentPath=tree.getSelectionPath();
                 //System.out.print(parentPath.getPath()[0]+" "+parentPath.getPath()[1]+"\n");
@@ -103,7 +112,7 @@ public class TreeListener implements TreeModelListener {
 
                 treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
 
-                RootClass.addMathFunc(treePath2String(parentPath),"new node");
+                RootClass.addMathFunc(treePath2String(parentPath),"new func");
                 //RootClass.outputFile();
 
                 tree.scrollPathToVisible(new TreePath(newNode.getPath()));
@@ -139,7 +148,7 @@ public class TreeListener implements TreeModelListener {
             }
         });
 
-        b4.addActionListener(new ActionListener() {
+        item2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 RootClass.outputFile();

@@ -429,7 +429,7 @@ public class FuncClass extends MathObject {
         AllFuncClass=tempFuncClass;
         AllFuncClass[NumOfClass]=new FuncClass();
         AllFuncClass[NumOfClass].setObjectName(SubClassName);
-        AllFuncClass[NumOfClass].setUpperPath(UpperPath+"\\"+ObjectName);
+        AllFuncClass[NumOfClass].setUpperPath(UpperPath+"\\"+"C"+ObjectName);
         NumOfClass++;
     }
     public void addSubClass(String[] Path, String SubClassName){
@@ -514,7 +514,7 @@ public class FuncClass extends MathObject {
         AllMathFunc=tempMathFunc;
         AllMathFunc[NumOfFunc]=new MathFunc();
         AllMathFunc[NumOfFunc].setObjectName(FuncName);
-        AllMathFunc[NumOfFunc].setUpperPath(UpperPath+"\\"+ObjectName);
+        AllMathFunc[NumOfFunc].setUpperPath(UpperPath+"\\"+"F"+ObjectName);
         NumOfFunc++;
     }
     public void addMathFunc(String[] Path, String FuncName){
@@ -605,6 +605,10 @@ public class FuncClass extends MathObject {
             }
             AllMathFunc[i].outputFile();
         }
+        if(NumOfFunc==0){
+            otherFuncs.writeFile(PathOfFunc, "", false);
+            otherFuncs.writeFile(PathOfFuncFreq, "", false);
+        }
 
         String PathOfSubClass = UpperPath+"\\"+"C"+ObjectName+"\\"+ObjectName+"SubClass.txt";
         for (int i = 0; i < NumOfClass; i++) {
@@ -617,6 +621,10 @@ public class FuncClass extends MathObject {
                 otherFuncs.writeFile(PathOfSubClass, "\r\n"+ClassName, true);
             }
             AllFuncClass[i].outputFile();
+        }
+        if(NumOfClass==0){
+            otherFuncs.writeFile(PathOfSubClass, "", false);
+            otherFuncs.writeFile(UpperPath+"\\"+"C"+ObjectName+"\\"+"hasSubClass.txt",""+0,false);
         }
 
         String PathOfNotes = UpperPath+"\\"+"C"+ObjectName+"\\"+ObjectName+"notes.txt";

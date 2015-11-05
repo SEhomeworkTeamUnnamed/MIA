@@ -261,6 +261,10 @@ public class MathFunc extends MathObject {
             }
             AllPara[i].outputFile();
         }
+        if(NumOfPara==0){
+            otherFuncs.writeFile(PathOfPara, "", false);
+            otherFuncs.writeFile(PathOfParaFreq, "", false);
+        }
 
         String PathOfNotes = UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"notes.txt";
         otherFuncs.writeFile(PathOfNotes, Notes, false);
