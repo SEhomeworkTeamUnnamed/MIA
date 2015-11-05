@@ -41,13 +41,21 @@ public class TreeListener implements TreeModelListener {
 
         JScrollPane scrollPane=new JScrollPane();
         scrollPane.setViewportView(tree);
+
+        Container con=new Container();
+        con.setLayout(new FlowLayout());
         JButton b1=new JButton("增加类");
         JButton b2=new JButton("增加函数");
         JButton b3=new JButton("删除");
-        Container con=new Container();
-        con.setLayout(new FlowLayout());
         con.add(b1);con.add(b2);con.add(b3);
+
+        Container con2=new Container();
+        con2.setLayout(new FlowLayout());
+        JButton b4=new JButton("保存更改");
+        con2.add(b4);
+
         contentPane.add(con,BorderLayout.SOUTH);
+        contentPane.add(con2,BorderLayout.NORTH);
 
         contentPane.add(scrollPane,BorderLayout.CENTER);
 
@@ -75,7 +83,7 @@ public class TreeListener implements TreeModelListener {
                 treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
 
                 RootClass.addSubClass(treePath2String(parentPath),"new node");
-                RootClass.outputFile();
+                //RootClass.outputFile();
 
                 tree.scrollPathToVisible(new TreePath(newNode.getPath()));
 
@@ -96,7 +104,7 @@ public class TreeListener implements TreeModelListener {
                 treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
 
                 RootClass.addMathFunc(treePath2String(parentPath),"new node");
-                RootClass.outputFile();
+                //RootClass.outputFile();
 
                 tree.scrollPathToVisible(new TreePath(newNode.getPath()));
 
@@ -117,17 +125,24 @@ public class TreeListener implements TreeModelListener {
                         String[] Path=treePath2String(treePath.getParentPath());
 
                         if(RootClass.hasMathFunc(Path,selectionNode.toString())){
-                            RootClass.deleteMathFunc(Path,selectionNode.toString());
-                            RootClass.outputFile();
+                            RootClass.deleteMathFunc(Path, selectionNode.toString());
+                            //RootClass.outputFile();
                         }
                         else if(RootClass.hasSubClass(Path,selectionNode.toString())){
                             RootClass.deleteSubClass(Path,selectionNode.toString());
-                            RootClass.outputFile();
+                            //RootClass.outputFile();
                         }
 
                             //System.out.print(selectionNode.toString()+"\n");
                     }
                 }
+            }
+        });
+
+        b4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                RootClass.outputFile();
             }
         });
 

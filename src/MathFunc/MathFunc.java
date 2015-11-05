@@ -80,7 +80,7 @@ public class MathFunc extends MathObject {
 
         ObjectName = funcname;
         UpperPath = upperpath;
-        String FilePath = upperpath + "\\" + funcname + "\\" + funcname + "Para.txt";
+        String FilePath = upperpath + "\\" +"F"+ funcname + "\\" + funcname + "Para.txt";
         //File file = new File(FilePath);
         //BufferedReader reader = null;
         //try {
@@ -132,7 +132,7 @@ public class MathFunc extends MathObject {
             int line = 1;
             // 一次读入一行，直到读入null为文件结束
             while ((paraname = reader2.readLine()) != null) {
-                AllPara[line - 1].loadAll(upperpath + "\\" + funcname, paraname);
+                AllPara[line - 1].loadAll(upperpath + "\\" +"F"+ funcname, paraname);
                 line++;
             }
             reader2.close();
@@ -154,7 +154,7 @@ public class MathFunc extends MathObject {
         //System.out.println(funcname);
 
         ObjectName = funcname;
-        String FilePath = upperpath + "\\" + funcname + "\\" + funcname + "Parafreq.txt";
+        String FilePath = upperpath + "\\" +"F"+ funcname + "\\" + funcname + "Parafreq.txt";
         File file = new File(FilePath);
         File dir = new File(file.getParent());
         try{
@@ -195,7 +195,7 @@ public class MathFunc extends MathObject {
 
         //System.out.println(funcname);
 
-        String FilePath = upperpath + "\\" + funcname + "\\" + funcname + "notes.txt";
+        String FilePath = upperpath + "\\" + "F"+funcname + "\\" + funcname + "notes.txt";
         File file = new File(FilePath);
         File dir = new File(file.getParent());
         try{
@@ -233,21 +233,21 @@ public class MathFunc extends MathObject {
     }
 
     public String getPathOfPara(){
-        return UpperPath+"\\"+ObjectName+"\\"+ObjectName+"Para.txt";
+        return UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"Para.txt";
     }
 
     public String getPathOfParaFreq(){
-        return UpperPath+"\\"+ObjectName+"\\"+ObjectName+"Parafreq.txt";
+        return UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"Parafreq.txt";
     }
 
     public String getPathOfNotes(){
-        return UpperPath+"\\"+ObjectName+"\\"+ObjectName+"notes.txt";
+        return UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"notes.txt";
     }
 
     public void outputFile(){
         Others otherFuncs=new Others();
-        String PathOfPara = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"Para.txt";
-        String PathOfParaFreq = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"Parafreq.txt";
+        String PathOfPara = UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"Para.txt";
+        String PathOfParaFreq = UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"Parafreq.txt";
         for (int i = 0; i < NumOfPara; i++) {
             String ParaName = AllPara[i].getObjectName();
             String ParaFreq = ""+AllPara[i].getUseFreq();
@@ -262,7 +262,7 @@ public class MathFunc extends MathObject {
             AllPara[i].outputFile();
         }
 
-        String PathOfNotes = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"notes.txt";
+        String PathOfNotes = UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"notes.txt";
         otherFuncs.writeFile(PathOfNotes, Notes, false);
     }
 }

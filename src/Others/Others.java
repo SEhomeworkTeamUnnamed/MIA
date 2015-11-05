@@ -29,7 +29,7 @@ public class Others {
     }
 
     /**
-     *get whether the class has a subclass or not
+     *get whether the class has a subclass or not according to file
      *
      * @param FilePath path of the file recording whether the class has subclass or not
      * @return true if the class has subclass according to file

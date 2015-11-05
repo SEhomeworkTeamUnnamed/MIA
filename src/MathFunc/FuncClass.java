@@ -160,7 +160,7 @@ public class FuncClass extends MathObject {
                 for (int i = 0, len = Path.length -1; i < len; i++) {
                     tempPath[i] = Path[i+1];
                 }
-                return AllFuncClass[index].hasMathFunc(tempPath,FuncName);
+                return AllFuncClass[index].hasMathFunc(tempPath, FuncName);
             }
 
         }
@@ -186,7 +186,7 @@ public class FuncClass extends MathObject {
 
         //System.out.println(classname);
         UpperPath=upperpath;
-        String FilePath = upperpath+"\\"+classname+"\\"+classname+"Func.txt";
+        String FilePath = upperpath+"\\"+"C"+classname+"\\"+classname+"Func.txt";
         //File file = new File(FilePath);
         //BufferedReader reader = null;
         //try {
@@ -238,7 +238,7 @@ public class FuncClass extends MathObject {
             int line = 1;
             // 一次读入一行，直到读入null为文件结束
             while ((funcname = reader2.readLine()) != null) {
-                AllMathFunc[line-1].readAll(upperpath+"\\"+classname, funcname);
+                AllMathFunc[line-1].readAll(upperpath+"\\"+"C"+classname, funcname);
                 line++;
             }
             reader2.close();
@@ -255,7 +255,7 @@ public class FuncClass extends MathObject {
     }
     public void readFuncFreq(String upperpath, String classname){
         Others otherFuncs=new Others();
-        String FilePath = upperpath+"\\"+classname+"\\"+classname+"FuncFreq.txt";
+        String FilePath = upperpath+"\\"+"C"+classname+"\\"+classname+"FuncFreq.txt";
         File file = new File(FilePath);
         File dir = new File(file.getParent());
 
@@ -297,11 +297,11 @@ public class FuncClass extends MathObject {
 
         //System.out.println(classname);
 
-        String FilePath0 = upperpath+"\\"+classname+"\\"+"hasSubClass.txt";
+        String FilePath0 = upperpath+"\\"+"C"+classname+"\\"+"hasSubClass.txt";
         Others otherfuncs = new Others();
         if(otherfuncs.hasSubClass(FilePath0)) {
 
-            String FilePath = upperpath + "\\" + classname + "\\" + classname + "SubClass.txt";
+            String FilePath = upperpath + "\\" +"C"+ classname + "\\" + classname + "SubClass.txt";
             //File file = new File(FilePath);
             //BufferedReader reader = null;
             //try {
@@ -354,7 +354,7 @@ public class FuncClass extends MathObject {
                 int line = 1;
                 // 一次读入一行，直到读入null为文件结束
                 while ((subclassname = reader2.readLine()) != null) {
-                    AllFuncClass[line - 1].readAll(upperpath + "\\" + classname, subclassname);
+                    AllFuncClass[line - 1].readAll(upperpath + "\\" +"C"+ classname, subclassname);
                     line++;
                 }
                 reader2.close();
@@ -372,7 +372,7 @@ public class FuncClass extends MathObject {
     }
 
     public void readNotes(String upperpath, String classname){
-        String FilePath = upperpath+"\\"+classname+"\\"+classname+"notes.txt";
+        String FilePath = upperpath+"\\"+"C"+classname+"\\"+classname+"notes.txt";
         File file = new File(FilePath);
         File dir = new File(file.getParent());
 
@@ -580,18 +580,18 @@ public class FuncClass extends MathObject {
     }
 
     public String getPathOfFunc(){
-        return UpperPath+"\\"+ObjectName+"\\"+ObjectName+"Func.txt";
+        return UpperPath+"\\"+"C"+ObjectName+"\\"+ObjectName+"Func.txt";
     }
     public String getPathOfFuncFreq(){
-        return UpperPath+"\\"+ObjectName+"\\"+ObjectName+"FuncFreq.txt";
+        return UpperPath+"\\"+"C"+ObjectName+"\\"+ObjectName+"FuncFreq.txt";
     }
     public String getPathOfNotes(){
-        return UpperPath+"\\"+ObjectName+"\\"+ObjectName+"notes.txt";
+        return UpperPath+"\\"+"C"+ObjectName+"\\"+ObjectName+"notes.txt";
     }
     public void outputFile(){
         Others otherFuncs=new Others();
-        String PathOfFunc = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"Func.txt";
-        String PathOfFuncFreq = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"FuncFreq.txt";
+        String PathOfFunc = UpperPath+"\\"+"C"+ObjectName+"\\"+ObjectName+"Func.txt";
+        String PathOfFuncFreq = UpperPath+"\\"+"C"+ObjectName+"\\"+ObjectName+"FuncFreq.txt";
         for (int i = 0; i < NumOfFunc ; i++) {
             String FuncName = AllMathFunc[i].getObjectName();
             String FuncFreq = ""+AllMathFunc[i].getUseFreq();
@@ -606,12 +606,12 @@ public class FuncClass extends MathObject {
             AllMathFunc[i].outputFile();
         }
 
-        String PathOfSubClass = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"SubClass.txt";
+        String PathOfSubClass = UpperPath+"\\"+"C"+ObjectName+"\\"+ObjectName+"SubClass.txt";
         for (int i = 0; i < NumOfClass; i++) {
             String ClassName = AllFuncClass[i].getObjectName();
             if(i==0){
                 otherFuncs.writeFile(PathOfSubClass, ClassName, false);
-                otherFuncs.writeFile(UpperPath+"\\"+ObjectName+"\\"+"hasSubClass.txt",""+1,false);
+                otherFuncs.writeFile(UpperPath+"\\"+"C"+ObjectName+"\\"+"hasSubClass.txt",""+1,false);
             }
             else {
                 otherFuncs.writeFile(PathOfSubClass, "\r\n"+ClassName, true);
@@ -619,7 +619,7 @@ public class FuncClass extends MathObject {
             AllFuncClass[i].outputFile();
         }
 
-        String PathOfNotes = UpperPath+"\\"+ObjectName+"\\"+ObjectName+"notes.txt";
+        String PathOfNotes = UpperPath+"\\"+"C"+ObjectName+"\\"+ObjectName+"notes.txt";
         otherFuncs.writeFile(PathOfNotes, Notes, false);
     }
 }
