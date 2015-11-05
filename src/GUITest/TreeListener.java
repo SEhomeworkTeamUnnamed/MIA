@@ -22,7 +22,7 @@ public class TreeListener implements TreeModelListener {
 
         FuncClass RootClass=new FuncClass();
         RootClass.setUpperPath(System.getProperty("user.dir")+"\\root");
-        RootClass.setObjectName("simpleClass");
+        RootClass.setObjectName("rootClass");
         RootClass.readAll();
         DefaultMutableTreeNode RootNode = RootClass.getTreeNode();
 
@@ -68,12 +68,15 @@ public class TreeListener implements TreeModelListener {
                 TreePath parentPath=tree.getSelectionPath();
                 //System.out.print(parentPath.getPath()[0]+" "+parentPath.getPath()[1]+"\n");
                 //System.out.print(parentPath.getPath()[0].toString());
-                RootClass.addSubClass(treePath2String(parentPath),"new node");
-                RootClass.outputFile();
+
                 //RootClass.print();
                 parentNode=(DefaultMutableTreeNode)(parentPath.getLastPathComponent());
 
                 treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
+
+                RootClass.addSubClass(treePath2String(parentPath),"new node");
+                RootClass.outputFile();
+
                 tree.scrollPathToVisible(new TreePath(newNode.getPath()));
 
             }
@@ -87,11 +90,14 @@ public class TreeListener implements TreeModelListener {
                 newNode.setAllowsChildren(true);
                 TreePath parentPath=tree.getSelectionPath();
                 //System.out.print(parentPath.getPath()[0]+" "+parentPath.getPath()[1]+"\n");
-                RootClass.addMathFunc(treePath2String(parentPath),"new node");
-                RootClass.outputFile();
+
                 parentNode=(DefaultMutableTreeNode)(parentPath.getLastPathComponent());
 
                 treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
+
+                RootClass.addMathFunc(treePath2String(parentPath),"new node");
+                RootClass.outputFile();
+
                 tree.scrollPathToVisible(new TreePath(newNode.getPath()));
 
             }
@@ -108,6 +114,18 @@ public class TreeListener implements TreeModelListener {
                     if(parent!=null){
                         treeModel.removeNodeFromParent(selectionNode);
 
+                        String[] Path=treePath2String(treePath.getParentPath());
+
+                        if(RootClass.hasMathFunc(Path,selectionNode.toString())){
+                            RootClass.deleteMathFunc(Path,selectionNode.toString());
+                            RootClass.outputFile();
+                        }
+                        else if(RootClass.hasSubClass(Path,selectionNode.toString())){
+                            RootClass.deleteSubClass(Path,selectionNode.toString());
+                            RootClass.outputFile();
+                        }
+
+                            //System.out.print(selectionNode.toString()+"\n");
                     }
                 }
             }

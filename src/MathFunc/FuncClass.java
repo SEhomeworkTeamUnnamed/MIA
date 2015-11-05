@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.Hashtable;
 
 import Others.*;
+import com.sun.jndi.cosnaming.CNCtx;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
@@ -102,6 +103,70 @@ public class FuncClass extends MathObject {
         }
         return true;
     }
+    public boolean hasSubClass(String ClassName){
+        for (int i = 0; i < NumOfClass; i++) {
+            if( ClassName.equals(AllFuncClass[i].getObjectName()) ){
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean hasSubClass(String[] Path, String ClassName){
+        if(Path.length==1){
+            if(ObjectName.equals(Path[0])) {
+                return this.hasSubClass(ClassName);
+            }
+        }
+        else{
+
+            int index=this.getIndexOfClass(Path[1]);
+            if(index>=0){
+                String[] tempPath=new String[Path.length -1];
+                for (int i = 0, len = Path.length -1; i < len; i++) {
+                    tempPath[i] = Path[i+1];
+                }
+                return AllFuncClass[index].hasSubClass(tempPath,ClassName);
+            }
+
+        }
+        return false;
+    }
+
+    public boolean hasMathFunc(){
+        if(NumOfFunc==0){
+            return false;
+        }
+        return true;
+    }
+    public boolean hasMathFunc(String FuncName){
+        for (int i = 0; i < NumOfFunc; i++) {
+            if( FuncName.equals(AllMathFunc[i].getObjectName()) ){
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean hasMathFunc(String[] Path, String FuncName){
+        if(Path.length==1){
+            if(ObjectName.equals(Path[0])) {
+                return this.hasMathFunc(FuncName);
+            }
+        }
+        else{
+
+            int index=this.getIndexOfClass(Path[1]);
+            if(index>=0){
+                String[] tempPath=new String[Path.length -1];
+                for (int i = 0, len = Path.length -1; i < len; i++) {
+                    tempPath[i] = Path[i+1];
+                }
+                return AllFuncClass[index].hasMathFunc(tempPath,FuncName);
+            }
+
+        }
+        return false;
+    }
+
 
     public void readAll(){
         String upperpath=UpperPath;
@@ -402,6 +467,34 @@ public class FuncClass extends MathObject {
         }
     }
 
+    public void deleteSubClass(String SubClassName){
+
+        FuncClass[] tempFuncClass=new FuncClass[NumOfClass-1];
+        for(int i = 0; i < NumOfClass-1; i++){
+            tempFuncClass[i]=AllFuncClass[i];
+        }
+        AllFuncClass=null;
+        AllFuncClass=tempFuncClass;
+        NumOfClass--;
+    }
+    public void deleteSubClass(String[] Path, String SubClassName){
+        if(Path.length==1){
+            if(ObjectName.equals(Path[0])){
+                this.deleteSubClass(SubClassName);
+            }
+        }
+        else{
+            int index=this.getIndexOfClass(Path[1]);
+            if(index>=0){
+                String[] tempPath=new String[Path.length -1];
+                for (int i = 0, len = Path.length -1; i < len; i++) {
+                    tempPath[i] = Path[i+1];
+                }
+                AllFuncClass[index].deleteSubClass(tempPath, SubClassName);
+            }
+        }
+    }
+
     public void addMathFunc(MathFunc NewMathFunc){
         MathFunc[] tempMathFunc=new MathFunc[NumOfFunc+1];
         for(int i = 0; i < NumOfFunc; i++){
@@ -455,6 +548,33 @@ public class FuncClass extends MathObject {
                     tempPath[i] = Path[i+1];
                 }
                 AllFuncClass[index].addMathFunc(tempPath,NewMathFunc);
+            }
+        }
+    }
+
+    public void deleteMathFunc(String FuncName){
+        MathFunc[] tempMathFunc=new MathFunc[NumOfFunc-1];
+        for(int i = 0; i < NumOfFunc-1; i++){
+            tempMathFunc[i]=AllMathFunc[i];
+        }
+        AllMathFunc=null;
+        AllMathFunc=tempMathFunc;
+        NumOfFunc--;
+    }
+    public void deleteMathFunc(String[] Path, String FuncName){
+        if(Path.length==1){
+            if(ObjectName.equals(Path[0])){
+                this.deleteMathFunc(FuncName);
+            }
+        }
+        else{
+            int index=this.getIndexOfClass(Path[1]);
+            if(index>=0){
+                String[] tempPath=new String[Path.length -1];
+                for (int i = 0, len = Path.length -1; i < len; i++) {
+                    tempPath[i] = Path[i+1];
+                }
+                AllFuncClass[index].deleteMathFunc(tempPath, FuncName);
             }
         }
     }
