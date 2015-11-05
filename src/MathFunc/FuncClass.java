@@ -18,6 +18,8 @@ public class FuncClass extends MathObject {
 
     MathFunc[] AllMathFunc;
     FuncClass[] AllFuncClass;
+    String[] ClassToDelete=new String[0];
+    String[] FuncToDelete=new String[0];
     int NumOfFunc;
     int NumOfClass;
 
@@ -466,6 +468,15 @@ public class FuncClass extends MathObject {
             }
         }
     }
+    public void addClassToDelete(String ClassName){
+        String[] temp=new String[ClassToDelete.length+1];
+        for (int i = 0,len=ClassToDelete.length; i < len; i++) {
+            temp[i]=ClassToDelete[i];
+        }
+        temp[ClassToDelete.length]=ClassName;
+        ClassToDelete=null;
+        ClassToDelete=temp;
+    }
 
     public void deleteSubClass(String SubClassName){
 
@@ -476,6 +487,7 @@ public class FuncClass extends MathObject {
         AllFuncClass=null;
         AllFuncClass=tempFuncClass;
         NumOfClass--;
+        addClassToDelete(SubClassName);
     }
     public void deleteSubClass(String[] Path, String SubClassName){
         if(Path.length==1){
@@ -514,7 +526,7 @@ public class FuncClass extends MathObject {
         AllMathFunc=tempMathFunc;
         AllMathFunc[NumOfFunc]=new MathFunc();
         AllMathFunc[NumOfFunc].setObjectName(FuncName);
-        AllMathFunc[NumOfFunc].setUpperPath(UpperPath+"\\"+"F"+ObjectName);
+        AllMathFunc[NumOfFunc].setUpperPath(UpperPath+"\\"+"C"+ObjectName);
         NumOfFunc++;
     }
     public void addMathFunc(String[] Path, String FuncName){
@@ -551,6 +563,15 @@ public class FuncClass extends MathObject {
             }
         }
     }
+    public void addFuncToDelete(String FuncName){
+        String[] temp=new String[FuncToDelete.length+1];
+        for (int i = 0,len=FuncToDelete.length; i < len; i++) {
+            temp[i]=FuncToDelete[i];
+        }
+        temp[FuncToDelete.length]=FuncName;
+        FuncToDelete=null;
+        FuncToDelete=temp;
+    }
 
     public void deleteMathFunc(String FuncName){
         MathFunc[] tempMathFunc=new MathFunc[NumOfFunc-1];
@@ -560,6 +581,7 @@ public class FuncClass extends MathObject {
         AllMathFunc=null;
         AllMathFunc=tempMathFunc;
         NumOfFunc--;
+        addFuncToDelete(FuncName);
     }
     public void deleteMathFunc(String[] Path, String FuncName){
         if(Path.length==1){
@@ -629,5 +651,12 @@ public class FuncClass extends MathObject {
 
         String PathOfNotes = UpperPath+"\\"+"C"+ObjectName+"\\"+ObjectName+"notes.txt";
         otherFuncs.writeFile(PathOfNotes, Notes, false);
+
+        for (int i = 0,len=FuncToDelete.length; i < len; i++) {
+            otherFuncs.deleteFolder(UpperPath+"\\"+"C"+ObjectName+"\\"+"F"+FuncToDelete[i]);
+        }
+        for (int i = 0,len=ClassToDelete.length; i < len; i++) {
+            otherFuncs.deleteFolder(UpperPath+"\\"+"C"+ObjectName+"\\"+"C"+ClassToDelete[i]);
+        }
     }
 }

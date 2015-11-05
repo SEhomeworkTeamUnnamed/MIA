@@ -23,8 +23,8 @@ public class MainPanel {
         RootClass.setUpperPath(System.getProperty("user.dir")+"\\root");
         RootClass.setObjectName("simpleClass");
         RootClass.readAll();
-        String[] path={"simpleClass"};
-        RootClass.addSubClass(path,"newClass");
+        //String[] path={"simpleClass"};
+        //RootClass.addSubClass(path,"newClass");
         String[] path2={"simpleClass","newClass"};
         //RootClass.addSubClass(path2,"newClass2");
         RootClass.deleteSubClass(path2,"newClass2");

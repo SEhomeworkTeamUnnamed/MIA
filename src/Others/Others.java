@@ -163,6 +163,77 @@ public class Others {
     }
 
     /**
+     *  根据路径删除指定的目录或文件，无论存在与否
+     *@param Path  要删除的目录或文件
+     *@return 删除成功返回 true，否则返回 false。
+     */
+    public void deleteFolder(String Path) {
+        File file = new File(Path);
+
+        if (file.exists()) {
+            if (file.isFile()) {
+                file.delete();
+            } else {
+                deleteDirectory(Path);
+            }
+        }
+    }
+
+    /**
+     * 删除单个文件
+     * @param   sPath    被删除文件的文件名
+     * @return 单个文件删除成功返回true，否则返回false
+     */
+    public boolean deleteFile(String sPath) {
+        boolean flag = false;
+        File file = new File(sPath);
+
+        if (file.isFile() && file.exists()) {
+            file.delete();
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * 删除目录（文件夹）以及目录下的文件
+     * @param   sPath 被删除目录的文件路径
+     * @return  目录删除成功返回true，否则返回false
+     */
+    public boolean deleteDirectory(String sPath) {
+        boolean flag=false;
+        if (!sPath.endsWith(File.separator)) {
+            sPath = sPath + File.separator;
+        }
+        File dirFile = new File(sPath);
+
+        if (!dirFile.exists() || !dirFile.isDirectory()) {
+            return false;
+        }
+        flag = true;
+
+        File[] files = dirFile.listFiles();
+        for (int i = 0; i < files.length; i++) {
+
+            if (files[i].isFile()) {
+                flag = deleteFile(files[i].getAbsolutePath());
+                if (!flag) break;
+            }
+            else {
+                flag = deleteDirectory(files[i].getAbsolutePath());
+                if (!flag) break;
+            }
+        }
+        if (!flag) return false;
+
+        if (dirFile.delete()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
      * for testing
      *
      * @param args
