@@ -40,7 +40,7 @@ public class TreeListener implements TreeModelListener {
 
 
         JTree tree=new JTree(RootNode);
-        tree.setEditable(true);
+        //tree.setEditable(true);
         //tree.addMouseListener(new MouseHandle());
         final DefaultTreeModel treeModel = (DefaultTreeModel)tree.getModel();
 

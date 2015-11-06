@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4a8187b-cf54-4e5a-a6f7-677937d10de3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/MIA_jar.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MathFunc/FuncClass.java" afterPath="$PROJECT_DIR$/src/MathFunc/FuncClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUITest/TreeListener.java" afterPath="$PROJECT_DIR$/src/GUITest/TreeListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/root/rootClass/class2/class2FuncFreq.txt" afterPath="$PROJECT_DIR$/root/rootClass/class2/class2FuncFreq.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MIA.iws" />
@@ -35,7 +36,9 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
                   <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-                  <folding />
+                  <folding>
+                    <element signature="imports" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -61,7 +64,9 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
                   <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-                  <folding />
+                  <folding>
+                    <element signature="imports" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -69,8 +74,8 @@
           <file leaf-file-name="TreeListener.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/GUITest/TreeListener.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5706897">
-                  <caret line="129" column="17" selection-start-line="129" selection-start-column="17" selection-end-line="129" selection-end-column="17" />
+                <state vertical-scroll-proportion="0.3443038">
+                  <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="method#treeNodesChanged#0;class#TreeListener#0" expanded="false" />
@@ -97,7 +102,9 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
                   <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-                  <folding />
+                  <folding>
+                    <element signature="imports" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -113,8 +120,20 @@
                   <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
                   <folding>
                     <element signature="method#MathObject#0;class#MathObject#0" expanded="false" />
-                    <element signature="e#322#323#0" expanded="true" />
-                    <element signature="e#355#356#0" expanded="true" />
+                    <element signature="e#407#408#0" expanded="false" />
+                    <element signature="e#446#447#0" expanded="false" />
+                    <element signature="e#482#483#0" expanded="false" />
+                    <element signature="e#514#515#0" expanded="false" />
+                    <element signature="e#564#565#0" expanded="false" />
+                    <element signature="e#601#602#0" expanded="false" />
+                    <element signature="e#633#634#0" expanded="false" />
+                    <element signature="e#661#662#0" expanded="false" />
+                    <element signature="e#703#704#0" expanded="false" />
+                    <element signature="e#732#733#0" expanded="false" />
+                    <element signature="e#763#764#0" expanded="false" />
+                    <element signature="e#793#794#0" expanded="false" />
+                    <element signature="e#836#837#0" expanded="false" />
+                    <element signature="e#869#870#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -123,8 +142,8 @@
           <file leaf-file-name="FuncClass.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/MathFunc/FuncClass.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.33275864">
-                  <caret line="554" column="16" selection-start-line="554" selection-start-column="16" selection-end-line="554" selection-end-column="16" />
+                <state vertical-scroll-proportion="1.2151898">
+                  <caret line="659" column="5" selection-start-line="659" selection-start-column="5" selection-end-line="659" selection-end-column="5" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="method#FuncClass#0;class#FuncClass#0" expanded="false" />
@@ -139,7 +158,6 @@
                     <element signature="method#readAll#0;class#FuncClass#0" expanded="false" />
                     <element signature="method#readAll#1;class#FuncClass#0" expanded="false" />
                     <element signature="method#readFunc#0;class#FuncClass#0" expanded="false" />
-                    <element signature="e#5774#5807#0" expanded="false" />
                     <element signature="method#readFuncFreq#0;class#FuncClass#0" expanded="false" />
                     <element signature="method#readClass#0;class#FuncClass#0" expanded="false" />
                     <element signature="method#readNotes#0;class#FuncClass#0" expanded="false" />
@@ -151,8 +169,7 @@
                     <element signature="method#addMathFunc#0;class#FuncClass#0" expanded="false" />
                     <element signature="method#addMathFunc#1;class#FuncClass#0" expanded="false" />
                     <element signature="method#addMathFunc#3;class#FuncClass#0" expanded="false" />
-                    <element signature="e#18674#18675#0" expanded="true" />
-                    <element signature="e#18749#18750#0" expanded="true" />
+                    <element signature="method#outputFile#0;class#FuncClass#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -167,6 +184,8 @@
                     <element signature="e#0#25830#0" expanded="false" />
                     <element signature="e#5748#5749#0" expanded="false" />
                     <element signature="e#5784#5785#0" expanded="false" />
+                    <element signature="e#10065#10066#0" expanded="false" />
+                    <element signature="e#10148#10149#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -176,22 +195,27 @@
             <entry file="file://$PROJECT_DIR$/src/MathFunc/MathFunc.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="267" column="1" selection-start-line="267" selection-start-column="1" selection-end-line="267" selection-end-column="1" />
+                  <caret line="267" column="0" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
                   <folding>
+                    <element signature="imports" expanded="false" />
                     <element signature="method#setAllPara#0;class#MathFunc#0" expanded="false" />
                     <element signature="method#addPara#0;class#MathFunc#0" expanded="false" />
                     <element signature="method#addPara#1;class#MathFunc#0" expanded="false" />
+                    <element signature="e#1287#1288#0" expanded="false" />
+                    <element signature="e#1319#1320#0" expanded="false" />
+                    <element signature="e#1353#1354#0" expanded="false" />
+                    <element signature="e#1383#1384#0" expanded="false" />
                     <element signature="method#print#0;class#MathFunc#0" expanded="false" />
                     <element signature="method#readAll#0;class#MathFunc#0" expanded="false" />
                     <element signature="method#readPara#0;class#MathFunc#0" expanded="false" />
                     <element signature="method#readParaFreq#0;class#MathFunc#0" expanded="false" />
                     <element signature="method#readNotes#0;class#MathFunc#0" expanded="false" />
-                    <element signature="e#6677#6678#0" expanded="true" />
-                    <element signature="e#6752#6753#0" expanded="true" />
-                    <element signature="e#6792#6793#0" expanded="true" />
-                    <element signature="e#6871#6872#0" expanded="true" />
-                    <element signature="e#6908#6909#0" expanded="true" />
-                    <element signature="e#6984#6985#0" expanded="true" />
+                    <element signature="e#6693#6694#0" expanded="false" />
+                    <element signature="e#6772#6773#0" expanded="false" />
+                    <element signature="e#6812#6813#0" expanded="false" />
+                    <element signature="e#6895#6896#0" expanded="false" />
+                    <element signature="e#6932#6933#0" expanded="false" />
+                    <element signature="e#7012#7013#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -203,9 +227,16 @@
                 <state vertical-scroll-proportion="0.0">
                   <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
                   <folding>
+                    <element signature="imports" expanded="false" />
+                    <element signature="e#618#619#0" expanded="false" />
+                    <element signature="e#654#655#0" expanded="false" />
                     <element signature="method#addParaValue#0;class#Para#0" expanded="false" />
                     <element signature="method#loadPara#0;class#Para#0" expanded="false" />
                     <element signature="method#loadNotes#0;class#Para#0" expanded="false" />
+                    <element signature="e#4231#4232#0" expanded="false" />
+                    <element signature="e#4292#4293#0" expanded="false" />
+                    <element signature="e#4328#4329#0" expanded="false" />
+                    <element signature="e#4388#4389#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -263,8 +294,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1065" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -277,7 +308,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -288,121 +319,7 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MIA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MIA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MIA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MIA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MIA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Others" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MIA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MIA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MathFunc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MIA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MIA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUITest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MIA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MIA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MIA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MIA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FileIO" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
@@ -414,6 +331,9 @@
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="ignore_missing_gitignore" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.TreeListener">
     <configuration default="false" name="MainPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -802,14 +722,15 @@
       <workItem from="1446511137307" duration="921000" />
       <workItem from="1446633557162" duration="13618000" />
       <workItem from="1446717407473" duration="2851000" />
+      <workItem from="1446808983228" duration="1747000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26856000" />
+    <option name="totallyTimeSpent" value="28603000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1065" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -820,12 +741,12 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921174" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34230354" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34157652" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17467949" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946581" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24886191" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -864,7 +785,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -886,7 +809,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -902,7 +827,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -924,7 +851,6 @@
             <element signature="method#readAll#0;class#FuncClass#0" expanded="false" />
             <element signature="method#readAll#1;class#FuncClass#0" expanded="false" />
             <element signature="method#readFunc#0;class#FuncClass#0" expanded="false" />
-            <element signature="e#5774#5807#0" expanded="false" />
             <element signature="method#readFuncFreq#0;class#FuncClass#0" expanded="false" />
             <element signature="method#readClass#0;class#FuncClass#0" expanded="false" />
             <element signature="method#readNotes#0;class#FuncClass#0" expanded="false" />
@@ -936,8 +862,7 @@
             <element signature="method#addMathFunc#0;class#FuncClass#0" expanded="false" />
             <element signature="method#addMathFunc#1;class#FuncClass#0" expanded="false" />
             <element signature="method#addMathFunc#3;class#FuncClass#0" expanded="false" />
-            <element signature="e#18674#18675#0" expanded="true" />
-            <element signature="e#18749#18750#0" expanded="true" />
+            <element signature="method#outputFile#0;class#FuncClass#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -947,20 +872,25 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="135" column="23" selection-start-line="135" selection-start-column="23" selection-end-line="135" selection-end-column="23" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#setAllPara#0;class#MathFunc#0" expanded="false" />
             <element signature="method#addPara#0;class#MathFunc#0" expanded="false" />
             <element signature="method#addPara#1;class#MathFunc#0" expanded="false" />
+            <element signature="e#1287#1288#0" expanded="false" />
+            <element signature="e#1319#1320#0" expanded="false" />
+            <element signature="e#1353#1354#0" expanded="false" />
+            <element signature="e#1383#1384#0" expanded="false" />
             <element signature="method#print#0;class#MathFunc#0" expanded="false" />
             <element signature="method#readAll#0;class#MathFunc#0" expanded="false" />
             <element signature="method#readPara#0;class#MathFunc#0" expanded="false" />
             <element signature="method#readParaFreq#0;class#MathFunc#0" expanded="false" />
             <element signature="method#readNotes#0;class#MathFunc#0" expanded="false" />
-            <element signature="e#6677#6678#0" expanded="true" />
-            <element signature="e#6752#6753#0" expanded="true" />
-            <element signature="e#6792#6793#0" expanded="true" />
-            <element signature="e#6871#6872#0" expanded="true" />
-            <element signature="e#6908#6909#0" expanded="true" />
-            <element signature="e#6984#6985#0" expanded="true" />
+            <element signature="e#6693#6694#0" expanded="false" />
+            <element signature="e#6772#6773#0" expanded="false" />
+            <element signature="e#6812#6813#0" expanded="false" />
+            <element signature="e#6895#6896#0" expanded="false" />
+            <element signature="e#6932#6933#0" expanded="false" />
+            <element signature="e#7012#7013#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -970,9 +900,16 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
           <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#618#619#0" expanded="false" />
+            <element signature="e#654#655#0" expanded="false" />
             <element signature="method#addParaValue#0;class#Para#0" expanded="false" />
             <element signature="method#loadPara#0;class#Para#0" expanded="false" />
             <element signature="method#loadNotes#0;class#Para#0" expanded="false" />
+            <element signature="e#4231#4232#0" expanded="false" />
+            <element signature="e#4292#4293#0" expanded="false" />
+            <element signature="e#4328#4329#0" expanded="false" />
+            <element signature="e#4388#4389#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -981,7 +918,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1003,7 +942,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1019,7 +960,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1041,7 +984,6 @@
             <element signature="method#readAll#0;class#FuncClass#0" expanded="false" />
             <element signature="method#readAll#1;class#FuncClass#0" expanded="false" />
             <element signature="method#readFunc#0;class#FuncClass#0" expanded="false" />
-            <element signature="e#5774#5807#0" expanded="false" />
             <element signature="method#readFuncFreq#0;class#FuncClass#0" expanded="false" />
             <element signature="method#readClass#0;class#FuncClass#0" expanded="false" />
             <element signature="method#readNotes#0;class#FuncClass#0" expanded="false" />
@@ -1053,8 +995,7 @@
             <element signature="method#addMathFunc#0;class#FuncClass#0" expanded="false" />
             <element signature="method#addMathFunc#1;class#FuncClass#0" expanded="false" />
             <element signature="method#addMathFunc#3;class#FuncClass#0" expanded="false" />
-            <element signature="e#18674#18675#0" expanded="true" />
-            <element signature="e#18749#18750#0" expanded="true" />
+            <element signature="method#outputFile#0;class#FuncClass#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1064,20 +1005,25 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="135" column="23" selection-start-line="135" selection-start-column="23" selection-end-line="135" selection-end-column="23" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#setAllPara#0;class#MathFunc#0" expanded="false" />
             <element signature="method#addPara#0;class#MathFunc#0" expanded="false" />
             <element signature="method#addPara#1;class#MathFunc#0" expanded="false" />
+            <element signature="e#1287#1288#0" expanded="false" />
+            <element signature="e#1319#1320#0" expanded="false" />
+            <element signature="e#1353#1354#0" expanded="false" />
+            <element signature="e#1383#1384#0" expanded="false" />
             <element signature="method#print#0;class#MathFunc#0" expanded="false" />
             <element signature="method#readAll#0;class#MathFunc#0" expanded="false" />
             <element signature="method#readPara#0;class#MathFunc#0" expanded="false" />
             <element signature="method#readParaFreq#0;class#MathFunc#0" expanded="false" />
             <element signature="method#readNotes#0;class#MathFunc#0" expanded="false" />
-            <element signature="e#6677#6678#0" expanded="true" />
-            <element signature="e#6752#6753#0" expanded="true" />
-            <element signature="e#6792#6793#0" expanded="true" />
-            <element signature="e#6871#6872#0" expanded="true" />
-            <element signature="e#6908#6909#0" expanded="true" />
-            <element signature="e#6984#6985#0" expanded="true" />
+            <element signature="e#6693#6694#0" expanded="false" />
+            <element signature="e#6772#6773#0" expanded="false" />
+            <element signature="e#6812#6813#0" expanded="false" />
+            <element signature="e#6895#6896#0" expanded="false" />
+            <element signature="e#6932#6933#0" expanded="false" />
+            <element signature="e#7012#7013#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1087,9 +1033,16 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
           <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#618#619#0" expanded="false" />
+            <element signature="e#654#655#0" expanded="false" />
             <element signature="method#addParaValue#0;class#Para#0" expanded="false" />
             <element signature="method#loadPara#0;class#Para#0" expanded="false" />
             <element signature="method#loadNotes#0;class#Para#0" expanded="false" />
+            <element signature="e#4231#4232#0" expanded="false" />
+            <element signature="e#4292#4293#0" expanded="false" />
+            <element signature="e#4328#4329#0" expanded="false" />
+            <element signature="e#4388#4389#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1098,7 +1051,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1106,7 +1061,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1122,7 +1079,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1144,7 +1103,6 @@
             <element signature="method#readAll#0;class#FuncClass#0" expanded="false" />
             <element signature="method#readAll#1;class#FuncClass#0" expanded="false" />
             <element signature="method#readFunc#0;class#FuncClass#0" expanded="false" />
-            <element signature="e#5774#5807#0" expanded="false" />
             <element signature="method#readFuncFreq#0;class#FuncClass#0" expanded="false" />
             <element signature="method#readClass#0;class#FuncClass#0" expanded="false" />
             <element signature="method#readNotes#0;class#FuncClass#0" expanded="false" />
@@ -1156,8 +1114,7 @@
             <element signature="method#addMathFunc#0;class#FuncClass#0" expanded="false" />
             <element signature="method#addMathFunc#1;class#FuncClass#0" expanded="false" />
             <element signature="method#addMathFunc#3;class#FuncClass#0" expanded="false" />
-            <element signature="e#18674#18675#0" expanded="true" />
-            <element signature="e#18749#18750#0" expanded="true" />
+            <element signature="method#outputFile#0;class#FuncClass#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1167,20 +1124,25 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="151" column="23" selection-start-line="151" selection-start-column="23" selection-end-line="151" selection-end-column="23" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#setAllPara#0;class#MathFunc#0" expanded="false" />
             <element signature="method#addPara#0;class#MathFunc#0" expanded="false" />
             <element signature="method#addPara#1;class#MathFunc#0" expanded="false" />
+            <element signature="e#1287#1288#0" expanded="false" />
+            <element signature="e#1319#1320#0" expanded="false" />
+            <element signature="e#1353#1354#0" expanded="false" />
+            <element signature="e#1383#1384#0" expanded="false" />
             <element signature="method#print#0;class#MathFunc#0" expanded="false" />
             <element signature="method#readAll#0;class#MathFunc#0" expanded="false" />
             <element signature="method#readPara#0;class#MathFunc#0" expanded="false" />
             <element signature="method#readParaFreq#0;class#MathFunc#0" expanded="false" />
             <element signature="method#readNotes#0;class#MathFunc#0" expanded="false" />
-            <element signature="e#6677#6678#0" expanded="true" />
-            <element signature="e#6752#6753#0" expanded="true" />
-            <element signature="e#6792#6793#0" expanded="true" />
-            <element signature="e#6871#6872#0" expanded="true" />
-            <element signature="e#6908#6909#0" expanded="true" />
-            <element signature="e#6984#6985#0" expanded="true" />
+            <element signature="e#6693#6694#0" expanded="false" />
+            <element signature="e#6772#6773#0" expanded="false" />
+            <element signature="e#6812#6813#0" expanded="false" />
+            <element signature="e#6895#6896#0" expanded="false" />
+            <element signature="e#6932#6933#0" expanded="false" />
+            <element signature="e#7012#7013#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1190,9 +1152,16 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
           <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#618#619#0" expanded="false" />
+            <element signature="e#654#655#0" expanded="false" />
             <element signature="method#addParaValue#0;class#Para#0" expanded="false" />
             <element signature="method#loadPara#0;class#Para#0" expanded="false" />
             <element signature="method#loadNotes#0;class#Para#0" expanded="false" />
+            <element signature="e#4231#4232#0" expanded="false" />
+            <element signature="e#4292#4293#0" expanded="false" />
+            <element signature="e#4328#4329#0" expanded="false" />
+            <element signature="e#4388#4389#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1201,7 +1170,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1210,9 +1181,16 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
           <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#618#619#0" expanded="false" />
+            <element signature="e#654#655#0" expanded="false" />
             <element signature="method#addParaValue#0;class#Para#0" expanded="false" />
             <element signature="method#loadPara#0;class#Para#0" expanded="false" />
             <element signature="method#loadNotes#0;class#Para#0" expanded="false" />
+            <element signature="e#4231#4232#0" expanded="false" />
+            <element signature="e#4292#4293#0" expanded="false" />
+            <element signature="e#4328#4329#0" expanded="false" />
+            <element signature="e#4388#4389#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1250,7 +1228,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.018930959">
           <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1308,7 +1285,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3322091">
           <caret line="88" column="17" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1331,6 +1307,8 @@
             <element signature="e#0#25830#0" expanded="false" />
             <element signature="e#5748#5749#0" expanded="false" />
             <element signature="e#5784#5785#0" expanded="false" />
+            <element signature="e#10065#10066#0" expanded="false" />
+            <element signature="e#10148#10149#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1339,7 +1317,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1360,22 +1340,27 @@
     <entry file="file://$PROJECT_DIR$/src/MathFunc/MathFunc.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="267" column="1" selection-start-line="267" selection-start-column="1" selection-end-line="267" selection-end-column="1" />
+          <caret line="267" column="0" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#setAllPara#0;class#MathFunc#0" expanded="false" />
             <element signature="method#addPara#0;class#MathFunc#0" expanded="false" />
             <element signature="method#addPara#1;class#MathFunc#0" expanded="false" />
+            <element signature="e#1287#1288#0" expanded="false" />
+            <element signature="e#1319#1320#0" expanded="false" />
+            <element signature="e#1353#1354#0" expanded="false" />
+            <element signature="e#1383#1384#0" expanded="false" />
             <element signature="method#print#0;class#MathFunc#0" expanded="false" />
             <element signature="method#readAll#0;class#MathFunc#0" expanded="false" />
             <element signature="method#readPara#0;class#MathFunc#0" expanded="false" />
             <element signature="method#readParaFreq#0;class#MathFunc#0" expanded="false" />
             <element signature="method#readNotes#0;class#MathFunc#0" expanded="false" />
-            <element signature="e#6677#6678#0" expanded="true" />
-            <element signature="e#6752#6753#0" expanded="true" />
-            <element signature="e#6792#6793#0" expanded="true" />
-            <element signature="e#6871#6872#0" expanded="true" />
-            <element signature="e#6908#6909#0" expanded="true" />
-            <element signature="e#6984#6985#0" expanded="true" />
+            <element signature="e#6693#6694#0" expanded="false" />
+            <element signature="e#6772#6773#0" expanded="false" />
+            <element signature="e#6812#6813#0" expanded="false" />
+            <element signature="e#6895#6896#0" expanded="false" />
+            <element signature="e#6932#6933#0" expanded="false" />
+            <element signature="e#7012#7013#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1386,8 +1371,20 @@
           <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
             <element signature="method#MathObject#0;class#MathObject#0" expanded="false" />
-            <element signature="e#322#323#0" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
+            <element signature="e#407#408#0" expanded="false" />
+            <element signature="e#446#447#0" expanded="false" />
+            <element signature="e#482#483#0" expanded="false" />
+            <element signature="e#514#515#0" expanded="false" />
+            <element signature="e#564#565#0" expanded="false" />
+            <element signature="e#601#602#0" expanded="false" />
+            <element signature="e#633#634#0" expanded="false" />
+            <element signature="e#661#662#0" expanded="false" />
+            <element signature="e#703#704#0" expanded="false" />
+            <element signature="e#732#733#0" expanded="false" />
+            <element signature="e#763#764#0" expanded="false" />
+            <element signature="e#793#794#0" expanded="false" />
+            <element signature="e#836#837#0" expanded="false" />
+            <element signature="e#869#870#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1397,9 +1394,16 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#618#619#0" expanded="false" />
+            <element signature="e#654#655#0" expanded="false" />
             <element signature="method#addParaValue#0;class#Para#0" expanded="false" />
             <element signature="method#loadPara#0;class#Para#0" expanded="false" />
             <element signature="method#loadNotes#0;class#Para#0" expanded="false" />
+            <element signature="e#4231#4232#0" expanded="false" />
+            <element signature="e#4292#4293#0" expanded="false" />
+            <element signature="e#4328#4329#0" expanded="false" />
+            <element signature="e#4388#4389#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1408,7 +1412,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1416,7 +1422,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.51111114">
           <caret line="1239" column="30" selection-start-line="1239" selection-start-column="30" selection-end-line="1239" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1424,13 +1429,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2475" column="30" selection-start-line="2475" selection-start-column="30" selection-end-line="2475" selection-end-column="30" />
-          <folding>
-            <element signature="e#29578#29579#0" expanded="true" />
-            <element signature="e#29610#29611#0" expanded="true" />
-            <element signature="e#87520#87521#0" expanded="true" />
-            <element signature="e#87557#87558#0" expanded="true" />
-            <element signature="class#TreeModelHandler#0;class#JTree#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1438,7 +1436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1454,7 +1451,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1471,24 +1470,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUITest/TreeListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5706897">
-          <caret line="129" column="17" selection-start-line="129" selection-start-column="17" selection-end-line="129" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#treeNodesChanged#0;class#TreeListener#0" expanded="false" />
-            <element signature="method#treeNodesInserted#0;class#TreeListener#0" expanded="false" />
-            <element signature="method#treeNodesRemoved#0;class#TreeListener#0" expanded="false" />
-            <element signature="method#treeStructureChanged#0;class#TreeListener#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MathFunc/FuncClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33275864">
-          <caret line="554" column="16" selection-start-line="554" selection-start-column="16" selection-end-line="554" selection-end-column="16" />
+        <state vertical-scroll-proportion="1.2151898">
+          <caret line="659" column="5" selection-start-line="659" selection-start-column="5" selection-end-line="659" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#FuncClass#0;class#FuncClass#0" expanded="false" />
@@ -1503,7 +1488,6 @@
             <element signature="method#readAll#0;class#FuncClass#0" expanded="false" />
             <element signature="method#readAll#1;class#FuncClass#0" expanded="false" />
             <element signature="method#readFunc#0;class#FuncClass#0" expanded="false" />
-            <element signature="e#5774#5807#0" expanded="false" />
             <element signature="method#readFuncFreq#0;class#FuncClass#0" expanded="false" />
             <element signature="method#readClass#0;class#FuncClass#0" expanded="false" />
             <element signature="method#readNotes#0;class#FuncClass#0" expanded="false" />
@@ -1515,11 +1499,108 @@
             <element signature="method#addMathFunc#0;class#FuncClass#0" expanded="false" />
             <element signature="method#addMathFunc#1;class#FuncClass#0" expanded="false" />
             <element signature="method#addMathFunc#3;class#FuncClass#0" expanded="false" />
-            <element signature="e#18674#18675#0" expanded="true" />
-            <element signature="e#18749#18750#0" expanded="true" />
+            <element signature="method#outputFile#0;class#FuncClass#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUITest/TreeListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3443038">
+          <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#treeNodesChanged#0;class#TreeListener#0" expanded="false" />
+            <element signature="method#treeNodesInserted#0;class#TreeListener#0" expanded="false" />
+            <element signature="method#treeNodesRemoved#0;class#TreeListener#0" expanded="false" />
+            <element signature="method#treeStructureChanged#0;class#TreeListener#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor>
+            <show-content>
+              <type id="artifact" />
+              <type id="library" />
+              <type id="javaee-facet-resources" />
+              <type id="jpa-descriptors" />
+            </show-content>
+          </artifact-editor>
+          <last-edited>MIA:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>MIA</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

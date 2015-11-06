@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="MIA:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MIA_jar</output-path>
+    <root id="archive" name="MIA.jar">
+      <element id="module-output" name="MIA" />
+    </root>
+  </artifact>
+</component>
