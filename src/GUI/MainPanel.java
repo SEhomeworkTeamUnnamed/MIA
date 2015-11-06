@@ -5,6 +5,8 @@ import MathFunc.*;
 
 /**
  * Created by IIIS on 10/28/2015.
+ *
+ * @author jwt625
  */
 public class MainPanel {
     public static void main(String[] args){

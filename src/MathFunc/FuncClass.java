@@ -12,6 +12,8 @@ import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
  * Created by IIIS on 10/28/2015.
+ *
+ * @author jwt625
  */
 public class FuncClass extends MathObject {
 

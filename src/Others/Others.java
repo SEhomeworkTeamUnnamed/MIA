@@ -4,6 +4,8 @@ import java.io.*;
 
 /**
  * Created by IIIS on 10/29/2015.
+ *
+ * @author jwt625
  */
 public class Others {
     //This function returns the int value of a String of decimal number

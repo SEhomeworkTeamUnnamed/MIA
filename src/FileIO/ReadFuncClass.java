@@ -8,6 +8,8 @@ import MathFunc.*;
 
 /**
  * Created by IIIS on 10/28/2015.
+ *
+ * @author jwt625
  */
 public class ReadFuncClass {
     String FilePath;

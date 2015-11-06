@@ -2,6 +2,8 @@ package MathFunc;
 
 /**
  * Created by IIIS on 11/1/2015.
+ *
+ * @author jwt625
  */
 public class MathObject {
     String ObjectName;
