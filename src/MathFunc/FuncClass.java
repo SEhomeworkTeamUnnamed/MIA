@@ -52,6 +52,9 @@ public class FuncClass extends MathObject {
 
     public void setNumOfFunc(int numoffunc){NumOfFunc = numoffunc;}
     public void setNumOfClass(int numofclass){NumOfClass = numofclass;}
+    public void setNewUpperPath(String upperPath){
+
+    }
 
     public int getNumOfFunc(){return NumOfFunc;}
     public int getNumOfClass(){return NumOfClass;}
@@ -63,10 +66,48 @@ public class FuncClass extends MathObject {
         }
         return -1;
     }
+    public int getIndexOfFunc(String[] Path, String FuncName){
+        if(Path.length==1){
+            if(ObjectName.equals(Path[0])) {
+                return this.getIndexOfFunc(FuncName);
+            }
+        }
+        else {
+
+            int index=this.getIndexOfClass(Path[1]);
+            if(index>=0){
+                String[] tempPath=new String[Path.length -1];
+                for (int i = 0, len = Path.length -1; i < len; i++) {
+                    tempPath[i] = Path[i+1];
+                }
+                return AllFuncClass[index].getIndexOfFunc(tempPath, FuncName);
+            }
+        }
+        return -1;
+    }
     public int getIndexOfClass(String ClassName){
         for (int i = 0; i < NumOfClass; i++) {
             if(AllFuncClass[i].getObjectName().equals(ClassName)){
                 return i;
+            }
+        }
+        return -1;
+    }
+    public int getIndexOfClass(String[] Path, String ClassName){
+        if(Path.length==1){
+            if(ObjectName.equals(Path[0])) {
+                return this.getIndexOfClass(ClassName);
+            }
+        }
+        else {
+
+            int index=this.getIndexOfClass(Path[1]);
+            if(index>=0){
+                String[] tempPath=new String[Path.length -1];
+                for (int i = 0, len = Path.length -1; i < len; i++) {
+                    tempPath[i] = Path[i+1];
+                }
+                return AllFuncClass[index].getIndexOfClass(tempPath, ClassName);
             }
         }
         return -1;
@@ -176,6 +217,18 @@ public class FuncClass extends MathObject {
     }
 
 
+    public void clearAll(){
+        UpperPath="";
+        ObjectName="";
+        Notes="";
+        UseFreq=0;
+        AllFuncClass=null;
+        AllMathFunc=null;
+        NumOfFunc=0;
+        NumOfClass=0;
+        ClassToDelete=null;
+        FuncToDelete=null;
+    }
     public void readAll(){
         String upperpath=UpperPath;
         String classname=ObjectName;

@@ -3,6 +3,8 @@ package GUI;
 import MathFunc.FuncClass;
 
 import javax.swing.*;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
@@ -18,13 +20,18 @@ public class RightTopPane extends JSplitPane {
     public RightTopPane(DefaultTreeModel treeModel, JTree tree, FuncClass RootClass){
         super();
 
-        JButton b1=new JButton("增加函数类");
-        JButton b2=new JButton("增加函数");
+        JButton b1=new JButton("添加函数类");
+        JButton b2=new JButton("添加函数");
+        JButton b22=new JButton("添加参数");
         JButton b3=new JButton("删除");
+        b1.setEnabled(false);
+        b2.setEnabled(false);
+        b22.setEnabled(false);
+        b3.setEnabled(false);
 
         Container con=new Container();
         con.setLayout(new FlowLayout());
-        con.add(b1);con.add(b2);
+        con.add(b1);con.add(b2);con.add(b22);
 
         Container con2=new Container();
         con2.setLayout(new FlowLayout());
@@ -39,6 +46,28 @@ public class RightTopPane extends JSplitPane {
         setLeftComponent(con);
         setRightComponent(con2);
         setDividerLocation(300);
+
+        tree.addTreeSelectionListener(new TreeSelectionListener() {
+            @Override
+            public void valueChanged(TreeSelectionEvent e) {
+                b3.setEnabled(true);
+                TreePath treePath=tree.getSelectionPath();
+                DefaultMutableTreeNode selectionNode =
+                        (DefaultMutableTreeNode)treePath.getLastPathComponent();
+                String[] Path=treePath2String(treePath.getParentPath());
+                if(RootClass.getIndexOfClass(Path,selectionNode.toString())>=0){
+                    b1.setEnabled(true);
+                    b2.setEnabled(true);
+                    b22.setEnabled(false);
+                }
+                else{
+                    b1.setEnabled(false);
+                    b2.setEnabled(false);
+                    b22.setEnabled(true);
+                }
+
+            }
+        });
 
         b1.addActionListener(new ActionListener() {
             @Override
@@ -93,6 +122,10 @@ public class RightTopPane extends JSplitPane {
 
                     TreeNode parent=(TreeNode)selectionNode.getParent();
                     if(parent!=null){
+                        b1.setEnabled(false);
+                        b2.setEnabled(false);
+                        b22.setEnabled(false);
+                        b3.setEnabled(false);
                         treeModel.removeNodeFromParent(selectionNode);
 
                         String[] Path=treePath2String(treePath.getParentPath());

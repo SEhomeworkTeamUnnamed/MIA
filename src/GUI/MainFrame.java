@@ -16,7 +16,7 @@ public class MainFrame extends JFrame {
 
         super(FrameName);
 
-        setJMenuBar(new MainMenu(RootClass));
+        setJMenuBar(new MainMenu(treeModel,tree,RootClass));
 
         getContentPane().add(new MainPane(treeModel, tree, RootClass),BorderLayout.CENTER);
 
@@ -26,6 +26,10 @@ public class MainFrame extends JFrame {
 
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
+                //int option =
+                //        JOptionPane.showConfirmDialog(null, "是否保存更改?", "",
+                //                JOptionPane.YES_NO_CANCEL_OPTION);
+                //System.out.print(option);
                 System.exit(0);
             }
         });
