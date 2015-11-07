@@ -1,3 +1,2 @@
-new class
 class1
 class2

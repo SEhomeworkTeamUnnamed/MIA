@@ -480,15 +480,20 @@ public class FuncClass extends MathObject {
     }
 
     public void deleteSubClass(String SubClassName){
-
         FuncClass[] tempFuncClass=new FuncClass[NumOfClass-1];
-        for(int i = 0; i < NumOfClass-1; i++){
-            tempFuncClass[i]=AllFuncClass[i];
+        int index = this.getIndexOfClass(SubClassName);
+        if(index >= 0) {
+            for (int i = 0; i < index; i++) {
+                tempFuncClass[i] = AllFuncClass[i];
+            }
+            for (int i = index + 1; i < NumOfClass; i++) {
+                tempFuncClass[i-1] = AllFuncClass[i];
+            }
+            AllFuncClass = null;
+            AllFuncClass = tempFuncClass;
+            NumOfClass--;
+            addClassToDelete(SubClassName);
         }
-        AllFuncClass=null;
-        AllFuncClass=tempFuncClass;
-        NumOfClass--;
-        addClassToDelete(SubClassName);
     }
     public void deleteSubClass(String[] Path, String SubClassName){
         if(Path.length==1){
@@ -576,13 +581,19 @@ public class FuncClass extends MathObject {
 
     public void deleteMathFunc(String FuncName){
         MathFunc[] tempMathFunc=new MathFunc[NumOfFunc-1];
-        for(int i = 0; i < NumOfFunc-1; i++){
-            tempMathFunc[i]=AllMathFunc[i];
+        int index = this.getIndexOfFunc(FuncName);
+        if(index >= 0) {
+            for (int i = 0; i < index; i++) {
+                tempMathFunc[i] = AllMathFunc[i];
+            }
+            for (int i = index + 1; i < NumOfFunc; i++) {
+                tempMathFunc[i-1] = AllMathFunc[i];
+            }
+            AllMathFunc = null;
+            AllMathFunc = tempMathFunc;
+            NumOfFunc--;
+            addFuncToDelete(FuncName);
         }
-        AllMathFunc=null;
-        AllMathFunc=tempMathFunc;
-        NumOfFunc--;
-        addFuncToDelete(FuncName);
     }
     public void deleteMathFunc(String[] Path, String FuncName){
         if(Path.length==1){

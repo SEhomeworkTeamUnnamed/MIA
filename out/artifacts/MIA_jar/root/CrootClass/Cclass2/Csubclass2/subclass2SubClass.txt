@@ -1,1 +1,1 @@
-new class
+subsubclass
