@@ -10,7 +10,10 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  * Created by IIIS on 11/4/2015.
@@ -28,17 +31,6 @@ public class TreeListener implements TreeModelListener {
         RootClass.readAll();
         DefaultMutableTreeNode RootNode = RootClass.getTreeNode();
 
-        JFrame f=new JFrame("树组件测试");
-        Container contentPane=f.getContentPane();
-
-        JMenuBar menuBar1=new JMenuBar();
-        f.setJMenuBar(menuBar1);
-        JMenu menu1=new JMenu("文件");
-        JMenuItem item1=new JMenuItem("打开");
-        JMenuItem item2=new JMenuItem("保存");
-        menu1.add(item1);
-        menu1.add(item2);
-        menuBar1.add(menu1);
 
 
         JTree tree=new JTree(RootNode);
@@ -53,22 +45,79 @@ public class TreeListener implements TreeModelListener {
         JScrollPane scrollPane=new JScrollPane();
         scrollPane.setViewportView(tree);
 
-        Container con=new Container();
-        con.setLayout(new FlowLayout());
-        JButton b1=new JButton("增加类");
+
+
+        JButton b1=new JButton("增加函数类");
         JButton b2=new JButton("增加函数");
         JButton b3=new JButton("删除");
-        con.add(b1);con.add(b2);con.add(b3);
+
+        Container con=new Container();
+        con.setLayout(new FlowLayout());
+        con.add(b1);con.add(b2);
+
+        Container con2=new Container();
+        con2.setLayout(new FlowLayout());
+        con2.add(b3);
+
+        JSplitPane subsubJSP=new JSplitPane();
+        subsubJSP.setOneTouchExpandable(true);
+        subsubJSP.setContinuousLayout(true);
+        subsubJSP.setPreferredSize(new Dimension(37,400));
+        subsubJSP.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
+        subsubJSP.setDividerSize(3);
+        subsubJSP.setLeftComponent(con);
+        subsubJSP.setRightComponent(con2);
+        subsubJSP.setDividerLocation(300);
+
+
+        JPanel jPanel=new JPanel();
+        JScrollPane scrollPaneRight=new JScrollPane();
+        scrollPaneRight.setViewportView(jPanel);
+
+        JSplitPane subJSplitPane=new JSplitPane();
+        subJSplitPane.setOneTouchExpandable(true);
+        subJSplitPane.setContinuousLayout(true);
+        subJSplitPane.setPreferredSize(new Dimension(447,400));
+        subJSplitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
+        subJSplitPane.setTopComponent(subsubJSP);
+        subJSplitPane.setBottomComponent(scrollPaneRight);
+        subJSplitPane.setDividerSize(3);
+        subJSplitPane.setDividerLocation(40);
+
+
+        JSplitPane jSplitPane=new JSplitPane();
+        jSplitPane.setOneTouchExpandable(true);
+        jSplitPane.setContinuousLayout(true);
+        jSplitPane.setPreferredSize(new Dimension(600,400));
+        jSplitPane.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
+        jSplitPane.setLeftComponent(scrollPane);
+        jSplitPane.setRightComponent(subJSplitPane);
+        jSplitPane.setDividerSize(3);
+        jSplitPane.setDividerLocation(150);
+
+
+        JFrame f=new JFrame("GUI测试");
+        Container contentPane=f.getContentPane();
+
+        JMenuBar menuBar1=new JMenuBar();
+        f.setJMenuBar(menuBar1);
+        JMenu menu1=new JMenu("文件");
+        JMenuItem item1=new JMenuItem("打开");
+        JMenuItem item2=new JMenuItem("保存");
+        menu1.add(item1);
+        menu1.add(item2);
+        menuBar1.add(menu1);
+
 
         //Container con2=new Container();
         //con2.setLayout(new FlowLayout());
         //JButton b4=new JButton("保存更改");
         //con2.add(b4);
 
-        contentPane.add(con,BorderLayout.SOUTH);
+        //contentPane.add(con,BorderLayout.SOUTH);
         //contentPane.add(con2,BorderLayout.NORTH);
 
-        contentPane.add(scrollPane,BorderLayout.CENTER);
+        contentPane.add(jSplitPane,BorderLayout.CENTER);
 
         f.pack();
         f.setVisible(true);
