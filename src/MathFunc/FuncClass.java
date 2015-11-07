@@ -29,6 +29,11 @@ public class FuncClass extends MathObject {
         NumOfFunc=0;
         NumOfClass=0;
     }
+    public FuncClass(String upperPath, String objectName){
+        this.setUpperPath(upperPath);
+        this.setObjectName(objectName);
+        this.readAll();
+    }
     public void print(){
         System.out.print("FuncClass name: ");
         System.out.println(ObjectName);

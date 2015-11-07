@@ -13,18 +13,11 @@ import javax.swing.tree.DefaultTreeModel;
  */
 public class Main {
     Main(){
-        FuncClass RootClass=new FuncClass();
-        RootClass.setUpperPath(System.getProperty("user.dir")+"\\root");
-        RootClass.setObjectName("rootClass");
-        RootClass.readAll();
+        FuncClass RootClass=new FuncClass(System.getProperty("user.dir")+"\\root","rootClass");
         DefaultMutableTreeNode RootNode = RootClass.getTreeNode();
 
         JTree tree=new JTree(RootNode);
-        //tree.setEditable(true);
-        //tree.addMouseListener(new MouseHandle());
         final DefaultTreeModel treeModel = (DefaultTreeModel)tree.getModel();
-
-        treeModel.addTreeModelListener(new GUI.TreeListener(RootClass,tree));
 
         new MainFrame(treeModel,tree,RootClass,"GUI≤‚ ‘ modified");
 
