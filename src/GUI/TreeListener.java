@@ -32,9 +32,7 @@ public class TreeListener implements TreeModelListener {
         //RootClass.outputFile();
     }
 
-    public static void main(String[] args){
-        //new TreeListener();
-    }
+
     @Override
     public void treeNodesChanged(TreeModelEvent e) {
         TreePath treePath= e.getTreePath();

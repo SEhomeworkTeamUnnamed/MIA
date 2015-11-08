@@ -52,18 +52,21 @@ public class RightTopPane extends JSplitPane {
             public void valueChanged(TreeSelectionEvent e) {
                 b3.setEnabled(true);
                 TreePath treePath=tree.getSelectionPath();
-                DefaultMutableTreeNode selectionNode =
-                        (DefaultMutableTreeNode)treePath.getLastPathComponent();
-                String[] Path=treePath2String(treePath.getParentPath());
-                if(RootClass.getIndexOfClass(Path,selectionNode.toString())>=0){
-                    b1.setEnabled(true);
-                    b2.setEnabled(true);
-                    b22.setEnabled(false);
-                }
-                else{
-                    b1.setEnabled(false);
-                    b2.setEnabled(false);
-                    b22.setEnabled(true);
+                try {
+                    DefaultMutableTreeNode selectionNode =
+                            (DefaultMutableTreeNode) treePath.getLastPathComponent();
+                    String[] Path = treePath2String(treePath.getParentPath());
+                    if (RootClass.getIndexOfClass(Path, selectionNode.toString()) >= 0) {
+                        b1.setEnabled(true);
+                        b2.setEnabled(true);
+                        b22.setEnabled(false);
+                    } else {
+                        b1.setEnabled(false);
+                        b2.setEnabled(false);
+                        b22.setEnabled(true);
+                    }
+                }catch(NullPointerException eNull){
+                    b3.setEnabled(false);
                 }
 
             }
@@ -124,10 +127,6 @@ public class RightTopPane extends JSplitPane {
 
                     TreeNode parent=(TreeNode)selectionNode.getParent();
                     if(parent!=null){
-                        b1.setEnabled(false);
-                        b2.setEnabled(false);
-                        b22.setEnabled(false);
-                        b3.setEnabled(false);
                         treeModel.removeNodeFromParent(selectionNode);
 
                         String[] Path=treePath2String(treePath.getParentPath());
@@ -141,6 +140,10 @@ public class RightTopPane extends JSplitPane {
                             //RootClass.outputFile();
                         }
 
+                        b1.setEnabled(false);
+                        b2.setEnabled(false);
+                        b22.setEnabled(false);
+                        b3.setEnabled(false);
                         //System.out.print(selectionNode.toString()+"\n");
                     }
                 }
