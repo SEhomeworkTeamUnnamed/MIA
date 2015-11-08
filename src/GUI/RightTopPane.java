@@ -66,6 +66,9 @@ public class RightTopPane extends JSplitPane {
                         b22.setEnabled(true);
                     }
                 }catch(NullPointerException eNull){
+                    b1.setEnabled(true);
+                    b2.setEnabled(true);
+                    b22.setEnabled(false);
                     b3.setEnabled(false);
                 }
 

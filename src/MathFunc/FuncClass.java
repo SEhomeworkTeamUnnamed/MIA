@@ -19,195 +19,215 @@ public class FuncClass extends MathObject {
 
     MathFunc[] AllMathFunc;
     FuncClass[] AllFuncClass;
-    String[] ClassToDelete=new String[0];
-    String[] FuncToDelete=new String[0];
+    String[] ClassToDelete = new String[0];
+    String[] FuncToDelete = new String[0];
     int NumOfFunc;
     int NumOfClass;
 
-    public FuncClass(){
+    public FuncClass() {
         super();
-        NumOfFunc=0;
-        NumOfClass=0;
+        NumOfFunc = 0;
+        NumOfClass = 0;
     }
-    public FuncClass(String upperPath, String objectName){
+
+    public FuncClass(String upperPath, String objectName) {
         this.setUpperPath(upperPath);
         this.setObjectName(objectName);
         this.readAll();
     }
-    public void print(){
+
+    public void print() {
         System.out.print("FuncClass name: ");
         System.out.println(ObjectName);
         System.out.print("FuncClass notes: ");
         System.out.println(Notes);
-        System.out.print(ObjectName+" include class:\n");
-        for(int i = 0; i < NumOfClass; i++){
+        System.out.print(ObjectName + " include class:\n");
+        for (int i = 0; i < NumOfClass; i++) {
             AllFuncClass[i].print();
         }
-        System.out.print(ObjectName+" include functions:\n");
-        for(int i = 0; i < NumOfFunc; i++){
+        System.out.print(ObjectName + " include functions:\n");
+        for (int i = 0; i < NumOfFunc; i++) {
             AllMathFunc[i].print();
         }
         System.out.println("------end of Class " + ObjectName);
     }
 
-    public void setNumOfFunc(int numoffunc){NumOfFunc = numoffunc;}
-    public void setNumOfClass(int numofclass){NumOfClass = numofclass;}
-    public void setNewUpperPath(String upperPath){
+    public void setNumOfFunc(int numoffunc) {
+        NumOfFunc = numoffunc;
+    }
+
+    public void setNumOfClass(int numofclass) {
+        NumOfClass = numofclass;
+    }
+
+    public void setNewUpperPath(String upperPath) {
 
     }
 
-    public int getNumOfFunc(){return NumOfFunc;}
-    public int getNumOfClass(){return NumOfClass;}
-    public int getIndexOfFunc(String FuncName){
+    public int getNumOfFunc() {
+        return NumOfFunc;
+    }
+
+    public int getNumOfClass() {
+        return NumOfClass;
+    }
+
+    public int getIndexOfFunc(String FuncName) {
         for (int i = 0; i < NumOfFunc; i++) {
-            if(AllMathFunc[i].getObjectName().equals(FuncName)){
+            if (AllMathFunc[i].getObjectName().equals(FuncName)) {
                 return i;
             }
         }
         return -1;
     }
-    public int getIndexOfFunc(String[] Path, String FuncName){
-        if(Path.length==1){
-            if(ObjectName.equals(Path[0])) {
+
+    public int getIndexOfFunc(String[] Path, String FuncName) {
+        if (Path.length == 1) {
+            if (ObjectName.equals(Path[0])) {
                 return this.getIndexOfFunc(FuncName);
             }
-        }
-        else {
+        } else {
 
-            int index=this.getIndexOfClass(Path[1]);
-            if(index>=0){
-                String[] tempPath=new String[Path.length -1];
-                for (int i = 0, len = Path.length -1; i < len; i++) {
-                    tempPath[i] = Path[i+1];
+            int index = this.getIndexOfClass(Path[1]);
+            if (index >= 0) {
+                String[] tempPath = new String[Path.length - 1];
+                for (int i = 0, len = Path.length - 1; i < len; i++) {
+                    tempPath[i] = Path[i + 1];
                 }
                 return AllFuncClass[index].getIndexOfFunc(tempPath, FuncName);
             }
         }
         return -1;
     }
-    public int getIndexOfClass(String ClassName){
+
+    public int getIndexOfClass(String ClassName) {
         for (int i = 0; i < NumOfClass; i++) {
-            if(AllFuncClass[i].getObjectName().equals(ClassName)){
+            if (AllFuncClass[i].getObjectName().equals(ClassName)) {
                 return i;
             }
         }
         return -1;
     }
-    public int getIndexOfClass(String[] Path, String ClassName){
-        if(Path.length==1){
-            if(ObjectName.equals(Path[0])) {
+
+    public int getIndexOfClass(String[] Path, String ClassName) {
+        if (Path.length == 1) {
+            if (ObjectName.equals(Path[0])) {
                 return this.getIndexOfClass(ClassName);
             }
-        }
-        else {
+        } else {
 
-            int index=this.getIndexOfClass(Path[1]);
-            if(index>=0){
-                String[] tempPath=new String[Path.length -1];
-                for (int i = 0, len = Path.length -1; i < len; i++) {
-                    tempPath[i] = Path[i+1];
+            int index = this.getIndexOfClass(Path[1]);
+            if (index >= 0) {
+                String[] tempPath = new String[Path.length - 1];
+                for (int i = 0, len = Path.length - 1; i < len; i++) {
+                    tempPath[i] = Path[i + 1];
                 }
                 return AllFuncClass[index].getIndexOfClass(tempPath, ClassName);
             }
         }
         return -1;
     }
+
     public MathFunc[] getAllMathFunc() {
         return AllMathFunc;
     }
+
     public FuncClass[] getAllFuncClass() {
         return AllFuncClass;
     }
-    public Hashtable getHashtable(){
-        Hashtable tempTable=new Hashtable();
-        String[] AllFuncName=new String[NumOfFunc];
+
+    public Hashtable getHashtable() {
+        Hashtable tempTable = new Hashtable();
+        String[] AllFuncName = new String[NumOfFunc];
         for (int i = 0; i < NumOfFunc; i++) {
             //AllFuncName[i]=AllMathFunc[i].getObjectName();
-            tempTable.put(AllMathFunc[i].getObjectName(),AllMathFunc[i].getObjectName());
+            tempTable.put(AllMathFunc[i].getObjectName(), AllMathFunc[i].getObjectName());
         }
         //tempTable.put(ObjectName,AllFuncName);
         for (int i = 0; i < NumOfClass; i++) {
-            tempTable.put(AllFuncClass[i].getObjectName(),AllFuncClass[i].getHashtable());
+            tempTable.put(AllFuncClass[i].getObjectName(), AllFuncClass[i].getHashtable());
         }
         return tempTable;
     }
 
-    public DefaultMutableTreeNode getTreeNode(){
-        DefaultMutableTreeNode tempNode=new DefaultMutableTreeNode(ObjectName);
+    public DefaultMutableTreeNode getTreeNode() {
+        DefaultMutableTreeNode tempNode = new DefaultMutableTreeNode(ObjectName);
 
         for (int i = 0; i < NumOfClass; i++) {
-            DefaultMutableTreeNode node=AllFuncClass[i].getTreeNode();
+            DefaultMutableTreeNode node = AllFuncClass[i].getTreeNode();
             tempNode.add(node);
         }
         for (int i = 0; i < NumOfFunc; i++) {
-            DefaultMutableTreeNode node=new DefaultMutableTreeNode(AllMathFunc[i].getObjectName());
+            DefaultMutableTreeNode node = new DefaultMutableTreeNode(AllMathFunc[i].getObjectName());
             tempNode.add(node);
         }
         return tempNode;
     }
 
-    public boolean hasSubClass(){
-        if(NumOfClass==0){
+    public boolean hasSubClass() {
+        if (NumOfClass == 0) {
             return false;
         }
         return true;
     }
-    public boolean hasSubClass(String ClassName){
+
+    public boolean hasSubClass(String ClassName) {
         for (int i = 0; i < NumOfClass; i++) {
-            if( ClassName.equals(AllFuncClass[i].getObjectName()) ){
+            if (ClassName.equals(AllFuncClass[i].getObjectName())) {
                 return true;
             }
         }
         return false;
     }
-    public boolean hasSubClass(String[] Path, String ClassName){
-        if(Path.length==1){
-            if(ObjectName.equals(Path[0])) {
+
+    public boolean hasSubClass(String[] Path, String ClassName) {
+        if (Path.length == 1) {
+            if (ObjectName.equals(Path[0])) {
                 return this.hasSubClass(ClassName);
             }
-        }
-        else{
+        } else {
 
-            int index=this.getIndexOfClass(Path[1]);
-            if(index>=0){
-                String[] tempPath=new String[Path.length -1];
-                for (int i = 0, len = Path.length -1; i < len; i++) {
-                    tempPath[i] = Path[i+1];
+            int index = this.getIndexOfClass(Path[1]);
+            if (index >= 0) {
+                String[] tempPath = new String[Path.length - 1];
+                for (int i = 0, len = Path.length - 1; i < len; i++) {
+                    tempPath[i] = Path[i + 1];
                 }
-                return AllFuncClass[index].hasSubClass(tempPath,ClassName);
+                return AllFuncClass[index].hasSubClass(tempPath, ClassName);
             }
 
         }
         return false;
     }
 
-    public boolean hasMathFunc(){
-        if(NumOfFunc==0){
+    public boolean hasMathFunc() {
+        if (NumOfFunc == 0) {
             return false;
         }
         return true;
     }
-    public boolean hasMathFunc(String FuncName){
+
+    public boolean hasMathFunc(String FuncName) {
         for (int i = 0; i < NumOfFunc; i++) {
-            if( FuncName.equals(AllMathFunc[i].getObjectName()) ){
+            if (FuncName.equals(AllMathFunc[i].getObjectName())) {
                 return true;
             }
         }
         return false;
     }
-    public boolean hasMathFunc(String[] Path, String FuncName){
-        if(Path.length==1){
-            if(ObjectName.equals(Path[0])) {
+
+    public boolean hasMathFunc(String[] Path, String FuncName) {
+        if (Path.length == 1) {
+            if (ObjectName.equals(Path[0])) {
                 return this.hasMathFunc(FuncName);
             }
-        }
-        else{
+        } else {
 
-            int index=this.getIndexOfClass(Path[1]);
-            if(index>=0){
-                String[] tempPath=new String[Path.length -1];
-                for (int i = 0, len = Path.length -1; i < len; i++) {
-                    tempPath[i] = Path[i+1];
+            int index = this.getIndexOfClass(Path[1]);
+            if (index >= 0) {
+                String[] tempPath = new String[Path.length - 1];
+                for (int i = 0, len = Path.length - 1; i < len; i++) {
+                    tempPath[i] = Path[i + 1];
                 }
                 return AllFuncClass[index].hasMathFunc(tempPath, FuncName);
             }
@@ -217,37 +237,40 @@ public class FuncClass extends MathObject {
     }
 
 
-    public void clearAll(){
-        UpperPath="";
-        ObjectName="";
-        Notes="";
-        UseFreq=0;
-        AllFuncClass=null;
-        AllMathFunc=null;
-        NumOfFunc=0;
-        NumOfClass=0;
-        ClassToDelete=null;
-        FuncToDelete=null;
+    public void clearAll() {
+        UpperPath = "";
+        ObjectName = "";
+        Notes = "";
+        UseFreq = 0;
+        AllFuncClass = null;
+        AllMathFunc = null;
+        NumOfFunc = 0;
+        NumOfClass = 0;
+        ClassToDelete = null;
+        FuncToDelete = null;
     }
-    public void readAll(){
-        String upperpath=UpperPath;
-        String classname=ObjectName;
+
+    public void readAll() {
+        String upperpath = UpperPath;
+        String classname = ObjectName;
         readFunc(upperpath, classname);
         readFuncFreq(upperpath, classname);
         readClass(upperpath, classname);
         readNotes(upperpath, classname);
     }
-    public void readAll(String upperpath, String classname){
+
+    public void readAll(String upperpath, String classname) {
         readFunc(upperpath, classname);
         readFuncFreq(upperpath, classname);
         readClass(upperpath, classname);
         readNotes(upperpath, classname);
     }
+
     public void readFunc(String upperpath, String classname) {
 
         //System.out.println(classname);
-        UpperPath=upperpath;
-        String FilePath = upperpath+"\\"+"C"+classname+"\\"+classname+"Func.txt";
+        UpperPath = upperpath;
+        String FilePath = upperpath + "\\" + "C" + classname + "\\" + classname + "Func.txt";
         //File file = new File(FilePath);
         //BufferedReader reader = null;
         //try {
@@ -271,24 +294,24 @@ public class FuncClass extends MathObject {
         //    }
         //}
         Others otherfuncs = new Others();
-        NumOfFunc=otherfuncs.getFileLength(FilePath);
+        NumOfFunc = otherfuncs.getFileLength(FilePath);
 
 
-        ObjectName=classname;
-        AllMathFunc=new MathFunc[NumOfFunc];
-        for(int i = 0; i < NumOfFunc; i++){
-            AllMathFunc[i]=new MathFunc();
+        ObjectName = classname;
+        AllMathFunc = new MathFunc[NumOfFunc];
+        for (int i = 0; i < NumOfFunc; i++) {
+            AllMathFunc[i] = new MathFunc();
         }
         File file2 = new File(FilePath);
         File dir = new File(file2.getParent());
-        try{
+        try {
             if (!dir.isDirectory()) {
                 dir.mkdirs();
             }
             if (!file2.exists()) {
                 file2.createNewFile();
             }
-        }catch (IOException e0) {
+        } catch (IOException e0) {
             e0.printStackTrace();
         }
 
@@ -299,7 +322,7 @@ public class FuncClass extends MathObject {
             int line = 1;
             // 一次读入一行，直到读入null为文件结束
             while ((funcname = reader2.readLine()) != null) {
-                AllMathFunc[line-1].readAll(upperpath+"\\"+"C"+classname, funcname);
+                AllMathFunc[line - 1].readAll(upperpath + "\\" + "C" + classname, funcname);
                 line++;
             }
             reader2.close();
@@ -314,20 +337,21 @@ public class FuncClass extends MathObject {
             }
         }
     }
-    public void readFuncFreq(String upperpath, String classname){
-        Others otherFuncs=new Others();
-        String FilePath = upperpath+"\\"+"C"+classname+"\\"+classname+"FuncFreq.txt";
+
+    public void readFuncFreq(String upperpath, String classname) {
+        Others otherFuncs = new Others();
+        String FilePath = upperpath + "\\" + "C" + classname + "\\" + classname + "FuncFreq.txt";
         File file = new File(FilePath);
         File dir = new File(file.getParent());
 
-        try{
+        try {
             if (!dir.isDirectory()) {
                 dir.mkdirs();
             }
             if (!file.exists()) {
                 file.createNewFile();
             }
-        }catch (IOException e0) {
+        } catch (IOException e0) {
             e0.printStackTrace();
         }
         BufferedReader reader = null;
@@ -337,7 +361,7 @@ public class FuncClass extends MathObject {
             int line = 1;
             // 一次读入一行，直到读入null为文件结束
             while ((freq = reader.readLine()) != null) {
-                AllMathFunc[line-1].setUseFreq(otherFuncs.String2int(freq));
+                AllMathFunc[line - 1].setUseFreq(otherFuncs.String2int(freq));
                 line++;
             }
             reader.close();
@@ -358,11 +382,11 @@ public class FuncClass extends MathObject {
 
         //System.out.println(classname);
 
-        String FilePath0 = upperpath+"\\"+"C"+classname+"\\"+"hasSubClass.txt";
+        String FilePath0 = upperpath + "\\" + "C" + classname + "\\" + "hasSubClass.txt";
         Others otherfuncs = new Others();
-        if(otherfuncs.hasSubClass(FilePath0)) {
+        if (otherfuncs.hasSubClass(FilePath0)) {
 
-            String FilePath = upperpath + "\\" +"C"+ classname + "\\" + classname + "SubClass.txt";
+            String FilePath = upperpath + "\\" + "C" + classname + "\\" + classname + "SubClass.txt";
             //File file = new File(FilePath);
             //BufferedReader reader = null;
             //try {
@@ -385,7 +409,7 @@ public class FuncClass extends MathObject {
             //        }
             //    }
             //}
-            NumOfClass=otherfuncs.getFileLength(FilePath);
+            NumOfClass = otherfuncs.getFileLength(FilePath);
 
             ObjectName = classname;
             AllFuncClass = new FuncClass[NumOfClass];
@@ -396,14 +420,14 @@ public class FuncClass extends MathObject {
             File file2 = new File(FilePath);
             File dir = new File(file2.getParent());
 
-            try{
+            try {
                 if (!dir.isDirectory()) {
                     dir.mkdirs();
                 }
                 if (!file2.exists()) {
                     file2.createNewFile();
                 }
-            }catch (IOException e0) {
+            } catch (IOException e0) {
                 e0.printStackTrace();
             }
 
@@ -415,7 +439,7 @@ public class FuncClass extends MathObject {
                 int line = 1;
                 // 一次读入一行，直到读入null为文件结束
                 while ((subclassname = reader2.readLine()) != null) {
-                    AllFuncClass[line - 1].readAll(upperpath + "\\" +"C"+ classname, subclassname);
+                    AllFuncClass[line - 1].readAll(upperpath + "\\" + "C" + classname, subclassname);
                     line++;
                 }
                 reader2.close();
@@ -432,19 +456,19 @@ public class FuncClass extends MathObject {
         }
     }
 
-    public void readNotes(String upperpath, String classname){
-        String FilePath = upperpath+"\\"+"C"+classname+"\\"+classname+"notes.txt";
+    public void readNotes(String upperpath, String classname) {
+        String FilePath = upperpath + "\\" + "C" + classname + "\\" + classname + "notes.txt";
         File file = new File(FilePath);
         File dir = new File(file.getParent());
 
-        try{
+        try {
             if (!dir.isDirectory()) {
                 dir.mkdirs();
             }
             if (!file.exists()) {
                 file.createNewFile();
             }
-        }catch (IOException e0) {
+        } catch (IOException e0) {
             e0.printStackTrace();
         }
         BufferedReader reader = null;
@@ -471,81 +495,83 @@ public class FuncClass extends MathObject {
 
     }
 
-    public void addSubClass(FuncClass NewClass){
-        FuncClass[] tempFuncClass=new FuncClass[NumOfClass+1];
-        for(int i = 0; i < NumOfClass; i++){
-            tempFuncClass[i]=AllFuncClass[i];
+    public void addSubClass(FuncClass NewClass) {
+        FuncClass[] tempFuncClass = new FuncClass[NumOfClass + 1];
+        for (int i = 0; i < NumOfClass; i++) {
+            tempFuncClass[i] = AllFuncClass[i];
         }
-        AllFuncClass=null;
-        AllFuncClass=tempFuncClass;
-        AllFuncClass[NumOfClass]=NewClass;
+        AllFuncClass = null;
+        AllFuncClass = tempFuncClass;
+        AllFuncClass[NumOfClass] = NewClass;
         NumOfClass++;
-    }
-    public void addSubClass(String SubClassName){
-        FuncClass[] tempFuncClass=new FuncClass[NumOfClass+1];
-        for(int i = 0; i < NumOfClass; i++){
-            tempFuncClass[i]=AllFuncClass[i];
-        }
-        AllFuncClass=null;
-        AllFuncClass=tempFuncClass;
-        AllFuncClass[NumOfClass]=new FuncClass();
-        AllFuncClass[NumOfClass].setObjectName(SubClassName);
-        AllFuncClass[NumOfClass].setUpperPath(UpperPath+"\\"+"C"+ObjectName);
-        NumOfClass++;
-    }
-    public void addSubClass(String[] Path, String SubClassName){
-        if(Path.length==1){
-            if(ObjectName.equals(Path[0])){
-                this.addSubClass(SubClassName);
-            }
-        }
-        else{
-            int index=this.getIndexOfClass(Path[1]);
-            if(index>=0){
-                String[] tempPath=new String[Path.length -1];
-                for (int i = 0, len = Path.length -1; i < len; i++) {
-                    tempPath[i] = Path[i+1];
-                }
-                AllFuncClass[index].addSubClass(tempPath,SubClassName);
-            }
-        }
-    }
-    public void addSubClass(String[] Path, FuncClass NewClass){
-        if(Path.length==1){
-            if(ObjectName.equals(Path[0])){
-                this.addSubClass(NewClass);
-            }
-        }
-        else{
-            int index=this.getIndexOfClass(Path[1]);
-            if(index>=0){
-                String[] tempPath=new String[Path.length -1];
-                for (int i = 0, len = Path.length -1; i < len; i++) {
-                    tempPath[i] = Path[i+1];
-                }
-                AllFuncClass[index].addSubClass(tempPath,NewClass);
-            }
-        }
-    }
-    public void addClassToDelete(String ClassName){
-        String[] temp=new String[ClassToDelete.length+1];
-        for (int i = 0,len=ClassToDelete.length; i < len; i++) {
-            temp[i]=ClassToDelete[i];
-        }
-        temp[ClassToDelete.length]=ClassName;
-        ClassToDelete=null;
-        ClassToDelete=temp;
     }
 
-    public void deleteSubClass(String SubClassName){
-        FuncClass[] tempFuncClass=new FuncClass[NumOfClass-1];
+    public void addSubClass(String SubClassName) {
+        FuncClass[] tempFuncClass = new FuncClass[NumOfClass + 1];
+        for (int i = 0; i < NumOfClass; i++) {
+            tempFuncClass[i] = AllFuncClass[i];
+        }
+        AllFuncClass = null;
+        AllFuncClass = tempFuncClass;
+        AllFuncClass[NumOfClass] = new FuncClass();
+        AllFuncClass[NumOfClass].setObjectName(SubClassName);
+        AllFuncClass[NumOfClass].setUpperPath(UpperPath + "\\" + "C" + ObjectName);
+        NumOfClass++;
+    }
+
+    public void addSubClass(String[] Path, String SubClassName) {
+        if (Path.length == 1) {
+            if (ObjectName.equals(Path[0])) {
+                this.addSubClass(SubClassName);
+            }
+        } else {
+            int index = this.getIndexOfClass(Path[1]);
+            if (index >= 0) {
+                String[] tempPath = new String[Path.length - 1];
+                for (int i = 0, len = Path.length - 1; i < len; i++) {
+                    tempPath[i] = Path[i + 1];
+                }
+                AllFuncClass[index].addSubClass(tempPath, SubClassName);
+            }
+        }
+    }
+
+    public void addSubClass(String[] Path, FuncClass NewClass) {
+        if (Path.length == 1) {
+            if (ObjectName.equals(Path[0])) {
+                this.addSubClass(NewClass);
+            }
+        } else {
+            int index = this.getIndexOfClass(Path[1]);
+            if (index >= 0) {
+                String[] tempPath = new String[Path.length - 1];
+                for (int i = 0, len = Path.length - 1; i < len; i++) {
+                    tempPath[i] = Path[i + 1];
+                }
+                AllFuncClass[index].addSubClass(tempPath, NewClass);
+            }
+        }
+    }
+
+    public void addClassToDelete(String ClassName) {
+        String[] temp = new String[ClassToDelete.length + 1];
+        for (int i = 0, len = ClassToDelete.length; i < len; i++) {
+            temp[i] = ClassToDelete[i];
+        }
+        temp[ClassToDelete.length] = ClassName;
+        ClassToDelete = null;
+        ClassToDelete = temp;
+    }
+
+    public void deleteSubClass(String SubClassName) {
+        FuncClass[] tempFuncClass = new FuncClass[NumOfClass - 1];
         int index = this.getIndexOfClass(SubClassName);
-        if(index >= 0) {
+        if (index >= 0) {
             for (int i = 0; i < index; i++) {
                 tempFuncClass[i] = AllFuncClass[i];
             }
             for (int i = index + 1; i < NumOfClass; i++) {
-                tempFuncClass[i-1] = AllFuncClass[i];
+                tempFuncClass[i - 1] = AllFuncClass[i];
             }
             AllFuncClass = null;
             AllFuncClass = tempFuncClass;
@@ -553,99 +579,101 @@ public class FuncClass extends MathObject {
             addClassToDelete(SubClassName);
         }
     }
-    public void deleteSubClass(String[] Path, String SubClassName){
-        if(Path.length==1){
-            if(ObjectName.equals(Path[0])){
+
+    public void deleteSubClass(String[] Path, String SubClassName) {
+        if (Path.length == 1) {
+            if (ObjectName.equals(Path[0])) {
                 this.deleteSubClass(SubClassName);
             }
-        }
-        else{
-            int index=this.getIndexOfClass(Path[1]);
-            if(index>=0){
-                String[] tempPath=new String[Path.length -1];
-                for (int i = 0, len = Path.length -1; i < len; i++) {
-                    tempPath[i] = Path[i+1];
+        } else {
+            int index = this.getIndexOfClass(Path[1]);
+            if (index >= 0) {
+                String[] tempPath = new String[Path.length - 1];
+                for (int i = 0, len = Path.length - 1; i < len; i++) {
+                    tempPath[i] = Path[i + 1];
                 }
                 AllFuncClass[index].deleteSubClass(tempPath, SubClassName);
             }
         }
     }
 
-    public void addMathFunc(MathFunc NewMathFunc){
-        MathFunc[] tempMathFunc=new MathFunc[NumOfFunc+1];
-        for(int i = 0; i < NumOfFunc; i++){
-            tempMathFunc[i]=AllMathFunc[i];
+    public void addMathFunc(MathFunc NewMathFunc) {
+        MathFunc[] tempMathFunc = new MathFunc[NumOfFunc + 1];
+        for (int i = 0; i < NumOfFunc; i++) {
+            tempMathFunc[i] = AllMathFunc[i];
         }
-        AllMathFunc=null;
-        AllMathFunc=tempMathFunc;
-        AllMathFunc[NumOfFunc]=NewMathFunc;
+        AllMathFunc = null;
+        AllMathFunc = tempMathFunc;
+        AllMathFunc[NumOfFunc] = NewMathFunc;
         NumOfFunc++;
     }
-    public void addMathFunc(String FuncName){
-        MathFunc[] tempMathFunc=new MathFunc[NumOfFunc+1];
-        for(int i = 0; i < NumOfFunc; i++){
-            tempMathFunc[i]=AllMathFunc[i];
+
+    public void addMathFunc(String FuncName) {
+        MathFunc[] tempMathFunc = new MathFunc[NumOfFunc + 1];
+        for (int i = 0; i < NumOfFunc; i++) {
+            tempMathFunc[i] = AllMathFunc[i];
         }
-        AllMathFunc=null;
-        AllMathFunc=tempMathFunc;
-        AllMathFunc[NumOfFunc]=new MathFunc();
+        AllMathFunc = null;
+        AllMathFunc = tempMathFunc;
+        AllMathFunc[NumOfFunc] = new MathFunc();
         AllMathFunc[NumOfFunc].setObjectName(FuncName);
-        AllMathFunc[NumOfFunc].setUpperPath(UpperPath+"\\"+"C"+ObjectName);
+        AllMathFunc[NumOfFunc].setUpperPath(UpperPath + "\\" + "C" + ObjectName);
         NumOfFunc++;
     }
-    public void addMathFunc(String[] Path, String FuncName){
-        if(Path.length==1){
-            if(ObjectName.equals(Path[0])){
+
+    public void addMathFunc(String[] Path, String FuncName) {
+        if (Path.length == 1) {
+            if (ObjectName.equals(Path[0])) {
                 this.addMathFunc(FuncName);
             }
-        }
-        else{
-            int index=this.getIndexOfClass(Path[1]);
-            if(index>=0){
-                String[] tempPath=new String[Path.length -1];
-                for (int i = 0, len = Path.length -1; i < len; i++) {
-                    tempPath[i] = Path[i+1];
+        } else {
+            int index = this.getIndexOfClass(Path[1]);
+            if (index >= 0) {
+                String[] tempPath = new String[Path.length - 1];
+                for (int i = 0, len = Path.length - 1; i < len; i++) {
+                    tempPath[i] = Path[i + 1];
                 }
                 AllFuncClass[index].addMathFunc(tempPath, FuncName);
             }
         }
     }
-    public void addMathFunc(String[] Path, MathFunc NewMathFunc){
-        if(Path.length==1){
-            if(ObjectName.equals(Path[0])){
+
+    public void addMathFunc(String[] Path, MathFunc NewMathFunc) {
+        if (Path.length == 1) {
+            if (ObjectName.equals(Path[0])) {
                 this.addMathFunc(NewMathFunc);
             }
-        }
-        else{
-            int index=this.getIndexOfClass(Path[1]);
-            if(index>=0){
-                String[] tempPath=new String[Path.length -1];
-                for (int i = 0, len = Path.length -1; i < len; i++) {
-                    tempPath[i] = Path[i+1];
+        } else {
+            int index = this.getIndexOfClass(Path[1]);
+            if (index >= 0) {
+                String[] tempPath = new String[Path.length - 1];
+                for (int i = 0, len = Path.length - 1; i < len; i++) {
+                    tempPath[i] = Path[i + 1];
                 }
-                AllFuncClass[index].addMathFunc(tempPath,NewMathFunc);
+                AllFuncClass[index].addMathFunc(tempPath, NewMathFunc);
             }
         }
     }
-    public void addFuncToDelete(String FuncName){
-        String[] temp=new String[FuncToDelete.length+1];
-        for (int i = 0,len=FuncToDelete.length; i < len; i++) {
-            temp[i]=FuncToDelete[i];
+
+    public void addFuncToDelete(String FuncName) {
+        String[] temp = new String[FuncToDelete.length + 1];
+        for (int i = 0, len = FuncToDelete.length; i < len; i++) {
+            temp[i] = FuncToDelete[i];
         }
-        temp[FuncToDelete.length]=FuncName;
-        FuncToDelete=null;
-        FuncToDelete=temp;
+        temp[FuncToDelete.length] = FuncName;
+        FuncToDelete = null;
+        FuncToDelete = temp;
     }
 
-    public void deleteMathFunc(String FuncName){
-        MathFunc[] tempMathFunc=new MathFunc[NumOfFunc-1];
+    public void deleteMathFunc(String FuncName) {
+        MathFunc[] tempMathFunc = new MathFunc[NumOfFunc - 1];
         int index = this.getIndexOfFunc(FuncName);
-        if(index >= 0) {
+        if (index >= 0) {
             for (int i = 0; i < index; i++) {
                 tempMathFunc[i] = AllMathFunc[i];
             }
             for (int i = index + 1; i < NumOfFunc; i++) {
-                tempMathFunc[i-1] = AllMathFunc[i];
+                tempMathFunc[i - 1] = AllMathFunc[i];
             }
             AllMathFunc = null;
             AllMathFunc = tempMathFunc;
@@ -653,80 +681,81 @@ public class FuncClass extends MathObject {
             addFuncToDelete(FuncName);
         }
     }
-    public void deleteMathFunc(String[] Path, String FuncName){
-        if(Path.length==1){
-            if(ObjectName.equals(Path[0])){
+
+    public void deleteMathFunc(String[] Path, String FuncName) {
+        if (Path.length == 1) {
+            if (ObjectName.equals(Path[0])) {
                 this.deleteMathFunc(FuncName);
             }
-        }
-        else{
-            int index=this.getIndexOfClass(Path[1]);
-            if(index>=0){
-                String[] tempPath=new String[Path.length -1];
-                for (int i = 0, len = Path.length -1; i < len; i++) {
-                    tempPath[i] = Path[i+1];
+        } else {
+            int index = this.getIndexOfClass(Path[1]);
+            if (index >= 0) {
+                String[] tempPath = new String[Path.length - 1];
+                for (int i = 0, len = Path.length - 1; i < len; i++) {
+                    tempPath[i] = Path[i + 1];
                 }
                 AllFuncClass[index].deleteMathFunc(tempPath, FuncName);
             }
         }
     }
 
-    public String getPathOfFunc(){
-        return UpperPath+"\\"+"C"+ObjectName+"\\"+ObjectName+"Func.txt";
+    public String getPathOfFunc() {
+        return UpperPath + "\\" + "C" + ObjectName + "\\" + ObjectName + "Func.txt";
     }
-    public String getPathOfFuncFreq(){
-        return UpperPath+"\\"+"C"+ObjectName+"\\"+ObjectName+"FuncFreq.txt";
+
+    public String getPathOfFuncFreq() {
+        return UpperPath + "\\" + "C" + ObjectName + "\\" + ObjectName + "FuncFreq.txt";
     }
-    public String getPathOfNotes(){
-        return UpperPath+"\\"+"C"+ObjectName+"\\"+ObjectName+"notes.txt";
+
+    public String getPathOfNotes() {
+        return UpperPath + "\\" + "C" + ObjectName + "\\" + ObjectName + "notes.txt";
     }
-    public void outputFile(){
-        Others otherFuncs=new Others();
-        String PathOfFunc = UpperPath+"\\"+"C"+ObjectName+"\\"+ObjectName+"Func.txt";
-        String PathOfFuncFreq = UpperPath+"\\"+"C"+ObjectName+"\\"+ObjectName+"FuncFreq.txt";
-        for (int i = 0; i < NumOfFunc ; i++) {
+
+    public void outputFile() {
+        Others otherFuncs = new Others();
+        String PathOfFunc = UpperPath + "\\" + "C" + ObjectName + "\\" + ObjectName + "Func.txt";
+        String PathOfFuncFreq = UpperPath + "\\" + "C" + ObjectName + "\\" + ObjectName + "FuncFreq.txt";
+        for (int i = 0; i < NumOfFunc; i++) {
             String FuncName = AllMathFunc[i].getObjectName();
-            String FuncFreq = ""+AllMathFunc[i].getUseFreq();
-            if(i==0){
+            String FuncFreq = "" + AllMathFunc[i].getUseFreq();
+            if (i == 0) {
                 otherFuncs.writeFile(PathOfFunc, FuncName, false);
                 otherFuncs.writeFile(PathOfFuncFreq, FuncFreq, false);
-            }
-            else{
-                otherFuncs.writeFile(PathOfFunc, "\r\n"+FuncName, true);
-                otherFuncs.writeFile(PathOfFuncFreq, "\r\n"+FuncFreq, true);
+            } else {
+                otherFuncs.writeFile(PathOfFunc, "\r\n" + FuncName, true);
+                otherFuncs.writeFile(PathOfFuncFreq, "\r\n" + FuncFreq, true);
             }
             AllMathFunc[i].outputFile();
         }
-        if(NumOfFunc==0){
+        if (NumOfFunc == 0) {
             otherFuncs.writeFile(PathOfFunc, "", false);
             otherFuncs.writeFile(PathOfFuncFreq, "", false);
         }
 
-        String PathOfSubClass = UpperPath+"\\"+"C"+ObjectName+"\\"+ObjectName+"SubClass.txt";
+        String PathOfSubClass = UpperPath + "\\" + "C" + ObjectName + "\\" + ObjectName + "SubClass.txt";
         for (int i = 0; i < NumOfClass; i++) {
             String ClassName = AllFuncClass[i].getObjectName();
-            if(i==0){
+            if (i == 0) {
                 otherFuncs.writeFile(PathOfSubClass, ClassName, false);
-                otherFuncs.writeFile(UpperPath+"\\"+"C"+ObjectName+"\\"+"hasSubClass.txt",""+1,false);
-            }
-            else {
-                otherFuncs.writeFile(PathOfSubClass, "\r\n"+ClassName, true);
+                otherFuncs.writeFile(UpperPath + "\\" + "C" + ObjectName + "\\" + "hasSubClass.txt", "" + 1, false);
+            } else {
+                otherFuncs.writeFile(PathOfSubClass, "\r\n" + ClassName, true);
             }
             AllFuncClass[i].outputFile();
         }
-        if(NumOfClass==0){
+        if (NumOfClass == 0) {
             otherFuncs.writeFile(PathOfSubClass, "", false);
-            otherFuncs.writeFile(UpperPath+"\\"+"C"+ObjectName+"\\"+"hasSubClass.txt",""+0,false);
+            otherFuncs.writeFile(UpperPath + "\\" + "C" + ObjectName + "\\" + "hasSubClass.txt", "" + 0, false);
         }
 
-        String PathOfNotes = UpperPath+"\\"+"C"+ObjectName+"\\"+ObjectName+"notes.txt";
+        String PathOfNotes = UpperPath + "\\" + "C" + ObjectName + "\\" + ObjectName + "notes.txt";
         otherFuncs.writeFile(PathOfNotes, Notes, false);
 
-        for (int i = 0,len=FuncToDelete.length; i < len; i++) {
-            otherFuncs.deleteFolder(UpperPath+"\\"+"C"+ObjectName+"\\"+"F"+FuncToDelete[i]);
+        for (int i = 0, len = FuncToDelete.length; i < len; i++) {
+            otherFuncs.deleteFolder(UpperPath + "\\" + "C" + ObjectName + "\\" + "F" + FuncToDelete[i]);
         }
-        for (int i = 0,len=ClassToDelete.length; i < len; i++) {
-            otherFuncs.deleteFolder(UpperPath+"\\"+"C"+ObjectName+"\\"+"C"+ClassToDelete[i]);
+        for (int i = 0, len = ClassToDelete.length; i < len; i++) {
+            otherFuncs.deleteFolder(UpperPath + "\\" + "C" + ObjectName + "\\" + "C" + ClassToDelete[i]);
         }
     }
 }
