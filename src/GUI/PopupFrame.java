@@ -91,11 +91,11 @@ public class PopupFrame extends JFrame {
             }
         });
 
-        addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
-            }
-        });
+        //addWindowListener(new WindowAdapter() {
+        //    public void windowClosing(WindowEvent e) {
+        //        System.exit(0);
+        //    }
+        //});
 
         jButtonAffirm.addActionListener(new ActionListener() {
             @Override
