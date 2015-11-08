@@ -22,7 +22,7 @@ public class RightTopPane extends JSplitPane {
 
         JButton b1=new JButton("添加函数类");
         JButton b2=new JButton("添加函数");
-        JButton b22=new JButton("添加参数");
+        JButton b22=new JButton("添加参数");//method not implement yet
         JButton b3=new JButton("删除");
         b1.setEnabled(false);
         b2.setEnabled(false);
@@ -72,22 +72,23 @@ public class RightTopPane extends JSplitPane {
         b1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DefaultMutableTreeNode parentNode=null;
-                DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new class");
-                newNode.setAllowsChildren(true);
-                TreePath parentPath=tree.getSelectionPath();
-                //System.out.print(parentPath.getPath()[0]+" "+parentPath.getPath()[1]+"\n");
-                //System.out.print(parentPath.getPath()[0].toString());
-
-                //RootClass.print();
-                parentNode=(DefaultMutableTreeNode)(parentPath.getLastPathComponent());
-
-                treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
-
-                RootClass.addSubClass(treePath2String(parentPath),"new class");
-                //RootClass.outputFile();
-
-                tree.scrollPathToVisible(new TreePath(newNode.getPath()));
+                new PopupFrame("","请输入函数类名：",treeModel,tree,RootClass,PopupFrame.ADD_CLASS);
+                //DefaultMutableTreeNode parentNode=null;
+                //DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new class");
+                //newNode.setAllowsChildren(true);
+                //TreePath parentPath=tree.getSelectionPath();
+                ////System.out.print(parentPath.getPath()[0]+" "+parentPath.getPath()[1]+"\n");
+                ////System.out.print(parentPath.getPath()[0].toString());
+//
+                ////RootClass.print();
+                //parentNode=(DefaultMutableTreeNode)(parentPath.getLastPathComponent());
+//
+                //treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
+//
+                //RootClass.addSubClass(treePath2String(parentPath),"new class");
+                ////RootClass.outputFile();
+//
+                //tree.scrollPathToVisible(new TreePath(newNode.getPath()));
 
             }
         });
@@ -95,20 +96,21 @@ public class RightTopPane extends JSplitPane {
         b2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DefaultMutableTreeNode parentNode=null;
-                DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new func");
-                newNode.setAllowsChildren(true);
-                TreePath parentPath=tree.getSelectionPath();
-                //System.out.print(parentPath.getPath()[0]+" "+parentPath.getPath()[1]+"\n");
-
-                parentNode=(DefaultMutableTreeNode)(parentPath.getLastPathComponent());
-
-                treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
-
-                RootClass.addMathFunc(treePath2String(parentPath),"new func");
-                //RootClass.outputFile();
-
-                tree.scrollPathToVisible(new TreePath(newNode.getPath()));
+                new PopupFrame("","请输入函数名：",treeModel,tree,RootClass,PopupFrame.ADD_FUNC);
+                //DefaultMutableTreeNode parentNode=null;
+                //DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new func");
+                //newNode.setAllowsChildren(true);
+                //TreePath parentPath=tree.getSelectionPath();
+                ////System.out.print(parentPath.getPath()[0]+" "+parentPath.getPath()[1]+"\n");
+//
+                //parentNode=(DefaultMutableTreeNode)(parentPath.getLastPathComponent());
+//
+                //treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
+//
+                //RootClass.addMathFunc(treePath2String(parentPath),"new func");
+                ////RootClass.outputFile();
+//
+                //tree.scrollPathToVisible(new TreePath(newNode.getPath()));
 
             }
         });

@@ -1,5 +1,6 @@
 package GUITest;
 
+import GUI.PopupFrame;
 import MathFunc.*;
 
 import javax.swing.*;
@@ -43,6 +44,8 @@ public class GUITest {
         RootClass.outputFile();
     }
     public static void main(String [] args){
-        new GUITest();
+        //new GUITest();
+
+        //PopupFrame pF=new PopupFrame();
     }
 }
