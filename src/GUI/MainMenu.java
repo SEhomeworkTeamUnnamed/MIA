@@ -29,7 +29,7 @@ public class MainMenu extends JMenuBar {
         item1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                OpenFile openFile = new OpenFile("打开已保存的数据库路径");
+                OpenFile openFile = new OpenFile("打开已保存的数据库文件夹(以C开头)");
                 int result = openFile.showOpenDialog(null);
                 if (result == JFileChooser.APPROVE_OPTION) {
                     RootClass.clearAll();
