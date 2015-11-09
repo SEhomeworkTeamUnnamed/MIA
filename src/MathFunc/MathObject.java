@@ -10,6 +10,8 @@ public class MathObject {
     String UpperPath;
     String Notes;
     int UseFreq;
+    public static int IS_CLASS=0;
+    public static int IS_FUNC=1;
 
     public MathObject() {
         ObjectName = "";
@@ -51,4 +53,8 @@ public class MathObject {
     }
 
     public void oneUse(){UseFreq++;}
+
+    public String toString(){
+        return ObjectName;
+    }
 }

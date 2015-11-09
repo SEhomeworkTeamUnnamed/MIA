@@ -271,4 +271,8 @@ public class MathFunc extends MathObject {
         String PathOfNotes = UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"notes.txt";
         otherFuncs.writeFile(PathOfNotes, Notes, false);
     }
+
+    public int hashCode(){
+        return MathObject.IS_FUNC;
+    }
 }

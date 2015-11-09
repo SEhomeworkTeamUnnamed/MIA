@@ -151,14 +151,14 @@ public class FuncClass extends MathObject {
     }
 
     public DefaultMutableTreeNode getTreeNode() {
-        DefaultMutableTreeNode tempNode = new DefaultMutableTreeNode(ObjectName);
+        DefaultMutableTreeNode tempNode = new DefaultMutableTreeNode(this);
 
         for (int i = 0; i < NumOfClass; i++) {
             DefaultMutableTreeNode node = AllFuncClass[i].getTreeNode();
             tempNode.add(node);
         }
         for (int i = 0; i < NumOfFunc; i++) {
-            DefaultMutableTreeNode node = new DefaultMutableTreeNode(AllMathFunc[i].getObjectName());
+            DefaultMutableTreeNode node = new DefaultMutableTreeNode(AllMathFunc[i]);
             tempNode.add(node);
         }
         return tempNode;
@@ -758,4 +758,9 @@ public class FuncClass extends MathObject {
             otherFuncs.deleteFolder(UpperPath + "\\" + "C" + ObjectName + "\\" + "C" + ClassToDelete[i]);
         }
     }
+
+    public int hashCode(){
+        return MathObject.IS_CLASS;
+    }
+
 }
