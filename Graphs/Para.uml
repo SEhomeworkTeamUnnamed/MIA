@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>MathFunc.Para</OriginalElement>
+  <nodes>
+    <node x="21.0" y="0.0">MathFunc.MathObject</node>
+    <node x="0.0" y="310.0">MathFunc.Para</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="MathFunc.Para" target="MathFunc.MathObject">
+      <point x="0.0" y="-179.5" />
+      <point x="0.0" y="130.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="56.0" y="157.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Properties</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
