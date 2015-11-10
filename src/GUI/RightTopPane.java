@@ -1,6 +1,7 @@
 package GUI;
 
 import MathFunc.FuncClass;
+import MathFunc.MathObject;
 
 import javax.swing.*;
 import javax.swing.event.TreeSelectionEvent;
@@ -56,7 +57,7 @@ public class RightTopPane extends JSplitPane {
                     DefaultMutableTreeNode selectionNode =
                             (DefaultMutableTreeNode) treePath.getLastPathComponent();
                     String[] Path = treePath2String(treePath.getParentPath());
-                    if (RootClass.getIndexOfClass(Path, selectionNode.toString()) >= 0) {
+                    if (selectionNode.getUserObject().hashCode() == MathObject.IS_CLASS) {
                         b1.setEnabled(true);
                         b2.setEnabled(true);
                         b22.setEnabled(false);
@@ -134,11 +135,11 @@ public class RightTopPane extends JSplitPane {
 
                         String[] Path=treePath2String(treePath.getParentPath());
 
-                        if(RootClass.hasMathFunc(Path,selectionNode.toString())){
+                        if(selectionNode.getUserObject().hashCode() == MathObject.IS_FUNC){
                             RootClass.deleteMathFunc(Path, selectionNode.toString());
                             //RootClass.outputFile();
                         }
-                        else if(RootClass.hasSubClass(Path,selectionNode.toString())){
+                        else if(selectionNode.getUserObject().hashCode() == MathObject.IS_CLASS){
                             RootClass.deleteSubClass(Path,selectionNode.toString());
                             //RootClass.outputFile();
                         }
