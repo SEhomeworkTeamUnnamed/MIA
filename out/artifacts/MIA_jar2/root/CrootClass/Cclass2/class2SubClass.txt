@@ -1,4 +1,2 @@
 всюЮ
 subclass
-class
-nnn
