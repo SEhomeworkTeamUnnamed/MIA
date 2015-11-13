@@ -36,6 +36,14 @@ public class FuncClass extends MathObject {
         this.readAll();
     }
 
+    public FuncClass(String upperPath, String objectName, int i){
+        super();
+        this.setUpperPath(upperPath);
+        this.setObjectName(objectName);
+        NumOfFunc = 0;
+        NumOfClass = 0;
+    }
+
     public void print() {
         System.out.print("FuncClass name: ");
         System.out.println(ObjectName);
@@ -577,6 +585,7 @@ public class FuncClass extends MathObject {
             AllFuncClass = tempFuncClass;
             NumOfClass--;
             addClassToDelete(SubClassName);
+            System.out.println("func deleted");
         }
     }
 
@@ -679,6 +688,7 @@ public class FuncClass extends MathObject {
             AllMathFunc = tempMathFunc;
             NumOfFunc--;
             addFuncToDelete(FuncName);
+            System.out.println("func deleted");
         }
     }
 
@@ -759,7 +769,7 @@ public class FuncClass extends MathObject {
         }
     }
 
-    public int hashCode(){
+    public int isClassOrFunc(){
         return MathObject.IS_CLASS;
     }
 

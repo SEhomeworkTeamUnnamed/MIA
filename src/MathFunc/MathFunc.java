@@ -22,6 +22,13 @@ public class MathFunc extends MathObject {
         NumOfPara = 0;
     }
 
+    public MathFunc(String upperPath, String FuncName){
+        super();
+        this.setUpperPath(upperPath);
+        this.setObjectName(FuncName);
+        NumOfPara = 0;
+    }
+
     public void setAllPara(Para[] NewParas) {
         NumOfPara = NewParas.length;
         for (int i = 0; i < NumOfPara; i++) {
@@ -272,7 +279,7 @@ public class MathFunc extends MathObject {
         otherFuncs.writeFile(PathOfNotes, Notes, false);
     }
 
-    public int hashCode(){
+    public int isClassOrFunc(){
         return MathObject.IS_FUNC;
     }
 }

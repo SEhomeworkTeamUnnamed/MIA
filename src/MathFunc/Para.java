@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * Created by IIIS on 10/28/2015.
  *
- * @author jwt625 
+ * @author jwt625
  */
 public class Para extends MathObject {
 

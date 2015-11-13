@@ -1,6 +1,7 @@
 package GUI;
 
 import MathFunc.FuncClass;
+import MathFunc.MathFunc;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -130,20 +131,32 @@ public class PopupFrame extends JFrame {
                     }
                 }
                 else{
-                    DefaultMutableTreeNode newNode = new DefaultMutableTreeNode(UserInput);
-
-                    newNode.setAllowsChildren(true);
                     TreePath parentPath=tree.getSelectionPath();
                     parentNode=(DefaultMutableTreeNode)(parentPath.getLastPathComponent());
+                    String parentClassName = ((FuncClass) parentNode.getUserObject()).getObjectName();
+                    String newUpperPath = ((FuncClass) parentNode.getUserObject()).getUpperPath()+"\\C"+parentClassName;
 
-                    treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
+
                     if(ClassOrFunc==PopupFrame.ADD_CLASS) {
-                        RootClass.addSubClass(treePath2String(parentPath), UserInput);
+                        FuncClass newSubClass=new FuncClass(newUpperPath,UserInput,1);
+                        RootClass.addSubClass(treePath2String(parentPath), newSubClass);
+
+                        DefaultMutableTreeNode newNode = new DefaultMutableTreeNode(newSubClass);
+
+                        newNode.setAllowsChildren(true);
+                        treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
+                        tree.scrollPathToVisible(new TreePath(newNode.getPath()));
                     }
                     else if(ClassOrFunc==PopupFrame.ADD_FUNC){
-                        RootClass.addMathFunc(treePath2String(parentPath), UserInput);
+                        MathFunc newMathFunc=new MathFunc(newUpperPath,UserInput);
+                        RootClass.addMathFunc(treePath2String(parentPath), newMathFunc);
+
+                        DefaultMutableTreeNode newNode = new DefaultMutableTreeNode(newMathFunc);
+
+                        newNode.setAllowsChildren(true);
+                        treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
+                        tree.scrollPathToVisible(new TreePath(newNode.getPath()));
                     }
-                    tree.scrollPathToVisible(new TreePath(newNode.getPath()));
                 }
             }
         });
