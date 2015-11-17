@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>MathFunc.Para</OriginalElement>
+  <nodes>
+    <node x="843.0518617021278" y="450.0">GUI.RightTopPane</node>
+    <node x="316.0518617021278" y="532.0">javax.swing.JMenuBar</node>
+    <node x="568.2220744680851" y="204.0">MathFunc.VarRange</node>
+    <node x="912.0518617021278" y="286.0">javax.swing.JSplitPane</node>
+    <node x="174.24024822695048" y="0.0">MathFunc.MathObject</node>
+    <node x="436.0518617021278" y="532.0">GUI.OpenFile</node>
+    <node x="218.05186170212778" y="532.0">javax.swing.JMenu</node>
+    <node x="70.80186170212778" y="286.0">MathFunc.FuncClass</node>
+    <node x="404.50310283687975" y="696.0">javax.swing.JTree</node>
+    <node x="301.586436170213" y="614.0">GUI.MainMenu</node>
+    <node x="444.5970744680851" y="204.0">MathFunc.MathFunc</node>
+    <node x="289.38785460992915" y="778.0">GUI.Main</node>
+    <node x="621.8262411347519" y="368.0">javax.swing.JScrollPane</node>
+    <node x="560.0518617021278" y="450.0">GUI.LeftPane</node>
+    <node x="685.2220744680851" y="204.0">MathFunc.OptionPara</node>
+    <node x="818.7531028368796" y="532.0">GUI.RightPane</node>
+    <node x="276.50310283687975" y="696.0">GUI.MainFrame</node>
+    <node x="614.523936170213" y="102.0">MathFunc.Para</node>
+    <node x="813.3018617021278" y="368.0">GUI.PopupFrame</node>
+    <node x="424.0518617021278" y="450.0">javax.swing.JFileChooser</node>
+    <node x="187.80186170212778" y="286.0">javax.swing.JFrame</node>
+    <node x="805.2628546099291" y="614.0">GUI.MainPane</node>
+    <node x="671.0518617021278" y="450.0">GUI.RightBottomPane</node>
+    <node x="78.24024822695048" y="0.0">Others.Others</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="GUI.MainMenu" target="javax.swing.JMenuBar">
+      <point x="0.0" y="-16.0" />
+      <point x="355.086436170213" y="589.0" />
+      <point x="366.0518617021278" y="589.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="MathFunc.Para" target="Others.Others">
+      <point x="-15.5" y="-16.0" />
+      <point x="630.023936170213" y="62.0" />
+      <point x="141.57358156028386" y="62.0" />
+      <point x="25.33333333333337" y="16.0" />
+    </edge>
+    <edge source="GUI.MainMenu" target="javax.swing.JMenu">
+      <point x="-35.66666666666663" y="-16.0" />
+      <point x="319.4197695035464" y="589.0" />
+      <point x="257.0518617021278" y="589.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="MathFunc.MathFunc" target="Others.Others">
+      <point x="-37.5" y="-16.0" />
+      <point x="457.0970744680851" y="184.0" />
+      <point x="143.25310283687963" y="184.0" />
+      <point x="143.25310283687963" y="72.0" />
+      <point x="116.24024822695048" y="72.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="GUI.RightPane" target="GUI.RightBottomPane">
+      <point x="-34.0" y="-16.0" />
+      <point x="835.7531028368796" y="512.0" />
+      <point x="747.0518617021278" y="512.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="GUI.PopupFrame" target="MathFunc.MathFunc">
+      <point x="14.75" y="-16.0" />
+      <point x="887.0518617021278" y="266.0" />
+      <point x="527.9304078014185" y="266.0" />
+      <point x="33.33333333333337" y="16.0" />
+    </edge>
+    <edge source="GUI.Main" target="javax.swing.JTree">
+      <point x="22.333333333333314" y="-16.0" />
+      <point x="345.2211879432625" y="753.0" />
+      <point x="438.00310283687975" y="753.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="GUI.Main" target="GUI.MainFrame">
+      <point x="0.0" y="-16.0" />
+      <point x="322.88785460992915" y="753.0" />
+      <point x="330.50310283687975" y="753.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="MathFunc.MathFunc" target="MathFunc.MathObject">
+      <point x="-12.5" y="-16.0" />
+      <point x="482.0970744680851" y="154.0" />
+      <point x="526.5970744680851" y="154.0" />
+      <point x="526.5970744680851" y="82.0" />
+      <point x="230.24024822695048" y="82.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="GUI.RightTopPane" target="javax.swing.JSplitPane">
+      <point x="32.0" y="-16.0" />
+      <point x="939.0518617021278" y="425.0" />
+      <point x="941.8018617021278" y="425.0" />
+      <point x="941.8018617021278" y="348.0" />
+      <point x="950.3018617021278" y="348.0" />
+      <point x="-12.75" y="16.0" />
+    </edge>
+    <edge source="GUI.PopupFrame" target="javax.swing.JSplitPane">
+      <point x="44.25" y="-16.0" />
+      <point x="916.5518617021278" y="348.0" />
+      <point x="924.8018617021278" y="348.0" />
+      <point x="-38.25" y="16.0" />
+    </edge>
+    <edge source="GUI.RightPane" target="GUI.RightTopPane">
+      <point x="0.0" y="-16.0" />
+      <point x="869.7531028368796" y="502.0" />
+      <point x="907.0518617021278" y="502.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="GUI.MainPane" target="GUI.RightPane">
+      <point x="0.0" y="-16.0" />
+      <point x="855.7628546099291" y="589.0" />
+      <point x="869.7531028368796" y="589.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="GUI.MainPane" target="GUI.LeftPane">
+      <point x="-33.66666666666663" y="-16.0" />
+      <point x="822.0961879432625" y="589.0" />
+      <point x="605.5518617021278" y="589.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="GUI.RightTopPane" target="GUI.PopupFrame">
+      <point x="-32.0" y="-16.0" />
+      <point x="875.0518617021278" y="425.0" />
+      <point x="872.3018617021278" y="425.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="MathFunc.MathFunc" target="MathFunc.Para">
+      <point x="12.5" y="-16.0" />
+      <point x="507.0970744680851" y="164.0" />
+      <point x="622.273936170213" y="164.0" />
+      <point x="-23.25" y="16.0" />
+    </edge>
+    <edge source="GUI.RightPane" target="javax.swing.JSplitPane">
+      <point x="34.0" y="-16.0" />
+      <point x="903.7531028368796" y="512.0" />
+      <point x="981.5518617021278" y="512.0" />
+      <point x="981.5518617021278" y="348.0" />
+      <point x="975.8018617021278" y="348.0" />
+      <point x="12.75" y="16.0" />
+    </edge>
+    <edge source="MathFunc.FuncClass" target="MathFunc.MathObject">
+      <point x="-12.125" y="-16.0" />
+      <point x="107.17686170212778" y="256.0" />
+      <point x="64.01285460992915" y="256.0" />
+      <point x="64.01285460992915" y="82.0" />
+      <point x="192.9069148936171" y="82.0" />
+      <point x="-37.33333333333337" y="16.0" />
+    </edge>
+    <edge source="GUI.MainMenu" target="GUI.OpenFile">
+      <point x="35.66666666666663" y="-16.0" />
+      <point x="390.75310283687963" y="589.0" />
+      <point x="482.0518617021278" y="589.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="MathFunc.VarRange" target="MathFunc.Para">
+      <point x="0.0" y="-16.0" />
+      <point x="616.7220744680851" y="184.0" />
+      <point x="653.273936170213" y="184.0" />
+      <point x="7.75" y="16.0" />
+    </edge>
+    <edge source="GUI.MainFrame" target="GUI.MainMenu">
+      <point x="-5.6843418860808015E-14" y="-16.0" />
+      <point x="330.50310283687963" y="671.0" />
+      <point x="355.086436170213" y="671.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="MathFunc.Para" target="MathFunc.MathObject">
+      <point x="15.5" y="-16.0" />
+      <point x="661.023936170213" y="52.0" />
+      <point x="267.57358156028386" y="52.0" />
+      <point x="37.33333333333337" y="16.0" />
+    </edge>
+    <edge source="MathFunc.FuncClass" target="MathFunc.MathFunc">
+      <point x="36.375" y="-16.0" />
+      <point x="155.67686170212778" y="266.0" />
+      <point x="494.5970744680851" y="266.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="GUI.Main" target="MathFunc.FuncClass">
+      <point x="-22.333333333333314" y="-16.0" />
+      <point x="300.5545212765959" y="753.0" />
+      <point x="95.05186170212778" y="753.0" />
+      <point x="-24.25" y="16.0" />
+    </edge>
+    <edge source="GUI.RightBottomPane" target="javax.swing.JScrollPane">
+      <point x="0.0" y="-16.0" />
+      <point x="747.0518617021278" y="425.0" />
+      <point x="703.5762411347519" y="425.0" />
+      <point x="27.25" y="16.0" />
+    </edge>
+    <edge source="GUI.MainFrame" target="GUI.MainPane">
+      <point x="35.99999999999994" y="-16.0" />
+      <point x="366.50310283687963" y="671.0" />
+      <point x="855.7628546099291" y="671.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="GUI.MainPane" target="javax.swing.JSplitPane">
+      <point x="33.66666666666663" y="-16.0" />
+      <point x="889.4295212765958" y="589.0" />
+      <point x="1000.8018617021278" y="589.0" />
+      <point x="38.25" y="16.0" />
+    </edge>
+    <edge source="GUI.PopupFrame" target="MathFunc.FuncClass">
+      <point x="-44.25" y="-16.0" />
+      <point x="828.0518617021278" y="348.0" />
+      <point x="143.55186170212778" y="348.0" />
+      <point x="24.25" y="16.0" />
+    </edge>
+    <edge source="MathFunc.OptionPara" target="MathFunc.Para">
+      <point x="0.0" y="-16.0" />
+      <point x="739.7220744680851" y="184.0" />
+      <point x="668.773936170213" y="184.0" />
+      <point x="23.25" y="16.0" />
+    </edge>
+    <edge source="GUI.MainFrame" target="javax.swing.JFrame">
+      <point x="-36.00000000000006" y="-16.0" />
+      <point x="294.50310283687963" y="671.0" />
+      <point x="207.55186170212778" y="671.0" />
+      <point x="-19.75" y="16.0" />
+    </edge>
+    <edge source="GUI.LeftPane" target="javax.swing.JScrollPane">
+      <point x="0.0" y="-16.0" />
+      <point x="605.5518617021278" y="425.0" />
+      <point x="649.0762411347519" y="425.0" />
+      <point x="-27.25" y="16.0" />
+    </edge>
+    <edge source="MathFunc.FuncClass" target="Others.Others">
+      <point x="-36.375" y="-16.0" />
+      <point x="82.92686170212778" y="266.0" />
+      <point x="26.0" y="266.0" />
+      <point x="26.0" y="72.0" />
+      <point x="90.90691489361711" y="72.0" />
+      <point x="-25.33333333333337" y="16.0" />
+    </edge>
+    <edge source="GUI.OpenFile" target="javax.swing.JFileChooser">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="GUI.PopupFrame" target="javax.swing.JFrame">
+      <point x="-14.75" y="-16.0" />
+      <point x="857.5518617021278" y="338.0" />
+      <point x="247.05186170212778" y="338.0" />
+      <point x="19.75" y="16.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7391304347826086" x="507.5" y="405.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
