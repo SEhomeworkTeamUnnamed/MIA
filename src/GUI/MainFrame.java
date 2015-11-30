@@ -19,7 +19,6 @@ public class MainFrame extends JFrame {
         setJMenuBar(new MainMenu(treeModel,tree,RootClass));
 
         getContentPane().add(new MainPane(treeModel, tree, RootClass),BorderLayout.CENTER);
-cdcd
 
         pack();
         setVisible(true);
