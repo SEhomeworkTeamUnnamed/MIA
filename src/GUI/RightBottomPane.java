@@ -9,7 +9,7 @@ public class RightBottomPane extends JScrollPane{
     RightBottomPane(){
         super();
 
-        JPanel jPanel=new JPanel();
-        setViewportView(jPanel);
+        DefaultWelcomePane DWP=new DefaultWelcomePane();
+        setViewportView(DWP);
     }
 }
