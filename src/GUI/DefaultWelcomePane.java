@@ -18,18 +18,52 @@ public class DefaultWelcomePane extends JPanel{
     DefaultWelcomePane(){
         setPreferredSize(new Dimension(450, 360));
 
-        GridBagLayout lay=new GridBagLayout();  //创建网格组布局方式对象
-        setLayout(lay);
+        JLabel bgp=new JLabel();
+        bgp.setIcon(new ImageIcon(System.getProperty("user.dir")+"\\root\\picture\\123.png"));
+        bgp.setText("欢迎使用MIA！");
+        bgp.setFont(new Font("华文彩云", Font.BOLD, 30));
+        bgp.setForeground(Color.BLUE);
+        bgp.setHorizontalTextPosition(0);
+        bgp.setVerticalTextPosition(0);
+
+        /*JLabel BackgroundPic=new JLabel(new ImageIcon(System.getProperty("user.dir")+"\\root\\picture\\123.jpg"));
+
+        JLabel title=new JLabel("欢迎使用MIA！");
+        title.setFont(new Font("华文彩云", Font.BOLD, 30));
+        title.setForeground(Color.BLUE);
+        title.setOpaque(false);
+        //title.setContentAreaFilled(false);*/
+
+        //创建一个水平箱子，用glue把title推到中央
+        /*Box hBox=Box.createHorizontalBox();
+        hBox.add(Box.createGlue().setBackground(););
+        hBox.add(title);
+        hBox.add(Box.createGlue());*/
+        //创建一个垂直箱子，用glue把title推到中央
+        /*Box vBox=Box.createVerticalBox();
+        vBox.add(Box.createGlue());
+        vBox.add(hBox);
+        vBox.add(Box.createGlue());*/
+
+        setLayout(new BorderLayout());
+        add(bgp, "Center");   //add(title);
+
+
+        //GridBagLayout lay=new GridBagLayout();  //创建网格组布局方式对象
+        //setLayout(lay);
+        /*setLayout(new BorderLayout());
 
         JLabel title=new JLabel("欢迎使用MIA！");
 
+        add(title, "Center");*/
+
         //初始化constraint
-        GridBagConstraints constraints=new GridBagConstraints();
+        /*GridBagConstraints constraints=new GridBagConstraints();
         constraints.fill=GridBagConstraints.NONE;
         constraints.anchor=GridBagConstraints.CENTER;
         constraints.weightx=3;
         constraints.weighty=4;
-        add(title, constraints, 0, 0, 20, 10);
+        add(title, constraints, 0, 0, 20, 10);*/
 
     }
 }

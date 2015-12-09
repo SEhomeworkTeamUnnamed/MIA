@@ -68,7 +68,7 @@ public class PopupFrameTest extends JFrame {
 
         JPanel upPane=new JPanel();
         JPanel botPane=new JPanel();
-        upPane.setLayout(new GridLayout(4,1));
+        upPane.setLayout(new GridLayout(2,2));
         upPane.add(jLabel1);
         upPane.add(jTextField);
         upPane.add(jLabel2);
