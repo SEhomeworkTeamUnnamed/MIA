@@ -57,4 +57,8 @@ public class MathObject {
     public String toString(){
         return ObjectName;
     }
+
+    public String show(){
+        return "";
+    }
 }

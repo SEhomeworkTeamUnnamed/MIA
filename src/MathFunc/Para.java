@@ -23,7 +23,7 @@ public class Para extends MathObject {
 
     public Para(){
         super();
-        ParaValue="";
+        ParaValue="default";
         ShowName=false;
         NumOfValues=0;
         AllParaValue=new String[20];
@@ -36,7 +36,7 @@ public class Para extends MathObject {
         ParaValue = NewValue;
     }
     public void setAllParaValue(String[] NewValues){
-        int NumOfValues = NewValues.length;
+        NumOfValues = NewValues.length;
         for(int i = 0; i < NumOfValues; i++){
             AllParaValue[i] = NewValues[i];
         }
@@ -171,5 +171,9 @@ public class Para extends MathObject {
 
         String PathOfNotes = UpperPath+"\\"+ObjectName+"notes.txt";
         otherFuncs.writeFile(PathOfNotes, Notes, false);
+    }
+    public String show(){
+
+        return "";
     }
 }

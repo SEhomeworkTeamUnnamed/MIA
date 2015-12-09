@@ -16,10 +16,14 @@ public class MathFunc extends MathObject {
 
     Para[] AllPara;
     int NumOfPara;
+    String MainField;
+    VarRangePara VarRange;
 
     public MathFunc() {
         super();
         NumOfPara = 0;
+        MainField = "";
+        VarRange = new VarRangePara();
     }
 
     public MathFunc(String upperPath, String FuncName){
@@ -27,6 +31,8 @@ public class MathFunc extends MathObject {
         this.setUpperPath(upperPath);
         this.setObjectName(FuncName);
         NumOfPara = 0;
+        MainField = "";
+        VarRange = new VarRangePara();
     }
 
     public void setAllPara(Para[] NewParas) {
@@ -61,6 +67,10 @@ public class MathFunc extends MathObject {
 
     public int getNumOfPara() {
         return NumOfPara;
+    }
+
+    public void setMainField(String mainField) {
+        MainField = mainField;
     }
 
     public Para[] getAllPara() {
@@ -241,6 +251,10 @@ public class MathFunc extends MathObject {
         }
     }
 
+    public String getMainField() {
+        return MainField;
+    }
+
     public String getPathOfPara(){
         return UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"Para.txt";
     }
@@ -281,5 +295,15 @@ public class MathFunc extends MathObject {
 
     public int isClassOrFunc(){
         return MathObject.IS_FUNC;
+    }
+
+    public String show(){
+        String toShow = "";
+        toShow = toShow+this.ObjectName+"["+MainField+","+VarRange.show();
+        for (int i = 0; i < NumOfPara; i++) {
+            toShow = toShow + AllPara[i].show();
+        }
+        toShow = toShow + "]";
+        return toShow;
     }
 }
