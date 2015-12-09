@@ -27,6 +27,7 @@ public class testframe extends JFrame {
         Dimension screenSize=kit.getScreenSize();
         setLocation(screenSize.width/4,screenSize.height/4);
 
+
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 //int option =

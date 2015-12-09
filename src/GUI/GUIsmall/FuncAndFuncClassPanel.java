@@ -2,6 +2,8 @@ package GUI.GUIsmall;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by 张思源 on 2015/12/9.
@@ -15,6 +17,13 @@ public class FuncAndFuncClassPanel extends JSplitPane{
         setContinuousLayout(true);
         setPreferredSize(new Dimension(450, 360));
         setOrientation(JSplitPane.HORIZONTAL_SPLIT);
+        JButton b1=new JButton("first");
+        b1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
 
         //测试代码
         /*JButton b1=new JButton("first");

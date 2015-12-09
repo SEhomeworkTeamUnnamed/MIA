@@ -89,7 +89,7 @@ public class PopupFrameTest extends JFrame {
         jSPane.setDividerLocation(30);
 
         RecursiveSplitPane recursiveSplitPane=new RecursiveSplitPane(upPane, botPane, 1);
-        for (int i = 0; i < 0; i++) {
+        for (int i = 0; i < 2; i++) {
             recursiveSplitPane=recursiveSplitPane.addBotPane(botPane, i+2);
         }
         //System.out.println(((RecursiveSplitPane) recursiveSplitPane.getTopComponent()).getDividerLocation());
