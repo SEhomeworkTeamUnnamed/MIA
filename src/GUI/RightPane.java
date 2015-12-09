@@ -10,16 +10,21 @@ import java.awt.*;
  * Created by IIIS on 11/7/2015.
  */
 public class RightPane extends JSplitPane{
-    RightPane(DefaultTreeModel treeModel, JTree tree, FuncClass RootClass){
+    RightTopPane rightTopPane;
+    RightBottomPane rightBottomPane;
+
+    RightPane(JTree tree, FuncClass RootClass){
         super();
+        rightTopPane = new RightTopPane(tree,RootClass);
+        rightBottomPane = new RightBottomPane();
 
         setOneTouchExpandable(true);
         setContinuousLayout(true);
         setPreferredSize(new Dimension(447, 400));
         setOrientation(JSplitPane.VERTICAL_SPLIT);
 
-        setTopComponent(new RightTopPane(treeModel,tree,RootClass));
-        setBottomComponent(new RightBottomPane());
+        setTopComponent(rightTopPane);
+        setBottomComponent(rightBottomPane);
 
         setDividerSize(3);
         setDividerLocation(40);

@@ -574,6 +574,7 @@ public class FuncClass extends MathObject {
     public void deleteSubClass(String SubClassName) {
         FuncClass[] tempFuncClass = new FuncClass[NumOfClass - 1];
         int index = this.getIndexOfClass(SubClassName);
+        String classToDelete = AllFuncClass[index].getObjectName();
         if (index >= 0) {
             for (int i = 0; i < index; i++) {
                 tempFuncClass[i] = AllFuncClass[i];
@@ -585,7 +586,7 @@ public class FuncClass extends MathObject {
             AllFuncClass = tempFuncClass;
             NumOfClass--;
             addClassToDelete(SubClassName);
-            System.out.println("func deleted");
+            System.out.println(classToDelete+ " subclass deleted");
         }
     }
 
@@ -677,6 +678,7 @@ public class FuncClass extends MathObject {
     public void deleteMathFunc(String FuncName) {
         MathFunc[] tempMathFunc = new MathFunc[NumOfFunc - 1];
         int index = this.getIndexOfFunc(FuncName);
+        String funcToDelete = AllMathFunc[index].getObjectName();
         if (index >= 0) {
             for (int i = 0; i < index; i++) {
                 tempMathFunc[i] = AllMathFunc[i];
@@ -688,7 +690,7 @@ public class FuncClass extends MathObject {
             AllMathFunc = tempMathFunc;
             NumOfFunc--;
             addFuncToDelete(FuncName);
-            System.out.println("func deleted");
+            System.out.println(funcToDelete+" func deleted");
         }
     }
 

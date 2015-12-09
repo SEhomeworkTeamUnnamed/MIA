@@ -19,25 +19,26 @@ import java.awt.event.ActionListener;
  * Created by IIIS on 11/7/2015.
  */
 public class RightTopPane extends JSplitPane {
-    public RightTopPane(DefaultTreeModel treeModel, JTree tree, FuncClass RootClass){
+    public RightTopPane(JTree tree, FuncClass RootClass){
         super();
+        final DefaultTreeModel treeModel = (DefaultTreeModel)tree.getModel();
 
-        JButton b1=new JButton("添加函数类");
-        JButton b2=new JButton("添加函数");
-        JButton b22=new JButton("添加参数");//method not implement yet
-        JButton b3=new JButton("删除");
-        b1.setEnabled(false);
-        b2.setEnabled(false);
-        b22.setEnabled(false);
-        b3.setEnabled(false);
+        JButton addFuncClassButt=new JButton("添加函数类");
+        JButton addMathFuncButt=new JButton("添加函数");
+        JButton addParaButt=new JButton("添加参数");//method not implement yet
+        JButton deleteButt=new JButton("删除");
+        addFuncClassButt.setEnabled(false);
+        addMathFuncButt.setEnabled(false);
+        addParaButt.setEnabled(false);
+        deleteButt.setEnabled(false);
 
         Container con=new Container();
         con.setLayout(new FlowLayout());
-        con.add(b1);con.add(b2);con.add(b22);
+        con.add(addFuncClassButt);con.add(addMathFuncButt);con.add(addParaButt);
 
         Container con2=new Container();
         con2.setLayout(new FlowLayout());
-        con2.add(b3);
+        con2.add(deleteButt);
 
 
         setOneTouchExpandable(true);
@@ -52,41 +53,37 @@ public class RightTopPane extends JSplitPane {
         tree.addTreeSelectionListener(new TreeSelectionListener() {
             @Override
             public void valueChanged(TreeSelectionEvent e) {
-                b3.setEnabled(true);
+                deleteButt.setEnabled(true);
                 TreePath treePath=tree.getSelectionPath();
                 try {
                     DefaultMutableTreeNode selectionNode =
                             (DefaultMutableTreeNode) treePath.getLastPathComponent();
+                    MathObject selectionNodeObject = (MathObject)selectionNode.getUserObject();
                     String[] Path = treePath2String(treePath.getParentPath());
-                    int ClassOrFunc;
-                    try{
-                        ClassOrFunc = ((FuncClass)selectionNode.getUserObject()).isClassOrFunc();
-                    }catch (ClassCastException ce){
-                        ClassOrFunc = ((MathFunc)selectionNode.getUserObject()).isClassOrFunc();
-                    }
-                    if (ClassOrFunc == MathObject.IS_CLASS) {
-                        b1.setEnabled(true);
-                        b2.setEnabled(true);
-                        b22.setEnabled(false);
+
+                    if (selectionNodeObject instanceof FuncClass) {
+                        addFuncClassButt.setEnabled(true);
+                        addMathFuncButt.setEnabled(true);
+                        addParaButt.setEnabled(false);
                     } else {
-                        b1.setEnabled(false);
-                        b2.setEnabled(false);
-                        b22.setEnabled(true);
+                        addFuncClassButt.setEnabled(false);
+                        addMathFuncButt.setEnabled(false);
+                        addParaButt.setEnabled(true);
                     }
                 }catch(NullPointerException eNull){
-                    b1.setEnabled(true);
-                    b2.setEnabled(true);
-                    b22.setEnabled(false);
-                    b3.setEnabled(false);
+                    addFuncClassButt.setEnabled(true);
+                    addMathFuncButt.setEnabled(true);
+                    addParaButt.setEnabled(false);
+                    deleteButt.setEnabled(false);
                 }
 
             }
         });
 
-        b1.addActionListener(new ActionListener() {
+        addFuncClassButt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new PopupFrame("","请输入函数类名：",treeModel,tree,RootClass,PopupFrame.ADD_CLASS);
+                new PopupFrame("", "请输入函数类名：", treeModel, tree, RootClass, PopupFrame.ADD_CLASS);
                 //DefaultMutableTreeNode parentNode=null;
                 //DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new class");
                 //newNode.setAllowsChildren(true);
@@ -107,10 +104,10 @@ public class RightTopPane extends JSplitPane {
             }
         });
 
-        b2.addActionListener(new ActionListener() {
+        addMathFuncButt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new PopupFrame("","请输入函数名：",treeModel,tree,RootClass,PopupFrame.ADD_FUNC);
+                new PopupFrame("", "请输入函数名：", treeModel, tree, RootClass, PopupFrame.ADD_FUNC);
                 //DefaultMutableTreeNode parentNode=null;
                 //DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new func");
                 //newNode.setAllowsChildren(true);
@@ -129,38 +126,32 @@ public class RightTopPane extends JSplitPane {
             }
         });
 
-        b3.addActionListener(new ActionListener() {
+        deleteButt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                TreePath treePath=tree.getSelectionPath();
-                if(treePath!=null){
-                    DefaultMutableTreeNode selectionNode=(DefaultMutableTreeNode)treePath.getLastPathComponent();
+                TreePath treePath = tree.getSelectionPath();
+                if (treePath != null) {
+                    DefaultMutableTreeNode selectionNode = (DefaultMutableTreeNode) treePath.getLastPathComponent();
 
-                    TreeNode parent=(TreeNode)selectionNode.getParent();
-                    if(parent!=null){
+                    TreeNode parent = (TreeNode) selectionNode.getParent();
+                    MathObject selectionNodeObject = (MathObject)selectionNode.getUserObject();
+                    if (parent != null) {
                         treeModel.removeNodeFromParent(selectionNode);
 
-                        String[] Path=treePath2String(treePath.getParentPath());
+                        String[] Path = treePath2String(treePath.getParentPath());
 
-                        int ClassOrFunc;
-                        try{
-                            ClassOrFunc = ((FuncClass)selectionNode.getUserObject()).isClassOrFunc();
-                        }catch (ClassCastException ce){
-                            ClassOrFunc = ((MathFunc)selectionNode.getUserObject()).isClassOrFunc();
-                        }
-                        if(ClassOrFunc == MathObject.IS_FUNC){
+                        if (selectionNodeObject instanceof MathFunc) {
                             RootClass.deleteMathFunc(Path, selectionNode.toString());
                             //RootClass.outputFile();
-                        }
-                        else if(ClassOrFunc == MathObject.IS_CLASS){
-                            RootClass.deleteSubClass(Path,selectionNode.toString());
+                        } else if (selectionNodeObject instanceof FuncClass) {
+                            RootClass.deleteSubClass(Path, selectionNode.toString());
                             //RootClass.outputFile();
                         }
 
-                        b1.setEnabled(false);
-                        b2.setEnabled(false);
-                        b22.setEnabled(false);
-                        b3.setEnabled(false);
+                        addFuncClassButt.setEnabled(false);
+                        addMathFuncButt.setEnabled(false);
+                        addParaButt.setEnabled(false);
+                        deleteButt.setEnabled(false);
                         //System.out.print(selectionNode.toString()+"\n");
                     }
                 }

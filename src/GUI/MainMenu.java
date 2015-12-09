@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
  * Created by IIIS on 11/7/2015.
  */
 public class MainMenu extends JMenuBar {
-    MainMenu(DefaultTreeModel treeModel,JTree tree,FuncClass RootClass) {
+    MainMenu(JTree tree,FuncClass RootClass) {
         super();
 
         JMenu menu1 = new JMenu("нд╪Ч");
@@ -25,6 +25,8 @@ public class MainMenu extends JMenuBar {
         menu1.addSeparator();
         menu1.add(item4);
         add(menu1);
+
+        final DefaultTreeModel treeModel = (DefaultTreeModel)tree.getModel();
 
         item1.addActionListener(new ActionListener() {
             @Override

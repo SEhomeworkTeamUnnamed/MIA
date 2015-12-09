@@ -25,6 +25,10 @@ public class PopupFrame extends JFrame {
     public static int ADD_CLASS=0;
     public static int ADD_FUNC=1;
 
+    class LowerPopupPane extends JSplitPane{
+
+    }
+
     public PopupFrame(String FrameName,String Instruction,
                       DefaultTreeModel treeModel, JTree tree,
                       FuncClass RootClass, int ClassOrFunc){
@@ -101,10 +105,46 @@ public class PopupFrame extends JFrame {
         jButtonAffirm.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setVisible(false);
 
                 DefaultMutableTreeNode parentNode=null;
-                if(UserInput.equals(null)) {
+                try{
+                    if(UserInput.equals(null))
+                    {}
+                    else{
+                        setVisible(false);
+                        TreePath parentPath=tree.getSelectionPath();
+                        parentNode=(DefaultMutableTreeNode)(parentPath.getLastPathComponent());
+                        String parentClassName = ((FuncClass) parentNode.getUserObject()).getObjectName();
+                        String newUpperPath = ((FuncClass) parentNode.getUserObject()).getUpperPath()+"\\C"+parentClassName;
+
+
+                        if(ClassOrFunc==PopupFrame.ADD_CLASS) {
+                            FuncClass newSubClass=new FuncClass(newUpperPath,UserInput,1);
+                            RootClass.addSubClass(treePath2String(parentPath), newSubClass);
+
+                            DefaultMutableTreeNode newNode = new DefaultMutableTreeNode(newSubClass);
+
+                            newNode.setAllowsChildren(true);
+                            treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
+                            tree.scrollPathToVisible(new TreePath(newNode.getPath()));
+                        }
+                        else if(ClassOrFunc==PopupFrame.ADD_FUNC){
+                            MathFunc newMathFunc=new MathFunc(newUpperPath,UserInput);
+                            RootClass.addMathFunc(treePath2String(parentPath), newMathFunc);
+
+                            DefaultMutableTreeNode newNode = new DefaultMutableTreeNode(newMathFunc);
+
+                            newNode.setAllowsChildren(true);
+                            treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
+                            tree.scrollPathToVisible(new TreePath(newNode.getPath()));
+                        }
+                    }
+
+                }catch (NullPointerException nPE){
+
+                }
+                /*if(UserInput.equals(null)) {
+
                     if(ClassOrFunc==PopupFrame.ADD_CLASS) {
                         DefaultMutableTreeNode newNode = new DefaultMutableTreeNode("new class");
 
@@ -129,35 +169,8 @@ public class PopupFrame extends JFrame {
                         RootClass.addMathFunc(treePath2String(parentPath), "new class");
                         tree.scrollPathToVisible(new TreePath(newNode.getPath()));
                     }
-                }
-                else{
-                    TreePath parentPath=tree.getSelectionPath();
-                    parentNode=(DefaultMutableTreeNode)(parentPath.getLastPathComponent());
-                    String parentClassName = ((FuncClass) parentNode.getUserObject()).getObjectName();
-                    String newUpperPath = ((FuncClass) parentNode.getUserObject()).getUpperPath()+"\\C"+parentClassName;
 
-
-                    if(ClassOrFunc==PopupFrame.ADD_CLASS) {
-                        FuncClass newSubClass=new FuncClass(newUpperPath,UserInput,1);
-                        RootClass.addSubClass(treePath2String(parentPath), newSubClass);
-
-                        DefaultMutableTreeNode newNode = new DefaultMutableTreeNode(newSubClass);
-
-                        newNode.setAllowsChildren(true);
-                        treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
-                        tree.scrollPathToVisible(new TreePath(newNode.getPath()));
-                    }
-                    else if(ClassOrFunc==PopupFrame.ADD_FUNC){
-                        MathFunc newMathFunc=new MathFunc(newUpperPath,UserInput);
-                        RootClass.addMathFunc(treePath2String(parentPath), newMathFunc);
-
-                        DefaultMutableTreeNode newNode = new DefaultMutableTreeNode(newMathFunc);
-
-                        newNode.setAllowsChildren(true);
-                        treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
-                        tree.scrollPathToVisible(new TreePath(newNode.getPath()));
-                    }
-                }
+                }*/
             }
         });
 

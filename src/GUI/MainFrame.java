@@ -12,13 +12,18 @@ import java.awt.event.WindowEvent;
  * Created by IIIS on 11/7/2015.
  */
 public class MainFrame extends JFrame {
-    MainFrame(DefaultTreeModel treeModel, JTree tree, FuncClass RootClass,String FrameName){
+    MainMenu mainMenu;
+    MainPane mainPane;
+
+    MainFrame(JTree tree, FuncClass RootClass,String FrameName){
 
         super(FrameName);
+        mainMenu = new MainMenu(tree,RootClass);
+        mainPane = new MainPane(tree, RootClass);
 
-        setJMenuBar(new MainMenu(treeModel,tree,RootClass));
+        setJMenuBar(mainMenu);
 
-        getContentPane().add(new MainPane(treeModel, tree, RootClass),BorderLayout.CENTER);
+        getContentPane().add(mainPane, BorderLayout.CENTER);
 
         pack();
         setVisible(true);
