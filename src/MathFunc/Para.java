@@ -172,8 +172,11 @@ public class Para extends MathObject {
         String PathOfNotes = UpperPath+"\\"+ObjectName+"notes.txt";
         otherFuncs.writeFile(PathOfNotes, Notes, false);
     }
-    public String show(){
 
+    public String show(){
+        if(ShowName){
+            return ObjectName+"->"+ParaValue;
+        }
         return "";
     }
 }

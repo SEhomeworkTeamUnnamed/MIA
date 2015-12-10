@@ -8,6 +8,7 @@ public class VarRangePara extends Para {
     double VarMin;
     double VarMax;
     double VarStep;
+    boolean HasStep;
 
     public VarRangePara(){
         super();
@@ -15,6 +16,10 @@ public class VarRangePara extends Para {
         VarMin=0;
         VarMax=0;
         VarStep=0;
+    }
+
+    public boolean IfHasStep(){
+        return HasStep;
     }
 
     public String show(){

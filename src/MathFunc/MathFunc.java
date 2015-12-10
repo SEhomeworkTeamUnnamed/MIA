@@ -17,13 +17,15 @@ public class MathFunc extends MathObject {
     Para[] AllPara;
     int NumOfPara;
     String MainField;
-    VarRangePara VarRange;
+    String MainFieldNote;
+    VarRangePara[] AllVarRangePara = new VarRangePara[10];
+    int NumOfVarRangePara;
 
     public MathFunc() {
         super();
         NumOfPara = 0;
+        NumOfVarRangePara = 0;
         MainField = "";
-        VarRange = new VarRangePara();
     }
 
     public MathFunc(String upperPath, String FuncName){
@@ -31,8 +33,8 @@ public class MathFunc extends MathObject {
         this.setUpperPath(upperPath);
         this.setObjectName(FuncName);
         NumOfPara = 0;
+        NumOfVarRangePara = 0;
         MainField = "";
-        VarRange = new VarRangePara();
     }
 
     public void setAllPara(Para[] NewParas) {
@@ -40,6 +42,27 @@ public class MathFunc extends MathObject {
         for (int i = 0; i < NumOfPara; i++) {
             AllPara[i] = NewParas[i];
         }
+    }
+
+    public String getMainFieldNote() {
+        return MainFieldNote;
+    }
+
+
+    public void setNumOfPara(int numOfPara) {
+        NumOfPara = numOfPara;
+    }
+
+    public void setMainFieldNote(String mainFieldNote) {
+        MainFieldNote = mainFieldNote;
+    }
+
+    public void setAllVarRangePara(VarRangePara[] allVarRangePara) {
+        AllVarRangePara = allVarRangePara;
+    }
+
+    public void setNumOfVarRangePara(int numOfVarRangePara) {
+        NumOfVarRangePara = numOfVarRangePara;
     }
 
     public void addPara(Para NewPara) {
@@ -69,6 +92,10 @@ public class MathFunc extends MathObject {
         return NumOfPara;
     }
 
+    public int getNumOfVarRangePara() {
+        return NumOfVarRangePara;
+    }
+
     public void setMainField(String mainField) {
         MainField = mainField;
     }
@@ -77,12 +104,19 @@ public class MathFunc extends MathObject {
         return AllPara;
     }
 
+    public VarRangePara[] getAllVarRangePara() {
+        return AllVarRangePara;
+    }
+
     public void print() {
         System.out.print("\t" + ObjectName + " " + UseFreq);
         System.out.print("\tFunc notes: ");
         System.out.print(Notes + "\n\t\tParameters:\n");
         for (int i = 0; i < NumOfPara; i++) {
             AllPara[i].print();
+        }
+        for (int i = 0; i < NumOfVarRangePara; i++) {
+            AllVarRangePara[i].print();
         }
         System.out.println("\t------end of Func "+ObjectName);
     }
@@ -299,7 +333,7 @@ public class MathFunc extends MathObject {
 
     public String show(){
         String toShow = "";
-        toShow = toShow+this.ObjectName+"["+MainField+","+VarRange.show();
+        toShow = toShow+this.ObjectName+"["+MainField+",";
         for (int i = 0; i < NumOfPara; i++) {
             toShow = toShow + AllPara[i].show();
         }
