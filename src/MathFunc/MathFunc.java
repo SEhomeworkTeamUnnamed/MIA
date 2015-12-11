@@ -24,7 +24,8 @@ public class MathFunc extends MathObject {
     public MathFunc() {
         super();
         NumOfPara = 0;
-        NumOfVarRangePara = 0;
+        NumOfVarRangePara = 1;
+        AllVarRangePara[0] = new VarRangePara();
         MainField = "";
     }
 
@@ -33,7 +34,8 @@ public class MathFunc extends MathObject {
         this.setUpperPath(upperPath);
         this.setObjectName(FuncName);
         NumOfPara = 0;
-        NumOfVarRangePara = 0;
+        NumOfVarRangePara = 1;
+        AllVarRangePara[0] = new VarRangePara();
         MainField = "";
     }
 

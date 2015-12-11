@@ -19,10 +19,10 @@ public class DefaultWelcomePane extends JPanel{
         setPreferredSize(new Dimension(450, 360));
 
         JLabel bgp=new JLabel();
-        bgp.setIcon(new ImageIcon(System.getProperty("user.dir")+"\\root\\picture\\123.png"));
-        bgp.setText("欢迎使用MIA！");
-        bgp.setFont(new Font("华文彩云", Font.BOLD, 30));
-        bgp.setForeground(Color.BLUE);
+        //bgp.setIcon(new ImageIcon(System.getProperty("user.dir")+"\\root\\picture\\123.png"));
+        bgp.setText("欢迎使用Mathematica Input Assistant！");
+        bgp.setFont(new Font("微软雅黑", Font.BOLD, 30));
+        //bgp.setForeground(Color.BLUE);
         bgp.setHorizontalTextPosition(0);
         bgp.setVerticalTextPosition(0);
 

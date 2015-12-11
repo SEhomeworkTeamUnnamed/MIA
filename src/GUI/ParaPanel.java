@@ -115,13 +115,17 @@ public class ParaPanel extends JSplitPane{
         JPanel FuncIntrPanel=new JPanel();
         JTextArea FuncIntrTextArea=new JTextArea(InfoFunc.getNotes(), 5, 40);
         FuncIntrTextArea.setEnabled(false);
+        //something wrong here 20151211
         FuncIntrPanel.setLayout(new BorderLayout());
-        add(FuncIntrTextArea, "Center");
-
+        //add(FuncIntrTextArea, "Center");
+        FuncIntrPanel.add(FuncIntrTextArea);
         ArrayNum1=InfoFunc.getNumOfVarRangePara();
         ArrayNum2=InfoFunc.getNumOfPara();
         ArrayPanel1=new JPanel[ArrayNum1];
         ArrayPanel2=new JPanel[ArrayNum2];
+        if (ArrayPanel1 == null) {
+            System.out.print("hahaha\n");
+        }
 
         JPanel MainFieldPanel=new JPanel();
         JPanel LeftMainFieldPanel=new JPanel(); JPanel RightMainFieldPanel=new JPanel();
@@ -160,7 +164,7 @@ public class ParaPanel extends JSplitPane{
 
         for(int i=0; i<ArrayNum2; i++)
         {
-            SetOnePanel(InfoFunc.getAllVarRangePara()[i], ArrayPanel2[i]);
+            SetOnePanel(InfoFunc.getAllPara()[i], ArrayPanel2[i]);
         }
 
         Box vBox=Box.createVerticalBox();

@@ -16,6 +16,9 @@ public class VarRangePara extends Para {
         VarMin=0;
         VarMax=0;
         VarStep=0;
+        HasStep=false;
+        setObjectName("I'm a variable! yeah!");
+        setNotes("I have no notes");
     }
 
     public boolean IfHasStep(){
