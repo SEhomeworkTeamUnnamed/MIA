@@ -141,7 +141,7 @@ public class PopupFrame extends JFrame {
                     }
 
                 }catch (NullPointerException nPE){
-
+                    nPE.printStackTrace();
                 }
                 /*if(UserInput.equals(null)) {
 
