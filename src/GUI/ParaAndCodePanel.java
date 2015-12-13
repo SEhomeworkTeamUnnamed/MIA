@@ -1,6 +1,7 @@
 package GUI;
 
 import MathFunc.*;
+import com.sun.deploy.panel.JavaPanel;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -17,12 +18,16 @@ import java.awt.event.ActionListener;
  */
 public class ParaAndCodePanel extends JSplitPane{
 
+    JButton CommitBotton;
     public class CodeGenePanel extends JPanel{
         JTextField CodeGeneTextField;
         CodeGenePanel(){
+            CommitBotton=new JButton("生成代码");
             CodeGeneTextField=new JTextField(40);
-            setLayout(new BorderLayout());
-            add(CodeGeneTextField, "Center");
+            Box hBox=Box.createHorizontalBox();
+            hBox.add(CommitBotton); hBox.add(Box.createHorizontalStrut(10));    hBox.add(CodeGeneTextField);
+            //setLayout(new BorderLayout());
+            add(hBox);
 
             Document CodeGeneTextDoc=new DefaultStyledDocument();
             CodeGeneTextField.setDocument(CodeGeneTextDoc);
@@ -410,21 +415,24 @@ public class ParaAndCodePanel extends JSplitPane{
             vBox.add(MainFieldPanel);
             vBox.add(Box.createVerticalStrut(10));
 
-            vBox.add(ArrayPanel1[0]);
-            for(int i=0; i<ArrayNum1-1; i++){
-                //vBox.add(Box.createVerticalStrut(10));  //这里的10可以调整！
-                vBox.add(ArrayPanel1[i+1]);
+            if(ArrayPanel1.length !=0) {
+                vBox.add(ArrayPanel1[0]);
+                for (int i = 0; i < ArrayNum1 - 1; i++) {
+                    //vBox.add(Box.createVerticalStrut(10));  //这里的10可以调整！
+                    vBox.add(ArrayPanel1[i + 1]);
+                }
             }
 
             vBox.add(Box.createVerticalStrut(10));
 
-            vBox.add(ArrayPanel2[0]);
-            for(int i=0; i<ArrayNum2-1; i++){
-                //vBox.add(Box.createVerticalStrut(10));  //这里的10可以调整！
-                vBox.add(ArrayPanel2[i+1]);
+            if(ArrayPanel2.length!=0) {
+                vBox.add(ArrayPanel2[0]);
+                for (int i = 0; i < ArrayNum2 - 1; i++) {
+                    //vBox.add(Box.createVerticalStrut(10));  //这里的10可以调整！
+                    vBox.add(ArrayPanel2[i + 1]);
+                }
             }
 
-            JButton CommitBotton=new JButton("生成代码");
 
             CommitBotton.addActionListener(new ActionListener() {
                 @Override
@@ -433,8 +441,8 @@ public class ParaAndCodePanel extends JSplitPane{
                 }
             });
 
-            vBox.add(Box.createGlue());
-            vBox.add(CommitBotton);
+            //vBox.add(Box.createGlue());
+            //vBox.add(CommitBotton);
 
             JPanel FuncParaPanel=new JPanel();
             FuncParaPanel.setLayout(new BorderLayout());
@@ -465,12 +473,19 @@ public class ParaAndCodePanel extends JSplitPane{
         setOrientation(JSplitPane.VERTICAL_SPLIT);
 
         CGP = new CodeGenePanel();
-        setTopComponent(CGP);
         PP = new ParaPanel(InfoFunc);
-        setBottomComponent(PP);
+        setTopComponent(PP);
+        Box hBox=Box.createHorizontalBox();
+        hBox.add(CGP);
+        setBottomComponent(hBox);
 
         setDividerSize(3);
-        setDividerLocation(100);
+        //setDividerLocation(300);
+        /*Box vBox=Box.createVerticalBox();
+        vBox.add(PP);
+        vBox.add(Box.createVerticalStrut(10));
+        vBox.add(CGP);
+        add(vBox);*/
     }
 
 }

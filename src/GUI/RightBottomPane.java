@@ -64,10 +64,11 @@ public class RightBottomPane extends JScrollPane{
             LeftPanel.setLayout(new FlowLayout());
             LeftPanel.add(CaFBotton);
 
-            JTextArea CaFTextArea=new JTextArea(CaFNote, 5, 20);
+            JTextArea CaFTextArea=new JTextArea(CaFNote, 3, 15);
             CaFTextArea.setEnabled(false);
+            CaFTextArea.setLineWrap(true);
             RightPanel.setLayout(new FlowLayout());
-            RightPanel.add(CaFTextArea);
+            RightPanel.add(new JScrollPane(CaFTextArea));
 
             AimPanel.setLayout(new GridLayout(0,2));
             AimPanel.add(LeftPanel);    AimPanel.add(RightPanel);
@@ -78,32 +79,33 @@ public class RightBottomPane extends JScrollPane{
             super();
 
             ArrayNum=Math.max(CaFNames.length, CaFNotes.length);
-            ArrayPanel=new JPanel[ArrayNum];
-            for (int i = 0; i < ArrayNum; i++) {
-                ArrayPanel[i]=new JPanel();
-            }
-
-            //between are added by jwt on 20151211
-            //
-
-            for(int i=0; i<ArrayNum; i++)
-            {
-                int numOfSubClass = ParentFuncClass.getNumOfClass();
-                MathObject mathObjectToSend;
-                if(i < numOfSubClass ){
-                    mathObjectToSend = ParentFuncClass.getAllFuncClass()[i];
+            Box vBox = Box.createVerticalBox();
+            if(ArrayNum!=0) {
+                ArrayPanel = new JPanel[ArrayNum];
+                for (int i = 0; i < ArrayNum; i++) {
+                    ArrayPanel[i] = new JPanel();
                 }
-                else{
-                    mathObjectToSend = ParentFuncClass.getAllMathFunc()[i-numOfSubClass];
-                }
-                SetOnePanel(CaFNames[i], CaFNotes[i], ArrayPanel[i], mathObjectToSend, i);
-            }
 
-            Box vBox=Box.createVerticalBox();
-            vBox.add(ArrayPanel[0]);
-            for(int i=0; i<ArrayNum-1; i++){
-                vBox.add(Box.createVerticalStrut(10));  //这里的10可以调整！
-                vBox.add(ArrayPanel[i+1]);
+                //between are added by jwt on 20151211
+                //
+
+                for (int i = 0; i < ArrayNum; i++) {
+                    int numOfSubClass = ParentFuncClass.getNumOfClass();
+                    MathObject mathObjectToSend;
+                    if (i < numOfSubClass) {
+                        mathObjectToSend = ParentFuncClass.getAllFuncClass()[i];
+                    } else {
+                        mathObjectToSend = ParentFuncClass.getAllMathFunc()[i - numOfSubClass];
+                    }
+                    SetOnePanel(CaFNames[i], CaFNotes[i], ArrayPanel[i], mathObjectToSend, i);
+                }
+
+
+                vBox.add(ArrayPanel[0]);
+                for (int i = 0; i < ArrayNum - 1; i++) {
+                    vBox.add(Box.createVerticalStrut(10));  //这里的10可以调整！
+                    vBox.add(ArrayPanel[i + 1]);
+                }
             }
 
             JPanel CaFTopPanel=new JPanel();
@@ -112,7 +114,7 @@ public class RightBottomPane extends JScrollPane{
             ParentTextArea.setEnabled(false);
 
             CaFTopPanel.setLayout(new FlowLayout());
-            CaFTopPanel.add(ParentTextArea);
+            CaFTopPanel.add(new JScrollPane(ParentTextArea));
             CaFBottomPanel.setLayout(new BorderLayout());
             CaFBottomPanel.add(vBox, "Center");
 
@@ -121,7 +123,7 @@ public class RightBottomPane extends JScrollPane{
             //setPreferredSize(new Dimension(600, 400));
             setOrientation(JSplitPane.VERTICAL_SPLIT);
 
-            setTopComponent(CaFTopPanel);
+            setTopComponent(new JScrollPane(CaFTopPanel));
             setBottomComponent(CaFBottomPanel);
 
             setDividerSize(3);
