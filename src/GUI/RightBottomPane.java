@@ -33,11 +33,15 @@ public class RightBottomPane extends JScrollPane{
             CaFBotton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
+                    int parentRow = newRow;
                     newRow = newRow + row+1;
-                    System.out.println(row);
-                    System.out.println(jTree.getRowForPath(treePath));
-                    System.out.println(newRow);
+                    //System.out.println(row);
+                    //System.out.println(jTree.getRowForPath(treePath));
+                    //System.out.println(newRow);
                     jTree.expandRow(jTree.getRowForPath(treePath));
+                    for (int i = parentRow+1; i < newRow; i++) {
+                        jTree.collapseRow(i);
+                    }
                     jTree.expandRow(newRow);
 
                     //Object[] parentPathObject = treePath.getPath();
