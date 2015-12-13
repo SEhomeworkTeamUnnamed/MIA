@@ -48,7 +48,7 @@ public class RightTopPane extends JSplitPane {
         setDividerSize(3);
         setLeftComponent(con);
         setRightComponent(con2);
-        setDividerLocation(300);
+        setDividerLocation(350);
 
         tree.addTreeSelectionListener(new TreeSelectionListener() {
             @Override
@@ -87,7 +87,7 @@ public class RightTopPane extends JSplitPane {
                 DefaultMutableTreeNode selectionNode =
                         (DefaultMutableTreeNode) treePath.getLastPathComponent();
                 FuncClass selectionNodeObject = (FuncClass)selectionNode.getUserObject();
-                new PopupFrame("", "请输入函数类名：", treeModel, tree, selectionNodeObject, PopupFrame.ADD_CLASS);
+                new PopupFrame("", treeModel, tree, selectionNodeObject, PopupFrame.ADD_CLASS);
                 //DefaultMutableTreeNode parentNode=null;
                 //DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new class");
                 //newNode.setAllowsChildren(true);
@@ -115,7 +115,7 @@ public class RightTopPane extends JSplitPane {
                 DefaultMutableTreeNode selectionNode =
                         (DefaultMutableTreeNode) treePath.getLastPathComponent();
                 FuncClass selectionNodeObject = (FuncClass)selectionNode.getUserObject();
-                new PopupFrame("", "请输入函数名：", treeModel, tree, selectionNodeObject, PopupFrame.ADD_FUNC);
+                new PopupFrame("", treeModel, tree, selectionNodeObject, PopupFrame.ADD_FUNC);
                 //DefaultMutableTreeNode parentNode=null;
                 //DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new func");
                 //newNode.setAllowsChildren(true);

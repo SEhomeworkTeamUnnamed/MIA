@@ -2,6 +2,7 @@ package GUI;
 
 import MathFunc.FuncClass;
 import MathFunc.MathFunc;
+import org.omg.CORBA.COMM_FAILURE;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -22,55 +23,125 @@ import java.awt.event.WindowEvent;
  */
 public class PopupFrame extends JFrame {
     String UserInput;
+    String NoteInput;
     public static int ADD_CLASS=0;
     public static int ADD_FUNC=1;
+    JButton jButtonAffirm;
+    JButton jButtonCancel;
+    PopupPane popupPane;
+    JTextArea jTextArea;
 
-    class LowerPopupPane extends JSplitPane{
 
-    }
+    class LowerPopupPane extends JPanel{
+        LowerPopupPane(){
+            setLayout(new FlowLayout());
 
-    class UpperPopupPane extends JSplitPane{
-        UpperPopupPane(){
+            jButtonAffirm=new JButton("确认");
+            jButtonCancel=new JButton("取消");
+            add(jButtonAffirm);
+            add(jButtonCancel);
 
         }
 
     }
 
-    public PopupFrame(String FrameName,String Instruction,
+    class UpperPopupPane extends JPanel{
+        UpperPopupPane(int ClassOrFunc){
+            setLayout(new FlowLayout());
+
+            JLabel jLabel;
+            if(ClassOrFunc == PopupFrame.ADD_CLASS) {
+                jLabel = new JLabel("请输入函数类名：");
+            }
+            else{
+                jLabel = new JLabel("请输入函数名：");
+            }
+            JTextField jTextField=new JTextField(10);
+            add(jLabel);
+            add(jTextField);
+
+            Document doc=new DefaultStyledDocument();
+            jTextField.setDocument(doc);
+
+            doc.addDocumentListener(new DocumentListener() {
+                @Override
+                public void insertUpdate(DocumentEvent e) {
+                    UserInput=jTextField.getText();
+
+                }
+
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                    UserInput=jTextField.getText();
+
+                }
+
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                    UserInput=jTextField.getText();
+                }
+            });
+
+        }
+
+    }
+
+    class MidPopupPane extends JPanel{
+        MidPopupPane(int ClassOrFunc){
+            setLayout(new GridLayout(1,2));
+
+            JLabel jLabel;
+            if(ClassOrFunc == PopupFrame.ADD_CLASS) {
+                jLabel = new JLabel("请输入函数类的说明：");
+            }
+            else{
+                jLabel = new JLabel("请输入函数的说明：");
+            }
+            jTextArea = new JTextArea(3,10);
+            jTextArea.setLineWrap(true);
+
+            add(jLabel);
+            add(new JScrollPane(jTextArea));
+        }
+    }
+
+    class PopupPane extends JPanel{
+        LowerPopupPane botPane;
+        MidPopupPane midPopupPane;
+        UpperPopupPane upPane;
+        PopupPane(int ClassOrFunc){
+            setPreferredSize(new Dimension(320, 200));
+            setLayout(new FlowLayout());
+
+            upPane = new UpperPopupPane(ClassOrFunc);
+            midPopupPane = new MidPopupPane(ClassOrFunc);
+            botPane = new LowerPopupPane();
+
+            Box vBox = Box.createVerticalBox();
+            vBox.add(upPane);
+            vBox.add(Box.createVerticalStrut(10));
+            vBox.add(midPopupPane);
+            vBox.add(Box.createVerticalStrut(10));
+            vBox.add(botPane);
+
+            add(vBox);
+        }
+    }
+
+    public PopupFrame(String FrameName,
                       DefaultTreeModel treeModel, JTree tree,
                       FuncClass SelectedClass, int ClassOrFunc){
         super(FrameName);
 
-        setSize(270,110);
+        setSize(320,200);
         Toolkit kit=Toolkit.getDefaultToolkit();
         Dimension screenSize=kit.getScreenSize();
         setLocation(screenSize.width/4,screenSize.height/4);
 
-        JLabel jLabel=new JLabel(Instruction);
-        JTextField jTextField=new JTextField(10);
-        JButton jButtonAffirm=new JButton("确认");
-        JButton jButtonCancel=new JButton("取消");
 
-        JPanel upPane=new JPanel();
-        JPanel botPane=new JPanel();
-        upPane.add(jLabel);
-        upPane.add(jTextField);
-        botPane.add(jButtonAffirm);
-        botPane.add(jButtonCancel);
+        popupPane = new PopupPane(ClassOrFunc);
 
-
-        JSplitPane jSPane=new JSplitPane();
-
-        jSPane.setOneTouchExpandable(true);
-        jSPane.setContinuousLayout(true);
-        jSPane.setPreferredSize(new Dimension(270, 110));
-        jSPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
-        jSPane.setTopComponent(upPane);
-        jSPane.setBottomComponent(botPane);
-        jSPane.setDividerSize(3);
-        jSPane.setDividerLocation(30);
-
-        setContentPane(jSPane);
+        setContentPane(popupPane);
 
         setVisible(true);
 
@@ -82,27 +153,7 @@ public class PopupFrame extends JFrame {
         //    }
         //});
 
-        Document doc=new DefaultStyledDocument();
-        jTextField.setDocument(doc);
 
-        doc.addDocumentListener(new DocumentListener() {
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                UserInput=jTextField.getText();
-
-            }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                UserInput=jTextField.getText();
-
-            }
-
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-                UserInput=jTextField.getText();
-            }
-        });
 
         //addWindowListener(new WindowAdapter() {
         //    public void windowClosing(WindowEvent e) {
@@ -115,6 +166,12 @@ public class PopupFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 DefaultMutableTreeNode parentNode=null;
+                try{
+                    NoteInput = jTextArea.getText();
+                }catch(Exception ex){
+                    ex.printStackTrace();
+                    NoteInput = "";
+                }
                 try{
                     if(UserInput.equals(null))
                     {
@@ -131,6 +188,7 @@ public class PopupFrame extends JFrame {
 
                         if(ClassOrFunc==PopupFrame.ADD_CLASS) {
                             FuncClass newSubClass=new FuncClass(newUpperPath,UserInput,1);
+                            newSubClass.setNotes(NoteInput);
                             SelectedClass.addSubClass(newSubClass);
 
                             DefaultMutableTreeNode newNode = new DefaultMutableTreeNode(newSubClass);
@@ -141,6 +199,7 @@ public class PopupFrame extends JFrame {
                         }
                         else if(ClassOrFunc==PopupFrame.ADD_FUNC){
                             MathFunc newMathFunc=new MathFunc(newUpperPath,UserInput);
+                            newMathFunc.setNotes(NoteInput);
                             SelectedClass.addMathFunc(newMathFunc);
 
                             DefaultMutableTreeNode newNode = new DefaultMutableTreeNode(newMathFunc);
