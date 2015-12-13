@@ -129,30 +129,34 @@ public class RightTopPane extends JSplitPane {
         deleteButt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                TreePath treePath = tree.getSelectionPath();
-                if (treePath != null) {
-                    DefaultMutableTreeNode selectionNode = (DefaultMutableTreeNode) treePath.getLastPathComponent();
+                JOptionPane jOptionPane=new JOptionPane();
+                int UserChoice = jOptionPane.showConfirmDialog(deleteButt, "ÄãÈ·¶¨É¾³ýÂð£¿","", JOptionPane.YES_NO_OPTION);
+                if(UserChoice == 0) {
+                    TreePath treePath = tree.getSelectionPath();
+                    if (treePath != null) {
+                        DefaultMutableTreeNode selectionNode = (DefaultMutableTreeNode) treePath.getLastPathComponent();
 
-                    TreeNode parent = (TreeNode) selectionNode.getParent();
-                    MathObject selectionNodeObject = (MathObject)selectionNode.getUserObject();
-                    if (parent != null) {
-                        treeModel.removeNodeFromParent(selectionNode);
+                        TreeNode parent = (TreeNode) selectionNode.getParent();
+                        MathObject selectionNodeObject = (MathObject) selectionNode.getUserObject();
+                        if (parent != null) {
+                            treeModel.removeNodeFromParent(selectionNode);
 
-                        String[] Path = treePath2String(treePath.getParentPath());
+                            String[] Path = treePath2String(treePath.getParentPath());
 
-                        if (selectionNodeObject instanceof MathFunc) {
-                            RootClass.deleteMathFunc(Path, selectionNode.toString());
-                            //RootClass.outputFile();
-                        } else if (selectionNodeObject instanceof FuncClass) {
-                            RootClass.deleteSubClass(Path, selectionNode.toString());
-                            //RootClass.outputFile();
+                            if (selectionNodeObject instanceof MathFunc) {
+                                RootClass.deleteMathFunc(Path, selectionNode.toString());
+                                //RootClass.outputFile();
+                            } else if (selectionNodeObject instanceof FuncClass) {
+                                RootClass.deleteSubClass(Path, selectionNode.toString());
+                                //RootClass.outputFile();
+                            }
+
+                            addFuncClassButt.setEnabled(false);
+                            addMathFuncButt.setEnabled(false);
+                            addParaButt.setEnabled(false);
+                            deleteButt.setEnabled(false);
+                            //System.out.print(selectionNode.toString()+"\n");
                         }
-
-                        addFuncClassButt.setEnabled(false);
-                        addMathFuncButt.setEnabled(false);
-                        addParaButt.setEnabled(false);
-                        deleteButt.setEnabled(false);
-                        //System.out.print(selectionNode.toString()+"\n");
                     }
                 }
             }

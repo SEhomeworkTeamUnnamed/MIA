@@ -3,6 +3,10 @@ package GUI;
 import MathFunc.MathFunc;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.text.DefaultStyledDocument;
+import javax.swing.text.Document;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -124,7 +128,7 @@ public class ParaPanel extends JSplitPane{
         ArrayPanel1=new JPanel[ArrayNum1];
         ArrayPanel2=new JPanel[ArrayNum2];
         if (ArrayPanel1 == null) {
-            System.out.print("hahaha\n");
+            System.out.print("ArrayPanel1 is null!\n");
         }
 
         JPanel MainFieldPanel=new JPanel();
@@ -134,12 +138,30 @@ public class ParaPanel extends JSplitPane{
         LeftMainFieldPanel.setLayout(new FlowLayout());
         LeftMainFieldPanel.add(MainFieldTextArea);
         Box hBox=Box.createHorizontalBox();
-        JLabel MainFieldLabel=new JLabel("MainField名称：");
+        JLabel MainFieldLabel=new JLabel("MainField内容：");
         JTextField MainFieldLabelTextField=new JTextField(15);
 
-        MainFieldLabelTextField.addActionListener(new ActionListener() {
+        Document MainFieldDoc=new DefaultStyledDocument();
+        MainFieldLabelTextField.setDocument(MainFieldDoc);
+
+        MainFieldDoc.addDocumentListener(new DocumentListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void insertUpdate(DocumentEvent e) {
+                System.out.println("MainField listener fired");
+                InfoFunc.setMainField(MainFieldLabelTextField.getText());
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                System.out.println("MainField listener fired");
+                InfoFunc.setMainField(MainFieldLabelTextField.getText());
+
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                System.out.println("MainField listener fired");
+                InfoFunc.setMainField(MainFieldLabelTextField.getText());
 
             }
         });
@@ -185,7 +207,7 @@ public class ParaPanel extends JSplitPane{
             vBox.add(ArrayPanel2[i+1]);
         }
 
-        JButton CommitBotton=new JButton("提交");
+        JButton CommitBotton=new JButton("生成代码");
 
         CommitBotton.addActionListener(new ActionListener() {
             @Override
