@@ -32,6 +32,10 @@ public class Para extends MathObject {
         }
     }
 
+    public void setShowName(boolean showName) {
+        ShowName = showName;
+    }
+
     public void setParaValue(String NewValue){
         ParaValue = NewValue;
     }

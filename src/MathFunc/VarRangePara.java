@@ -5,17 +5,17 @@ package MathFunc;
  */
 public class VarRangePara extends Para {
     String VarName;
-    double VarMin;
-    double VarMax;
-    double VarStep;
+    String VarMin;
+    String VarMax;
+    String VarStep;
     boolean HasStep;
 
     public VarRangePara(){
         super();
         VarName="";
-        VarMin=0;
-        VarMax=0;
-        VarStep=0;
+        VarMin="";
+        VarMax="";
+        VarStep="";
         HasStep=false;
         setObjectName("I'm a variable! yeah!");
         setNotes("I have no notes");
@@ -28,12 +28,32 @@ public class VarRangePara extends Para {
     public String show(){
         if(ShowName){
             String toShow="{";
-            toShow=toShow+VarName+","+VarMin+","+VarMax;
-            if(VarStep!=0){
-                toShow=toShow+","+VarStep;
+            toShow=toShow+VarName+", "+VarMin+", "+VarMax;
+            if(HasStep){
+                toShow=toShow+", "+VarStep;
             }
             return toShow+"}";
         }
         return "";
+    }
+
+    public void setVarName(String varName) {
+        VarName = varName;
+    }
+
+    public void setVarMin(String varMin) {
+        VarMin = varMin;
+    }
+
+    public void setVarMax(String varMax) {
+        VarMax = varMax;
+    }
+
+    public void setVarStep(String varStep) {
+        VarStep = varStep;
+    }
+
+    public void setHasStep(boolean hasStep) {
+        HasStep = hasStep;
     }
 }

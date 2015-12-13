@@ -7,6 +7,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.DefaultStyledDocument;
 import javax.swing.text.Document;
+import javax.xml.ws.soap.MTOMFeature;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -37,6 +38,15 @@ public class ParaAndCodePanel extends JSplitPane{
     public class ParaPanel extends JSplitPane{
         int ArrayNum1;  int ArrayNum2;
         JPanel[] ArrayPanel1;   JPanel[] ArrayPanel2;
+        MathFunc ChosenFunc;
+
+        public class AModel extends DefaultComboBoxModel{
+            AModel(String[] s){
+                for (int i = 0; i < s.length; i++) {
+                    addElement(s[i]);
+                }
+            }
+        }
 
         void SetOnePanel(Para OnePara, JPanel AimPanel){
             JPanel LeftPanel=new JPanel();  JPanel RightPanel=new JPanel();
@@ -55,7 +65,10 @@ public class ParaAndCodePanel extends JSplitPane{
             combo.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-
+                    System.out.println("ComboBox listener fired");
+                    OnePara.setParaValue((String)combo.getSelectedItem());
+                    OnePara.setShowName(true);
+                    //System.out.print(combo.getSelectedItem());
                 }
             });
 
@@ -77,51 +90,237 @@ public class ParaAndCodePanel extends JSplitPane{
 
             Box hBox=Box.createHorizontalBox();
             if(OneVarRangePara.IfHasStep()) {
-                JLabel MinLabel=new JLabel("最小值："); JLabel StepLabel=new JLabel("步长："); JLabel MaxLabel=new JLabel("最大值：");
-                JTextField MinTextField=new JTextField(10); JTextField StepTextField=new JTextField(10); JTextField MaxTextField=new JTextField(10);
+                JLabel VarNameLabel=new JLabel("变量名称：");
+                JLabel MinLabel=new JLabel("最小值：");
+                JLabel StepLabel=new JLabel("步长：");
+                JLabel MaxLabel=new JLabel("最大值：");
+                JTextField VarNameTextField=new JTextField(10);
+                JTextField MinTextField=new JTextField(10);
+                JTextField StepTextField=new JTextField(10);
+                JTextField MaxTextField=new JTextField(10);
 
-                MinTextField.addActionListener(new ActionListener() {
+                Document VarNameDoc=new DefaultStyledDocument();
+                VarNameTextField.setDocument(VarNameDoc);
+                VarNameDoc.addDocumentListener(new DocumentListener() {
                     @Override
-                    public void actionPerformed(ActionEvent e) {
+                    public void insertUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarName(VarNameTextField.getText());
+                        OneVarRangePara.setShowName(true);
+                    }
+
+                    @Override
+                    public void removeUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarName(VarNameTextField.getText());
+                        OneVarRangePara.setShowName(true);
+
+                    }
+
+                    @Override
+                    public void changedUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarName(VarNameTextField.getText());
+                        OneVarRangePara.setShowName(true);
 
                     }
                 });
-                StepTextField.addActionListener(new ActionListener() {
+
+                Document MinDoc=new DefaultStyledDocument();
+                MinTextField.setDocument(MinDoc);
+                MinDoc.addDocumentListener(new DocumentListener() {
                     @Override
-                    public void actionPerformed(ActionEvent e) {
+                    public void insertUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarMin(MinTextField.getText());
+                        OneVarRangePara.setShowName(true);
+
+                    }
+
+                    @Override
+                    public void removeUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarMin(MinTextField.getText());
+                        OneVarRangePara.setShowName(true);
+
+                    }
+
+                    @Override
+                    public void changedUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarMin(MinTextField.getText());
+                        OneVarRangePara.setShowName(true);
 
                     }
                 });
-                MaxTextField.addActionListener(new ActionListener() {
+
+                Document StepDoc=new DefaultStyledDocument();
+                StepTextField.setDocument(StepDoc);
+                StepDoc.addDocumentListener(new DocumentListener() {
                     @Override
-                    public void actionPerformed(ActionEvent e) {
+                    public void insertUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarStep(StepTextField.getText());
+                        OneVarRangePara.setShowName(true);
+
+                    }
+
+                    @Override
+                    public void removeUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarStep(StepTextField.getText());
+                        OneVarRangePara.setShowName(true);
+
+                    }
+
+                    @Override
+                    public void changedUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarStep(StepTextField.getText());
+                        OneVarRangePara.setShowName(true);
 
                     }
                 });
 
-                hBox.add(MinLabel); hBox.add(MinTextField); hBox.add(Box.createVerticalStrut(5));
-                hBox.add(StepLabel); hBox.add(StepTextField); hBox.add(Box.createVerticalStrut(5));
-                hBox.add(MaxLabel); hBox.add(MaxTextField);
+                Document MaxDoc=new DefaultStyledDocument();
+                MaxTextField.setDocument(MaxDoc);
+                MaxDoc.addDocumentListener(new DocumentListener() {
+                    @Override
+                    public void insertUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarMax(MaxTextField.getText());
+                        OneVarRangePara.setShowName(true);
+
+                    }
+
+                    @Override
+                    public void removeUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarMax(MaxTextField.getText());
+                        OneVarRangePara.setShowName(true);
+
+                    }
+
+                    @Override
+                    public void changedUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarMax(MaxTextField.getText());
+                        OneVarRangePara.setShowName(true);
+
+                    }
+                });
+
+                hBox.add(VarNameLabel);
+                hBox.add(VarNameTextField);
+                hBox.add(Box.createVerticalStrut(5));
+                hBox.add(MinLabel);
+                hBox.add(MinTextField);
+                hBox.add(Box.createVerticalStrut(5));
+                hBox.add(StepLabel);
+                hBox.add(StepTextField);
+                hBox.add(Box.createVerticalStrut(5));
+                hBox.add(MaxLabel);
+                hBox.add(MaxTextField);
             }
             else {
-                JLabel MinLabel=new JLabel("最小值："); JLabel MaxLabel=new JLabel("最大值：");
-                JTextField MinTextField=new JTextField(10); JTextField MaxTextField=new JTextField(10);
+                JLabel VarNameLabel=new JLabel("变量名称：");
+                JLabel MinLabel=new JLabel("最小值：");
+                JLabel MaxLabel=new JLabel("最大值：");
+                JTextField VarNameTextField=new JTextField(10);
+                JTextField MinTextField=new JTextField(10);
+                JTextField MaxTextField=new JTextField(10);
 
-                MinTextField.addActionListener(new ActionListener() {
+                Document VarNameDoc=new DefaultStyledDocument();
+                VarNameTextField.setDocument(VarNameDoc);
+                VarNameDoc.addDocumentListener(new DocumentListener() {
                     @Override
-                    public void actionPerformed(ActionEvent e) {
+                    public void insertUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarName(VarNameTextField.getText());
+                        OneVarRangePara.setShowName(true);
+                    }
+
+                    @Override
+                    public void removeUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarName(VarNameTextField.getText());
+                        OneVarRangePara.setShowName(true);
+
+                    }
+
+                    @Override
+                    public void changedUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarName(VarNameTextField.getText());
+                        OneVarRangePara.setShowName(true);
 
                     }
                 });
-                MaxTextField.addActionListener(new ActionListener() {
+
+                Document MinDoc=new DefaultStyledDocument();
+                MinTextField.setDocument(MinDoc);
+                MinDoc.addDocumentListener(new DocumentListener() {
                     @Override
-                    public void actionPerformed(ActionEvent e) {
+                    public void insertUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarMin(MinTextField.getText());
+                        OneVarRangePara.setShowName(true);
+
+                    }
+
+                    @Override
+                    public void removeUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarMin(MinTextField.getText());
+                        OneVarRangePara.setShowName(true);
+
+                    }
+
+                    @Override
+                    public void changedUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarMin(MinTextField.getText());
+                        OneVarRangePara.setShowName(true);
 
                     }
                 });
 
-                hBox.add(MinLabel); hBox.add(MinTextField); hBox.add(Box.createVerticalStrut(5));
-                hBox.add(MaxLabel); hBox.add(MaxTextField);
+                Document MaxDoc=new DefaultStyledDocument();
+                MaxTextField.setDocument(MaxDoc);
+                MaxDoc.addDocumentListener(new DocumentListener() {
+                    @Override
+                    public void insertUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarMax(MaxTextField.getText());
+                        OneVarRangePara.setShowName(true);
+
+                    }
+
+                    @Override
+                    public void removeUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarMax(MaxTextField.getText());
+                        OneVarRangePara.setShowName(true);
+
+                    }
+
+                    @Override
+                    public void changedUpdate(DocumentEvent e) {
+                        System.out.println("VarRangePara TextField listener fired");
+                        OneVarRangePara.setVarMax(MaxTextField.getText());
+                        OneVarRangePara.setShowName(true);
+
+                    }
+                });
+
+                hBox.add(VarNameLabel);
+                hBox.add(VarNameTextField);
+                hBox.add(Box.createVerticalStrut(5));
+                hBox.add(MinLabel);
+                hBox.add(MinTextField);
+                hBox.add(Box.createVerticalStrut(5));
+                hBox.add(MaxLabel);
+                hBox.add(MaxTextField);
             }
             RightPanel.add(hBox);
 
@@ -132,6 +331,7 @@ public class ParaAndCodePanel extends JSplitPane{
 
         ParaPanel(MathFunc InfoFunc){
             super();
+            ChosenFunc = InfoFunc;
 
             JPanel FuncIntrPanel=new JPanel();
             JTextArea FuncIntrTextArea=new JTextArea(InfoFunc.getNotes(), 5, 40);
