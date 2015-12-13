@@ -19,7 +19,7 @@ import java.awt.event.ActionListener;
  * Created by IIIS on 11/7/2015.
  */
 public class RightTopPane extends JSplitPane {
-    public RightTopPane(JTree tree, FuncClass RootClass){
+    public RightTopPane(JTree tree){
         super();
         final DefaultTreeModel treeModel = (DefaultTreeModel)tree.getModel();
 
@@ -83,7 +83,11 @@ public class RightTopPane extends JSplitPane {
         addFuncClassButt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new PopupFrame("", "请输入函数类名：", treeModel, tree, RootClass, PopupFrame.ADD_CLASS);
+                TreePath treePath=tree.getSelectionPath();
+                DefaultMutableTreeNode selectionNode =
+                        (DefaultMutableTreeNode) treePath.getLastPathComponent();
+                FuncClass selectionNodeObject = (FuncClass)selectionNode.getUserObject();
+                new PopupFrame("", "请输入函数类名：", treeModel, tree, selectionNodeObject, PopupFrame.ADD_CLASS);
                 //DefaultMutableTreeNode parentNode=null;
                 //DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new class");
                 //newNode.setAllowsChildren(true);
@@ -107,7 +111,11 @@ public class RightTopPane extends JSplitPane {
         addMathFuncButt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new PopupFrame("", "请输入函数名：", treeModel, tree, RootClass, PopupFrame.ADD_FUNC);
+                TreePath treePath=tree.getSelectionPath();
+                DefaultMutableTreeNode selectionNode =
+                        (DefaultMutableTreeNode) treePath.getLastPathComponent();
+                FuncClass selectionNodeObject = (FuncClass)selectionNode.getUserObject();
+                new PopupFrame("", "请输入函数名：", treeModel, tree, selectionNodeObject, PopupFrame.ADD_FUNC);
                 //DefaultMutableTreeNode parentNode=null;
                 //DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new func");
                 //newNode.setAllowsChildren(true);
@@ -136,18 +144,19 @@ public class RightTopPane extends JSplitPane {
                     if (treePath != null) {
                         DefaultMutableTreeNode selectionNode = (DefaultMutableTreeNode) treePath.getLastPathComponent();
 
-                        TreeNode parent = (TreeNode) selectionNode.getParent();
+                        DefaultMutableTreeNode parent = (DefaultMutableTreeNode) selectionNode.getParent();
                         MathObject selectionNodeObject = (MathObject) selectionNode.getUserObject();
                         if (parent != null) {
                             treeModel.removeNodeFromParent(selectionNode);
 
                             String[] Path = treePath2String(treePath.getParentPath());
+                            FuncClass parentFuncClass = (FuncClass)parent.getUserObject();
 
                             if (selectionNodeObject instanceof MathFunc) {
-                                RootClass.deleteMathFunc(Path, selectionNode.toString());
+                                parentFuncClass.deleteMathFunc(selectionNode.toString());
                                 //RootClass.outputFile();
                             } else if (selectionNodeObject instanceof FuncClass) {
-                                RootClass.deleteSubClass(Path, selectionNode.toString());
+                                parentFuncClass.deleteSubClass(selectionNode.toString());
                                 //RootClass.outputFile();
                             }
 

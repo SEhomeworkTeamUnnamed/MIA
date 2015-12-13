@@ -29,15 +29,23 @@ public class PopupFrame extends JFrame {
 
     }
 
+    class UpperPopupPane extends JSplitPane{
+        UpperPopupPane(){
+
+        }
+
+    }
+
     public PopupFrame(String FrameName,String Instruction,
                       DefaultTreeModel treeModel, JTree tree,
-                      FuncClass RootClass, int ClassOrFunc){
+                      FuncClass SelectedClass, int ClassOrFunc){
         super(FrameName);
 
         setSize(270,110);
         Toolkit kit=Toolkit.getDefaultToolkit();
         Dimension screenSize=kit.getScreenSize();
         setLocation(screenSize.width/4,screenSize.height/4);
+
         JLabel jLabel=new JLabel(Instruction);
         JTextField jTextField=new JTextField(10);
         JButton jButtonAffirm=new JButton("确认");
@@ -109,7 +117,10 @@ public class PopupFrame extends JFrame {
                 DefaultMutableTreeNode parentNode=null;
                 try{
                     if(UserInput.equals(null))
-                    {}
+                    {
+                        JOptionPane jOptionPane=new JOptionPane();
+                        JOptionPane.showMessageDialog(jButtonAffirm,"请输入正确的英文名称！");
+                    }
                     else{
                         setVisible(false);
                         TreePath parentPath=tree.getSelectionPath();
@@ -120,7 +131,7 @@ public class PopupFrame extends JFrame {
 
                         if(ClassOrFunc==PopupFrame.ADD_CLASS) {
                             FuncClass newSubClass=new FuncClass(newUpperPath,UserInput,1);
-                            RootClass.addSubClass(treePath2String(parentPath), newSubClass);
+                            SelectedClass.addSubClass(newSubClass);
 
                             DefaultMutableTreeNode newNode = new DefaultMutableTreeNode(newSubClass);
 
@@ -130,7 +141,7 @@ public class PopupFrame extends JFrame {
                         }
                         else if(ClassOrFunc==PopupFrame.ADD_FUNC){
                             MathFunc newMathFunc=new MathFunc(newUpperPath,UserInput);
-                            RootClass.addMathFunc(treePath2String(parentPath), newMathFunc);
+                            SelectedClass.addMathFunc(newMathFunc);
 
                             DefaultMutableTreeNode newNode = new DefaultMutableTreeNode(newMathFunc);
 
@@ -142,6 +153,8 @@ public class PopupFrame extends JFrame {
 
                 }catch (NullPointerException nPE){
                     nPE.printStackTrace();
+                    JOptionPane jOptionPane=new JOptionPane();
+                    JOptionPane.showMessageDialog(jButtonAffirm,"请输入正确的英文名称！");
                 }
                 /*if(UserInput.equals(null)) {
 
@@ -154,7 +167,7 @@ public class PopupFrame extends JFrame {
 
                         treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
 
-                        RootClass.addSubClass(treePath2String(parentPath), "new class");
+                        SelectedClass.addSubClass(treePath2String(parentPath), "new class");
                         tree.scrollPathToVisible(new TreePath(newNode.getPath()));
                     }
                     else if(ClassOrFunc==PopupFrame.ADD_FUNC){
@@ -166,7 +179,7 @@ public class PopupFrame extends JFrame {
 
                         treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
 
-                        RootClass.addMathFunc(treePath2String(parentPath), "new class");
+                        SelectedClass.addMathFunc(treePath2String(parentPath), "new class");
                         tree.scrollPathToVisible(new TreePath(newNode.getPath()));
                     }
 

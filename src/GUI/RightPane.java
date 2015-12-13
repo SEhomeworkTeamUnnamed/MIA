@@ -13,10 +13,10 @@ public class RightPane extends JSplitPane{
     RightTopPane rightTopPane;
     RightBottomPane rightBottomPane;
 
-    RightPane(JTree tree, FuncClass RootClass){
+    RightPane(JTree tree){
         super();
-        rightTopPane = new RightTopPane(tree,RootClass);
-        rightBottomPane = new RightBottomPane(tree, RootClass);
+        rightTopPane = new RightTopPane(tree);
+        rightBottomPane = new RightBottomPane(tree);
 
         setOneTouchExpandable(true);
         setContinuousLayout(true);

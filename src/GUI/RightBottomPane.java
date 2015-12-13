@@ -129,7 +129,7 @@ public class RightBottomPane extends JScrollPane{
         }
     }
 
-    RightBottomPane(JTree tree, FuncClass RootClass){
+    RightBottomPane(JTree tree){
         super();
         jTree = tree;
         setDefaultWelcomePane();

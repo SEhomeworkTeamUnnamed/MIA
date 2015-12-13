@@ -19,7 +19,7 @@ public class MainFrame extends JFrame {
 
         super(FrameName);
         mainMenu = new MainMenu(tree,RootClass);
-        mainPane = new MainPane(tree, RootClass);
+        mainPane = new MainPane(tree);
 
         setJMenuBar(mainMenu);
 

@@ -13,10 +13,10 @@ public class MainPane extends JSplitPane{
     LeftPane leftPane;
     RightPane rightPane;
 
-    MainPane(JTree tree, FuncClass RootClass){
+    MainPane(JTree tree){
         super();
         leftPane = new LeftPane(tree);
-        rightPane = new RightPane(tree,RootClass);
+        rightPane = new RightPane(tree);
 
         setOneTouchExpandable(true);
         setContinuousLayout(true);
