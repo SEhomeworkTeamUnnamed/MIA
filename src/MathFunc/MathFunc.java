@@ -77,6 +77,12 @@ public class MathFunc extends MathObject {
         AllPara[NumOfPara]=NewPara;
         NumOfPara++;
     }
+
+    public void addVarRangePara(VarRangePara newVarRangePara){
+        AllVarRangePara[NumOfVarRangePara] = newVarRangePara;
+        NumOfVarRangePara++;
+    }
+
     public void addPara(String ParaName){
         Para[] tempPara = new Para[NumOfPara + 1];
         for (int i = 0; i < NumOfPara; i++) {
@@ -349,6 +355,7 @@ public class MathFunc extends MathObject {
         Others otherFuncs=new Others();
         String PathOfPara = UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"Para.txt";
         String PathOfParaFreq = UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"Parafreq.txt";
+        String PathOfVarRangePara = UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"VarRangeParas.txt";
         for (int i = 0; i < NumOfPara; i++) {
             String ParaName = AllPara[i].getObjectName();
             String ParaFreq = ""+AllPara[i].getUseFreq();
@@ -366,6 +373,17 @@ public class MathFunc extends MathObject {
             otherFuncs.writeFile(PathOfPara, "", false);
             otherFuncs.writeFile(PathOfParaFreq, "", false);
         }
+
+        String VarRangeParaText = "";
+        for (int i = 0; i < NumOfVarRangePara; i++) {
+            if (AllVarRangePara[i].IfHasStep()){
+                VarRangeParaText = VarRangeParaText + 1 +"\r\n";
+            }
+            else{
+                VarRangeParaText = VarRangeParaText + 0 +"\r\n";
+            }
+        }
+        otherFuncs.writeFile(PathOfVarRangePara, VarRangeParaText, false);
 
         String PathOfNotes = UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"notes.txt";
         otherFuncs.writeFile(PathOfNotes, Notes, false);
