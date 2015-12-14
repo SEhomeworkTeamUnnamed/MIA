@@ -30,6 +30,7 @@ public class PopupFrame extends JFrame {
     JButton jButtonCancel;
     PopupPane popupPane;
     JTextArea jTextArea;
+    JTextArea paraValueTextArea;
 
 
     class LowerPopupPane extends JPanel{
@@ -96,18 +97,36 @@ public class PopupFrame extends JFrame {
             JLabel jLabel;
             if(ClassOrFunc == PopupFrame.ADD_CLASS) {
                 jLabel = new JLabel("请输入函数类的说明：");
+                jTextArea = new JTextArea(3,10);
+                jTextArea.setLineWrap(true);
+
+                add(jLabel);
+                add(new JScrollPane(jTextArea));
             }
             else if (ClassOrFunc == PopupFrame.ADD_FUNC) {
                 jLabel = new JLabel("请输入函数的说明：");
+                jTextArea = new JTextArea(3,10);
+                jTextArea.setLineWrap(true);
+
+                add(jLabel);
+                add(new JScrollPane(jTextArea));
+            }
+            else if(ClassOrFunc == PopupFrame.ADD_PARA){
+                jLabel = new JLabel("请输入参数的说明：");
+                jTextArea = new JTextArea(3,10);
+                jTextArea.setLineWrap(true);
+
+                add(jLabel);
+                add(new JScrollPane(jTextArea));
             }
             else{
                 jLabel = new JLabel("请按行输入可取的参数值：");
-            }
-            jTextArea = new JTextArea(3,10);
-            jTextArea.setLineWrap(true);
+                paraValueTextArea = new JTextArea(3,10);
+                paraValueTextArea.setLineWrap(true);
 
-            add(jLabel);
-            add(new JScrollPane(jTextArea));
+                add(jLabel);
+                add(new JScrollPane(paraValueTextArea));
+            }
         }
     }
 
@@ -116,7 +135,7 @@ public class PopupFrame extends JFrame {
         MidPopupPane midPopupPane;
         UpperPopupPane upPane;
         PopupPane(int ClassOrFunc){
-            setPreferredSize(new Dimension(350, 200));
+            setPreferredSize(new Dimension(350, 250));
             setLayout(new FlowLayout());
 
             upPane = new UpperPopupPane(ClassOrFunc);
@@ -128,6 +147,10 @@ public class PopupFrame extends JFrame {
             vBox.add(Box.createVerticalStrut(10));
             vBox.add(midPopupPane);
             vBox.add(Box.createVerticalStrut(10));
+            if(ClassOrFunc == PopupFrame.ADD_PARA){
+                vBox.add(new MidPopupPane(PopupFrame.ADD_PARA + 1));
+                vBox.add(Box.createVerticalStrut(10));
+            }
             vBox.add(botPane);
 
             add(vBox);
@@ -139,7 +162,7 @@ public class PopupFrame extends JFrame {
                       int ClassOrFunc){
         super(FrameName);
 
-        setSize(350,200);
+        setSize(350,250);
         Toolkit kit=Toolkit.getDefaultToolkit();
         Dimension screenSize=kit.getScreenSize();
         setLocation(screenSize.width/4,screenSize.height/4);
@@ -188,11 +211,11 @@ public class PopupFrame extends JFrame {
                         setVisible(false);
                         TreePath parentPath=tree.getSelectionPath();
                         parentNode=(DefaultMutableTreeNode)(parentPath.getLastPathComponent());
-                        String parentClassName = ((FuncClass) parentNode.getUserObject()).getObjectName();
-                        String newUpperPath = ((FuncClass) parentNode.getUserObject()).getUpperPath()+"\\C"+parentClassName;
 
 
                         if(ClassOrFunc==PopupFrame.ADD_CLASS) {
+                            String parentClassName = ((FuncClass) parentNode.getUserObject()).getObjectName();
+                            String newUpperPath = ((FuncClass) parentNode.getUserObject()).getUpperPath()+"\\C"+parentClassName;
                             FuncClass newSubClass=new FuncClass(newUpperPath,UserInput,1);
                             newSubClass.setNotes(NoteInput);
                             ((FuncClass) parentNode.getUserObject()).addSubClass(newSubClass);
@@ -204,6 +227,8 @@ public class PopupFrame extends JFrame {
                             tree.scrollPathToVisible(new TreePath(newNode.getPath()));
                         }
                         else if(ClassOrFunc==PopupFrame.ADD_FUNC){
+                            String parentClassName = ((FuncClass) parentNode.getUserObject()).getObjectName();
+                            String newUpperPath = ((FuncClass) parentNode.getUserObject()).getUpperPath()+"\\C"+parentClassName;
                             MathFunc newMathFunc=new MathFunc(newUpperPath,UserInput);
                             newMathFunc.setNotes(NoteInput);
                             ((FuncClass) parentNode.getUserObject()).addMathFunc(newMathFunc);
@@ -215,7 +240,12 @@ public class PopupFrame extends JFrame {
                             tree.scrollPathToVisible(new TreePath(newNode.getPath()));
                         }
                         else{
+                            String parentClassName = ((MathFunc) parentNode.getUserObject()).getObjectName();
+                            String newUpperPath = ((MathFunc) parentNode.getUserObject()).getUpperPath()+"\\F"+parentClassName;
                             Para newPara=new Para();
+                            newPara.setUpperPath(newUpperPath);
+                            String paraValues = paraValueTextArea.getText();
+                            System.out.print(paraValues.substring(paraValues.indexOf("\n")));
                         }
                     }
 

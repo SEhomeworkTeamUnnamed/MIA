@@ -3,479 +3,570 @@
   <ID>JAVA</ID>
   <OriginalElement>GUI.DefaultWelcomePane</OriginalElement>
   <nodes>
-    <node x="559.0323814546912" y="602.0">GUI.RightTopPane</node>
-    <node x="1662.4936231665658" y="602.0">javax.swing.JMenu.WinListener</node>
-    <node x="617.2227898332324" y="368.0">javax.swing.JSplitPane</node>
-    <node x="286.1573814546912" y="0.0">MathFunc.MathObject</node>
-    <node x="889.5323814546911" y="490.0">GUI.DefaultWelcomePane</node>
-    <node x="124.19071478802448" y="602.0">GUI.PopupFrame.UpperPopupPane</node>
-    <node x="1794.5314044605182" y="704.0">GUI.OpenFile</node>
-    <node x="170.0" y="368.0">MathFunc.FuncClass</node>
-    <node x="1734.5314044605182" y="786.0">GUI.MainMenu</node>
-    <node x="371.6573814546912" y="256.0">MathFunc.MathFunc</node>
-    <node x="569.5323814546912" y="256.0">javax.swing.JSplitPane.AccessibleJSplitPane</node>
-    <node x="629.6198814546912" y="704.0">GUI.RightPane</node>
-    <node x="786.1573814546912" y="704.0">GUI.LeftPane</node>
-    <node x="1793.4936231665658" y="602.0">javax.swing.JMenu.AccessibleJMenu</node>
-    <node x="596.9331901748039" y="888.0">GUI.MainFrame</node>
-    <node x="34.5" y="368.0">javax.swing.JFrame</node>
-    <node x="387.0323814546912" y="602.0">GUI.PopupFrame.LowerPopupPane</node>
-    <node x="918.2323814546911" y="602.0">GUI.RightBottomPane</node>
-    <node x="658.0948814546912" y="786.0">GUI.MainPane</node>
-    <node x="1157.3920634920632" y="704.0">GUI.RightBottomPane.ClassAndFuncPane</node>
-    <node x="1306.4073814546912" y="164.0">javax.swing.JPanel.AccessibleJPanel</node>
-    <node x="1696.5314044605182" y="704.0">javax.swing.JMenu</node>
-    <node x="773.4102898332324" y="368.0">javax.swing.JScrollPane.AccessibleJScrollPane</node>
-    <node x="1315.4936231665658" y="490.0">GUI.ParaAndCodePanel.ParaPanel.AModel</node>
-    <node x="328.7189044605182" y="970.0">GUI.Main</node>
-    <node x="760.5323814546912" y="490.0">javax.swing.JScrollPane</node>
-    <node x="1121.4073814546912" y="368.0">GUI.ParaAndCodePanel.CodeGenePanel</node>
-    <node x="730.1573814546912" y="602.0">javax.swing.JScrollPane.ScrollBar</node>
-    <node x="352.6573814546912" y="164.0">MathFunc.VarRangePara</node>
-    <node x="1200.995690174804" y="602.0">GUI.ParaAndCodePanel.ParaPanel</node>
-    <node x="459.1573814546912" y="82.0">MathFunc.Para</node>
-    <node x="363.2823814546912" y="490.0">GUI.PopupFrame</node>
-    <node x="1089.5323814546912" y="490.0">GUI.ParaAndCodePanel</node>
-    <node x="1466.4936231665658" y="602.0">javax.swing.JMenu.MenuChangeListener</node>
-    <node x="1340.9073814546912" y="256.0">javax.swing.JPanel</node>
-    <node x="0.0" y="256.0">javax.swing.JFrame.AccessibleJFrame</node>
+    <node x="916.2219726062458" y="732.0">GUI.RightTopPane</node>
+    <node x="1231.2219726062458" y="732.0">javax.swing.JMenu.WinListener</node>
+    <node x="212.62499999999977" y="356.0">javax.swing.JSplitPane</node>
+    <node x="1767.7305043522774" y="844.0">javax.swing.JFileChooser.WeakPCL</node>
+    <node x="1518.724167946748" y="0.0">MathFunc.MathObject</node>
+    <node x="308.6374999999998" y="630.0">GUI.DefaultWelcomePane</node>
+    <node x="1364.3138376856107" y="844.0">GUI.OpenFile</node>
+    <node x="987.9708333333331" y="356.0">GUI.PopupFrame.UpperPopupPane</node>
+    <node x="1566.8908346134147" y="498.0">MathFunc.FuncClass</node>
+    <node x="1304.3138376856107" y="936.0">GUI.MainMenu</node>
+    <node x="1493.3075012800814" y="356.0">MathFunc.MathFunc</node>
+    <node x="295.874167946748" y="844.0">GUI.RightPane</node>
+    <node x="0.0" y="844.0">GUI.LeftPane</node>
+    <node x="332.47416794674814" y="164.0">javax.swing.JSplitPane.AccessibleJSplitPane</node>
+    <node x="1064.2219726062458" y="732.0">javax.swing.JMenu.AccessibleJMenu</node>
+    <node x="1277.0638376856107" y="1018.0">GUI.MainFrame</node>
+    <node x="1737.897171018944" y="732.0">javax.swing.JFileChooser</node>
+    <node x="1794.5146825396823" y="498.0">javax.swing.JFrame</node>
+    <node x="168.69916794674805" y="936.0">GUI.MainPane</node>
+    <node x="274.72416794674814" y="732.0">GUI.RightBottomPane</node>
+    <node x="1159.970833333333" y="356.0">GUI.PopupFrame.LowerPopupPane</node>
+    <node x="196.24999999999977" y="498.0">GUI.RightBottomPane.ClassAndFuncPane</node>
+    <node x="828.9708333333331" y="356.0">GUI.PopupFrame.MidPopupPane</node>
+    <node x="663.2956349206348" y="82.0">javax.swing.JPanel.AccessibleJPanel</node>
+    <node x="1216.0638376856107" y="844.0">javax.swing.JMenu</node>
+    <node x="296.22416794674814" y="82.0">javax.swing.JScrollPane.AccessibleJScrollPane</node>
+    <node x="722.9708333333331" y="356.0">GUI.ParaAndCodePanel.ParaPanel.AModel</node>
+    <node x="1455.5638376856107" y="1100.0">GUI.Main</node>
+    <node x="203.47416794674814" y="164.0">javax.swing.JScrollPane</node>
+    <node x="484.1613095238093" y="498.0">GUI.ParaAndCodePanel.CodeGenePanel</node>
+    <node x="185.22416794674814" y="82.0">javax.swing.JScrollPane.ScrollBar</node>
+    <node x="1480.9325012800814" y="164.0">MathFunc.VarRangePara</node>
+    <node x="1040.045634920635" y="498.0">GUI.PopupFrame.PopupPane</node>
+    <node x="691.6374999999998" y="498.0">GUI.ParaAndCodePanel.ParaPanel</node>
+    <node x="1449.4325012800814" y="82.0">MathFunc.Para</node>
+    <node x="1102.0138376856107" y="630.0">GUI.PopupFrame</node>
+    <node x="507.6374999999998" y="630.0">GUI.ParaAndCodePanel</node>
+    <node x="1362.2219726062458" y="732.0">javax.swing.JMenu.MenuChangeListener</node>
+    <node x="697.7956349206349" y="164.0">javax.swing.JPanel</node>
+    <node x="1703.397171018944" y="630.0">javax.swing.JFileChooser.AccessibleJFileChooser</node>
+    <node x="1760.0146825396823" y="356.0">javax.swing.JFrame.AccessibleJFrame</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="GUI.PopupFrame" target="javax.swing.JPanel">
-      <point x="23.600000000000023" y="-16.0" />
-      <point x="445.8823814546912" y="420.0" />
-      <point x="533.4227898332324" y="420.0" />
-      <point x="533.4227898332324" y="328.0" />
-      <point x="1346.3359528832625" y="328.0" />
-      <point x="-32.57142857142867" y="16.0" />
-    </edge>
     <edge source="javax.swing.JScrollPane.ScrollBar" target="javax.swing.JScrollPane">
-      <point x="-22.75" y="-16.0" />
-      <point x="752.9073814546912" y="582.0" />
-      <point x="774.1573814546912" y="582.0" />
-      <point x="-40.875" y="16.0" />
-    </edge>
-    <edge source="GUI.PopupFrame.LowerPopupPane" target="javax.swing.JSplitPane">
-      <point x="37.75" y="-16.0" />
-      <point x="500.2823814546912" y="582.0" />
-      <point x="502.7823814546912" y="582.0" />
-      <point x="502.7823814546912" y="450.0" />
-      <point x="645.5561231665658" y="450.0" />
-      <point x="-22.66666666666663" y="16.0" />
+      <point x="22.75" y="16.0" />
+      <point x="253.47416794674814" y="144.0" />
+      <point x="244.34916794674814" y="144.0" />
+      <point x="-13.625" y="-16.0" />
     </edge>
     <edge source="GUI.ParaAndCodePanel.ParaPanel" target="GUI.ParaAndCodePanel">
-      <point x="-33.333333333333314" y="-16.0" />
-      <point x="1217.6623568414707" y="552.0" />
-      <point x="1171.0323814546912" y="552.0" />
-      <point x="0.0" y="16.0" />
+      <point x="33.33333333333334" y="16.0" />
+      <point x="774.9708333333331" y="610.0" />
+      <point x="658.9946428571427" y="610.0" />
+      <point x="69.85714285714289" y="-16.0" />
     </edge>
     <edge source="GUI.ParaAndCodePanel.ParaPanel" target="GUI.ParaAndCodePanel.ParaPanel.AModel">
-      <point x="11.111111111111143" y="-16.0" />
-      <point x="1262.106801285915" y="552.0" />
-      <point x="1336.9936231665658" y="552.0" />
+      <point x="8.333333333333343" y="-16.0" />
+      <point x="749.9708333333331" y="478.0" />
+      <point x="744.4708333333331" y="478.0" />
       <point x="-21.5" y="16.0" />
     </edge>
     <edge source="javax.swing.JMenu.AccessibleJMenu" target="javax.swing.JMenu">
       <point x="36.75" y="16.0" />
-      <point x="1903.7436231665658" y="684.0" />
-      <point x="1768.9599758890895" y="684.0" />
-      <point x="33.428571428571445" y="-16.0" />
+      <point x="1174.4719726062458" y="814.0" />
+      <point x="1232.7781233998962" y="814.0" />
+      <point x="-22.285714285714334" y="-16.0" />
     </edge>
     <edge source="GUI.RightPane" target="GUI.RightBottomPane">
-      <point x="20.399999999999977" y="-16.0" />
-      <point x="701.0198814546911" y="674.0" />
-      <point x="933.4323814546912" y="674.0" />
-      <point x="-60.799999999999955" y="16.0" />
+      <point x="0.0" y="-16.0" />
+      <point x="346.874167946748" y="804.0" />
+      <point x="388.72416794674814" y="804.0" />
+      <point x="38.0" y="16.0" />
     </edge>
     <edge source="GUI.PopupFrame" target="MathFunc.MathFunc">
-      <point x="0.0" y="-16.0" />
-      <point x="422.2823814546912" y="470.0" />
-      <point x="434.1573814546912" y="470.0" />
-      <point x="12.5" y="16.0" />
+      <point x="29.5" y="-16.0" />
+      <point x="1190.5138376856107" y="580.0" />
+      <point x="1530.8075012800814" y="580.0" />
+      <point x="-12.5" y="16.0" />
+    </edge>
+    <edge source="GUI.PopupFrame.PopupPane" target="GUI.PopupFrame.MidPopupPane">
+      <point x="-31.71428571428578" y="-16.0" />
+      <point x="1063.8313492063492" y="448.0" />
+      <point x="943.9708333333331" y="448.0" />
+      <point x="46.0" y="16.0" />
     </edge>
     <edge source="GUI.Main" target="GUI.MainFrame">
-      <point x="16.75" y="-16.0" />
-      <point x="378.9689044605182" y="945.0" />
-      <point x="650.9331901748039" y="945.0" />
+      <point x="-16.75" y="-16.0" />
+      <point x="1472.3138376856107" y="1075.0" />
+      <point x="1331.0638376856107" y="1075.0" />
       <point x="0.0" y="16.0" />
     </edge>
     <edge source="javax.swing.JPanel.AccessibleJPanel" target="javax.swing.JPanel">
       <point x="36.25" y="16.0" />
-      <point x="1415.1573814546912" y="236.0" />
-      <point x="1397.9073814546912" y="236.0" />
-      <point x="19.0" y="-16.0" />
+      <point x="772.0456349206348" y="144.0" />
+      <point x="754.7956349206347" y="144.0" />
+      <point x="18.999999999999886" y="-16.0" />
+    </edge>
+    <edge source="GUI.PopupFrame.PopupPane" target="javax.swing.JPanel">
+      <point x="-15.85714285714289" y="-16.0" />
+      <point x="1079.688492063492" y="438.0" />
+      <point x="977.4708333333331" y="438.0" />
+      <point x="977.4708333333331" y="236.0" />
+      <point x="754.7956349206347" y="236.0" />
+      <point x="18.999999999999886" y="16.0" />
     </edge>
     <edge source="javax.swing.JMenu" target="javax.swing.JMenu.WinListener">
-      <point x="0.0" y="-16.0" />
-      <point x="1735.5314044605182" y="654.0" />
-      <point x="1717.9936231665658" y="654.0" />
-      <point x="0.0" y="16.0" />
+      <point x="-11.14285714285711" y="-16.0" />
+      <point x="1243.9209805427536" y="824.0" />
+      <point x="1249.7219726062458" y="824.0" />
+      <point x="-37.0" y="16.0" />
     </edge>
-    <edge source="javax.swing.JScrollPane" target="javax.swing.JScrollPane.ScrollBar">
-      <point x="-13.625" y="16.0" />
-      <point x="801.4073814546912" y="582.0" />
-      <point x="798.4073814546912" y="582.0" />
-      <point x="22.75" y="-16.0" />
+    <edge source="GUI.PopupFrame.PopupPane" target="GUI.PopupFrame">
+      <point x="37.0" y="16.0" />
+      <point x="1132.545634920635" y="580.0" />
+      <point x="1143.3138376856107" y="580.0" />
+      <point x="-17.700000000000045" y="-16.0" />
     </edge>
     <edge source="GUI.RightTopPane" target="javax.swing.JSplitPane">
-      <point x="32.0" y="-16.0" />
-      <point x="655.0323814546912" y="470.0" />
-      <point x="668.2227898332324" y="470.0" />
-      <point x="0.0" y="16.0" />
+      <point x="-32.0" y="-16.0" />
+      <point x="948.2219726062458" y="712.0" />
+      <point x="681.1374999999998" y="712.0" />
+      <point x="681.1374999999998" y="448.0" />
+      <point x="289.1249999999998" y="448.0" />
+      <point x="25.5" y="16.0" />
+    </edge>
+    <edge source="javax.swing.JScrollPane" target="javax.swing.JScrollPane.ScrollBar">
+      <point x="-40.875" y="-16.0" />
+      <point x="217.09916794674814" y="144.0" />
+      <point x="207.97416794674814" y="144.0" />
+      <point x="-22.75" y="16.0" />
     </edge>
     <edge source="GUI.RightPane" target="GUI.RightTopPane">
-      <point x="-40.799999999999955" y="-16.0" />
-      <point x="639.8198814546912" y="684.0" />
-      <point x="591.0323814546912" y="684.0" />
-      <point x="-32.0" y="16.0" />
+      <point x="40.80000000000001" y="-16.0" />
+      <point x="387.67416794674796" y="824.0" />
+      <point x="1012.2219726062458" y="824.0" />
+      <point x="32.0" y="16.0" />
     </edge>
     <edge source="GUI.PopupFrame.LowerPopupPane" target="GUI.PopupFrame">
-      <point x="-37.75" y="-16.0" />
-      <point x="424.7823814546912" y="572.0" />
-      <point x="422.2823814546912" y="572.0" />
-      <point x="0.0" y="16.0" />
+      <point x="50.33333333333326" y="16.0" />
+      <point x="1285.8041666666663" y="468.0" />
+      <point x="1195.3313492063492" y="468.0" />
+      <point x="1195.3313492063492" y="560.0" />
+      <point x="1166.9138376856108" y="560.0" />
+      <point x="5.900000000000091" y="-16.0" />
     </edge>
     <edge source="GUI.MainPane" target="GUI.RightPane">
-      <point x="0.0" y="-16.0" />
-      <point x="708.5948814546912" y="766.0" />
-      <point x="706.1198814546912" y="766.0" />
+      <point x="40.39999999999998" y="-16.0" />
+      <point x="259.599167946748" y="916.0" />
+      <point x="372.374167946748" y="916.0" />
       <point x="25.5" y="16.0" />
     </edge>
     <edge source="javax.swing.JMenu.WinListener" target="javax.swing.JMenu">
       <point x="37.0" y="16.0" />
-      <point x="1754.9936231665658" y="664.0" />
-      <point x="1746.6742616033753" y="664.0" />
+      <point x="1323.7219726062458" y="794.0" />
+      <point x="1266.2066948284678" y="794.0" />
       <point x="11.14285714285711" y="-16.0" />
     </edge>
+    <edge source="javax.swing.JFileChooser.AccessibleJFileChooser" target="javax.swing.JFileChooser">
+      <point x="46.25" y="16.0" />
+      <point x="1842.147171018944" y="712.0" />
+      <point x="1824.897171018944" y="712.0" />
+      <point x="29.0" y="-16.0" />
+    </edge>
     <edge source="javax.swing.JMenu" target="javax.swing.JMenu.AccessibleJMenu">
-      <point x="22.285714285714334" y="-16.0" />
-      <point x="1757.8171187462326" y="674.0" />
-      <point x="1830.2436231665658" y="674.0" />
+      <point x="-33.428571428571445" y="-16.0" />
+      <point x="1221.6352662570393" y="824.0" />
+      <point x="1100.9719726062458" y="824.0" />
       <point x="-36.75" y="16.0" />
     </edge>
     <edge source="GUI.RightTopPane" target="GUI.PopupFrame">
-      <point x="-32.0" y="-16.0" />
-      <point x="591.0323814546912" y="572.0" />
-      <point x="461.61571478802455" y="572.0" />
-      <point x="39.33333333333334" y="16.0" />
-    </edge>
-    <edge source="MathFunc.MathFunc" target="MathFunc.Para">
-      <point x="40.0" y="-16.0" />
-      <point x="461.6573814546912" y="236.0" />
-      <point x="501.1573814546912" y="236.0" />
-      <point x="501.1573814546912" y="139.0" />
-      <point x="510.82404812135786" y="139.0" />
-      <point x="20.666666666666686" y="16.0" />
-    </edge>
-    <edge source="GUI.ParaAndCodePanel.ParaPanel" target="javax.swing.JPanel">
-      <point x="33.333333333333314" y="-16.0" />
-      <point x="1284.3290235081372" y="572.0" />
-      <point x="1411.9936231665658" y="572.0" />
-      <point x="1411.9936231665658" y="348.0" />
-      <point x="1378.9073814546912" y="348.0" />
+      <point x="32.0" y="-16.0" />
+      <point x="1012.2219726062458" y="712.0" />
+      <point x="1161.0138376856107" y="712.0" />
       <point x="0.0" y="16.0" />
     </edge>
+    <edge source="GUI.PopupFrame.PopupPane" target="GUI.PopupFrame.LowerPopupPane">
+      <point x="31.71428571428578" y="-16.0" />
+      <point x="1127.2599206349207" y="448.0" />
+      <point x="1185.1374999999998" y="448.0" />
+      <point x="-50.33333333333337" y="16.0" />
+    </edge>
+    <edge source="MathFunc.MathFunc" target="MathFunc.Para">
+      <point x="-40.0" y="-16.0" />
+      <point x="1503.3075012800814" y="336.0" />
+      <point x="1470.4325012800814" y="336.0" />
+      <point x="1470.4325012800814" y="144.0" />
+      <point x="1472.6825012800814" y="144.0" />
+      <point x="-7.75" y="16.0" />
+    </edge>
+    <edge source="GUI.ParaAndCodePanel.ParaPanel" target="javax.swing.JPanel">
+      <point x="-25.0" y="-16.0" />
+      <point x="716.6374999999998" y="428.0" />
+      <point x="615.3541666666665" y="428.0" />
+      <point x="615.3541666666665" y="326.0" />
+      <point x="731.995634920635" y="326.0" />
+      <point x="-3.7999999999999545" y="16.0" />
+    </edge>
     <edge source="GUI.RightBottomPane" target="GUI.ParaAndCodePanel">
-      <point x="30.40000000000009" y="-16.0" />
-      <point x="1024.6323814546913" y="572.0" />
-      <point x="1105.8323814546911" y="572.0" />
-      <point x="-65.19999999999999" y="16.0" />
+      <point x="47.5" y="-16.0" />
+      <point x="398.22416794674814" y="702.0" />
+      <point x="548.3874999999998" y="702.0" />
+      <point x="-40.75" y="16.0" />
+    </edge>
+    <edge source="GUI.PopupFrame.MidPopupPane" target="GUI.PopupFrame">
+      <point x="-46.0" y="16.0" />
+      <point x="851.9708333333331" y="468.0" />
+      <point x="952.6825012800814" y="468.0" />
+      <point x="952.6825012800814" y="610.0" />
+      <point x="1107.9138376856108" y="610.0" />
+      <point x="-53.09999999999991" y="-16.0" />
     </edge>
     <edge source="MathFunc.FuncClass" target="MathFunc.MathObject">
-      <point x="-32.33333333333337" y="-16.0" />
-      <point x="186.16666666666663" y="328.0" />
-      <point x="290.6668374522801" y="328.0" />
-      <point x="290.6668374522801" y="57.0" />
-      <point x="304.8240481213578" y="57.0" />
-      <point x="-37.33333333333337" y="16.0" />
+      <point x="32.33333333333337" y="-16.0" />
+      <point x="1647.724167946748" y="478.0" />
+      <point x="1640.4325012800814" y="478.0" />
+      <point x="1640.4325012800814" y="52.0" />
+      <point x="1612.0575012800814" y="52.0" />
+      <point x="37.33333333333337" y="16.0" />
     </edge>
     <edge source="GUI.ParaAndCodePanel.ParaPanel.AModel" target="GUI.ParaAndCodePanel.ParaPanel">
       <point x="21.5" y="16.0" />
-      <point x="1379.9936231665658" y="562.0" />
-      <point x="1273.217912397026" y="562.0" />
-      <point x="22.22222222222223" y="-16.0" />
+      <point x="787.4708333333331" y="468.0" />
+      <point x="766.6374999999998" y="468.0" />
+      <point x="25.0" y="-16.0" />
     </edge>
     <edge source="GUI.MainFrame" target="GUI.MainMenu">
-      <point x="21.60000000000008" y="-16.0" />
-      <point x="672.533190174804" y="858.0" />
-      <point x="1761.2814044605182" y="858.0" />
-      <point x="-26.75" y="16.0" />
+      <point x="21.59999999999991" y="-16.0" />
+      <point x="1352.6638376856106" y="988.0" />
+      <point x="1384.5638376856107" y="988.0" />
+      <point x="26.75" y="16.0" />
     </edge>
     <edge source="MathFunc.FuncClass" target="MathFunc.MathFunc">
-      <point x="0.0" y="-16.0" />
-      <point x="218.5" y="338.0" />
-      <point x="384.1573814546912" y="338.0" />
-      <point x="-37.5" y="16.0" />
+      <point x="-32.33333333333334" y="-16.0" />
+      <point x="1583.0575012800814" y="478.0" />
+      <point x="1555.8075012800814" y="478.0" />
+      <point x="12.5" y="16.0" />
     </edge>
     <edge source="GUI.MainFrame" target="GUI.MainPane">
-      <point x="5.6843418860808015E-14" y="-16.0" />
-      <point x="650.9331901748039" y="848.0" />
-      <point x="733.8448814546912" y="848.0" />
+      <point x="-21.59999999999991" y="-16.0" />
+      <point x="1309.4638376856108" y="988.0" />
+      <point x="244.44916794674805" y="988.0" />
       <point x="25.25" y="16.0" />
+    </edge>
+    <edge source="GUI.ParaAndCodePanel" target="javax.swing.JSplitPane">
+      <point x="-69.85714285714289" y="-16.0" />
+      <point x="519.2803571428569" y="610.0" />
+      <point x="447.2446428571426" y="610.0" />
+      <point x="447.2446428571426" y="458.0" />
+      <point x="272.1249999999998" y="458.0" />
+      <point x="8.5" y="16.0" />
     </edge>
     <edge source="javax.swing.JMenu.MenuChangeListener" target="javax.swing.JMenu">
       <point x="44.0" y="16.0" />
-      <point x="1598.4936231665658" y="674.0" />
-      <point x="1713.2456901748037" y="674.0" />
-      <point x="-22.285714285714334" y="-16.0" />
-    </edge>
-    <edge source="GUI.ParaAndCodePanel" target="javax.swing.JSplitPane">
-      <point x="-61.12499999999994" y="-16.0" />
-      <point x="1109.9073814546912" y="450.0" />
-      <point x="702.2227898332324" y="450.0" />
-      <point x="34.0" y="16.0" />
-    </edge>
-    <edge source="GUI.MainPane" target="javax.swing.JSplitPane">
-      <point x="-40.39999999999998" y="-16.0" />
-      <point x="668.1948814546911" y="766.0" />
-      <point x="548.5323814546912" y="766.0" />
-      <point x="548.5323814546912" y="460.0" />
-      <point x="656.8894564998991" y="460.0" />
-      <point x="-11.333333333333371" y="16.0" />
+      <point x="1494.2219726062458" y="814.0" />
+      <point x="1288.492409114182" y="814.0" />
+      <point x="33.428571428571445" y="-16.0" />
     </edge>
     <edge source="GUI.ParaAndCodePanel.CodeGenePanel" target="javax.swing.JPanel">
       <point x="0.0" y="-16.0" />
-      <point x="1191.4073814546912" y="348.0" />
-      <point x="1368.0502385975483" y="348.0" />
-      <point x="-10.85714285714289" y="16.0" />
+      <point x="554.1613095238092" y="316.0" />
+      <point x="724.3956349206348" y="316.0" />
+      <point x="-11.399999999999977" y="16.0" />
+    </edge>
+    <edge source="GUI.MainPane" target="javax.swing.JSplitPane">
+      <point x="0.0" y="-16.0" />
+      <point x="219.19916794674805" y="896.0" />
+      <point x="101.5" y="896.0" />
+      <point x="101.5" y="468.0" />
+      <point x="221.12499999999977" y="468.0" />
+      <point x="-42.5" y="16.0" />
     </edge>
     <edge source="GUI.ParaAndCodePanel.CodeGenePanel" target="GUI.ParaAndCodePanel">
       <point x="46.66666666666663" y="16.0" />
-      <point x="1238.0740481213577" y="470.0" />
-      <point x="1232.1573814546912" y="470.0" />
-      <point x="61.12500000000006" y="-16.0" />
+      <point x="600.827976190476" y="610.0" />
+      <point x="589.1374999999998" y="610.0" />
+      <point x="0.0" y="-16.0" />
     </edge>
-    <edge source="GUI.ParaAndCodePanel" target="GUI.ParaAndCodePanel.ParaPanel">
-      <point x="65.19999999999999" y="16.0" />
-      <point x="1236.2323814546912" y="582.0" />
-      <point x="1239.8845790636929" y="582.0" />
-      <point x="-11.111111111111143" y="-16.0" />
+    <edge source="GUI.PopupFrame.PopupPane" target="GUI.PopupFrame.UpperPopupPane">
+      <point x="0.0" y="-16.0" />
+      <point x="1095.545634920635" y="428.0" />
+      <point x="1013.3041666666663" y="428.0" />
+      <point x="-50.66666666666674" y="16.0" />
     </edge>
     <edge source="GUI.ParaAndCodePanel" target="GUI.ParaAndCodePanel.CodeGenePanel">
-      <point x="-20.374999999999943" y="-16.0" />
-      <point x="1150.6573814546912" y="470.0" />
-      <point x="1144.7407147880244" y="470.0" />
-      <point x="-46.666666666666686" y="16.0" />
+      <point x="-23.285714285714334" y="-16.0" />
+      <point x="565.8517857142855" y="610.0" />
+      <point x="554.1613095238092" y="610.0" />
+      <point x="0.0" y="16.0" />
     </edge>
-    <edge source="GUI.MainFrame" target="javax.swing.JFrame">
-      <point x="-43.19999999999993" y="-16.0" />
-      <point x="607.7331901748039" y="868.0" />
-      <point x="286.6907147880245" y="868.0" />
-      <point x="286.6907147880245" y="460.0" />
-      <point x="54.25" y="460.0" />
-      <point x="-19.75" y="16.0" />
+    <edge source="GUI.ParaAndCodePanel" target="GUI.ParaAndCodePanel.ParaPanel">
+      <point x="46.571428571428555" y="-16.0" />
+      <point x="635.7089285714284" y="600.0" />
+      <point x="741.6374999999998" y="600.0" />
+      <point x="0.0" y="16.0" />
     </edge>
     <edge source="GUI.LeftPane" target="javax.swing.JScrollPane">
       <point x="0.0" y="-16.0" />
-      <point x="831.6573814546912" y="582.0" />
-      <point x="828.6573814546912" y="582.0" />
+      <point x="45.5" y="236.0" />
+      <point x="217.09916794674814" y="236.0" />
+      <point x="-40.875" y="16.0" />
+    </edge>
+    <edge source="GUI.MainFrame" target="javax.swing.JFrame">
+      <point x="43.200000000000045" y="-16.0" />
+      <point x="1374.2638376856107" y="998.0" />
+      <point x="1692.897171018944" y="998.0" />
+      <point x="1692.897171018944" y="610.0" />
+      <point x="1853.7646825396823" y="610.0" />
+      <point x="19.75" y="16.0" />
+    </edge>
+    <edge source="GUI.RightBottomPane.ClassAndFuncPane" target="javax.swing.JScrollPane">
+      <point x="-59.625" y="-16.0" />
+      <point x="216.12499999999977" y="458.0" />
+      <point x="134.5" y="458.0" />
+      <point x="134.5" y="256.0" />
+      <point x="271.59916794674814" y="256.0" />
       <point x="13.625" y="16.0" />
     </edge>
     <edge source="GUI.PopupFrame" target="javax.swing.JFrame">
-      <point x="-47.19999999999999" y="-16.0" />
-      <point x="375.0823814546912" y="450.0" />
-      <point x="93.75" y="450.0" />
-      <point x="19.75" y="16.0" />
+      <point x="53.09999999999991" y="-16.0" />
+      <point x="1214.1138376856106" y="600.0" />
+      <point x="1814.2646825396823" y="600.0" />
+      <point x="-19.75" y="16.0" />
     </edge>
     <edge source="GUI.RightBottomPane" target="GUI.DefaultWelcomePane">
-      <point x="-30.40000000000009" y="-16.0" />
-      <point x="963.832381454691" y="572.0" />
-      <point x="934.2823814546911" y="572.0" />
+      <point x="9.5" y="-16.0" />
+      <point x="360.22416794674814" y="712.0" />
+      <point x="353.3874999999998" y="712.0" />
       <point x="-44.75" y="16.0" />
     </edge>
     <edge source="GUI.RightBottomPane.ClassAndFuncPane" target="javax.swing.JSplitPane">
-      <point x="13.25" y="-16.0" />
-      <point x="1250.1420634920632" y="664.0" />
-      <point x="1433.9936231665658" y="664.0" />
-      <point x="1433.9936231665658" y="440.0" />
-      <point x="713.5561231665658" y="440.0" />
-      <point x="45.33333333333337" y="16.0" />
+      <point x="-19.875" y="-16.0" />
+      <point x="-8.5" y="16.0" />
+    </edge>
+    <edge source="javax.swing.JFileChooser.WeakPCL" target="javax.swing.JFileChooser">
+      <point x="-23.75" y="-16.0" />
+      <point x="1791.4805043522774" y="824.0" />
+      <point x="1795.897171018944" y="824.0" />
+      <point x="0.0" y="16.0" />
     </edge>
     <edge source="MathFunc.MathFunc" target="MathFunc.VarRangePara">
-      <point x="0.0" y="-16.0" />
-      <point x="421.6573814546912" y="216.0" />
-      <point x="447.9073814546912" y="216.0" />
-      <point x="31.75" y="16.0" />
+      <point x="-20.0" y="-16.0" />
+      <point x="1523.3075012800814" y="336.0" />
+      <point x="1512.6825012800814" y="336.0" />
+      <point x="-31.75" y="16.0" />
     </edge>
     <edge source="javax.swing.JPanel" target="javax.swing.JPanel.AccessibleJPanel">
-      <point x="-19.0" y="-16.0" />
-      <point x="1359.9073814546912" y="236.0" />
-      <point x="1342.6573814546912" y="236.0" />
+      <point x="-19.000000000000114" y="-16.0" />
+      <point x="716.7956349206347" y="144.0" />
+      <point x="699.5456349206348" y="144.0" />
       <point x="-36.25" y="16.0" />
+    </edge>
+    <edge source="GUI.PopupFrame" target="MathFunc.Para">
+      <point x="17.700000000000045" y="-16.0" />
+      <point x="1178.7138376856108" y="570.0" />
+      <point x="1454.6825012800814" y="570.0" />
+      <point x="1454.6825012800814" y="144.0" />
+      <point x="1457.1825012800814" y="144.0" />
+      <point x="-23.25" y="16.0" />
+    </edge>
+    <edge source="GUI.PopupFrame.MidPopupPane" target="javax.swing.JPanel">
+      <point x="34.5" y="-16.0" />
+      <point x="932.4708333333331" y="246.0" />
+      <point x="747.1956349206348" y="246.0" />
+      <point x="11.399999999999977" y="16.0" />
     </edge>
     <edge source="GUI.MainMenu" target="javax.swing.JMenu">
       <point x="-26.75" y="-16.0" />
-      <point x="1761.2814044605182" y="766.0" />
-      <point x="1735.5314044605182" y="766.0" />
+      <point x="1331.0638376856107" y="916.0" />
+      <point x="1255.0638376856107" y="916.0" />
       <point x="0.0" y="16.0" />
     </edge>
     <edge source="javax.swing.JFrame" target="javax.swing.JFrame.AccessibleJFrame">
       <point x="-19.75" y="-16.0" />
-      <point x="54.25" y="348.0" />
-      <point x="37.0" y="348.0" />
+      <point x="1814.2646825396823" y="478.0" />
+      <point x="1797.0146825396823" y="478.0" />
       <point x="-37.0" y="16.0" />
     </edge>
     <edge source="javax.swing.JMenu" target="javax.swing.JMenu.MenuChangeListener">
-      <point x="-33.428571428571445" y="-16.0" />
-      <point x="1702.1028330319468" y="684.0" />
-      <point x="1510.4936231665658" y="684.0" />
+      <point x="22.285714285714334" y="-16.0" />
+      <point x="1277.3495519713251" y="804.0" />
+      <point x="1406.2219726062458" y="804.0" />
       <point x="-44.0" y="16.0" />
     </edge>
     <edge source="GUI.ParaAndCodePanel.ParaPanel" target="javax.swing.JSplitPane">
-      <point x="-44.44444444444446" y="-16.0" />
-      <point x="1206.5512457303594" y="562.0" />
-      <point x="1079.032381454691" y="562.0" />
-      <point x="1079.032381454691" y="460.0" />
-      <point x="690.8894564998991" y="460.0" />
-      <point x="22.666666666666742" y="16.0" />
+      <point x="-41.66666666666667" y="-16.0" />
+      <point x="699.9708333333331" y="438.0" />
+      <point x="306.1249999999998" y="438.0" />
+      <point x="42.5" y="16.0" />
     </edge>
     <edge source="MathFunc.MathFunc" target="MathFunc.MathObject">
-      <point x="-40.0" y="-16.0" />
-      <point x="381.6573814546912" y="236.0" />
-      <point x="342.1573814546912" y="236.0" />
+      <point x="40.0" y="-16.0" />
+      <point x="1583.3075012800814" y="336.0" />
+      <point x="1629.4325012800814" y="336.0" />
+      <point x="1629.4325012800814" y="62.0" />
+      <point x="1574.724167946748" y="62.0" />
       <point x="0.0" y="16.0" />
     </edge>
-    <edge source="GUI.PopupFrame" target="javax.swing.JSplitPane">
-      <point x="47.19999999999999" y="-16.0" />
-      <point x="469.48238145469116" y="430.0" />
-      <point x="622.8894564998991" y="430.0" />
-      <point x="-45.33333333333337" y="16.0" />
+    <edge source="GUI.PopupFrame" target="GUI.PopupFrame.PopupPane">
+      <point x="-29.5" y="-16.0" />
+      <point x="1131.5138376856107" y="590.0" />
+      <point x="1095.545634920635" y="590.0" />
+      <point x="0.0" y="16.0" />
     </edge>
     <edge source="javax.swing.JSplitPane.AccessibleJSplitPane" target="javax.swing.JSplitPane">
       <point x="42.75" y="16.0" />
-      <point x="697.7823814546912" y="318.0" />
-      <point x="693.7227898332324" y="318.0" />
+      <point x="460.72416794674814" y="276.0" />
+      <point x="289.1249999999998" y="276.0" />
       <point x="25.5" y="-16.0" />
     </edge>
-    <edge source="javax.swing.JSplitPane" target="javax.swing.JSplitPane.AccessibleJSplitPane">
-      <point x="-25.5" y="-16.0" />
-      <point x="642.7227898332324" y="318.0" />
-      <point x="612.2823814546912" y="318.0" />
-      <point x="-42.75" y="16.0" />
-    </edge>
     <edge source="GUI.MainPane" target="GUI.LeftPane">
-      <point x="40.39999999999998" y="-16.0" />
-      <point x="748.994881454691" y="766.0" />
-      <point x="854.4073814546912" y="766.0" />
+      <point x="-20.200000000000045" y="-16.0" />
+      <point x="198.999167946748" y="906.0" />
+      <point x="68.25" y="906.0" />
       <point x="22.75" y="16.0" />
     </edge>
     <edge source="javax.swing.JScrollPane" target="javax.swing.JScrollPane.AccessibleJScrollPane">
-      <point x="-27.25" y="-16.0" />
-      <point x="787.7823814546912" y="470.0" />
-      <point x="817.9102898332324" y="470.0" />
+      <point x="13.625" y="-16.0" />
+      <point x="271.59916794674814" y="134.0" />
+      <point x="340.72416794674814" y="134.0" />
       <point x="-44.5" y="16.0" />
     </edge>
+    <edge source="GUI.PopupFrame.LowerPopupPane" target="javax.swing.JPanel">
+      <point x="0.0" y="-16.0" />
+      <point x="1235.470833333333" y="216.0" />
+      <point x="769.9956349206348" y="216.0" />
+      <point x="34.19999999999993" y="16.0" />
+    </edge>
+    <edge source="javax.swing.JSplitPane" target="javax.swing.JSplitPane.AccessibleJSplitPane">
+      <point x="-25.5" y="-16.0" />
+      <point x="238.12499999999977" y="266.0" />
+      <point x="375.22416794674814" y="266.0" />
+      <point x="-42.75" y="16.0" />
+    </edge>
     <edge source="GUI.RightBottomPane.ClassAndFuncPane" target="GUI.RightBottomPane">
-      <point x="-66.25" y="-16.0" />
-      <point x="1170.6420634920632" y="684.0" />
-      <point x="994.2323814546911" y="684.0" />
-      <point x="0.0" y="16.0" />
+      <point x="-53.0" y="16.0" />
+      <point x="222.74999999999977" y="610.0" />
+      <point x="243.74999999999977" y="610.0" />
+      <point x="243.74999999999977" y="702.0" />
+      <point x="303.22416794674814" y="702.0" />
+      <point x="-47.5" y="-16.0" />
     </edge>
     <edge source="GUI.RightBottomPane" target="GUI.RightBottomPane.ClassAndFuncPane">
-      <point x="30.40000000000009" y="16.0" />
-      <point x="1024.6323814546913" y="674.0" />
-      <point x="1197.1420634920632" y="674.0" />
-      <point x="-39.75" y="-16.0" />
+      <point x="-28.5" y="-16.0" />
+      <point x="322.22416794674814" y="692.0" />
+      <point x="254.74999999999977" y="692.0" />
+      <point x="254.74999999999977" y="600.0" />
+      <point x="275.7499999999998" y="600.0" />
+      <point x="0.0" y="16.0" />
     </edge>
     <edge source="MathFunc.VarRangePara" target="MathFunc.Para">
       <point x="0.0" y="-16.0" />
-      <point x="416.1573814546912" y="139.0" />
-      <point x="469.4907147880245" y="139.0" />
-      <point x="-20.66666666666667" y="16.0" />
+      <point x="1544.4325012800814" y="144.0" />
+      <point x="1488.1825012800814" y="144.0" />
+      <point x="7.75" y="16.0" />
     </edge>
     <edge source="GUI.ParaAndCodePanel.ParaPanel" target="MathFunc.MathFunc">
-      <point x="0.0" y="-16.0" />
-      <point x="1250.995690174804" y="542.0" />
-      <point x="1271.9073814546912" y="542.0" />
-      <point x="1271.9073814546912" y="308.0" />
-      <point x="459.1573814546912" y="308.0" />
-      <point x="37.5" y="16.0" />
+      <point x="41.666666666666686" y="-16.0" />
+      <point x="783.3041666666664" y="478.0" />
+      <point x="1505.8075012800814" y="478.0" />
+      <point x="-37.5" y="16.0" />
     </edge>
     <edge source="GUI.RightPane" target="javax.swing.JSplitPane">
-      <point x="0.0" y="-16.0" />
-      <point x="680.6198814546912" y="664.0" />
-      <point x="713.4698814546912" y="664.0" />
-      <point x="713.4698814546912" y="470.0" />
-      <point x="679.5561231665658" y="470.0" />
-      <point x="11.333333333333371" y="16.0" />
+      <point x="-40.799999999999955" y="-16.0" />
+      <point x="306.07416794674805" y="824.0" />
+      <point x="112.5" y="824.0" />
+      <point x="112.5" y="478.0" />
+      <point x="238.12499999999977" y="478.0" />
+      <point x="-25.5" y="16.0" />
     </edge>
     <edge source="GUI.MainMenu" target="GUI.OpenFile">
       <point x="26.75" y="-16.0" />
-      <point x="1814.7814044605182" y="766.0" />
-      <point x="1840.5314044605182" y="766.0" />
+      <point x="1384.5638376856107" y="916.0" />
+      <point x="1410.3138376856107" y="916.0" />
       <point x="0.0" y="16.0" />
     </edge>
     <edge source="MathFunc.Para" target="MathFunc.MathObject">
       <point x="0.0" y="-16.0" />
-      <point x="490.1573814546912" y="57.0" />
-      <point x="379.49071478802455" y="57.0" />
-      <point x="37.33333333333334" y="16.0" />
+      <point x="1480.4325012800814" y="62.0" />
+      <point x="1537.3908346134144" y="62.0" />
+      <point x="-37.33333333333334" y="16.0" />
     </edge>
     <edge source="GUI.Main" target="MathFunc.FuncClass">
-      <point x="-16.75" y="-16.0" />
-      <point x="345.4689044605182" y="945.0" />
-      <point x="113.69071478802448" y="945.0" />
-      <point x="113.69071478802448" y="470.0" />
-      <point x="194.25" y="470.0" />
-      <point x="-24.25" y="16.0" />
-    </edge>
-    <edge source="GUI.RightBottomPane" target="javax.swing.JScrollPane">
-      <point x="-60.799999999999955" y="-16.0" />
-      <point x="933.4323814546912" y="582.0" />
-      <point x="855.9073814546912" y="582.0" />
-      <point x="40.875" y="16.0" />
+      <point x="16.75" y="-16.0" />
+      <point x="1505.8138376856107" y="1075.0" />
+      <point x="1898.897171018944" y="1075.0" />
+      <point x="1898.897171018944" y="590.0" />
+      <point x="1639.6408346134147" y="590.0" />
+      <point x="24.25" y="16.0" />
     </edge>
     <edge source="GUI.DefaultWelcomePane" target="javax.swing.JPanel">
       <point x="0.0" y="-16.0" />
-      <point x="979.0323814546911" y="470.0" />
-      <point x="1009.1602898332324" y="470.0" />
-      <point x="1009.1602898332324" y="338.0" />
-      <point x="1357.1930957404054" y="338.0" />
-      <point x="-21.71428571428578" y="16.0" />
+      <point x="398.1374999999998" y="306.0" />
+      <point x="716.7956349206349" y="306.0" />
+      <point x="-19.0" y="16.0" />
+    </edge>
+    <edge source="GUI.RightBottomPane" target="javax.swing.JScrollPane">
+      <point x="-66.5" y="-16.0" />
+      <point x="284.22416794674814" y="712.0" />
+      <point x="123.5" y="712.0" />
+      <point x="123.5" y="246.0" />
+      <point x="244.34916794674814" y="246.0" />
+      <point x="-13.625" y="16.0" />
+    </edge>
+    <edge source="javax.swing.JFileChooser" target="javax.swing.JFileChooser.AccessibleJFileChooser">
+      <point x="-29.0" y="-16.0" />
+      <point x="1766.897171018944" y="712.0" />
+      <point x="1749.647171018944" y="712.0" />
+      <point x="-46.25" y="16.0" />
     </edge>
     <edge source="GUI.PopupFrame.UpperPopupPane" target="GUI.PopupFrame">
-      <point x="-38.0" y="-16.0" />
-      <point x="162.19071478802448" y="572.0" />
-      <point x="382.9490481213578" y="572.0" />
-      <point x="-39.33333333333334" y="16.0" />
+      <point x="50.66666666666674" y="16.0" />
+      <point x="1114.6374999999998" y="408.0" />
+      <point x="1178.6348822324624" y="408.0" />
+      <point x="1178.6348822324624" y="550.0" />
+      <point x="1155.1138376856106" y="550.0" />
+      <point x="-5.900000000000091" y="-16.0" />
     </edge>
     <edge source="javax.swing.JFrame.AccessibleJFrame" target="javax.swing.JFrame">
       <point x="37.0" y="16.0" />
-      <point x="111.0" y="348.0" />
-      <point x="93.75" y="348.0" />
+      <point x="1871.0146825396823" y="478.0" />
+      <point x="1853.7646825396823" y="478.0" />
       <point x="19.75" y="-16.0" />
     </edge>
+    <edge source="GUI.PopupFrame.MidPopupPane" target="javax.swing.JScrollPane">
+      <point x="-34.5" y="-16.0" />
+      <point x="863.4708333333331" y="256.0" />
+      <point x="298.84916794674814" y="256.0" />
+      <point x="40.875" y="16.0" />
+    </edge>
     <edge source="GUI.PopupFrame" target="MathFunc.FuncClass">
-      <point x="-23.599999999999994" y="-16.0" />
-      <point x="398.68238145469115" y="440.0" />
-      <point x="242.75" y="440.0" />
-      <point x="24.25" y="16.0" />
+      <point x="41.299999999999955" y="-16.0" />
+      <point x="1202.3138376856107" y="590.0" />
+      <point x="1591.1408346134147" y="590.0" />
+      <point x="-24.25" y="16.0" />
     </edge>
     <edge source="GUI.RightBottomPane.ClassAndFuncPane" target="javax.swing.JPanel">
-      <point x="66.25" y="-16.0" />
-      <point x="1303.1420634920632" y="684.0" />
-      <point x="1455.9936231665658" y="684.0" />
-      <point x="1455.9936231665658" y="318.0" />
-      <point x="1411.4788100261198" y="318.0" />
-      <point x="32.57142857142867" y="16.0" />
-    </edge>
-    <edge source="GUI.PopupFrame.UpperPopupPane" target="javax.swing.JSplitPane">
-      <point x="38.0" y="-16.0" />
-      <point x="238.19071478802448" y="582.0" />
-      <point x="491.7823814546912" y="582.0" />
-      <point x="491.7823814546912" y="440.0" />
-      <point x="634.2227898332324" y="440.0" />
-      <point x="-34.0" y="16.0" />
+      <point x="19.875" y="-16.0" />
+      <point x="295.6249999999998" y="468.0" />
+      <point x="357.64999999999986" y="468.0" />
+      <point x="357.64999999999986" y="286.0" />
+      <point x="701.5956349206349" y="286.0" />
+      <point x="-34.200000000000045" y="16.0" />
     </edge>
     <edge source="javax.swing.JScrollPane.AccessibleJScrollPane" target="javax.swing.JScrollPane">
       <point x="44.5" y="16.0" />
-      <point x="906.9102898332324" y="470.0" />
-      <point x="842.2823814546912" y="470.0" />
-      <point x="27.25" y="-16.0" />
+      <point x="429.72416794674814" y="144.0" />
+      <point x="298.84916794674814" y="144.0" />
+      <point x="40.875" y="-16.0" />
+    </edge>
+    <edge source="GUI.PopupFrame.UpperPopupPane" target="javax.swing.JPanel">
+      <point x="0.0" y="-16.0" />
+      <point x="1063.970833333333" y="226.0" />
+      <point x="762.3956349206348" y="226.0" />
+      <point x="26.600000000000023" y="16.0" />
+    </edge>
+    <edge source="GUI.OpenFile" target="javax.swing.JFileChooser">
+      <point x="0.0" y="-16.0" />
+      <point x="1410.3138376856107" y="824.0" />
+      <point x="1757.2305043522774" y="824.0" />
+      <point x="-38.66666666666666" y="16.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.5" x="412.0" y="490.0" />
+  <settings layout="Hierarchic Group" zoom="0.9987146529562982" x="1624.6241956241956" y="637.8764478764479" />
   <SelectedNodes />
   <Categories>
     <Category>Inner Classes</Category>
