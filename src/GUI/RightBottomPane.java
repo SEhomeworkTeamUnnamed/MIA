@@ -123,7 +123,7 @@ public class RightBottomPane extends JScrollPane{
             //setPreferredSize(new Dimension(600, 400));
             setOrientation(JSplitPane.VERTICAL_SPLIT);
 
-            setTopComponent(new JScrollPane(CaFTopPanel));
+            setTopComponent(CaFTopPanel);
             setBottomComponent(CaFBottomPanel);
 
             setDividerSize(3);
@@ -133,6 +133,7 @@ public class RightBottomPane extends JScrollPane{
 
     RightBottomPane(JTree tree){
         super();
+        DWP=new DefaultWelcomePane();
         jTree = tree;
         setDefaultWelcomePane();
         //DefaultWelcomePane DWP=new DefaultWelcomePane();
@@ -176,11 +177,10 @@ public class RightBottomPane extends JScrollPane{
     }
 
     void setDefaultWelcomePane(){
-        DWP=new DefaultWelcomePane();
         setViewportView(DWP);
     }
 
-    void setClassAndFuncPane(FuncClass selectedFuncClass){
+    public void setClassAndFuncPane(FuncClass selectedFuncClass){
         int numOfCF = selectedFuncClass.getNumOfClass()+selectedFuncClass.getNumOfFunc();
         String[] CFNames=new String[numOfCF];
         String[] CFNotes=new String[numOfCF];
@@ -196,7 +196,7 @@ public class RightBottomPane extends JScrollPane{
         CAFP=new ClassAndFuncPane(selectedFuncClass.getNotes(),  CFNames, CFNotes, selectedFuncClass);
         setViewportView(CAFP);
     }
-    void setParaAndCodePane(MathFunc selectedMathFunc){
+    public void setParaAndCodePane(MathFunc selectedMathFunc){
         PACP=new ParaAndCodePanel(selectedMathFunc);
         setViewportView(PACP);
     }

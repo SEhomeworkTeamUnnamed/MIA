@@ -24,8 +24,8 @@ public class MathFunc extends MathObject {
     public MathFunc() {
         super();
         NumOfPara = 0;
-        NumOfVarRangePara = 1;
-        AllVarRangePara[0] = new VarRangePara();
+        NumOfVarRangePara = 0;
+        //AllVarRangePara[0] = new VarRangePara();
         MainField = "";
     }
 
@@ -34,8 +34,8 @@ public class MathFunc extends MathObject {
         this.setUpperPath(upperPath);
         this.setObjectName(FuncName);
         NumOfPara = 0;
-        NumOfVarRangePara = 1;
-        AllVarRangePara[0] = new VarRangePara();
+        NumOfVarRangePara = 0;
+        //AllVarRangePara[0] = new VarRangePara();
         MainField = "";
     }
 
@@ -123,13 +123,14 @@ public class MathFunc extends MathObject {
         System.out.println("\t------end of Func "+ObjectName);
     }
 
-    public void readAll(String upperpath, String funcname) {
-        readPara(upperpath, funcname);
-        readParaFreq(upperpath, funcname);
-        readNotes(upperpath, funcname);
+    public void readAll(String upperPath, String funcName) {
+        readPara(upperPath, funcName);
+        readParaFreq(upperPath, funcName);
+        readNotes(upperPath, funcName);
+        readVarRangeParas(upperPath, funcName);
     }
 
-    public void readPara(String upperpath, String funcname) {
+    private void readPara(String upperpath, String funcname) {
 
         //System.out.println(funcname);
 
@@ -203,7 +204,7 @@ public class MathFunc extends MathObject {
         }
     }
 
-    public void readParaFreq(String upperpath, String funcname) {
+    private void readParaFreq(String upperpath, String funcname) {
         Others otherFuncs = new Others();
 
         //System.out.println(funcname);
@@ -246,7 +247,7 @@ public class MathFunc extends MathObject {
         }
     }
 
-    public void readNotes(String upperpath, String funcname) {
+    private void readNotes(String upperpath, String funcname) {
 
         //System.out.println(funcname);
 
@@ -271,8 +272,49 @@ public class MathFunc extends MathObject {
             int line = 1;
             // 一次读入一行，直到读入null为文件结束
             while ((notes = reader.readLine()) != null) {
-                Notes = notes;
+                Notes = Notes + notes+"\n";
                 line++;
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e1) {
+                }
+            }
+        }
+    }
+
+    private void readVarRangeParas(String upperPath, String funcName) {
+
+        String FilePath = upperPath + "\\" + "F"+funcName + "\\" + funcName + "VarRangeParas.txt";
+        File file = new File(FilePath);
+        File dir = new File(file.getParent());
+        try{
+            if (!dir.isDirectory()) {
+                dir.mkdirs();
+            }
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+        }catch (IOException e0) {
+            e0.printStackTrace();
+        }
+
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            String notes = null;
+            // 一次读入一行，直到读入null为文件结束
+            while ((notes = reader.readLine()) != null) {
+                AllVarRangePara[NumOfVarRangePara] = new VarRangePara();
+                if(notes.equals("1")) {
+                    AllVarRangePara[NumOfVarRangePara].setHasStep(true);
+                }
+                NumOfVarRangePara++;
             }
             reader.close();
         } catch (IOException e) {

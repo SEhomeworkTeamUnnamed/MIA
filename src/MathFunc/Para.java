@@ -139,7 +139,7 @@ public class Para extends MathObject {
             int line = 1;
             // 一次读入一行，直到读入null为文件结束
             while ((notes = reader.readLine()) != null) {
-                Notes=notes;
+                Notes=Notes+notes+"\n";
                 line++;
             }
             reader.close();

@@ -56,10 +56,11 @@ public class ParaAndCodePanel extends JSplitPane{
         void SetOnePanel(Para OnePara, JPanel AimPanel){
             JPanel LeftPanel=new JPanel();  JPanel RightPanel=new JPanel();
 
-            JTextArea ParaTextArea=new JTextArea(OnePara.getObjectName()+'\n'+ OnePara.getNotes(), 5, 20);
+            JTextArea ParaTextArea=new JTextArea(OnePara.getObjectName()+'\n'+ OnePara.getNotes(), 3, 25);
             ParaTextArea.setEnabled(false);
+            ParaTextArea.setLineWrap(true);
             LeftPanel.setLayout(new FlowLayout());
-            LeftPanel.add(ParaTextArea);
+            LeftPanel.add(new JScrollPane(ParaTextArea));
 
             Box hBox=Box.createHorizontalBox();
             //JLabel ParaLabel=new JLabel("请选择您需要的参数：");
@@ -88,10 +89,11 @@ public class ParaAndCodePanel extends JSplitPane{
         void SetOnePanel(VarRangePara OneVarRangePara, JPanel AimPanel){
             JPanel LeftPanel=new JPanel();  JPanel RightPanel=new JPanel();
 
-            JTextArea ParaTextArea=new JTextArea(OneVarRangePara.getObjectName()+'\n'+OneVarRangePara.getNotes(), 5, 20);
+            JTextArea ParaTextArea=new JTextArea(OneVarRangePara.getObjectName()+'\n'+OneVarRangePara.getNotes(), 3, 25);
             ParaTextArea.setEnabled(false);
+            ParaTextArea.setLineWrap(true);
             LeftPanel.setLayout(new FlowLayout());
-            LeftPanel.add(ParaTextArea);
+            LeftPanel.add(new JScrollPane(ParaTextArea));
 
             Box hBox=Box.createHorizontalBox();
             if(OneVarRangePara.IfHasStep()) {
@@ -99,10 +101,10 @@ public class ParaAndCodePanel extends JSplitPane{
                 JLabel MinLabel=new JLabel("最小值：");
                 JLabel StepLabel=new JLabel("步长：");
                 JLabel MaxLabel=new JLabel("最大值：");
-                JTextField VarNameTextField=new JTextField(10);
-                JTextField MinTextField=new JTextField(10);
-                JTextField StepTextField=new JTextField(10);
-                JTextField MaxTextField=new JTextField(10);
+                JTextField VarNameTextField=new JTextField(5);
+                JTextField MinTextField=new JTextField(5);
+                JTextField StepTextField=new JTextField(5);
+                JTextField MaxTextField=new JTextField(5);
 
                 Document VarNameDoc=new DefaultStyledDocument();
                 VarNameTextField.setDocument(VarNameDoc);
@@ -342,9 +344,9 @@ public class ParaAndCodePanel extends JSplitPane{
             JTextArea FuncIntrTextArea=new JTextArea(InfoFunc.getNotes(), 5, 40);
             FuncIntrTextArea.setEnabled(false);
             //something wrong here 20151211
-            FuncIntrPanel.setLayout(new BorderLayout());
+            FuncIntrPanel.setLayout(new FlowLayout());
             //add(FuncIntrTextArea, "Center");
-            FuncIntrPanel.add(FuncIntrTextArea);
+            FuncIntrPanel.add(new JScrollPane(FuncIntrTextArea));
             ArrayNum1=InfoFunc.getNumOfVarRangePara();
             ArrayNum2=InfoFunc.getNumOfPara();
             ArrayPanel1=new JPanel[ArrayNum1];
@@ -355,10 +357,11 @@ public class ParaAndCodePanel extends JSplitPane{
 
             JPanel MainFieldPanel=new JPanel();
             JPanel LeftMainFieldPanel=new JPanel(); JPanel RightMainFieldPanel=new JPanel();
-            JTextArea MainFieldTextArea=new JTextArea(InfoFunc.getMainField()+'\n'+InfoFunc.getMainFieldNote(), 5, 20);
+            JTextArea MainFieldTextArea=new JTextArea(InfoFunc.getMainField()+'\n'+InfoFunc.getMainFieldNote(), 3, 25);
             MainFieldTextArea.setEnabled(false);
+            MainFieldTextArea.setLineWrap(true);
             LeftMainFieldPanel.setLayout(new FlowLayout());
-            LeftMainFieldPanel.add(MainFieldTextArea);
+            LeftMainFieldPanel.add(new JScrollPane(MainFieldTextArea));
             Box hBox=Box.createHorizontalBox();
             JLabel MainFieldLabel=new JLabel("MainField内容：");
             JTextField MainFieldLabelTextField=new JTextField(15);

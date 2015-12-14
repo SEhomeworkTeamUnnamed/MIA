@@ -159,7 +159,7 @@ public class PopupFrame extends JFrame {
 
     public PopupFrame(String FrameName,
                       DefaultTreeModel treeModel, JTree tree,
-                      int ClassOrFunc){
+                      int ClassOrFunc, RightBottomPane bottomPane){
         super(FrameName);
 
         setSize(350,250);
@@ -204,8 +204,7 @@ public class PopupFrame extends JFrame {
                 try{
                     if(UserInput.equals(null))
                     {
-                        JOptionPane jOptionPane=new JOptionPane();
-                        JOptionPane.showMessageDialog(jButtonAffirm,"请输入正确的英文名称！");
+                        JOptionPane.showMessageDialog(jButtonAffirm,"请输入正确的名称！");
                     }
                     else{
                         setVisible(false);
@@ -225,6 +224,7 @@ public class PopupFrame extends JFrame {
                             newNode.setAllowsChildren(true);
                             treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
                             tree.scrollPathToVisible(new TreePath(newNode.getPath()));
+                            bottomPane.setClassAndFuncPane((FuncClass) parentNode.getUserObject());
                         }
                         else if(ClassOrFunc==PopupFrame.ADD_FUNC){
                             String parentClassName = ((FuncClass) parentNode.getUserObject()).getObjectName();
@@ -238,21 +238,36 @@ public class PopupFrame extends JFrame {
                             newNode.setAllowsChildren(true);
                             treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
                             tree.scrollPathToVisible(new TreePath(newNode.getPath()));
+                            bottomPane.setClassAndFuncPane((FuncClass) parentNode.getUserObject());
                         }
                         else{
                             String parentClassName = ((MathFunc) parentNode.getUserObject()).getObjectName();
                             String newUpperPath = ((MathFunc) parentNode.getUserObject()).getUpperPath()+"\\F"+parentClassName;
                             Para newPara=new Para();
                             newPara.setUpperPath(newUpperPath);
+                            newPara.setObjectName(UserInput);
+                            newPara.setNotes(NoteInput);
                             String paraValues = paraValueTextArea.getText();
-                            System.out.print(paraValues.substring(paraValues.indexOf("\n")));
+                            newPara.addParaValue(paraValues.substring(0, paraValues.indexOf("\n")));
+                            if(paraValues.indexOf("\n")>=0) {
+                                do {
+                                    paraValues = paraValues.substring(paraValues.indexOf("\n")+1);
+                                    try {
+                                        newPara.addParaValue(paraValues.substring(0, paraValues.indexOf("\n")));
+                                    }catch(StringIndexOutOfBoundsException SIOOBE){
+                                        newPara.addParaValue(paraValues);
+                                    }
+                                } while (paraValues.indexOf("\n")>=0);
+                            }
+                            //System.out.print(paraValues.substring(paraValues.indexOf("\n")));
+                            ((MathFunc) parentNode.getUserObject()).addPara(newPara);
+                            bottomPane.setParaAndCodePane((MathFunc) parentNode.getUserObject());
                         }
                     }
 
                 }catch (NullPointerException nPE){
                     nPE.printStackTrace();
-                    JOptionPane jOptionPane=new JOptionPane();
-                    JOptionPane.showMessageDialog(jButtonAffirm,"请输入正确的英文名称！");
+                    JOptionPane.showMessageDialog(jButtonAffirm,"请输入正确的名称！");
                 }
                 /*if(UserInput.equals(null)) {
 

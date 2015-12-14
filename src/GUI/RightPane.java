@@ -1,6 +1,6 @@
 package GUI;
 
-import MathFunc.FuncClass;
+import MathFunc.*;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
@@ -15,8 +15,8 @@ public class RightPane extends JSplitPane{
 
     RightPane(JTree tree){
         super();
-        rightTopPane = new RightTopPane(tree);
         rightBottomPane = new RightBottomPane(tree);
+        rightTopPane = new RightTopPane(tree, rightBottomPane);
 
         setOneTouchExpandable(true);
         setContinuousLayout(true);

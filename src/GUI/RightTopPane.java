@@ -19,7 +19,7 @@ import java.awt.event.ActionListener;
  * Created by IIIS on 11/7/2015.
  */
 public class RightTopPane extends JSplitPane {
-    public RightTopPane(JTree tree){
+    public RightTopPane(JTree tree, RightBottomPane bottomPane){
         super();
         final DefaultTreeModel treeModel = (DefaultTreeModel)tree.getModel();
 
@@ -83,7 +83,7 @@ public class RightTopPane extends JSplitPane {
         addFuncClassButt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new PopupFrame("添加函数类", treeModel, tree, PopupFrame.ADD_CLASS);
+                new PopupFrame("添加函数类", treeModel, tree, PopupFrame.ADD_CLASS, bottomPane);
                 //DefaultMutableTreeNode parentNode=null;
                 //DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new class");
                 //newNode.setAllowsChildren(true);
@@ -107,7 +107,7 @@ public class RightTopPane extends JSplitPane {
         addMathFuncButt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new PopupFrame("添加函数", treeModel, tree, PopupFrame.ADD_FUNC);
+                new PopupFrame("添加函数", treeModel, tree, PopupFrame.ADD_FUNC, bottomPane);
                 //DefaultMutableTreeNode parentNode=null;
                 //DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new func");
                 //newNode.setAllowsChildren(true);
@@ -129,7 +129,7 @@ public class RightTopPane extends JSplitPane {
         addParaButt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new PopupFrame("添加参数", treeModel, tree, PopupFrame.ADD_PARA);
+                new PopupFrame("添加参数", treeModel, tree, PopupFrame.ADD_PARA, bottomPane);
 
             }
         });
@@ -137,8 +137,7 @@ public class RightTopPane extends JSplitPane {
         deleteButt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane jOptionPane=new JOptionPane();
-                int UserChoice = jOptionPane.showConfirmDialog(deleteButt, "你确定删除吗？","", JOptionPane.YES_NO_OPTION);
+                int UserChoice = JOptionPane.showConfirmDialog(deleteButt, "你确定删除吗？","", JOptionPane.YES_NO_OPTION);
                 if(UserChoice == 0) {
                     TreePath treePath = tree.getSelectionPath();
                     if (treePath != null) {

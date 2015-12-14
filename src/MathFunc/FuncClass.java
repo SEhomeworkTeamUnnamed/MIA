@@ -274,7 +274,7 @@ public class FuncClass extends MathObject {
         readNotes(upperpath, classname);
     }
 
-    public void readFunc(String upperpath, String classname) {
+    private void readFunc(String upperpath, String classname) {
 
         //System.out.println(classname);
         UpperPath = upperpath;
@@ -346,7 +346,7 @@ public class FuncClass extends MathObject {
         }
     }
 
-    public void readFuncFreq(String upperpath, String classname) {
+    private void readFuncFreq(String upperpath, String classname) {
         Others otherFuncs = new Others();
         String FilePath = upperpath + "\\" + "C" + classname + "\\" + classname + "FuncFreq.txt";
         File file = new File(FilePath);
@@ -386,7 +386,7 @@ public class FuncClass extends MathObject {
 
     }
 
-    public void readClass(String upperpath, String classname) {
+    private void readClass(String upperpath, String classname) {
 
         //System.out.println(classname);
 
@@ -464,7 +464,7 @@ public class FuncClass extends MathObject {
         }
     }
 
-    public void readNotes(String upperpath, String classname) {
+    private void readNotes(String upperpath, String classname) {
         String FilePath = upperpath + "\\" + "C" + classname + "\\" + classname + "notes.txt";
         File file = new File(FilePath);
         File dir = new File(file.getParent());
@@ -486,7 +486,7 @@ public class FuncClass extends MathObject {
             int line = 1;
             // 一次读入一行，直到读入null为文件结束
             while ((notes = reader.readLine()) != null) {
-                Notes = notes;
+                Notes = Notes + notes+"\n";
                 line++;
             }
             reader.close();
