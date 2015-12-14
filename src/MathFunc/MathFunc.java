@@ -337,17 +337,10 @@ public class MathFunc extends MathObject {
         String toShow = "";
         toShow = toShow+this.ObjectName+"["+MainField;
         for (int i = 0; i < NumOfVarRangePara; i++) {
-            toShow = toShow + ", "+ AllVarRangePara[i].show();
+            toShow = toShow + AllVarRangePara[i].show();
         }
-        String tempPara;
         for (int i = 0; i < NumOfPara; i++) {
-            tempPara = AllPara[i].show();
-            if(tempPara.equals("")){
-                continue;
-            }
-            else {
-                toShow = toShow + ", " + tempPara;
-            }
+            toShow = toShow + AllPara[i].show();
         }
         toShow = toShow + "]";
         return toShow;

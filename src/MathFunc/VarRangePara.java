@@ -27,7 +27,7 @@ public class VarRangePara extends Para {
 
     public String show(){
         if(ShowName){
-            String toShow="{";
+            String toShow=", {";
             toShow=toShow+VarName+", "+VarMin+", "+VarMax;
             if(HasStep){
                 toShow=toShow+", "+VarStep;

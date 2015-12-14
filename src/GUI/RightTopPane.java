@@ -83,11 +83,7 @@ public class RightTopPane extends JSplitPane {
         addFuncClassButt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                TreePath treePath=tree.getSelectionPath();
-                DefaultMutableTreeNode selectionNode =
-                        (DefaultMutableTreeNode) treePath.getLastPathComponent();
-                FuncClass selectionNodeObject = (FuncClass)selectionNode.getUserObject();
-                new PopupFrame("", treeModel, tree, selectionNodeObject, PopupFrame.ADD_CLASS);
+                new PopupFrame("添加函数类", treeModel, tree, PopupFrame.ADD_CLASS);
                 //DefaultMutableTreeNode parentNode=null;
                 //DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new class");
                 //newNode.setAllowsChildren(true);
@@ -111,11 +107,7 @@ public class RightTopPane extends JSplitPane {
         addMathFuncButt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                TreePath treePath=tree.getSelectionPath();
-                DefaultMutableTreeNode selectionNode =
-                        (DefaultMutableTreeNode) treePath.getLastPathComponent();
-                FuncClass selectionNodeObject = (FuncClass)selectionNode.getUserObject();
-                new PopupFrame("", treeModel, tree, selectionNodeObject, PopupFrame.ADD_FUNC);
+                new PopupFrame("添加函数", treeModel, tree, PopupFrame.ADD_FUNC);
                 //DefaultMutableTreeNode parentNode=null;
                 //DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new func");
                 //newNode.setAllowsChildren(true);
@@ -130,6 +122,14 @@ public class RightTopPane extends JSplitPane {
                 ////RootClass.outputFile();
 //
                 //tree.scrollPathToVisible(new TreePath(newNode.getPath()));
+
+            }
+        });
+
+        addParaButt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new PopupFrame("添加参数", treeModel, tree, PopupFrame.ADD_PARA);
 
             }
         });

@@ -179,7 +179,7 @@ public class Para extends MathObject {
 
     public String show(){
         if(ShowName){
-            return ObjectName+"->"+ParaValue;
+            return ", "+ ObjectName+"->"+ParaValue;
         }
         return "";
     }
