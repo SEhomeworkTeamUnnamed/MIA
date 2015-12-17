@@ -20,7 +20,12 @@ public class DefaultWelcomePane extends JPanel{
 
         JLabel bgp=new JLabel();
         bgp.setIcon(new ImageIcon(System.getProperty("user.dir")+"\\root\\picture\\welcome pic.png"));
-        bgp.setText("欢迎使用 Mathematica Input Assistant!");
+        bgp.setText("<html>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp欢迎使用<br>" +
+                "Mathematica Input Assistant!<br><br><br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +
+                "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp --物理32&nbsp蒋文韬<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +
+                "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 物理32&nbsp张思源<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +
+                "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp基科31&nbsp李泽清<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +
+                "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp基科31&nbsp&nbsp&nbsp傅笛</html>");
         bgp.setFont(new Font("微软雅黑", Font.BOLD, 30));
         bgp.setForeground(Color.BLACK);
         bgp.setHorizontalTextPosition(0);
