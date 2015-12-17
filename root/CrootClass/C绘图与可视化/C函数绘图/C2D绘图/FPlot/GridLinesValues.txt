@@ -1,0 +1,7 @@
+default
+Automatic
+None
+{Automatic, None}
+{None,  Automatic}
+{Range[x start,  x end], Range[y start, y end]}
+{Range[x start,  x end, increment], Range[y start, y end, increment]}

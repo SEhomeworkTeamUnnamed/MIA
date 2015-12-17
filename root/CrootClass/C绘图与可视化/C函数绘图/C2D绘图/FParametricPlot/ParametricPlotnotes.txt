@@ -1,0 +1,2 @@
+这个函数利用参数方程来绘制曲线
+ParametricPlot[{fx, fy}, {u, umin, umax}]

@@ -1,0 +1,4 @@
+default
+Hue
+GrayLevel
+"SunsetColors"

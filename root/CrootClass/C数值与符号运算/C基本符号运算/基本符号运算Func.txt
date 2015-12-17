@@ -1,0 +1,6 @@
+Simplify
+FullSimplify
+Factor
+Expand
+Reduce
+Series

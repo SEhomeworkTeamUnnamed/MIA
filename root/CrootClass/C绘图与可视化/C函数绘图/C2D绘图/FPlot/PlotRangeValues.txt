@@ -1,0 +1,5 @@
+default
+{y min, y max}
+All
+Automatic
+Full
