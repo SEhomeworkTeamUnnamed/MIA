@@ -56,8 +56,10 @@ public class ParaAndCodePanel extends JSplitPane{
         void SetOnePanel(Para OnePara, JPanel AimPanel){
             JPanel LeftPanel=new JPanel();  JPanel RightPanel=new JPanel();
 
-            JTextArea ParaTextArea=new JTextArea(OnePara.getObjectName()+'\n'+ OnePara.getNotes(), 3, 25);
-            ParaTextArea.setEnabled(false);
+            JTextArea ParaTextArea=new JTextArea(OnePara.getObjectName()+'\n'+ OnePara.getNotes(), 3, 20);
+            ParaTextArea.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 20));
+            ParaTextArea.setForeground(Color.BLACK);
+            //ParaTextArea.setEnabled(false);
             ParaTextArea.setLineWrap(true);
             LeftPanel.setLayout(new FlowLayout());
             LeftPanel.add(new JScrollPane(ParaTextArea));
@@ -67,6 +69,7 @@ public class ParaAndCodePanel extends JSplitPane{
             ComboBoxModel mode=new AModel(OnePara.getAllParaValue());
             JComboBox combo=new JComboBox(mode);
             combo.setBorder(BorderFactory.createTitledBorder("ÇëÑ¡ÔñÄúÐèÒªµÄ²ÎÊý£º"));
+            
 
             combo.addActionListener(new ActionListener() {
                 @Override
@@ -89,8 +92,10 @@ public class ParaAndCodePanel extends JSplitPane{
         void SetOnePanel(VarRangePara OneVarRangePara, JPanel AimPanel){
             JPanel LeftPanel=new JPanel();  JPanel RightPanel=new JPanel();
 
-            JTextArea ParaTextArea=new JTextArea(OneVarRangePara.getObjectName()+'\n'+OneVarRangePara.getNotes(), 3, 25);
-            ParaTextArea.setEnabled(false);
+            JTextArea ParaTextArea=new JTextArea(OneVarRangePara.getObjectName()+'\n'+OneVarRangePara.getNotes(), 3, 20);
+            ParaTextArea.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 20));
+            ParaTextArea.setForeground(Color.BLACK);
+            //ParaTextArea.setEnabled(false);
             ParaTextArea.setLineWrap(true);
             LeftPanel.setLayout(new FlowLayout());
             LeftPanel.add(new JScrollPane(ParaTextArea));
@@ -341,8 +346,10 @@ public class ParaAndCodePanel extends JSplitPane{
             ChosenFunc = InfoFunc;
 
             JPanel FuncIntrPanel=new JPanel();
-            JTextArea FuncIntrTextArea=new JTextArea(InfoFunc.getNotes(), 5, 40);
-            FuncIntrTextArea.setEnabled(false);
+            JTextArea FuncIntrTextArea=new JTextArea(InfoFunc.getNotes(), 5, 45);
+            FuncIntrTextArea.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 25));
+            FuncIntrTextArea.setForeground(Color.BLACK);
+            //FuncIntrTextArea.setEnabled(false);
             //something wrong here 20151211
             FuncIntrPanel.setLayout(new FlowLayout());
             //add(FuncIntrTextArea, "Center");
@@ -357,8 +364,10 @@ public class ParaAndCodePanel extends JSplitPane{
 
             JPanel MainFieldPanel=new JPanel();
             JPanel LeftMainFieldPanel=new JPanel(); JPanel RightMainFieldPanel=new JPanel();
-            JTextArea MainFieldTextArea=new JTextArea(InfoFunc.getMainField()+'\n'+InfoFunc.getMainFieldNote(), 3, 25);
-            MainFieldTextArea.setEnabled(false);
+            JTextArea MainFieldTextArea=new JTextArea(InfoFunc.getMainField()+'\n'+InfoFunc.getMainFieldNote(), 3, 20);
+            MainFieldTextArea.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 20));
+            MainFieldTextArea.setForeground(Color.BLACK);
+            //MainFieldTextArea.setEnabled(false);
             MainFieldTextArea.setLineWrap(true);
             LeftMainFieldPanel.setLayout(new FlowLayout());
             LeftMainFieldPanel.add(new JScrollPane(MainFieldTextArea));

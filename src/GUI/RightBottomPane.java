@@ -65,7 +65,9 @@ public class RightBottomPane extends JScrollPane{
             LeftPanel.add(CaFBotton);
 
             JTextArea CaFTextArea=new JTextArea(CaFNote, 3, 15);
-            CaFTextArea.setEnabled(false);
+            CaFTextArea.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 20));
+            CaFTextArea.setForeground(Color.BLACK);
+            //CaFTextArea.setEnabled(false);
             CaFTextArea.setLineWrap(true);
             RightPanel.setLayout(new FlowLayout());
             RightPanel.add(new JScrollPane(CaFTextArea));
@@ -110,8 +112,10 @@ public class RightBottomPane extends JScrollPane{
 
             JPanel CaFTopPanel=new JPanel();
             JPanel CaFBottomPanel=new JPanel();
-            JTextArea ParentTextArea=new JTextArea(ParentNote, 5, 40);
-            ParentTextArea.setEnabled(false);
+            JTextArea ParentTextArea=new JTextArea(ParentNote, 5, 25);
+            ParentTextArea.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 25));
+            ParentTextArea.setForeground(Color.BLACK);
+            //ParentTextArea.setEnabled(false);
 
             CaFTopPanel.setLayout(new FlowLayout());
             CaFTopPanel.add(new JScrollPane(ParentTextArea));
