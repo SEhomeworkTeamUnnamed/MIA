@@ -19,10 +19,10 @@ public class DefaultWelcomePane extends JPanel{
         setPreferredSize(new Dimension(450, 360));
 
         JLabel bgp=new JLabel();
-        //bgp.setIcon(new ImageIcon(System.getProperty("user.dir")+"\\root\\picture\\123.png"));
-        bgp.setText("ª∂”≠ π”√Mathematica Input Assistant£°");
+        bgp.setIcon(new ImageIcon(System.getProperty("user.dir")+"\\root\\picture\\welcome pic.png"));
+        bgp.setText("ª∂”≠ π”√ Mathematica Input Assistant!");
         bgp.setFont(new Font("Œ¢»Ì—≈∫⁄", Font.BOLD, 30));
-        //bgp.setForeground(Color.BLUE);
+        bgp.setForeground(Color.BLACK);
         bgp.setHorizontalTextPosition(0);
         bgp.setVerticalTextPosition(0);
 
