@@ -1,4 +1,4 @@
-default
+default                                         
 {y min, y max}
 All
 Automatic

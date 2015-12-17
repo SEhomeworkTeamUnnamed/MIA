@@ -194,7 +194,7 @@ public class RightBottomPane extends JScrollPane{
         }
         for (int i = selectedFuncClass.getNumOfClass(), i0 = selectedFuncClass.getNumOfClass(); i < numOfCF; i++) {
             CFNames[i] = selectedFuncClass.getAllMathFunc()[i - i0].getObjectName();
-            CFNotes[i] = selectedFuncClass.getAllMathFunc()[i - i0].getObjectName();
+            CFNotes[i] = selectedFuncClass.getAllMathFunc()[i - i0].getNotes();
         }
 
         CAFP=new ClassAndFuncPane(selectedFuncClass.getNotes(),  CFNames, CFNotes, selectedFuncClass);

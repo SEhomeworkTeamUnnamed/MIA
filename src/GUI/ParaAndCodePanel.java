@@ -23,7 +23,7 @@ public class ParaAndCodePanel extends JSplitPane{
         JTextField CodeGeneTextField;
         CodeGenePanel(){
             CommitBotton=new JButton("生成代码");
-            CodeGeneTextField=new JTextField(40);
+            CodeGeneTextField=new JTextField(90);
             Box hBox=Box.createHorizontalBox();
             hBox.add(CommitBotton); hBox.add(Box.createHorizontalStrut(10));    hBox.add(CodeGeneTextField);
             //setLayout(new BorderLayout());
@@ -69,7 +69,9 @@ public class ParaAndCodePanel extends JSplitPane{
             ComboBoxModel mode=new AModel(OnePara.getAllParaValue());
             JComboBox combo=new JComboBox(mode);
             combo.setBorder(BorderFactory.createTitledBorder("请选择您需要的参数："));
-            
+            //cmyCustomizedField.setMinimumSize(new Dimension(20,20));
+            //combo.setMinimumSize(new Dimension(10,5));
+
 
             combo.addActionListener(new ActionListener() {
                 @Override
@@ -364,7 +366,8 @@ public class ParaAndCodePanel extends JSplitPane{
 
             JPanel MainFieldPanel=new JPanel();
             JPanel LeftMainFieldPanel=new JPanel(); JPanel RightMainFieldPanel=new JPanel();
-            JTextArea MainFieldTextArea=new JTextArea(InfoFunc.getMainField()+'\n'+InfoFunc.getMainFieldNote(), 3, 20);
+            //JTextArea MainFieldTextArea=new JTextArea(InfoFunc.getMainField()+'\n'+InfoFunc.getMainFieldNote(), 3, 20);
+            JTextArea MainFieldTextArea=new JTextArea("此处为待处理的函数或数据", 3, 20);
             MainFieldTextArea.setFont(new Font("微软雅黑", Font.BOLD, 20));
             MainFieldTextArea.setForeground(Color.BLACK);
             //MainFieldTextArea.setEnabled(false);
@@ -372,7 +375,7 @@ public class ParaAndCodePanel extends JSplitPane{
             LeftMainFieldPanel.setLayout(new FlowLayout());
             LeftMainFieldPanel.add(new JScrollPane(MainFieldTextArea));
             Box hBox=Box.createHorizontalBox();
-            JLabel MainFieldLabel=new JLabel("MainField内容：");
+            JLabel MainFieldLabel=new JLabel();
             JTextField MainFieldLabelTextField=new JTextField(15);
 
             Document MainFieldDoc=new DefaultStyledDocument();

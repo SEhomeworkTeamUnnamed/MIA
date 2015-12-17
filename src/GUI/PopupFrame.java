@@ -248,6 +248,7 @@ public class PopupFrame extends JFrame {
                             newPara.setObjectName(UserInput);
                             newPara.setNotes(NoteInput);
                             String paraValues = paraValueTextArea.getText();
+                            newPara.addParaValue("default                                         ");
                             newPara.addParaValue(paraValues.substring(0, paraValues.indexOf("\n")));
                             if(paraValues.indexOf("\n")>=0) {
                                 do {
