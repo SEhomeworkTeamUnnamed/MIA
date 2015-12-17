@@ -12,7 +12,7 @@ import javax.swing.tree.DefaultTreeModel;
  */
 public class Main {
     Main(){
-        FuncClass RootClass=new FuncClass(System.getProperty("user.dir")+"\\root","rootClass");
+        FuncClass RootClass=new FuncClass(System.getProperty("user.dir")+"\\root","Mathematica Input Assistant");
 
         JTree tree=new JTree(RootClass.getTreeNode());
         final DefaultTreeModel treeModel = (DefaultTreeModel)tree.getModel();
