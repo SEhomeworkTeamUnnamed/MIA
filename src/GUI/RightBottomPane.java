@@ -65,10 +65,14 @@ public class RightBottomPane extends JScrollPane{
             LeftPanel.add(CaFBotton);
 
             JTextArea CaFTextArea=new JTextArea(CaFNote, 3, 15);
-            CaFTextArea.setEnabled(false);
+            CaFTextArea.setFont(new Font("å¾®è½¯é›…é»‘",Font.BOLD, 20));
+            CaFTextArea.setForeground(Color.BLACK);
+            //CaFTextArea.setEnabled(false);
             CaFTextArea.setLineWrap(true);
             RightPanel.setLayout(new FlowLayout());
             RightPanel.add(new JScrollPane(CaFTextArea));
+
+            //JLabel CaFJLabel=new JLabel(CaFNote);
 
             AimPanel.setLayout(new GridLayout(0,2));
             AimPanel.add(LeftPanel);    AimPanel.add(RightPanel);
@@ -103,7 +107,7 @@ public class RightBottomPane extends JScrollPane{
 
                 vBox.add(ArrayPanel[0]);
                 for (int i = 0; i < ArrayNum - 1; i++) {
-                    vBox.add(Box.createVerticalStrut(10));  //ÕâÀïµÄ10¿ÉÒÔµ÷Õû£¡
+                    vBox.add(Box.createVerticalStrut(10));  //ï¿½ï¿½ï¿½ï¿½ï¿½10ï¿½ï¿½ï¿½Ôµï¿½ï¿½ï¿½ï¿½ï¿½
                     vBox.add(ArrayPanel[i + 1]);
                 }
             }
@@ -111,7 +115,9 @@ public class RightBottomPane extends JScrollPane{
             JPanel CaFTopPanel=new JPanel();
             JPanel CaFBottomPanel=new JPanel();
             JTextArea ParentTextArea=new JTextArea(ParentNote, 5, 40);
-            ParentTextArea.setEnabled(false);
+            ParentTextArea.setFont(new Font("å¾®è½¯é›…é»‘",Font.BOLD, 25));
+            ParentTextArea.setForeground(Color.BLACK);
+            //ParentTextArea.setEnabled(false);
 
             CaFTopPanel.setLayout(new FlowLayout());
             CaFTopPanel.add(new JScrollPane(ParentTextArea));

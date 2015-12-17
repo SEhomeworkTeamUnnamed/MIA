@@ -14,7 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Created by ÕÅË¼Ô´ on 2015/12/10.
+ * Created by ï¿½ï¿½Ë¼Ô´ on 2015/12/10.
  */
 public class ParaAndCodePanel extends JSplitPane{
 
@@ -22,7 +22,7 @@ public class ParaAndCodePanel extends JSplitPane{
     public class CodeGenePanel extends JPanel{
         JTextField CodeGeneTextField;
         CodeGenePanel(){
-            CommitBotton=new JButton("Éú³É´úÂë");
+            CommitBotton=new JButton("ï¿½ï¿½ï¿½É´ï¿½ï¿½ï¿½");
             CodeGeneTextField=new JTextField(40);
             Box hBox=Box.createHorizontalBox();
             hBox.add(CommitBotton); hBox.add(Box.createHorizontalStrut(10));    hBox.add(CodeGeneTextField);
@@ -57,16 +57,18 @@ public class ParaAndCodePanel extends JSplitPane{
             JPanel LeftPanel=new JPanel();  JPanel RightPanel=new JPanel();
 
             JTextArea ParaTextArea=new JTextArea(OnePara.getObjectName()+'\n'+ OnePara.getNotes(), 3, 25);
-            ParaTextArea.setEnabled(false);
+            ParaTextArea.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 20));
+            ParaTextArea.setForeground(Color.BLACK);
+            //ParaTextArea.setEnabled(false);
             ParaTextArea.setLineWrap(true);
             LeftPanel.setLayout(new FlowLayout());
             LeftPanel.add(new JScrollPane(ParaTextArea));
 
             Box hBox=Box.createHorizontalBox();
-            //JLabel ParaLabel=new JLabel("ÇëÑ¡ÔñÄúÐèÒªµÄ²ÎÊý£º");
+            //JLabel ParaLabel=new JLabel("ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½");
             ComboBoxModel mode=new AModel(OnePara.getAllParaValue());
             JComboBox combo=new JComboBox(mode);
-            combo.setBorder(BorderFactory.createTitledBorder("ÇëÑ¡ÔñÄúÐèÒªµÄ²ÎÊý£º"));
+            combo.setBorder(BorderFactory.createTitledBorder("ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½"));
 
             combo.addActionListener(new ActionListener() {
                 @Override
@@ -90,17 +92,19 @@ public class ParaAndCodePanel extends JSplitPane{
             JPanel LeftPanel=new JPanel();  JPanel RightPanel=new JPanel();
 
             JTextArea ParaTextArea=new JTextArea(OneVarRangePara.getObjectName()+'\n'+OneVarRangePara.getNotes(), 3, 25);
-            ParaTextArea.setEnabled(false);
+            ParaTextArea.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 20));
+            ParaTextArea.setForeground(Color.BLACK);
+            //ParaTextArea.setEnabled(false);
             ParaTextArea.setLineWrap(true);
             LeftPanel.setLayout(new FlowLayout());
             LeftPanel.add(new JScrollPane(ParaTextArea));
 
             Box hBox=Box.createHorizontalBox();
             if(OneVarRangePara.IfHasStep()) {
-                JLabel VarNameLabel=new JLabel("±äÁ¿Ãû³Æ£º");
-                JLabel MinLabel=new JLabel("×îÐ¡Öµ£º");
-                JLabel StepLabel=new JLabel("²½³¤£º");
-                JLabel MaxLabel=new JLabel("×î´óÖµ£º");
+                JLabel VarNameLabel=new JLabel("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½");
+                JLabel MinLabel=new JLabel("ï¿½ï¿½Ð¡Öµï¿½ï¿½");
+                JLabel StepLabel=new JLabel("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+                JLabel MaxLabel=new JLabel("ï¿½ï¿½ï¿½Öµï¿½ï¿½");
                 JTextField VarNameTextField=new JTextField(5);
                 JTextField MinTextField=new JTextField(5);
                 JTextField StepTextField=new JTextField(5);
@@ -230,9 +234,9 @@ public class ParaAndCodePanel extends JSplitPane{
                 hBox.add(MaxTextField);
             }
             else {
-                JLabel VarNameLabel=new JLabel("±äÁ¿Ãû³Æ£º");
-                JLabel MinLabel=new JLabel("×îÐ¡Öµ£º");
-                JLabel MaxLabel=new JLabel("×î´óÖµ£º");
+                JLabel VarNameLabel=new JLabel("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½");
+                JLabel MinLabel=new JLabel("ï¿½ï¿½Ð¡Öµï¿½ï¿½");
+                JLabel MaxLabel=new JLabel("ï¿½ï¿½ï¿½Öµï¿½ï¿½");
                 JTextField VarNameTextField=new JTextField(10);
                 JTextField MinTextField=new JTextField(10);
                 JTextField MaxTextField=new JTextField(10);
@@ -342,7 +346,9 @@ public class ParaAndCodePanel extends JSplitPane{
 
             JPanel FuncIntrPanel=new JPanel();
             JTextArea FuncIntrTextArea=new JTextArea(InfoFunc.getNotes(), 5, 40);
-            FuncIntrTextArea.setEnabled(false);
+            FuncIntrTextArea.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 25));
+            FuncIntrTextArea.setForeground(Color.BLACK);
+            //FuncIntrTextArea.setEnabled(false);
             //something wrong here 20151211
             FuncIntrPanel.setLayout(new FlowLayout());
             //add(FuncIntrTextArea, "Center");
@@ -358,12 +364,14 @@ public class ParaAndCodePanel extends JSplitPane{
             JPanel MainFieldPanel=new JPanel();
             JPanel LeftMainFieldPanel=new JPanel(); JPanel RightMainFieldPanel=new JPanel();
             JTextArea MainFieldTextArea=new JTextArea(InfoFunc.getMainField()+'\n'+InfoFunc.getMainFieldNote(), 3, 25);
-            MainFieldTextArea.setEnabled(false);
+            MainFieldTextArea.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 20));
+            MainFieldTextArea.setForeground(Color.BLACK);
+            //MainFieldTextArea.setEnabled(false);
             MainFieldTextArea.setLineWrap(true);
             LeftMainFieldPanel.setLayout(new FlowLayout());
             LeftMainFieldPanel.add(new JScrollPane(MainFieldTextArea));
             Box hBox=Box.createHorizontalBox();
-            JLabel MainFieldLabel=new JLabel("MainFieldÄÚÈÝ£º");
+            JLabel MainFieldLabel=new JLabel("MainFieldï¿½ï¿½ï¿½Ý£ï¿½");
             JTextField MainFieldLabelTextField=new JTextField(15);
 
             Document MainFieldDoc=new DefaultStyledDocument();
@@ -421,7 +429,7 @@ public class ParaAndCodePanel extends JSplitPane{
             if(ArrayPanel1.length !=0) {
                 vBox.add(ArrayPanel1[0]);
                 for (int i = 0; i < ArrayNum1 - 1; i++) {
-                    //vBox.add(Box.createVerticalStrut(10));  //ÕâÀïµÄ10¿ÉÒÔµ÷Õû£¡
+                    //vBox.add(Box.createVerticalStrut(10));  //ï¿½ï¿½ï¿½ï¿½ï¿½10ï¿½ï¿½ï¿½Ôµï¿½ï¿½ï¿½ï¿½ï¿½
                     vBox.add(ArrayPanel1[i + 1]);
                 }
             }
@@ -431,7 +439,7 @@ public class ParaAndCodePanel extends JSplitPane{
             if(ArrayPanel2.length!=0) {
                 vBox.add(ArrayPanel2[0]);
                 for (int i = 0; i < ArrayNum2 - 1; i++) {
-                    //vBox.add(Box.createVerticalStrut(10));  //ÕâÀïµÄ10¿ÉÒÔµ÷Õû£¡
+                    //vBox.add(Box.createVerticalStrut(10));  //ï¿½ï¿½ï¿½ï¿½ï¿½10ï¿½ï¿½ï¿½Ôµï¿½ï¿½ï¿½ï¿½ï¿½
                     vBox.add(ArrayPanel2[i + 1]);
                 }
             }
