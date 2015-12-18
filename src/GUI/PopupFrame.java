@@ -202,9 +202,9 @@ public class PopupFrame extends JFrame {
                     NoteInput = "";
                 }
                 try{
-                    if(UserInput.equals(null))
+                    if(!checkName(UserInput))
                     {
-                        JOptionPane.showMessageDialog(jButtonAffirm,"请输入正确的名称！");
+                        JOptionPane.showMessageDialog(jButtonAffirm,"请输入正确的仅由英文字母组成的名称！");
                     }
                     else{
                         setVisible(false);
@@ -268,7 +268,7 @@ public class PopupFrame extends JFrame {
 
                 }catch (NullPointerException nPE){
                     nPE.printStackTrace();
-                    JOptionPane.showMessageDialog(jButtonAffirm,"请输入正确的名称！");
+                    JOptionPane.showMessageDialog(jButtonAffirm,"请输入正确的仅由英文字母组成的名称！");
                 }
                 /*if(UserInput.equals(null)) {
 
@@ -323,5 +323,17 @@ public class PopupFrame extends JFrame {
         }
         //System.out.print(p+"\n");
         return path;
+    }
+
+    private boolean checkName(String stringToCheck){
+        int len = stringToCheck.length();
+        char tempCh;
+        for (int i = 0; i < len; i++) {
+            tempCh = stringToCheck.charAt(i);
+            if((tempCh < 'A')||(tempCh > 'z')){
+                return false;
+            }
+        }
+        return true;
     }
 }
