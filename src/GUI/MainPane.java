@@ -20,7 +20,7 @@ public class MainPane extends JSplitPane{
 
         setOneTouchExpandable(true);
         setContinuousLayout(true);
-        setPreferredSize(new Dimension(780, 650));
+        setPreferredSize(new Dimension(780, 610));
         setOrientation(JSplitPane.HORIZONTAL_SPLIT);
 
         setLeftComponent(leftPane);
