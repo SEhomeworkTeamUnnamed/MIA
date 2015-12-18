@@ -1,7 +1,6 @@
 package GUI.GUIsmall;
 
 import GUI.LeftPane;
-import GUI.RightPane;
 import MathFunc.FuncClass;
 
 import javax.swing.*;

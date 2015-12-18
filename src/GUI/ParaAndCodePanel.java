@@ -56,7 +56,7 @@ public class ParaAndCodePanel extends JSplitPane{
         void SetOnePanel(Para OnePara, JPanel AimPanel){
             JPanel LeftPanel=new JPanel();  JPanel RightPanel=new JPanel();
 
-            JTextArea ParaTextArea=new JTextArea(OnePara.getObjectName()+'\n'+ OnePara.getNotes(), 3, 20);
+            JTextArea ParaTextArea=new JTextArea("²ÎÊýÃû³Æ£º"+ OnePara.getObjectName()+'\n'+ OnePara.getNotes(), 3, 20);
             ParaTextArea.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 20));
             ParaTextArea.setForeground(Color.BLACK);
             //ParaTextArea.setEnabled(false);
@@ -348,7 +348,7 @@ public class ParaAndCodePanel extends JSplitPane{
             ChosenFunc = InfoFunc;
 
             JPanel FuncIntrPanel=new JPanel();
-            JTextArea FuncIntrTextArea=new JTextArea(InfoFunc.getNotes(), 5, 45);
+            JTextArea FuncIntrTextArea=new JTextArea(InfoFunc.getNotes(), 3, 45);
             FuncIntrTextArea.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 25));
             FuncIntrTextArea.setForeground(Color.BLACK);
             //FuncIntrTextArea.setEnabled(false);

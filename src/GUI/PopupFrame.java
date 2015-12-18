@@ -159,7 +159,7 @@ public class PopupFrame extends JFrame {
 
     public PopupFrame(String FrameName,
                       DefaultTreeModel treeModel, JTree tree,
-                      int ClassOrFunc, RightBottomPane bottomPane){
+                      int ClassOrFunc, MainPane bottomPane){
         super(FrameName);
 
         setSize(350,250);

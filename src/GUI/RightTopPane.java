@@ -83,7 +83,7 @@ public class RightTopPane extends JSplitPane {
         addFuncClassButt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new PopupFrame("添加函数类", treeModel, tree, PopupFrame.ADD_CLASS, bottomPane);
+                //new PopupFrame("添加函数类", treeModel, tree, PopupFrame.ADD_CLASS, bottomPane);
                 //DefaultMutableTreeNode parentNode=null;
                 //DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new class");
                 //newNode.setAllowsChildren(true);
@@ -107,7 +107,7 @@ public class RightTopPane extends JSplitPane {
         addMathFuncButt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new PopupFrame("添加函数", treeModel, tree, PopupFrame.ADD_FUNC, bottomPane);
+                //new PopupFrame("添加函数", treeModel, tree, PopupFrame.ADD_FUNC, bottomPane);
                 //DefaultMutableTreeNode parentNode=null;
                 //DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new func");
                 //newNode.setAllowsChildren(true);
@@ -129,7 +129,7 @@ public class RightTopPane extends JSplitPane {
         addParaButt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new PopupFrame("添加参数", treeModel, tree, PopupFrame.ADD_PARA, bottomPane);
+                //new PopupFrame("添加参数", treeModel, tree, PopupFrame.ADD_PARA, bottomPane);
 
             }
         });

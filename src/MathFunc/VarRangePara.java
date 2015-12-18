@@ -17,8 +17,8 @@ public class VarRangePara extends Para {
         VarMax="";
         VarStep="";
         HasStep=false;
-        setObjectName("I'm a variable! yeah!");
-        setNotes("I have no notes");
+        setObjectName("此处为待处理函数中的变量名称与取值范围");
+        setNotes("");
     }
 
     public boolean IfHasStep(){

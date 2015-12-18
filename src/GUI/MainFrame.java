@@ -18,8 +18,8 @@ public class MainFrame extends JFrame {
     MainFrame(JTree tree, FuncClass RootClass,String FrameName){
 
         super(FrameName);
-        mainMenu = new MainMenu(tree,RootClass);
         mainPane = new MainPane(tree);
+        mainMenu = new MainMenu(tree,RootClass, mainPane);
 
         setJMenuBar(mainMenu);
 

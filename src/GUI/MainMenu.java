@@ -1,10 +1,10 @@
 package GUI;
 
-import MathFunc.FuncClass;
-import MathFunc.MathFunc;
-import MathFunc.VarRangePara;
+import MathFunc.*;
 
 import javax.swing.*;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
  * Created by IIIS on 11/7/2015.
  */
 public class MainMenu extends JMenuBar {
-    MainMenu(JTree tree,FuncClass RootClass) {
+    MainMenu(JTree tree,FuncClass RootClass, MainPane mainPane) {
         super();
 
         JMenu menu1 = new JMenu("文件");
@@ -31,9 +31,25 @@ public class MainMenu extends JMenuBar {
         add(menu1);
 
         JMenu menu2 = new JMenu("编辑");
-        JMenuItem item21 = new JMenuItem("添加变量范围");
-        menu2.add(item21);
+        JMenuItem addFuncClassItem = new JMenuItem("添加函数类");
+        JMenuItem addMathFuncItem = new JMenuItem("添加函数");
+        JMenuItem addVarRangeItem = new JMenuItem("添加变量范围");
+        JMenuItem addParaItem = new JMenuItem("添加参数");
+        JMenuItem deleteItem = new JMenuItem("删除");
+        menu2.add(addFuncClassItem);
+        menu2.add(addMathFuncItem);
+        menu2.addSeparator();
+        menu2.add(addVarRangeItem);
+        menu2.add(addParaItem);
+        menu2.addSeparator();
+        menu2.add(deleteItem);
         add(menu2);
+
+        addFuncClassItem.setEnabled(false);
+        addMathFuncItem.setEnabled(false);
+        addVarRangeItem.setEnabled(false);
+        addParaItem.setEnabled(false);
+        deleteItem.setEnabled(false);
 
         final DefaultTreeModel treeModel = (DefaultTreeModel)tree.getModel();
 
@@ -80,13 +96,117 @@ public class MainMenu extends JMenuBar {
             }
         });
 
-        item21.addActionListener(new ActionListener() {
+        tree.addTreeSelectionListener(new TreeSelectionListener() {
+            @Override
+            public void valueChanged(TreeSelectionEvent e) {
+                deleteItem.setEnabled(true);
+                TreePath treePath=tree.getSelectionPath();
+                try {
+                    DefaultMutableTreeNode selectionNode =
+                            (DefaultMutableTreeNode) treePath.getLastPathComponent();
+                    MathObject selectionNodeObject = (MathObject)selectionNode.getUserObject();
+
+                    if (selectionNodeObject instanceof FuncClass) {
+                        addFuncClassItem.setEnabled(true);
+                        addMathFuncItem.setEnabled(true);
+                        addVarRangeItem.setEnabled(false);
+                        addParaItem.setEnabled(false);
+                    } else {
+                        addFuncClassItem.setEnabled(false);
+                        addMathFuncItem.setEnabled(false);
+                        addVarRangeItem.setEnabled(true);
+                        addParaItem.setEnabled(true);
+                    }
+                }catch(NullPointerException eNull){
+                    eNull.printStackTrace();
+                    addFuncClassItem.setEnabled(true);
+                    addMathFuncItem.setEnabled(true);
+                    addVarRangeItem.setEnabled(false);
+                    addParaItem.setEnabled(false);
+                    deleteItem.setEnabled(false);
+                }
+
+            }
+        });
+
+        addFuncClassItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                TreePath parentPath=tree.getSelectionPath();
-                DefaultMutableTreeNode parentNode=(DefaultMutableTreeNode)(parentPath.getLastPathComponent());
+                new PopupFrame("添加函数类", treeModel, tree, PopupFrame.ADD_CLASS, mainPane);
+            }
+        });
+
+        addMathFuncItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new PopupFrame("添加函数", treeModel, tree, PopupFrame.ADD_FUNC, mainPane);
+                //DefaultMutableTreeNode parentNode=null;
+                //DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new func");
+                //newNode.setAllowsChildren(true);
+                //TreePath parentPath=tree.getSelectionPath();
+                ////System.out.print(parentPath.getPath()[0]+" "+parentPath.getPath()[1]+"\n");
+//
+                //parentNode=(DefaultMutableTreeNode)(parentPath.getLastPathComponent());
+//
+                //treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
+//
+                //RootClass.addMathFunc(treePath2String(parentPath),"new func");
+                ////RootClass.outputFile();
+//
+                //tree.scrollPathToVisible(new TreePath(newNode.getPath()));
+
+            }
+        });
+
+        addParaItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new PopupFrame("添加参数", treeModel, tree, PopupFrame.ADD_PARA, mainPane);
+
+            }
+        });
+
+        deleteItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int UserChoice = JOptionPane.showConfirmDialog(deleteItem, "你确定删除吗？","", JOptionPane.YES_NO_OPTION);
+                if(UserChoice == 0) {
+                    TreePath treePath = tree.getSelectionPath();
+                    if (treePath != null) {
+                        DefaultMutableTreeNode selectionNode = (DefaultMutableTreeNode) treePath.getLastPathComponent();
+
+                        DefaultMutableTreeNode parent = (DefaultMutableTreeNode) selectionNode.getParent();
+                        MathObject selectionNodeObject = (MathObject) selectionNode.getUserObject();
+                        if (parent != null) {
+                            treeModel.removeNodeFromParent(selectionNode);
+                            FuncClass parentFuncClass = (FuncClass)parent.getUserObject();
+
+                            if (selectionNodeObject instanceof MathFunc) {
+                                parentFuncClass.deleteMathFunc(selectionNode.toString());
+                                //RootClass.outputFile();
+                            } else if (selectionNodeObject instanceof FuncClass) {
+                                parentFuncClass.deleteSubClass(selectionNode.toString());
+                                //RootClass.outputFile();
+                            }
+
+                            addFuncClassItem.setEnabled(false);
+                            addMathFuncItem.setEnabled(false);
+                            addParaItem.setEnabled(false);
+                            deleteItem.setEnabled(false);
+                            //System.out.print(selectionNode.toString()+"\n");
+                        }
+                    }
+                }
+            }
+        });
+
+        addVarRangeItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                TreePath parentPath = tree.getSelectionPath();
+                DefaultMutableTreeNode parentNode = (DefaultMutableTreeNode) (parentPath.getLastPathComponent());
                 VarRangePara newVarRangePara = new VarRangePara();
-                int result = JOptionPane.showConfirmDialog(item21, "变量是否需设定步长？", "添加变量范围参数", JOptionPane.YES_NO_CANCEL_OPTION);
+                int result = JOptionPane.showConfirmDialog(addVarRangeItem, "变量是否需设定步长？", "添加变量范围参数", JOptionPane.YES_NO_CANCEL_OPTION);
                 try {
                     if (result == 0) {
                         newVarRangePara.setHasStep(true);
@@ -94,7 +214,8 @@ public class MainMenu extends JMenuBar {
                     } else if (result == 1) {
                         ((MathFunc) parentNode.getUserObject()).addVarRangePara(newVarRangePara);
                     }
-                }catch (ClassCastException CCE){
+                    mainPane.setParaAndCodePane((MathFunc) parentNode.getUserObject());
+                } catch (ClassCastException CCE) {
                     CCE.printStackTrace();
                 }
             }

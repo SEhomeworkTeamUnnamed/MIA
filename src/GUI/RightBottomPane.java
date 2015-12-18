@@ -112,7 +112,7 @@ public class RightBottomPane extends JScrollPane{
 
             JPanel CaFTopPanel=new JPanel();
             JPanel CaFBottomPanel=new JPanel();
-            JTextArea ParentTextArea=new JTextArea(ParentNote, 5, 25);
+            JTextArea ParentTextArea=new JTextArea(ParentNote, 3, 25);
             ParentTextArea.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 25));
             ParentTextArea.setForeground(Color.BLACK);
             //ParentTextArea.setEnabled(false);
