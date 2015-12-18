@@ -6,7 +6,7 @@ import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
 
 /**
- * Created by IIIS on 10/28/2015.
+ * Created by jwt625 on 10/28/2015.
  *
  * @author jwt625
  */

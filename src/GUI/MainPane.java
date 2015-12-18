@@ -6,8 +6,8 @@ import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.*;
 
-/**
- * Created by IIIS on 11/7/2015.
+/**Main panel of the GUI, comprised of a left panel and a right panel
+ * Created by jwt625 on 11/7/2015.
  */
 public class MainPane extends JSplitPane{
     LeftPane leftPane;

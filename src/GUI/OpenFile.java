@@ -2,8 +2,8 @@ package GUI;
 
 import javax.swing.*;
 
-/**
- * Created by IIIS on 11/7/2015.
+/**class for file opening, called when fileOpen JMenuItem is clicked
+ * Created by jwt625 on 11/7/2015.
  */
 public class OpenFile extends JFileChooser {
     OpenFile(String title) {

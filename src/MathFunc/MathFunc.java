@@ -7,20 +7,46 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-/**
- * Created by IIIS on 10/28/2015.
+/**Class describing MathFunc, with two kinds of parameters
+ * Created by jwt625 on 10/28/2015.
  *
  * @author jwt625
  */
 public class MathFunc extends MathObject {
 
+    /**
+     * All parameters
+     */
     Para[] AllPara;
+
+    /**
+     * number of parameters
+     */
     int NumOfPara;
+
+    /**
+     * main user input, a function to plot or data to manipulate
+     */
     String MainField;
+
+    /**
+     * Note of the mainField
+     */
     String MainFieldNote;
+
+    /**
+     * All VarRangePara
+     */
     VarRangePara[] AllVarRangePara = new VarRangePara[10];
+
+    /**
+     * number of all VarRangePara
+     */
     int NumOfVarRangePara;
 
+    /**
+     * default method to generate an empty MathFunc
+     */
     public MathFunc() {
         super();
         NumOfPara = 0;
@@ -29,7 +55,11 @@ public class MathFunc extends MathObject {
         MainField = "";
     }
 
-    public MathFunc(String upperPath, String FuncName){
+    /**method to generate a MathFunc with given upperPath and name
+     * @param upperPath path of the file of the upper FuncClass
+     * @param FuncName name of this Object
+     */
+    public MathFunc(String upperPath, String FuncName) {
         super();
         this.setUpperPath(upperPath);
         this.setObjectName(FuncName);
@@ -67,6 +97,9 @@ public class MathFunc extends MathObject {
         NumOfVarRangePara = numOfVarRangePara;
     }
 
+    /**add a parameter
+     * @param NewPara new parameter to add
+     */
     public void addPara(Para NewPara) {
         Para[] tempPara = new Para[NumOfPara + 1];
         for (int i = 0; i < NumOfPara; i++) {
@@ -74,48 +107,69 @@ public class MathFunc extends MathObject {
         }
         AllPara = null;
         AllPara = tempPara;
-        AllPara[NumOfPara]=NewPara;
+        AllPara[NumOfPara] = NewPara;
         NumOfPara++;
     }
 
-    public void addVarRangePara(VarRangePara newVarRangePara){
+    /**add a VarRangePara
+     * @param newVarRangePara new VarRangePara to add
+     */
+    public void addVarRangePara(VarRangePara newVarRangePara) {
         AllVarRangePara[NumOfVarRangePara] = newVarRangePara;
         NumOfVarRangePara++;
     }
 
-    public void addPara(String ParaName){
+    public void addPara(String ParaName) {
         Para[] tempPara = new Para[NumOfPara + 1];
         for (int i = 0; i < NumOfPara; i++) {
             tempPara[i] = AllPara[i];
         }
         AllPara = null;
         AllPara = tempPara;
-        AllPara[NumOfPara]=new Para();
+        AllPara[NumOfPara] = new Para();
         AllPara[NumOfPara].setObjectName(ParaName);
-        AllPara[NumOfPara].setUpperPath(UpperPath+"\\"+ObjectName);
+        AllPara[NumOfPara].setUpperPath(UpperPath + "\\" + ObjectName);
         NumOfPara++;
     }
 
+    /**
+     * @return number of parameters
+     */
     public int getNumOfPara() {
         return NumOfPara;
     }
 
+    /**
+     * @return number of VarRangePara
+     */
     public int getNumOfVarRangePara() {
         return NumOfVarRangePara;
     }
 
+    /**set the mainField
+     * @param mainField mainField to set
+     */
     public void setMainField(String mainField) {
         MainField = mainField;
     }
 
+    /**
+     * @return all parameters
+     */
     public Para[] getAllPara() {
         return AllPara;
     }
 
+    /**
+     * @return all VarRangePara
+     */
     public VarRangePara[] getAllVarRangePara() {
         return AllVarRangePara;
     }
 
+    /**
+     * print the information of this FuncClass, for testing
+     */
     public void print() {
         System.out.print("\t" + ObjectName + " " + UseFreq);
         System.out.print("\tFunc notes: ");
@@ -126,9 +180,13 @@ public class MathFunc extends MathObject {
         for (int i = 0; i < NumOfVarRangePara; i++) {
             AllVarRangePara[i].print();
         }
-        System.out.println("\t------end of Func "+ObjectName);
+        System.out.println("\t------end of Func " + ObjectName);
     }
 
+    /**read all information from file
+     * @param upperPath path of the file of the upper FuncClass
+     * @param funcName name of this object
+     */
     public void readAll(String upperPath, String funcName) {
         readPara(upperPath, funcName);
         readParaFreq(upperPath, funcName);
@@ -136,13 +194,17 @@ public class MathFunc extends MathObject {
         readVarRangeParas(upperPath, funcName);
     }
 
+    /**read all parameters from file
+     * @param upperpath path of the file of the upper FuncClass
+     * @param funcname name of this object
+     */
     private void readPara(String upperpath, String funcname) {
 
         //System.out.println(funcname);
 
         ObjectName = funcname;
         UpperPath = upperpath;
-        String FilePath = upperpath + "\\" +"F"+ funcname + "\\" + funcname + "Para.txt";
+        String FilePath = upperpath + "\\" + "F" + funcname + "\\" + funcname + "Para.txt";
         //File file = new File(FilePath);
         //BufferedReader reader = null;
         //try {
@@ -166,7 +228,7 @@ public class MathFunc extends MathObject {
         //    }
         //}
         Others otherfuncs = new Others();
-        NumOfPara=otherfuncs.getFileLength(FilePath);
+        NumOfPara = otherfuncs.getFileLength(FilePath);
 
         AllPara = new Para[NumOfPara];
         for (int i = 0; i < NumOfPara; i++) {
@@ -176,14 +238,14 @@ public class MathFunc extends MathObject {
 
         File file2 = new File(FilePath);
         File dir = new File(file2.getParent());
-        try{
+        try {
             if (!dir.isDirectory()) {
                 dir.mkdirs();
             }
             if (!file2.exists()) {
                 file2.createNewFile();
             }
-        }catch (IOException e0) {
+        } catch (IOException e0) {
             e0.printStackTrace();
         }
 
@@ -194,7 +256,7 @@ public class MathFunc extends MathObject {
             int line = 1;
             // 一次读入一行，直到读入null为文件结束
             while ((paraname = reader2.readLine()) != null) {
-                AllPara[line - 1].loadAll(upperpath + "\\" +"F"+ funcname, paraname);
+                AllPara[line - 1].loadAll(upperpath + "\\" + "F" + funcname, paraname);
                 line++;
             }
             reader2.close();
@@ -210,23 +272,27 @@ public class MathFunc extends MathObject {
         }
     }
 
+    /**read all para frequencies from file
+     * @param upperpath path of the file of the upper FuncClass
+     * @param funcname name of this object
+     */
     private void readParaFreq(String upperpath, String funcname) {
         Others otherFuncs = new Others();
 
         //System.out.println(funcname);
 
         ObjectName = funcname;
-        String FilePath = upperpath + "\\" +"F"+ funcname + "\\" + funcname + "Parafreq.txt";
+        String FilePath = upperpath + "\\" + "F" + funcname + "\\" + funcname + "Parafreq.txt";
         File file = new File(FilePath);
         File dir = new File(file.getParent());
-        try{
+        try {
             if (!dir.isDirectory()) {
                 dir.mkdirs();
             }
             if (!file.exists()) {
                 file.createNewFile();
             }
-        }catch (IOException e0) {
+        } catch (IOException e0) {
             e0.printStackTrace();
         }
 
@@ -253,21 +319,25 @@ public class MathFunc extends MathObject {
         }
     }
 
+    /**read notes from file
+     * @param upperpath path of the file of the upper FuncClass
+     * @param funcname name of this object
+     */
     private void readNotes(String upperpath, String funcname) {
 
         //System.out.println(funcname);
 
-        String FilePath = upperpath + "\\" + "F"+funcname + "\\" + funcname + "notes.txt";
+        String FilePath = upperpath + "\\" + "F" + funcname + "\\" + funcname + "notes.txt";
         File file = new File(FilePath);
         File dir = new File(file.getParent());
-        try{
+        try {
             if (!dir.isDirectory()) {
                 dir.mkdirs();
             }
             if (!file.exists()) {
                 file.createNewFile();
             }
-        }catch (IOException e0) {
+        } catch (IOException e0) {
             e0.printStackTrace();
         }
 
@@ -278,7 +348,7 @@ public class MathFunc extends MathObject {
             int line = 1;
             // 一次读入一行，直到读入null为文件结束
             while ((notes = reader.readLine()) != null) {
-                Notes = Notes + notes+"\n";
+                Notes = Notes + notes + "\n";
                 line++;
             }
             reader.close();
@@ -294,19 +364,23 @@ public class MathFunc extends MathObject {
         }
     }
 
+    /**read VarRangePara from file
+     * @param upperPath path of the file of the upper FuncClass
+     * @param funcName
+     */
     private void readVarRangeParas(String upperPath, String funcName) {
 
-        String FilePath = upperPath + "\\" + "F"+funcName + "\\" + funcName + "VarRangeParas.txt";
+        String FilePath = upperPath + "\\" + "F" + funcName + "\\" + funcName + "VarRangeParas.txt";
         File file = new File(FilePath);
         File dir = new File(file.getParent());
-        try{
+        try {
             if (!dir.isDirectory()) {
                 dir.mkdirs();
             }
             if (!file.exists()) {
                 file.createNewFile();
             }
-        }catch (IOException e0) {
+        } catch (IOException e0) {
             e0.printStackTrace();
         }
 
@@ -317,7 +391,7 @@ public class MathFunc extends MathObject {
             // 一次读入一行，直到读入null为文件结束
             while ((notes = reader.readLine()) != null) {
                 AllVarRangePara[NumOfVarRangePara] = new VarRangePara();
-                if(notes.equals("1")) {
+                if (notes.equals("1")) {
                     AllVarRangePara[NumOfVarRangePara].setHasStep(true);
                 }
                 NumOfVarRangePara++;
@@ -339,63 +413,67 @@ public class MathFunc extends MathObject {
         return MainField;
     }
 
-    public String getPathOfPara(){
-        return UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"Para.txt";
+    public String getPathOfPara() {
+        return UpperPath + "\\" + "F" + ObjectName + "\\" + ObjectName + "Para.txt";
     }
 
-    public String getPathOfParaFreq(){
-        return UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"Parafreq.txt";
+    public String getPathOfParaFreq() {
+        return UpperPath + "\\" + "F" + ObjectName + "\\" + ObjectName + "Parafreq.txt";
     }
 
-    public String getPathOfNotes(){
-        return UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"notes.txt";
+    public String getPathOfNotes() {
+        return UpperPath + "\\" + "F" + ObjectName + "\\" + ObjectName + "notes.txt";
     }
 
-    public void outputFile(){
-        Others otherFuncs=new Others();
-        String PathOfPara = UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"Para.txt";
-        String PathOfParaFreq = UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"Parafreq.txt";
-        String PathOfVarRangePara = UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"VarRangeParas.txt";
+    /**
+     * output informations of this FuncClass to files
+     */
+    public void outputFile() {
+        Others otherFuncs = new Others();
+        String PathOfPara = UpperPath + "\\" + "F" + ObjectName + "\\" + ObjectName + "Para.txt";
+        String PathOfParaFreq = UpperPath + "\\" + "F" + ObjectName + "\\" + ObjectName + "Parafreq.txt";
+        String PathOfVarRangePara = UpperPath + "\\" + "F" + ObjectName + "\\" + ObjectName + "VarRangeParas.txt";
         for (int i = 0; i < NumOfPara; i++) {
             String ParaName = AllPara[i].getObjectName();
-            String ParaFreq = ""+AllPara[i].getUseFreq();
-            if(i==0){
+            String ParaFreq = "" + AllPara[i].getUseFreq();
+            if (i == 0) {
                 otherFuncs.writeFile(PathOfPara, ParaName, false);
                 otherFuncs.writeFile(PathOfParaFreq, ParaFreq, false);
-            }
-            else{
-                otherFuncs.writeFile(PathOfPara, "\r\n"+ParaName, true);
-                otherFuncs.writeFile(PathOfParaFreq, "\r\n"+ParaFreq, true);
+            } else {
+                otherFuncs.writeFile(PathOfPara, "\r\n" + ParaName, true);
+                otherFuncs.writeFile(PathOfParaFreq, "\r\n" + ParaFreq, true);
             }
             AllPara[i].outputFile();
         }
-        if(NumOfPara==0){
+        if (NumOfPara == 0) {
             otherFuncs.writeFile(PathOfPara, "", false);
             otherFuncs.writeFile(PathOfParaFreq, "", false);
         }
 
         String VarRangeParaText = "";
         for (int i = 0; i < NumOfVarRangePara; i++) {
-            if (AllVarRangePara[i].IfHasStep()){
-                VarRangeParaText = VarRangeParaText + 1 +"\r\n";
-            }
-            else{
-                VarRangeParaText = VarRangeParaText + 0 +"\r\n";
+            if (AllVarRangePara[i].ifHasStep()) {
+                VarRangeParaText = VarRangeParaText + 1 + "\r\n";
+            } else {
+                VarRangeParaText = VarRangeParaText + 0 + "\r\n";
             }
         }
         otherFuncs.writeFile(PathOfVarRangePara, VarRangeParaText, false);
 
-        String PathOfNotes = UpperPath+"\\"+"F"+ObjectName+"\\"+ObjectName+"notes.txt";
+        String PathOfNotes = UpperPath + "\\" + "F" + ObjectName + "\\" + ObjectName + "notes.txt";
         otherFuncs.writeFile(PathOfNotes, Notes, false);
     }
 
-    public int isClassOrFunc(){
+    public int isClassOrFunc() {
         return MathObject.IS_FUNC;
     }
 
-    public String show(){
+    /**method to
+     * @return
+     */
+    public String show() {
         String toShow = "";
-        toShow = toShow+this.ObjectName+"["+MainField;
+        toShow = toShow + this.ObjectName + "[" + MainField;
         for (int i = 0; i < NumOfVarRangePara; i++) {
             toShow = toShow + AllVarRangePara[i].show();
         }

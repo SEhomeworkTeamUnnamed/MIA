@@ -6,8 +6,8 @@ import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.*;
 
-/**
- * Created by IIIS on 11/7/2015.
+/**not used after GUI modification on 20151217
+ * Created by jwt625 on 11/7/2015.
  */
 public class RightPane extends JSplitPane{
     RightTopPane rightTopPane;

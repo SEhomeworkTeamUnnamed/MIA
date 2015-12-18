@@ -165,9 +165,10 @@ public class Others {
     }
 
     /**
-     *  根据路径删除指定的目录或文件，无论存在与否
-     *@param Path  要删除的目录或文件
-     *@return 删除成功返回 true，否则返回 false。
+     *  delete the folder given,
+     *  whether existing or not
+     *@param Path  path to delete
+     *@return true if succeed，else false
      */
     public void deleteFolder(String Path) {
         File file = new File(Path);
@@ -182,9 +183,9 @@ public class Others {
     }
 
     /**
-     * 删除单个文件
-     * @param   sPath    被删除文件的文件名
-     * @return 单个文件删除成功返回true，否则返回false
+     * delete a single file
+     * @param   sPath  name of the file to delete
+     * @return true if succeed，else false
      */
     public boolean deleteFile(String sPath) {
         boolean flag = false;
@@ -198,9 +199,9 @@ public class Others {
     }
 
     /**
-     * 删除目录（文件夹）以及目录下的文件
-     * @param   sPath 被删除目录的文件路径
-     * @return  目录删除成功返回true，否则返回false
+     * delete the directory and file given,
+     * @param   sPath path to delete
+     * @return  true if succeed，else false
      */
     public boolean deleteDirectory(String sPath) {
         boolean flag=false;

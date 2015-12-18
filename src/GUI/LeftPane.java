@@ -4,8 +4,8 @@ import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
-/**
- * Created by IIIS on 11/7/2015.
+/**Left panel of the main panel
+ * Created by jwt625 on 11/7/2015.
  */
 public class LeftPane extends JScrollPane {
 

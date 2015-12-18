@@ -18,21 +18,57 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 /**
+ * Frame pop up when user click one of the <code>edit</code> method from the menu
  * Created by IIIS on 11/8/2015.
  */
 public class PopupFrame extends JFrame {
+
+    /**
+     * String to accept user's input of Object Name
+     */
     String UserInput;
+
+    /**
+     * String to accept user's input of Object Notes
+     */
     String NoteInput;
+
     public static int ADD_CLASS=0;
+
     public static int ADD_FUNC=1;
+
     public static int ADD_PARA=2;
+
+    /**
+     * affirm button
+     */
     JButton jButtonAffirm;
+
+    /**
+     * cancel button
+     */
     JButton jButtonCancel;
+
+    /**
+     * panel of the PopupFrame
+     */
     PopupPane popupPane;
+
+    /**
+     * JTextArea for user to input notes
+     */
     JTextArea jTextArea;
+
+    /**
+     * JTextArea for user to input parameter values
+     */
     JTextArea paraValueTextArea;
 
 
+
+    /**
+     * lower component panel of the Panel of the PopupFrame
+     */
     class LowerPopupPane extends JPanel{
         LowerPopupPane(){
             setLayout(new FlowLayout());
@@ -46,6 +82,9 @@ public class PopupFrame extends JFrame {
 
     }
 
+    /**
+     * upper component panel of the Panel of the PopupFrame
+     */
     class UpperPopupPane extends JPanel{
         UpperPopupPane(int ClassOrFunc){
             setLayout(new FlowLayout());
@@ -90,6 +129,9 @@ public class PopupFrame extends JFrame {
 
     }
 
+    /**
+     * mid component panel of the Panel of the PopupFrame
+     */
     class MidPopupPane extends JPanel{
         MidPopupPane(int ClassOrFunc){
             setLayout(new GridLayout(1,2));
@@ -130,6 +172,9 @@ public class PopupFrame extends JFrame {
         }
     }
 
+    /**
+     * Panel of the PopupFrame
+     */
     class PopupPane extends JPanel{
         LowerPopupPane botPane;
         MidPopupPane midPopupPane;
@@ -157,6 +202,14 @@ public class PopupFrame extends JFrame {
         }
     }
 
+    /**construct PopupFrame to accept user's input
+     * @param FrameName name of the frame
+     * @param treeModel treeModel of the tree
+     * @param tree tree composed of FuncClass and MathFunc
+     * @param ClassOrFunc number determine the type of the PopupFrame
+     * @param bottomPane Panel showing the information of the chosen MathObject,
+     *                   for refreshing ofter modification
+     */
     public PopupFrame(String FrameName,
                       DefaultTreeModel treeModel, JTree tree,
                       int ClassOrFunc, MainPane bottomPane){
@@ -175,21 +228,6 @@ public class PopupFrame extends JFrame {
         setVisible(true);
 
 
-        //jTextField.addActionListener(new ActionListener() {
-        //    @Override
-        //    public void actionPerformed(ActionEvent e) {
-        //        UserInput=jTextField.getText();
-        //    }
-        //});
-
-
-
-        //addWindowListener(new WindowAdapter() {
-        //    public void windowClosing(WindowEvent e) {
-        //        System.exit(0);
-        //    }
-        //});
-
         jButtonAffirm.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -202,9 +240,9 @@ public class PopupFrame extends JFrame {
                     NoteInput = "";
                 }
                 try{
-                    if(!checkName(UserInput))
+                    if(UserInput.equals(""))
                     {
-                        JOptionPane.showMessageDialog(jButtonAffirm,"请输入正确的仅由英文字母组成的名称！");
+                        JOptionPane.showMessageDialog(jButtonAffirm,"请输入正确的名称！");
                     }
                     else{
                         setVisible(false);
@@ -227,6 +265,9 @@ public class PopupFrame extends JFrame {
                             bottomPane.setClassAndFuncPane((FuncClass) parentNode.getUserObject());
                         }
                         else if(ClassOrFunc==PopupFrame.ADD_FUNC){
+                            if(!checkName(UserInput)){
+                                throw new NullPointerException("Func Name Error");
+                            }
                             String parentClassName = ((FuncClass) parentNode.getUserObject()).getObjectName();
                             String newUpperPath = ((FuncClass) parentNode.getUserObject()).getUpperPath()+"\\C"+parentClassName;
                             MathFunc newMathFunc=new MathFunc(newUpperPath,UserInput);
@@ -260,7 +301,9 @@ public class PopupFrame extends JFrame {
                                     }
                                 } while (paraValues.indexOf("\n")>=0);
                             }
-                            //System.out.print(paraValues.substring(paraValues.indexOf("\n")));
+                            /*for testing
+                            System.out.print(paraValues.substring(paraValues.indexOf("\n")));
+                            */
                             ((MathFunc) parentNode.getUserObject()).addPara(newPara);
                             bottomPane.setParaAndCodePane((MathFunc) parentNode.getUserObject());
                         }
@@ -319,12 +362,20 @@ public class PopupFrame extends JFrame {
         //String p = "";
         for (int i = 0; i < len; i++) {
             path[i]=treePath.getPathComponent(i).toString();
-            //p=p+treePath.getPathComponent(i).toString();
+            /*for testing
+            p=p+treePath.getPathComponent(i).toString();
+            */
         }
-        //System.out.print(p+"\n");
+        /*for testing
+        System.out.print(p+"\n");
+        */
         return path;
     }
 
+    /**check whether a string is a acceptable Mathematica function Name
+     * @param stringToCheck string to check
+     * @return true if the string is acceptable
+     */
     private boolean checkName(String stringToCheck){
         int len = stringToCheck.length();
         char tempCh;

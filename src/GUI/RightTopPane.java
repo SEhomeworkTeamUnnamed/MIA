@@ -15,10 +15,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Created by IIIS on 11/7/2015.
+/**not used after GUI modification on 20151217
+ * Created by jwt625 on 11/7/2015.
  */
 public class RightTopPane extends JSplitPane {
+
     public RightTopPane(JTree tree, RightBottomPane bottomPane){
         super();
         final DefaultTreeModel treeModel = (DefaultTreeModel)tree.getModel();

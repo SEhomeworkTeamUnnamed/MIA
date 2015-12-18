@@ -10,32 +10,67 @@ import Others.*;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
-/**
- * Created by IIIS on 10/28/2015.
+/**Class describing a FuncClass containing subFuncClass and MathFunc
+ * Created by jwt625 on 10/28/2015.
  *
  * @author jwt625
  */
 public class FuncClass extends MathObject {
 
+    /**
+     * All MathFunc contained
+     */
     MathFunc[] AllMathFunc;
+
+    /**
+     * All FuncClass contained
+     */
     FuncClass[] AllFuncClass;
+
+    /**
+     * All Class user have chose to delete
+     */
     String[] ClassToDelete = new String[0];
+
+    /**
+     * All Func user have chosen to delete
+     */
     String[] FuncToDelete = new String[0];
+
+    /**
+     * number of MathFunc contained
+     */
     int NumOfFunc;
+
+    /**
+     * number of SubClass
+     */
     int NumOfClass;
 
+    /**
+     * default initialization, generate a FuncClass containing nothing
+     */
     public FuncClass() {
         super();
         NumOfFunc = 0;
         NumOfClass = 0;
     }
 
+    /**generate a FuncClass and read information from files
+     * @param upperPath path of the file of the upper FuncClass
+     * @param objectName name of this FuncClass Object
+     */
     public FuncClass(String upperPath, String objectName) {
         this.setUpperPath(upperPath);
         this.setObjectName(objectName);
         this.readAll();
     }
 
+    /**generate a FuncClass with given upperPath and Object name
+     * @param upperPath path of the file of the upper FuncClass
+     * @param objectName name of this FuncClass Object
+     * @param i just for reload, not used
+     */
     public FuncClass(String upperPath, String objectName, int i){
         super();
         this.setUpperPath(upperPath);
@@ -44,6 +79,9 @@ public class FuncClass extends MathObject {
         NumOfClass = 0;
     }
 
+    /**
+     * print the information of this FuncClass, for testing
+     */
     public void print() {
         System.out.print("FuncClass name: ");
         System.out.println(ObjectName);
@@ -60,26 +98,24 @@ public class FuncClass extends MathObject {
         System.out.println("------end of Class " + ObjectName);
     }
 
-    public void setNumOfFunc(int numoffunc) {
-        NumOfFunc = numoffunc;
-    }
-
-    public void setNumOfClass(int numofclass) {
-        NumOfClass = numofclass;
-    }
-
-    public void setNewUpperPath(String upperPath) {
-
-    }
-
+    /**
+     * @return the number of sub FuncClass
+     */
     public int getNumOfFunc() {
         return NumOfFunc;
     }
 
+    /**
+     * @return the number of MathFunc contained
+     */
     public int getNumOfClass() {
         return NumOfClass;
     }
 
+    /**get the index of the MathFunc whose name is given
+     * @param FuncName name of the MathFunc to search
+     * @return index of the MathFunc
+     */
     public int getIndexOfFunc(String FuncName) {
         for (int i = 0; i < NumOfFunc; i++) {
             if (AllMathFunc[i].getObjectName().equals(FuncName)) {
@@ -89,6 +125,12 @@ public class FuncClass extends MathObject {
         return -1;
     }
 
+    /**get the index of the MathFunc whose name is given
+     * never used after structure modification of calling method
+     * @param Path an Array of String giving the name of sub FuncClass
+     * @param FuncName name of the MathFunc to search
+     * @return index of the MathFunc
+     */
     public int getIndexOfFunc(String[] Path, String FuncName) {
         if (Path.length == 1) {
             if (ObjectName.equals(Path[0])) {
@@ -108,6 +150,10 @@ public class FuncClass extends MathObject {
         return -1;
     }
 
+    /**get the index of the FuncClass whose name is given
+     * @param ClassName name of the FuncClass to search
+     * @return index of the FuncClass
+     */
     public int getIndexOfClass(String ClassName) {
         for (int i = 0; i < NumOfClass; i++) {
             if (AllFuncClass[i].getObjectName().equals(ClassName)) {
@@ -117,6 +163,12 @@ public class FuncClass extends MathObject {
         return -1;
     }
 
+    /**get the index of the FuncClass whose name is given
+     * never used after structure modification of calling method
+     * @param Path an Array of String giving the name of sub FuncClass
+     * @param ClassName name of the FuncClass to search
+     * @return index of the FuncClass
+     */
     public int getIndexOfClass(String[] Path, String ClassName) {
         if (Path.length == 1) {
             if (ObjectName.equals(Path[0])) {
@@ -136,10 +188,16 @@ public class FuncClass extends MathObject {
         return -1;
     }
 
+    /**
+     * @return All MathFunc
+     */
     public MathFunc[] getAllMathFunc() {
         return AllMathFunc;
     }
 
+    /**
+     * @return All FuncClass
+     */
     public FuncClass[] getAllFuncClass() {
         return AllFuncClass;
     }
@@ -158,6 +216,10 @@ public class FuncClass extends MathObject {
         return tempTable;
     }
 
+    /**generate the DefaultMutableTreeNode of this FuncClass
+     * for tree construction
+     * @return DefaultMutableTreeNode of this FuncClass
+     */
     public DefaultMutableTreeNode getTreeNode() {
         DefaultMutableTreeNode tempNode = new DefaultMutableTreeNode(this);
 
@@ -179,6 +241,10 @@ public class FuncClass extends MathObject {
         return true;
     }
 
+    /**
+     * @param ClassName name of the FuncClass to find
+     * @return true if it exists in subClass, else false
+     */
     public boolean hasSubClass(String ClassName) {
         for (int i = 0; i < NumOfClass; i++) {
             if (ClassName.equals(AllFuncClass[i].getObjectName())) {
@@ -188,6 +254,12 @@ public class FuncClass extends MathObject {
         return false;
     }
 
+    /**
+     * not used
+     * @param Path an Array of String giving the name of sub FuncClass
+     * @param ClassName name of the FuncClass to find
+     * @return true if it exists in subClass, else false
+     */
     public boolean hasSubClass(String[] Path, String ClassName) {
         if (Path.length == 1) {
             if (ObjectName.equals(Path[0])) {
@@ -215,6 +287,10 @@ public class FuncClass extends MathObject {
         return true;
     }
 
+    /**
+     * @param FuncName FuncClass to find
+     * @return true if exists, else false
+     */
     public boolean hasMathFunc(String FuncName) {
         for (int i = 0; i < NumOfFunc; i++) {
             if (FuncName.equals(AllMathFunc[i].getObjectName())) {
@@ -224,6 +300,12 @@ public class FuncClass extends MathObject {
         return false;
     }
 
+    /**
+     * not used
+     * @param Path an Array of String giving the name of sub FuncClass
+     * @param FuncName FuncClass to find
+     * @return true if exists, else false
+     */
     public boolean hasMathFunc(String[] Path, String FuncName) {
         if (Path.length == 1) {
             if (ObjectName.equals(Path[0])) {
@@ -244,7 +326,10 @@ public class FuncClass extends MathObject {
         return false;
     }
 
-
+    /**
+     * clear all subClass and MathFunc
+     * for deleting
+     */
     public void clearAll() {
         UpperPath = "";
         ObjectName = "";
@@ -258,6 +343,9 @@ public class FuncClass extends MathObject {
         FuncToDelete = null;
     }
 
+    /**
+     * read all information from file
+     */
     public void readAll() {
         String upperpath = UpperPath;
         String classname = ObjectName;
@@ -267,6 +355,10 @@ public class FuncClass extends MathObject {
         readNotes(upperpath, classname);
     }
 
+    /**read all information from file
+     * @param upperpath path of the file of the upper FuncClass
+     * @param classname Name of this Object
+     */
     public void readAll(String upperpath, String classname) {
         readFunc(upperpath, classname);
         readFuncFreq(upperpath, classname);
@@ -274,33 +366,38 @@ public class FuncClass extends MathObject {
         readNotes(upperpath, classname);
     }
 
+    /**read all information of a MathFunc
+     * @param upperpath path of the file of the upper FuncClass
+     * @param classname Name of this Object
+     */
     private void readFunc(String upperpath, String classname) {
 
         //System.out.println(classname);
         UpperPath = upperpath;
         String FilePath = upperpath + "\\" + "C" + classname + "\\" + classname + "Func.txt";
-        //File file = new File(FilePath);
-        //BufferedReader reader = null;
-        //try {
-        //    reader = new BufferedReader(new FileReader(file));
-        //    String funcname = null;
-        //    int line = 1;
-        //    // 一次读入一行，直到读入null为文件结束
-        //    while ((funcname = reader.readLine()) != null) {
-        //        line++;
-        //    }
-        //    NumOfFunc = line-1;
-        //    reader.close();
-        //} catch (IOException e) {
-        //    e.printStackTrace();
-        //} finally {
-        //    if (reader != null) {
-        //        try {
-        //            reader.close();
-        //        } catch (IOException e1) {
-        //        }
-        //    }
-        //}
+        /*for testing
+        File file = new File(FilePath);
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            String funcname = null;
+            int line = 1;
+            while ((funcname = reader.readLine()) != null) {
+                line++;
+            }
+            NumOfFunc = line-1;
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e1) {
+                }
+            }
+        }
+        */
         Others otherfuncs = new Others();
         NumOfFunc = otherfuncs.getFileLength(FilePath);
 
@@ -328,7 +425,6 @@ public class FuncClass extends MathObject {
             reader2 = new BufferedReader(new FileReader(file2));
             String funcname = null;
             int line = 1;
-            // 一次读入一行，直到读入null为文件结束
             while ((funcname = reader2.readLine()) != null) {
                 AllMathFunc[line - 1].readAll(upperpath + "\\" + "C" + classname, funcname);
                 line++;
@@ -346,6 +442,10 @@ public class FuncClass extends MathObject {
         }
     }
 
+    /**read frequency of a MathFunc
+     * @param upperpath path of the file of the upper FuncClass
+     * @param classname Name of this Object
+     */
     private void readFuncFreq(String upperpath, String classname) {
         Others otherFuncs = new Others();
         String FilePath = upperpath + "\\" + "C" + classname + "\\" + classname + "FuncFreq.txt";
@@ -386,6 +486,10 @@ public class FuncClass extends MathObject {
 
     }
 
+    /**read information of a class from file
+     * @param upperpath path of the file of the upper FuncClass
+     * @param classname Name of this Object
+     */
     private void readClass(String upperpath, String classname) {
 
         //System.out.println(classname);
@@ -464,6 +568,10 @@ public class FuncClass extends MathObject {
         }
     }
 
+    /**read note of this class from file
+     * @param upperpath path of the file of the upper FuncClass
+     * @param classname Name of this Object
+     */
     private void readNotes(String upperpath, String classname) {
         String FilePath = upperpath + "\\" + "C" + classname + "\\" + classname + "notes.txt";
         File file = new File(FilePath);
@@ -503,6 +611,9 @@ public class FuncClass extends MathObject {
 
     }
 
+    /**add a subClass
+     * @param NewClass class to add
+     */
     public void addSubClass(FuncClass NewClass) {
         FuncClass[] tempFuncClass = new FuncClass[NumOfClass + 1];
         for (int i = 0; i < NumOfClass; i++) {
@@ -514,6 +625,9 @@ public class FuncClass extends MathObject {
         NumOfClass++;
     }
 
+    /**add an empty class
+     * @param SubClassName name of the class to add
+     */
     public void addSubClass(String SubClassName) {
         FuncClass[] tempFuncClass = new FuncClass[NumOfClass + 1];
         for (int i = 0; i < NumOfClass; i++) {
@@ -527,6 +641,11 @@ public class FuncClass extends MathObject {
         NumOfClass++;
     }
 
+    /**add a class to one of the subClass
+     * not used
+     * @param Path an Array of String giving the name of sub FuncClass
+     * @param SubClassName name of the class to add
+     */
     public void addSubClass(String[] Path, String SubClassName) {
         if (Path.length == 1) {
             if (ObjectName.equals(Path[0])) {
@@ -561,6 +680,9 @@ public class FuncClass extends MathObject {
         }
     }
 
+    /**add a class to the ClassToDelete list
+     * @param ClassName name of the class to delete
+     */
     public void addClassToDelete(String ClassName) {
         String[] temp = new String[ClassToDelete.length + 1];
         for (int i = 0, len = ClassToDelete.length; i < len; i++) {
@@ -571,6 +693,9 @@ public class FuncClass extends MathObject {
         ClassToDelete = temp;
     }
 
+    /**delete a subClass
+     * @param SubClassName name of the class to delete
+     */
     public void deleteSubClass(String SubClassName) {
         FuncClass[] tempFuncClass = new FuncClass[NumOfClass - 1];
         int index = this.getIndexOfClass(SubClassName);
@@ -590,6 +715,10 @@ public class FuncClass extends MathObject {
         }
     }
 
+    /**delete a subClass
+     * @param Path an Array of String giving the name of sub FuncClass
+     * @param SubClassName name of the class to delete
+     */
     public void deleteSubClass(String[] Path, String SubClassName) {
         if (Path.length == 1) {
             if (ObjectName.equals(Path[0])) {
@@ -607,6 +736,9 @@ public class FuncClass extends MathObject {
         }
     }
 
+    /**add a MathFunc
+     * @param NewMathFunc MathFunc to add
+     */
     public void addMathFunc(MathFunc NewMathFunc) {
         MathFunc[] tempMathFunc = new MathFunc[NumOfFunc + 1];
         for (int i = 0; i < NumOfFunc; i++) {
@@ -618,6 +750,9 @@ public class FuncClass extends MathObject {
         NumOfFunc++;
     }
 
+    /**add an empty MathFunc
+     * @param FuncName name of the MathFunc
+     */
     public void addMathFunc(String FuncName) {
         MathFunc[] tempMathFunc = new MathFunc[NumOfFunc + 1];
         for (int i = 0; i < NumOfFunc; i++) {
@@ -631,6 +766,11 @@ public class FuncClass extends MathObject {
         NumOfFunc++;
     }
 
+    /**add a MathFunc to a subClass
+     * not used
+     * @param Path an Array of String giving the name of sub FuncClass
+     * @param FuncName name of the MathFunc
+     */
     public void addMathFunc(String[] Path, String FuncName) {
         if (Path.length == 1) {
             if (ObjectName.equals(Path[0])) {
@@ -665,6 +805,9 @@ public class FuncClass extends MathObject {
         }
     }
 
+    /**add a MathFunc to the ClassToDelete list
+     * @param FuncName name of the MathFunc to delete
+     */
     public void addFuncToDelete(String FuncName) {
         String[] temp = new String[FuncToDelete.length + 1];
         for (int i = 0, len = FuncToDelete.length; i < len; i++) {
@@ -675,6 +818,9 @@ public class FuncClass extends MathObject {
         FuncToDelete = temp;
     }
 
+    /**delete a MathFunc
+     * @param FuncName name of the MathFunc to delete
+     */
     public void deleteMathFunc(String FuncName) {
         MathFunc[] tempMathFunc = new MathFunc[NumOfFunc - 1];
         int index = this.getIndexOfFunc(FuncName);
@@ -694,6 +840,10 @@ public class FuncClass extends MathObject {
         }
     }
 
+    /**delete a MathFunc
+     * @param Path an Array of String giving the name of sub FuncClass
+     * @param FuncName name of the MathFunc to delete
+     */
     public void deleteMathFunc(String[] Path, String FuncName) {
         if (Path.length == 1) {
             if (ObjectName.equals(Path[0])) {
@@ -723,6 +873,9 @@ public class FuncClass extends MathObject {
         return UpperPath + "\\" + "C" + ObjectName + "\\" + ObjectName + "notes.txt";
     }
 
+    /**
+     * output information of this MathFunc to files
+     */
     public void outputFile() {
         Others otherFuncs = new Others();
         String PathOfFunc = UpperPath + "\\" + "C" + ObjectName + "\\" + ObjectName + "Func.txt";

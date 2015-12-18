@@ -3,7 +3,7 @@ package GUI;
 import javax.swing.*;
 import java.awt.*;
 
-/**
+/**Panel to be exhibit when no object of the tree is chosen
  * Created by ’≈Àº‘¥ on 2015/12/9.
  */
 public class DefaultWelcomePane extends JPanel{

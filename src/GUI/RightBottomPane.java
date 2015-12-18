@@ -11,8 +11,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Created by IIIS on 11/7/2015.
+/**right pane of the main panel
+ * Created by jwt625 on 11/7/2015.
  */
 public class RightBottomPane extends JScrollPane{
     DefaultWelcomePane DWP;
@@ -22,6 +22,10 @@ public class RightBottomPane extends JScrollPane{
     JTree jTree;
     int newRow;
 
+    /**
+     * subClass of right panel, called when a FuncClass is selected on the tree,
+     * to set the right panel to panel showing information of the FuncClass
+     */
     public class ClassAndFuncPane extends JSplitPane{
         int ArrayNum;
         JPanel[] ArrayPanel;
@@ -35,23 +39,27 @@ public class RightBottomPane extends JScrollPane{
                 public void actionPerformed(ActionEvent e) {
                     int parentRow = newRow;
                     newRow = newRow + row+1;
-                    //System.out.println(row);
-                    //System.out.println(jTree.getRowForPath(treePath));
-                    //System.out.println(newRow);
+                    /*for testing
+                    System.out.println(row);
+                    System.out.println(jTree.getRowForPath(treePath));
+                    System.out.println(newRow);
+                    */
                     jTree.expandRow(jTree.getRowForPath(treePath));
                     for (int i = parentRow+1; i < newRow; i++) {
                         jTree.collapseRow(i);
                     }
                     jTree.expandRow(newRow);
 
-                    //Object[] parentPathObject = treePath.getPath();
-                    //Object[] currentPathObject = new MathObject[parentPathObject.length];
-                    //for (int i = 0, len = parentPathObject.length; i < len; i++) {
-                    //    currentPathObject[i] = parentPathObject[i];
-                    //}
-                    //currentPathObject[parentPathObject.length] = ClickedMathObject;
-                    //TreePath currentTreePath = new TreePath(currentPathObject);
-                    //jTree.scrollPathToVisible(currentTreePath);
+                    /*for testing
+                    Object[] parentPathObject = treePath.getPath();
+                    Object[] currentPathObject = new MathObject[parentPathObject.length];
+                    for (int i = 0, len = parentPathObject.length; i < len; i++) {
+                        currentPathObject[i] = parentPathObject[i];
+                    }
+                    currentPathObject[parentPathObject.length] = ClickedMathObject;
+                    TreePath currentTreePath = new TreePath(currentPathObject);
+                    jTree.scrollPathToVisible(currentTreePath);
+                    */
 
                     if(ClickedMathObject instanceof FuncClass){
                         setClassAndFuncPane((FuncClass)ClickedMathObject);
@@ -88,8 +96,9 @@ public class RightBottomPane extends JScrollPane{
                     ArrayPanel[i] = new JPanel();
                 }
 
-                //between are added by jwt on 20151211
-                //
+                /*
+                between are added by jwt on 20151211
+                */
 
                 for (int i = 0; i < ArrayNum; i++) {
                     int numOfSubClass = ParentFuncClass.getNumOfClass();
@@ -140,19 +149,6 @@ public class RightBottomPane extends JScrollPane{
         DWP=new DefaultWelcomePane();
         jTree = tree;
         setDefaultWelcomePane();
-        //DefaultWelcomePane DWP=new DefaultWelcomePane();
-        //setViewportView(DWP);
-
-        //String[] testString1 = new String[5];
-        //for (int i = 0; i < 5; i++) {
-        //    testString1[i] = i+"";
-        //}
-        //ClassAndFuncPane CFP=new ClassAndFuncPane("hhh", testString1, testString1);
-        //setViewportView(CFP);
-
-        //MathFunc mf=new MathFunc();
-        //ParaAndCodePanel CGP=new ParaAndCodePanel(mf);
-        //setViewportView(CGP);
 
         tree.addTreeSelectionListener(new TreeSelectionListener() {
             @Override
@@ -180,10 +176,16 @@ public class RightBottomPane extends JScrollPane{
 
     }
 
+    /**
+     * set the right panel to a DefaultWelcomePane
+     */
     void setDefaultWelcomePane(){
         setViewportView(DWP);
     }
 
+    /**set the right panel to a ClassAndFuncPane
+     * @param selectedFuncClass FuncClass that user selected
+     */
     public void setClassAndFuncPane(FuncClass selectedFuncClass){
         int numOfCF = selectedFuncClass.getNumOfClass()+selectedFuncClass.getNumOfFunc();
         String[] CFNames=new String[numOfCF];
@@ -200,6 +202,10 @@ public class RightBottomPane extends JScrollPane{
         CAFP=new ClassAndFuncPane(selectedFuncClass.getNotes(),  CFNames, CFNotes, selectedFuncClass);
         setViewportView(CAFP);
     }
+
+    /**set the right panel to a ClassAndFuncPane
+     * @param selectedMathFunc MathFunc that user selected
+     */
     public void setParaAndCodePane(MathFunc selectedMathFunc){
         PACP=new ParaAndCodePanel(selectedMathFunc);
         setViewportView(PACP);

@@ -12,9 +12,9 @@ import javax.swing.tree.TreePath;
 import java.awt.event.*;
 
 /**
- * Created by IIIS on 11/4/2015.
+ * Created by jwt625 on 11/4/2015.
  * ********
- * useless
+ * first try on GUI, useless
  * ********
  *
  * @author jwt625

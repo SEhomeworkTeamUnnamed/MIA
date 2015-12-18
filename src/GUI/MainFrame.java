@@ -8,8 +8,8 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-/**
- * Created by IIIS on 11/7/2015.
+/**Main frame of the GUI
+ * Created by jwt625 on 11/7/2015.
  */
 public class MainFrame extends JFrame {
     MainMenu mainMenu;

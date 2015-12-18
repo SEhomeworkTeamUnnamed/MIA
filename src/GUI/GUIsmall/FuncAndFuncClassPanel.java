@@ -25,8 +25,8 @@ public class FuncAndFuncClassPanel extends JSplitPane{
             }
         });
 
-        //≤‚ ‘¥˙¬Î
-        /*JButton b1=new JButton("first");
+        /*for testing
+        JButton b1=new JButton("first");
         JButton b2=new JButton("second");
         JButton b3=new JButton("third");
         JButton b4=new JButton("fourth");
@@ -39,7 +39,8 @@ public class FuncAndFuncClassPanel extends JSplitPane{
         con.setLayout(new FlowLayout());
         con.add(b1);con.add(b2);con.add(b3);con.add(b4);con.add(b5);con.add(b6);con.add(b7);
 
-        setLeftComponent(con);*/
+        setLeftComponent(con);
+        */
 
         setDividerSize(3);
         setDividerLocation(200);

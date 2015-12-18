@@ -11,11 +11,11 @@ import javax.swing.tree.TreePath;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Created by IIIS on 11/7/2015.
+/**Menu of the GUI
+ * Created by jwt625 on 11/7/2015.
  */
 public class MainMenu extends JMenuBar {
-    MainMenu(JTree tree,FuncClass RootClass, MainPane mainPane) {
+    MainMenu(JTree tree, FuncClass RootClass, MainPane mainPane) {
         super();
 
         JMenu menu1 = new JMenu("文件");
@@ -51,7 +51,7 @@ public class MainMenu extends JMenuBar {
         addParaItem.setEnabled(false);
         deleteItem.setEnabled(false);
 
-        final DefaultTreeModel treeModel = (DefaultTreeModel)tree.getModel();
+        final DefaultTreeModel treeModel = (DefaultTreeModel) tree.getModel();
 
         item1.addActionListener(new ActionListener() {
             @Override
@@ -92,7 +92,7 @@ public class MainMenu extends JMenuBar {
         item4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                    System.exit(0);
+                System.exit(0);
             }
         });
 
@@ -100,11 +100,11 @@ public class MainMenu extends JMenuBar {
             @Override
             public void valueChanged(TreeSelectionEvent e) {
                 deleteItem.setEnabled(true);
-                TreePath treePath=tree.getSelectionPath();
+                TreePath treePath = tree.getSelectionPath();
                 try {
                     DefaultMutableTreeNode selectionNode =
                             (DefaultMutableTreeNode) treePath.getLastPathComponent();
-                    MathObject selectionNodeObject = (MathObject)selectionNode.getUserObject();
+                    MathObject selectionNodeObject = (MathObject) selectionNode.getUserObject();
 
                     if (selectionNodeObject instanceof FuncClass) {
                         addFuncClassItem.setEnabled(true);
@@ -117,7 +117,7 @@ public class MainMenu extends JMenuBar {
                         addVarRangeItem.setEnabled(true);
                         addParaItem.setEnabled(true);
                     }
-                }catch(NullPointerException eNull){
+                } catch (NullPointerException eNull) {
                     eNull.printStackTrace();
                     addFuncClassItem.setEnabled(true);
                     addMathFuncItem.setEnabled(true);
@@ -140,21 +140,6 @@ public class MainMenu extends JMenuBar {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new PopupFrame("添加函数", treeModel, tree, PopupFrame.ADD_FUNC, mainPane);
-                //DefaultMutableTreeNode parentNode=null;
-                //DefaultMutableTreeNode newNode=new DefaultMutableTreeNode("new func");
-                //newNode.setAllowsChildren(true);
-                //TreePath parentPath=tree.getSelectionPath();
-                ////System.out.print(parentPath.getPath()[0]+" "+parentPath.getPath()[1]+"\n");
-//
-                //parentNode=(DefaultMutableTreeNode)(parentPath.getLastPathComponent());
-//
-                //treeModel.insertNodeInto(newNode,parentNode,parentNode.getChildCount());
-//
-                //RootClass.addMathFunc(treePath2String(parentPath),"new func");
-                ////RootClass.outputFile();
-//
-                //tree.scrollPathToVisible(new TreePath(newNode.getPath()));
-
             }
         });
 
@@ -169,8 +154,8 @@ public class MainMenu extends JMenuBar {
         deleteItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int UserChoice = JOptionPane.showConfirmDialog(deleteItem, "你确定删除吗？","", JOptionPane.YES_NO_OPTION);
-                if(UserChoice == 0) {
+                int UserChoice = JOptionPane.showConfirmDialog(deleteItem, "你确定删除吗？", "", JOptionPane.YES_NO_OPTION);
+                if (UserChoice == 0) {
                     TreePath treePath = tree.getSelectionPath();
                     if (treePath != null) {
                         DefaultMutableTreeNode selectionNode = (DefaultMutableTreeNode) treePath.getLastPathComponent();
@@ -179,7 +164,7 @@ public class MainMenu extends JMenuBar {
                         MathObject selectionNodeObject = (MathObject) selectionNode.getUserObject();
                         if (parent != null) {
                             treeModel.removeNodeFromParent(selectionNode);
-                            FuncClass parentFuncClass = (FuncClass)parent.getUserObject();
+                            FuncClass parentFuncClass = (FuncClass) parent.getUserObject();
 
                             if (selectionNodeObject instanceof MathFunc) {
                                 parentFuncClass.deleteMathFunc(selectionNode.toString());

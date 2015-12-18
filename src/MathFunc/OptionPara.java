@@ -3,8 +3,9 @@ package MathFunc;
 /**
  * Created by ’≈Àº‘¥ on 2015/11/16.
  *
- *
+ ***********
  * useless!!
+ ***********
  */
 public class OptionPara extends Para {
     public String show(){

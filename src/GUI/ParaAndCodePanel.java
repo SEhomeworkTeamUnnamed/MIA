@@ -1,14 +1,12 @@
 package GUI;
 
 import MathFunc.*;
-import com.sun.deploy.panel.JavaPanel;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.DefaultStyledDocument;
 import javax.swing.text.Document;
-import javax.xml.ws.soap.MTOMFeature;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -103,7 +101,7 @@ public class ParaAndCodePanel extends JSplitPane{
             LeftPanel.add(new JScrollPane(ParaTextArea));
 
             Box hBox=Box.createHorizontalBox();
-            if(OneVarRangePara.IfHasStep()) {
+            if(OneVarRangePara.ifHasStep()) {
                 JLabel VarNameLabel=new JLabel("变量名称：");
                 JLabel MinLabel=new JLabel("最小值：");
                 JLabel StepLabel=new JLabel("步长：");
