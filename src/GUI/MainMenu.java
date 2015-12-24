@@ -45,6 +45,11 @@ public class MainMenu extends JMenuBar {
         menu2.add(deleteItem);
         add(menu2);
 
+        JMenu menu3 =  new JMenu("ËÑË÷");
+        JMenuItem searchFunc = new JMenuItem("ËÑË÷º¯Êý");
+        menu3.add(searchFunc);
+        add(menu3);
+
         addFuncClassItem.setEnabled(false);
         addMathFuncItem.setEnabled(false);
         addVarRangeItem.setEnabled(false);
@@ -203,6 +208,14 @@ public class MainMenu extends JMenuBar {
                 } catch (ClassCastException CCE) {
                     CCE.printStackTrace();
                 }
+            }
+        });
+
+        searchFunc.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //JOptionPane.showConfirmDialog(menu3, "clicked!");
+                new PopupSearchFrame(mainPane, RootClass);
             }
         });
     }

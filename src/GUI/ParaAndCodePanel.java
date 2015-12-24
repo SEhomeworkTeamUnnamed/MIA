@@ -16,14 +16,14 @@ import java.awt.event.ActionListener;
  */
 public class ParaAndCodePanel extends JSplitPane{
 
-    JButton CommitBotton;
+    JButton CommitButton;
     public class CodeGenePanel extends JPanel{
         JTextField CodeGeneTextField;
         CodeGenePanel(){
-            CommitBotton=new JButton("生成代码");
+            CommitButton =new JButton("生成代码");
             CodeGeneTextField=new JTextField(90);
             Box hBox=Box.createHorizontalBox();
-            hBox.add(CommitBotton); hBox.add(Box.createHorizontalStrut(10));    hBox.add(CodeGeneTextField);
+            hBox.add(CommitButton); hBox.add(Box.createHorizontalStrut(10));    hBox.add(CodeGeneTextField);
             //setLayout(new BorderLayout());
             add(hBox);
 
@@ -447,7 +447,7 @@ public class ParaAndCodePanel extends JSplitPane{
             }
 
 
-            CommitBotton.addActionListener(new ActionListener() {
+            CommitButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     CGP.setCodeGeneText(InfoFunc.show());
@@ -455,7 +455,7 @@ public class ParaAndCodePanel extends JSplitPane{
             });
 
             //vBox.add(Box.createGlue());
-            //vBox.add(CommitBotton);
+            //vBox.add(CommitButton);
 
             JPanel FuncParaPanel=new JPanel();
             FuncParaPanel.setLayout(new BorderLayout());

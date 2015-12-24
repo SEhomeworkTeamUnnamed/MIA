@@ -1,5 +1,7 @@
 package StringComp;
 
+import MathFunc.*;
+
 /**
  * Created by DI on 2015/12/8.
  */
@@ -7,16 +9,15 @@ public class StringComp {
     public static void main(String[] args) {
         StringComp stringComp = new StringComp();
         System.out.print("hello world!\n");
-        System.out.println(stringComp.cmpStr("mathematicas" , "matlab" ));
-        String[] str2 = {"mathematica","mathfunction","matlab","mavericas","massinf","mgjhga","materias"};
-        String[] str3 = stringComp.Simrank("math",str2);
-        for(int i = 0;i< str3.length;i++) {
+        System.out.println(stringComp.cmpStr("mathematicas", "matlab"));
+        String[] str2 = {"mathematica", "mathfunction", "matlab", "mavericas", "massinf", "mgjhga", "materias"};
+        String[] str3 = stringComp.simRank("math", str2);
+        for (int i = 0; i < str3.length; i++) {
             System.out.println(str3[i]);
-            System.out.println("\n");
         }
     }
 
-    int myindexOf(String s1, String s2, int i) {
+    int myIndexOf(String s1, String s2, int i) {
         char a = s1.charAt(i);
         int output = 0;
         char b = a;
@@ -43,16 +44,16 @@ public class StringComp {
         if (len1 <= 0) {
             a = -1;
         } else {
-            if (myindexOf(str1, str2, 0) < 0) {
+            if (myIndexOf(str1, str2, 0) < 0) {
                 a = -1;
             } else {
                 a = 0;
                 for (int i = 0; i < len1; i++) {
-                    int temp = myindexOf(str1, str2, i);//temp为中间变量
+                    int temp = myIndexOf(str1, str2, i);//temp为中间变量
                     if (temp < 0) {
                         break;
                     } else {
-                        a += (float)(1) / (temp + 1);
+                        a += (float) (1) / (temp + 1);
                         str2 = str2.substring(temp + 1);
                     }
                 }
@@ -61,11 +62,11 @@ public class StringComp {
         return a;
     }
 
-    String[] Simrank(String str1, String[] str2) {
+    String[] simRank(String str1, String[] str2) {
         int len = str2.length;
         float[] a = new float[len];
         int Ok_len = 0;
-        for (int i = 0;i < len;i++) {
+        for (int i = 0; i < len; i++) {
             float b = cmpStr(str1, str2[i]);
             if (b >= 1) {
                 a[Ok_len] = b;
@@ -74,32 +75,67 @@ public class StringComp {
             }
         }
         String[] b = new String[(Ok_len)];
-        for (int i = 0; i < Ok_len;i++ )
-        {
+        for (int i = 0; i < Ok_len; i++) {
             b[i] = str2[i];
         }
-        return quickSort(a,b);
+        return quickSort(a, b);
+    }
+
+    public MathFunc[] simRank(String str, MathFunc[] AllMathFuncs){
+        int len = AllMathFuncs.length;
+        float[] a = new float[len];
+        int Ok_len = 0;
+        for (int i = 0; i < len; i++) {
+            float b = cmpStr(str, AllMathFuncs[i].getObjectName());
+            if (b >= 1) {
+                a[Ok_len] = b;
+                AllMathFuncs[Ok_len] = AllMathFuncs[i];
+                Ok_len++;
+            }
+        }
+        MathFunc[] b = new MathFunc[(Ok_len)];
+        for (int i = 0; i < Ok_len; i++) {
+            b[i] = AllMathFuncs[i];
+        }
+        return quickSort(a, b);
     }
 
 
-
-    public static String[] quickSort(float[] a,String[] b) {
+    public static String[] quickSort(float[] a, String[] b) {
         float tmp = 0;
         String temp;
-            for (int i = 0; i < b.length; i++) {
-                for (int j = b.length - 1; j > i; j--) {
-                    if (a[j] > a[j - 1]) {
-                        tmp = a[j];
-                        temp = b[j];
-                        a[j] = a[j - 1];
-                        b[j] = b[j - 1];
-                        a[j - 1] = tmp;
-                        b[j - 1] = temp;
-                    }
+        for (int i = 0; i < b.length; i++) {
+            for (int j = b.length - 1; j > i; j--) {
+                if (a[j] > a[j - 1]) {
+                    tmp = a[j];
+                    temp = b[j];
+                    a[j] = a[j - 1];
+                    b[j] = b[j - 1];
+                    a[j - 1] = tmp;
+                    b[j - 1] = temp;
                 }
             }
-        return b;
         }
+        return b;
     }
+
+    public static MathFunc[] quickSort(float[] a, MathFunc[] b){
+        float tmp = 0;
+        MathFunc temp;
+        for (int i = 0; i < b.length; i++) {
+            for (int j = b.length - 1; j > i; j--) {
+                if (a[j] > a[j - 1]) {
+                    tmp = a[j];
+                    temp = b[j];
+                    a[j] = a[j - 1];
+                    b[j] = b[j - 1];
+                    a[j - 1] = tmp;
+                    b[j - 1] = temp;
+                }
+            }
+        }
+        return b;
+    }
+}
 
 

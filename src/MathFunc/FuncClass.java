@@ -195,6 +195,28 @@ public class FuncClass extends MathObject {
         return AllMathFunc;
     }
 
+    public MathFunc[] getAllInsideMathFunc(){
+        MathFunc[] AllMathFuncs = AllMathFunc;
+        if(NumOfClass == 0){
+            return AllMathFuncs;
+        }
+        else{
+            for (int i = 0; i < NumOfClass; i++) {
+                int currentLen = AllMathFuncs.length;
+                MathFunc[] currentInsideFuncs = AllFuncClass[i].getAllInsideMathFunc();
+                MathFunc[] tempFuncs = new MathFunc[currentLen + currentInsideFuncs.length];
+                for (int j = 0; j < currentLen; j++) {
+                    tempFuncs[j] = AllMathFuncs[j];
+                }
+                for (int j = 0, len = currentInsideFuncs.length; j < len; j++) {
+                    tempFuncs[j + currentLen] = currentInsideFuncs[j];
+                }
+                AllMathFuncs = tempFuncs;
+            }
+            return AllMathFuncs;
+        }
+    }
+
     /**
      * @return All FuncClass
      */

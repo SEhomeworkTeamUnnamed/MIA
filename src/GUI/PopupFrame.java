@@ -19,7 +19,7 @@ import java.awt.event.WindowEvent;
 
 /**
  * Frame pop up when user click one of the <code>edit</code> method from the menu
- * Created by IIIS on 11/8/2015.
+ * Created by jwt625 on 11/8/2015.
  */
 public class PopupFrame extends JFrame {
 
