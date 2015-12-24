@@ -1,4 +1,4 @@
-package Test;
+package StringComp;
 
 /**
  * Created by DI on 2015/12/8.

@@ -17,7 +17,7 @@ public class Main {
         JTree tree=new JTree(RootClass.getTreeNode());
         final DefaultTreeModel treeModel = (DefaultTreeModel)tree.getModel();
 
-        new MainFrame(tree,RootClass,"GUI≤‚ ‘ modified");
+        new MainFrame(tree,RootClass,"Mathematica Input Assistant");
 
     }
     public static void main(String[] args){
