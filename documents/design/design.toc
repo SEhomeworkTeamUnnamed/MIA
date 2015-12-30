@@ -1,0 +1,26 @@
+\contentsline {chapter}{目录}{i}{chapter*.1}
+\contentsline {chapter}{\numberline {(一\ignorespaces )\hspace {0.3em}}概述}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}简介}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}软件内容与功能}{1}{section.1.2}
+\contentsline {chapter}{\numberline {(二\ignorespaces )\hspace {0.3em}}软件结构设计}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}开发环境}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}总体架构}{3}{section.2.2}
+\contentsline {section}{\numberline {2.3}数学相关类}{4}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}MathObject类}{4}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}FuncClass与MathFunc类}{4}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Para与VarRangePara类}{5}{subsection.2.3.3}
+\contentsline {section}{\numberline {2.4}用户界面相关类}{6}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}MainFrame与MainPane类}{6}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}RightBottomPane与ParaAndCodePane类}{6}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}PopupFrame与PopupSearchFrame}{7}{subsection.2.4.3}
+\contentsline {chapter}{\numberline {(三\ignorespaces )\hspace {0.3em}}用户界面设计}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}主界面}{9}{section.3.1}
+\contentsline {section}{\numberline {3.2}菜单栏}{10}{section.3.2}
+\contentsline {section}{\numberline {3.3}左侧界面}{10}{section.3.3}
+\contentsline {section}{\numberline {3.4}介绍界面}{11}{section.3.4}
+\contentsline {section}{\numberline {3.5}函数设定界面}{11}{section.3.5}
+\contentsline {section}{\numberline {3.6}弹出界面与对话框}{12}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}添加函数类，函数与参数界面}{12}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}添加变量对话框，删除对话框与搜索对话框}{12}{subsection.3.6.2}
+\contentsline {section}{\numberline {3.7}主要设计原则}{12}{section.3.7}
+\contentsline {chapter}{\numberline {(四\ignorespaces )\hspace {0.3em}}反思}{14}{chapter.4}
