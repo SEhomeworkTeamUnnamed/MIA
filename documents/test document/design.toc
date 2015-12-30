@@ -1,0 +1,32 @@
+\contentsline {chapter}{目录}{i}{chapter*.1}
+\contentsline {chapter}{\numberline {(一\ignorespaces )\hspace {0.3em}}测试规划及说明}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}测试说明}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}功能测试}{1}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}压力测试}{1}{subsection.1.1.2}
+\contentsline {section}{\numberline {1.2}测试内容}{1}{section.1.2}
+\contentsline {section}{\numberline {1.3}测试环境}{1}{section.1.3}
+\contentsline {section}{\numberline {1.4}测试工具}{2}{section.1.4}
+\contentsline {section}{\numberline {1.5}测试用例}{2}{section.1.5}
+\contentsline {chapter}{\numberline {(二\ignorespaces )\hspace {0.3em}}测试内容及展示}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}表观测试}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}欢迎界面测试：}{3}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}菜单栏子目录显示、左侧树形结构窗口按钮以及滚动条使用测试}{4}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}子对话框的显示}{4}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}右侧操作窗口按钮测试}{5}{subsection.2.1.4}
+\contentsline {section}{\numberline {2.2}函数使用测试}{5}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}ParametricPlot}{5}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}ContourPlot3D}{6}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}其它}{7}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}函数和函数类添加测试}{7}{section.2.3}
+\contentsline {section}{\numberline {2.4}搜索函数功能测试}{9}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}搜索框弹出测试}{9}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}即时反应检索功能测试}{9}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}搜索对话框按钮测试}{10}{subsection.2.4.3}
+\contentsline {section}{\numberline {2.5}细节功能测试}{11}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}函数名称输入非法测试}{11}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}步长选择提示}{11}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}函数函数类删除操作}{11}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}其它}{11}{subsection.2.5.4}
+\contentsline {chapter}{\numberline {(三\ignorespaces )\hspace {0.3em}}测试结果及改进}{14}{chapter.3}
+\contentsline {section}{\numberline {3.1}测试结果}{14}{section.3.1}
+\contentsline {section}{\numberline {3.2}测试改进}{14}{section.3.2}
