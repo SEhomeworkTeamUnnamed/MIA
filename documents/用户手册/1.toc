@@ -5,20 +5,16 @@
 \contentsline {chapter}{\numberline {(二\ignorespaces )\hspace {0.3em}}软件综述}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}软件功能}{3}{section.2.1}
 \contentsline {section}{\numberline {2.2}运行环境}{3}{section.2.2}
-\contentsline {chapter}{\numberline {(三\ignorespaces )\hspace {0.3em}}接口说明}{4}{chapter.3}
-\contentsline {section}{\numberline {3.1}硬件借口}{4}{section.3.1}
-\contentsline {section}{\numberline {3.2}软件借口}{4}{section.3.2}
-\contentsline {section}{\numberline {3.3}通信借口}{4}{section.3.3}
-\contentsline {chapter}{\numberline {(四\ignorespaces )\hspace {0.3em}}界面及操作说明}{5}{chapter.4}
-\contentsline {section}{\numberline {4.1}主界面}{5}{section.4.1}
-\contentsline {section}{\numberline {4.2}菜单栏}{6}{section.4.2}
-\contentsline {section}{\numberline {4.3}左侧界面}{6}{section.4.3}
-\contentsline {section}{\numberline {4.4}介绍界面}{7}{section.4.4}
-\contentsline {section}{\numberline {4.5}函数设定界面}{7}{section.4.5}
-\contentsline {section}{\numberline {4.6}弹出界面与对话框}{8}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}添加函数类，函数与参数界面}{8}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}添加变量对话框，删除对话框与搜索对话框}{8}{subsection.4.6.2}
-\contentsline {chapter}{\numberline {(五\ignorespaces )\hspace {0.3em}}操作说明}{9}{chapter.5}
-\contentsline {section}{\numberline {5.1}使用函数}{9}{section.5.1}
-\contentsline {section}{\numberline {5.2}添加函数与函数类}{10}{section.5.2}
-\contentsline {section}{\numberline {5.3}搜索功能}{12}{section.5.3}
+\contentsline {chapter}{\numberline {(三\ignorespaces )\hspace {0.3em}}界面及操作说明}{4}{chapter.3}
+\contentsline {section}{\numberline {3.1}主界面}{4}{section.3.1}
+\contentsline {section}{\numberline {3.2}菜单栏}{5}{section.3.2}
+\contentsline {section}{\numberline {3.3}左侧界面}{5}{section.3.3}
+\contentsline {section}{\numberline {3.4}介绍界面}{6}{section.3.4}
+\contentsline {section}{\numberline {3.5}函数设定界面}{6}{section.3.5}
+\contentsline {section}{\numberline {3.6}弹出界面与对话框}{7}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}添加函数类，函数与参数界面}{7}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}添加变量对话框，删除对话框与搜索对话框}{7}{subsection.3.6.2}
+\contentsline {chapter}{\numberline {(四\ignorespaces )\hspace {0.3em}}操作说明}{8}{chapter.4}
+\contentsline {section}{\numberline {4.1}使用函数}{8}{section.4.1}
+\contentsline {section}{\numberline {4.2}添加函数与函数类}{9}{section.4.2}
+\contentsline {section}{\numberline {4.3}搜索功能}{11}{section.4.3}
